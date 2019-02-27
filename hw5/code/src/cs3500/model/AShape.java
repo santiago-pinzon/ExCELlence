@@ -59,12 +59,14 @@ public abstract class AShape implements Shapes{
   @Override
   public String getDescription(int key) {
     String out = "motion\t" + this.name +  "\t";
+
     out += String.format("%-1s %s %-1s %-1s %s", key, this.center.toString(), this.height,
         this.width, this.color.toString()) + "\t\t";
     this.performActions(key);
     out += String.format("%-1s %s %-1s %-1s %s", actions.get(key).get(0).getEndTime() ,
-        this.center.toString(), this.height,
-        this.width, this.color.toString()) + "\n";
+        this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
+
+
 
     return out;
   }
