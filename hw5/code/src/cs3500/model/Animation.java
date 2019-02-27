@@ -2,7 +2,10 @@ package cs3500.model;
 
 public interface Animation {
 
-  String getDescription();
+  int getStartTime();
 
-  void doAction();
+  int getEndTime();
+
+  void apply(Shapes shape);
+
 }

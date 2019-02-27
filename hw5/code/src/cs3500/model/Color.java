@@ -23,6 +23,6 @@ public class Color {
 
   @Override
   public String toString(){
-    return this.r + "\t" + this.g + "\t" + this.b;
+    return String.format("%-1s %-1s %-1s", this.r, this.g, this.b);
   }
 }

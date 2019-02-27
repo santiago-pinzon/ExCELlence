@@ -15,8 +15,16 @@ public class Position{
     this.y = y;
   }
 
+  public int getX() {
+    return this.x;
+  }
+
+  public int getY() {
+    return this.y;
+  }
+
   @Override
   public String toString(){
-    return  this.x + "\t" + this.y;
+    return  String.format("%-1s %-1s", this.x, this.y);
   }
 }

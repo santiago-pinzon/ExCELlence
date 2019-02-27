@@ -1,7 +1,16 @@
 package cs3500.model;
 
 public class ColorChange extends AbstractAnimation {
-  public ColorChange(Shapes shape, int startTime, int endTime) {
-    super(shape, startTime, endTime);
+  Color color;
+
+  public ColorChange(int startTime, int endTime, Color color) {
+    super(startTime, endTime);
+    this.color = color;
+  }
+
+
+  @Override
+  public void apply(Shapes shape) {
+    shape.changeColor(this.color);
   }
 }

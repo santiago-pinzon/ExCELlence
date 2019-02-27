@@ -14,10 +14,17 @@ public interface Shapes {
 
   void changeColor(Color c);
 
-  String getDescription();
+  String getFullDescription();
+
+  String getDescription(int key);
 
   String getName();
 
   void getImage();
+
+  void addAction(Animation animate);
+
+  void performActions(int key);
+
 
 }
