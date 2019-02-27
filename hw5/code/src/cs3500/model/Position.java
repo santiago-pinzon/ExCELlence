@@ -25,6 +25,6 @@ public class Position{
 
   @Override
   public String toString(){
-    return  String.format("%-1s %-1s", this.x, this.y);
+    return  String.format("%-5s %-5s", this.x, this.y);
   }
 }
