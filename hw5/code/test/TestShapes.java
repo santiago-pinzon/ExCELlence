@@ -6,6 +6,73 @@ import static org.junit.Assert.assertEquals;
 
 public class TestShapes {
 
+  @Test(expected = IllegalArgumentException.class)
+  public void testRectangleWith0Height(){
+    Position p = new Position(3, 3);
+    Color c = new Color(255, 0, 0);
+    Shapes s = new Rectangle(p, 0, 3, c, "Rectangle");
+    assertEquals("Height cannot be negative", s.getName());
+    }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testRectangleWithNegativeHeight(){
+    Position p = new Position(3, 3);
+    Color c = new Color(255, 0, 0);
+    Shapes s = new Rectangle(p, -2, 3, c, "Rectangle");
+    assertEquals("Height cannot be negative", s.getName());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testRectangleWith0Width(){
+    Position p = new Position(3, 3);
+    Color c = new Color(255, 0, 0);
+    Shapes s = new Rectangle(p, 2, 0, c, "Rectangle");
+    assertEquals("Width cannot be negative", s.getName());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testRectangleWithNegativeWidth(){
+    Position p = new Position(3, 3);
+    Color c = new Color(255, 0, 0);
+    Shapes s = new Rectangle(p, 2, -3, c, "Rectangle");
+    assertEquals("Width cannot be negative", s.getName());
+  }
+
+  @Test
+  public void testGetNameForRectangle(){
+    Position p = new Position(3, 3);
+    Color c = new Color(255, 0, 0);
+    Shapes s = new Rectangle(p, 2, 3, c, "Rectangle");
+    assertEquals("Rectangle", s.getName());
+  }
+
+  @Test
+  public void testGetNameForEllipse(){
+    Position p = new Position(3, 3);
+    Color c = new Color(255, 0, 0);
+    Shapes s = new Rectangle(p, 2, 3, c, "Ellipse");
+    assertEquals("Ellipse", s.getName());
+  }
+
+  @Test
+  public void testGetDesciptionForRectangle(){
+    Position p = new Position(3, 3);
+    Color c = new Color(255, 0, 0);
+    Shapes s = new Rectangle(p, 2, 3, c, "Rectangle");
+    assertEquals("shape Rectangle Rectangle\n\n", s.getFullDescription());
+  }
+
+  @Test
+  public void testGetDescriptionForEllipse(){
+    Position p = new Position(3, 3);
+    Color c = new Color(255, 0, 0);
+    Shapes s = new Ellipse(p, 2, 3, c, "Ellipse");
+    assertEquals("shape Ellipse Ellipse\n\n", s.getFullDescription());
+  }
+
+
+
+  }
 
 
 
@@ -13,4 +80,5 @@ public class TestShapes {
 
 
 
-}
+
+
