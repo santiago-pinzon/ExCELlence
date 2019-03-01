@@ -30,6 +30,7 @@ public class AnimationModelImpl implements AnimationModel {
     String output = "";
     for(String key: this.listOfShapes.keySet()) {
       output += this.listOfShapes.get(key).getFullDescription();
+      output += "\n";
     }
     return output;
   }
