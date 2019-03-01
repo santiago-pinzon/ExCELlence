@@ -63,7 +63,7 @@ public class TestShapes {
   }
 
   @Test
-  public void testGetDesciptionForRectangle() {
+  public void testGetDescriptionForRectangle() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Rectangle(p, 2, 3, c, "Rectangle");

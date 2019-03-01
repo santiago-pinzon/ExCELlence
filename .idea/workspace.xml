@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e43cfbd2-1a8d-4cb6-8d6a-a357af6b2906" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/AnimationModelImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/test/AnimationModelImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/TestShapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/test/TestShapes.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,20 +22,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306">
-              <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+            <state relative-caret-position="720">
+              <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1469#1470#0" expanded="true" />
+                <element signature="e#1494#1495#0" expanded="true" />
+                <element signature="e#1544#1545#0" expanded="true" />
+                <element signature="e#1568#1569#0" expanded="true" />
+                <element signature="e#2317#2318#0" expanded="true" />
+                <element signature="e#2343#2344#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hw5/code/test/AnimationModelImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state relative-caret-position="1258">
+              <caret line="175" column="32" selection-start-line="175" selection-start-column="32" selection-end-line="175" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw5/code/test/TestColor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-204">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+              <folding>
+                <element signature="e#1154#1155#0" expanded="true" />
+                <element signature="e#1226#1227#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,11 +71,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="35" column="3" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="35" selection-end-column="3" />
+            <state relative-caret-position="153">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
               <folding>
-                <element signature="e#183#184#0" expanded="true" />
-                <element signature="e#227#228#0" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#382#383#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,57 +84,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/test/TestAbstractAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="-1156">
+              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java">
+        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AbstractAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-              <folding>
-                <element signature="e#477#478#0" expanded="true" />
-                <element signature="e#549#550#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-110">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Position.java">
+        <entry file="file://$PROJECT_DIR$/hw5/code/test/TestPosition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-              <folding>
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#402#403#0" expanded="true" />
-                <element signature="e#443#444#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/ColorChange.java">
+        <entry file="file://$PROJECT_DIR$/hw5/code/test/TestShapes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+            <state relative-caret-position="187">
+              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
               <folding>
-                <element signature="e#302#303#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -125,33 +140,33 @@
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AbstractAnimation.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Size.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Motion.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/TestMotion.java" />
-        <option value="$PROJECT_DIR$/hw5/code/test/TestShapes.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Rectangle.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Ellipse.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/ColorChange.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Position.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/TestAbstractAnimation.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/test.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" />
+        <option value="$PROJECT_DIR$/hw5/code/test/AnimationModelImplTest.java" />
+        <option value="$PROJECT_DIR$/hw5/code/test/TestShapes.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-9" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
     <option name="width" value="1295" />
-    <option name="height" value="1409" />
+    <option name="height" value="1410" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,6 +211,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -204,7 +220,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551379166166" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551476365494" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -223,7 +239,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="JUnit.AnimationModelImplTest">
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs3500.model.test" />
       <module name="ExCELlence" />
@@ -237,18 +253,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAbstractAnimation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimationModelImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExCELlence" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestAbstractAnimation" />
+      <option name="MAIN_CLASS_NAME" value="AnimationModelImplTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnimationModelImplTest.testAddingIntermediateAnimation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExCELlence" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimationModelImplTest" />
+      <option name="METHOD_NAME" value="testAddingIntermediateAnimation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnimationModelImplTest.testGetAnimationForJustEllipse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExCELlence" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimationModelImplTest" />
+      <option name="METHOD_NAME" value="testGetAnimationForJustEllipse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestShapes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExCELlence" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestShapes" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AnimationModelImplTest" />
+        <item itemvalue="JUnit.AnimationModelImplTest.testAddingIntermediateAnimation" />
+        <item itemvalue="JUnit.AnimationModelImplTest.testGetAnimationForJustEllipse" />
         <item itemvalue="Application.test" />
-        <item itemvalue="JUnit.TestAbstractAnimation" />
+        <item itemvalue="JUnit.TestShapes" />
       </list>
     </recent_temporary>
   </component>
@@ -266,15 +313,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAbstractAnimation - 2019.02.27 at 23h 47m 31s.xml">
-      <configuration name="TestAbstractAnimation" configurationId="JUnit" />
+    <history-entry file="AnimationModelImplTest - 2019.03.01 at 16h 04m 14s.xml">
+      <configuration name="AnimationModelImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimationModelImplTest - 2019.03.01 at 16h 05m 18s.xml">
+      <configuration name="AnimationModelImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimationModelImplTest - 2019.03.01 at 16h 06m 00s.xml">
+      <configuration name="AnimationModelImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimationModelImplTest - 2019.03.01 at 16h 06m 08s.xml">
+      <configuration name="AnimationModelImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimationModelImplTest_testGetAnimationForJustEllipse - 2019.03.01 at 16h 12m 08s.xml">
+      <configuration name="AnimationModelImplTest.testGetAnimationForJustEllipse" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimationModelImplTest - 2019.03.01 at 16h 12m 13s.xml">
+      <configuration name="AnimationModelImplTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimationModelImplTest_testAddingIntermediateAnimation - 2019.03.01 at 16h 14m 27s.xml">
+      <configuration name="AnimationModelImplTest.testAddingIntermediateAnimation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimationModelImplTest_testAddingIntermediateAnimation - 2019.03.01 at 16h 14m 57s.xml">
+      <configuration name="AnimationModelImplTest.testAddingIntermediateAnimation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimationModelImplTest_testAddingIntermediateAnimation - 2019.03.01 at 16h 15m 39s.xml">
+      <configuration name="AnimationModelImplTest.testAddingIntermediateAnimation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AnimationModelImplTest - 2019.03.01 at 16h 15m 47s.xml">
+      <configuration name="AnimationModelImplTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="846" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1885906" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19127516" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -304,19 +378,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Component.java" />
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AbstractAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding>
-            <element signature="e#531#532#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Motion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -336,13 +397,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/test/TestMotion.java" />
-    <entry file="file://$PROJECT_DIR$/hw5/code/test/TestShapes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Ellipse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -357,13 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Rectangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -371,13 +418,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/ColorChange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        <state relative-caret-position="204">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding>
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -385,65 +431,118 @@
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Position.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding>
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/ColorChange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding>
-            <element signature="e#302#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/test/TestAbstractAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="561">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="247">
+          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
+    <entry file="file://$PROJECT_DIR$/hw5/code/test/TestColor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="3" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="35" selection-end-column="3" />
+        <state relative-caret-position="-204">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
           <folding>
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#1154#1155#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
+        <state relative-caret-position="272">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding>
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+            <element signature="e#1494#1495#0" expanded="true" />
+            <element signature="e#1544#1545#0" expanded="true" />
+            <element signature="e#1568#1569#0" expanded="true" />
+            <element signature="e#2317#2318#0" expanded="true" />
+            <element signature="e#2343#2344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AbstractAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/test/TestShapes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/test/TestPosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/test/TestAbstractAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1156">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/test/AnimationModelImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="175" column="32" selection-start-line="175" selection-start-column="32" selection-end-line="175" selection-end-column="32" />
         </state>
       </provider>
     </entry>

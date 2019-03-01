@@ -27,7 +27,6 @@ public interface Shapes {
    *
    * @param c the new color for the shape
    */
-
   void changeColor(Color c);
 
   /**
@@ -35,7 +34,6 @@ public interface Shapes {
    *
    * @return the description of the shape
    */
-
   String getFullDescription();
 
   /**
@@ -44,7 +42,6 @@ public interface Shapes {
    * @param key represents the animation
    * @return the description of the actions of the shape.
    */
-
   String getDescription(int key);
 
   /**
@@ -52,13 +49,11 @@ public interface Shapes {
    *
    * @return the name of the shape
    */
-
   String getName();
 
   /**
    * Gets the image of the shape. Since we don't know how to render yet this is left empty.
    */
-
   void getImage();
 
   /**
@@ -66,7 +61,6 @@ public interface Shapes {
    *
    * @param animate the animation being added on
    */
-
   void addAction(Animation animate);
 
   /**
@@ -74,7 +68,6 @@ public interface Shapes {
    *
    * @param key a singular animation.
    */
-
   void performActions(int key);
 
 

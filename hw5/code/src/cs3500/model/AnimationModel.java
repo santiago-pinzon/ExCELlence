@@ -32,7 +32,6 @@ public interface AnimationModel {
    *
    * @return the full animation as a string.
    */
-
   String getAnimation();
 
 }

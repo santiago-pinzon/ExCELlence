@@ -1,6 +1,7 @@
 package cs3500.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -101,7 +102,12 @@ public abstract class AShape implements Shapes {
     int key = animate.getStartTime();
 
     if (!keyPoints.contains(key)) {
+      if(keyPoints.size() > 0 && key != actions.get(keyPoints.get(keyPoints.size()-1)).get(0).getEndTime()) {
+        throw new IllegalArgumentException("Start time for new animation does not match up with "
+            + "end time for previous animation");
+      }
       keyPoints.add(key);
+      Collections.sort(keyPoints);
     }
 
     if (!actions.containsKey(key)) {

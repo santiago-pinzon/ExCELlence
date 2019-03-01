@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 
 public class AnimationModelImpl implements AnimationModel {
-  HashMap<String, Shapes> listOfShapes;
+  private HashMap<String, Shapes> listOfShapes;
 
   /**
    * Constructs the animation model using a hashMap to take care of the list of shapes.

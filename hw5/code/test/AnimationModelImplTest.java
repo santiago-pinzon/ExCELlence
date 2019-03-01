@@ -156,4 +156,24 @@ public class AnimationModelImplTest {
     assertEquals("", imp.getAnimation());
   }
 
+  // Test adding an animation that starts before the previous one ends
+  @Test (expected = java.lang.IllegalArgumentException.class)
+  public void testAddingIntermediateAnimation() {
+    Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
+        new Color(255, 0, 0), "R");
+    Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
+        new Color(0, 0, 255), "E");
+
+    Motion motion = new Motion(0, 10, new Position(5, 0));
+    ColorChange color = new ColorChange(0, 10, new Color(0, 255, 0));
+    Size size = new Size(9, 15, 20, 21);
+
+    AnimationModelImpl imp = new AnimationModelImpl();
+    imp.addShape(test);
+    imp.addShape(hello);
+
+    imp.addAnimation("R", motion);
+    imp.addAnimation("R", size);
+  }
+
 }
