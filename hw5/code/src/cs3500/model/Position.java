@@ -1,7 +1,7 @@
 package cs3500.model;
 
 /**
- * Class to represent a Position
+ * Class to represent a Position.
  */
 
 public class Position {
@@ -9,7 +9,7 @@ public class Position {
   int y;
 
   /**
-   * Constructs a position with a given x and y value
+   * Constructs a position with a given x and y value.
    *
    * @param x the x coordinate
    * @param y the y coordinate
@@ -29,7 +29,7 @@ public class Position {
   }
 
   /**
-   * Gets the x value of the position
+   * Gets the x value of the position.
    *
    * @return the x value
    */
@@ -39,7 +39,7 @@ public class Position {
   }
 
   /**
-   * Gets the y value of the position
+   * Gets the y value of the position.
    *
    * @return the y value
    */

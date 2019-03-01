@@ -4,6 +4,10 @@ import cs3500.model.Color;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Testing color.
+ */
+
 public class TestColor {
 
   @Test(expected = IllegalArgumentException.class)

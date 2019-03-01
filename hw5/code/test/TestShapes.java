@@ -8,6 +8,10 @@ import cs3500.model.Shapes;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Testing shapes.
+ */
+
 public class TestShapes {
 
   @Test(expected = IllegalArgumentException.class)

@@ -4,6 +4,10 @@ import cs3500.model.Position;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Testing position.
+ */
+
 public class TestPosition {
   @Test(expected = IllegalArgumentException.class)
   public void testNegativeXPosition() {

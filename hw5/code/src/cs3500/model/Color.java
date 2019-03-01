@@ -1,7 +1,7 @@
 package cs3500.model;
 
 /**
- * Class that represents colors;
+ * Class that represents colors.
  */
 
 public class Color {

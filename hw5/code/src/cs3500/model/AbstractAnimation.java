@@ -21,7 +21,8 @@ public abstract class AbstractAnimation implements Animation {
 
   public AbstractAnimation(int startTime, int endTime) {
     if (endTime <= startTime) {
-      throw new IllegalArgumentException("end time cannot be less than or the same as the start time");
+      throw new IllegalArgumentException("end time cannot be less than or the " +
+              "same as the start time");
     }
     this.startTime = startTime;
     this.endTime = endTime;

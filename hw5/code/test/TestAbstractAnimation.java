@@ -11,6 +11,9 @@ import cs3500.model.Size;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Testing abstract animation.
+ */
 
 public class TestAbstractAnimation {
   @Test(expected = IllegalArgumentException.class)

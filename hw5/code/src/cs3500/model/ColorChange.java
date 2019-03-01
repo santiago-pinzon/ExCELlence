@@ -1,7 +1,7 @@
 package cs3500.model;
 
 /**
- * Represents the animation of changing a color
+ * Represents the animation of changing a color.
  */
 
 public class ColorChange extends AbstractAnimation {

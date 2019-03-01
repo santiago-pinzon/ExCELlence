@@ -24,6 +24,6 @@ public class Ellipse extends AShape {
 
   @Override
   public void getImage() {
-
+    //don't know how to render yet
   }
 }
