@@ -2,7 +2,6 @@ import org.junit.Test;
 
 import cs3500.model.*;
 
-
 import static org.junit.Assert.assertEquals;
 
 
@@ -82,7 +81,7 @@ public class TestAbstractAnimation {
     Size size = new Size(10, 15, 20,21);
     r.addAction(motion);
     r.addAction(c);
-    r.addAction(size); 
+    r.addAction(size);
     assertEquals("shape E Ellipse\n\n" +
             "motion\tE\t0     0     0     10    10    255   0     0"+
             "    \t\t10    5     0     10    10    0     255   0    \n" +
