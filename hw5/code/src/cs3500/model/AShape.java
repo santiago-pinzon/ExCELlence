@@ -9,6 +9,7 @@ import java.util.HashMap;
  */
 
 public abstract class AShape implements Shapes {
+
   public HashMap<Integer, ArrayList<Animation>> actions;
   public ArrayList<Integer> keyPoints;
   protected Position center;
@@ -23,9 +24,9 @@ public abstract class AShape implements Shapes {
    *
    * @param center the position of the shape
    * @param height the height of the shape
-   * @param width  the width of the shape
-   * @param color  the color of the shape
-   * @param name   the name of the shape
+   * @param width the width of the shape
+   * @param color the color of the shape
+   * @param name the name of the shape
    * @throws IllegalArgumentException if the height is <= 0
    * @throws IllegalArgumentException if the width is <= 0
    */
@@ -78,11 +79,10 @@ public abstract class AShape implements Shapes {
     String out = "motion\t" + this.name + "\t";
 
     out += String.format("%-5s %s %-5s %-5s %s", key, this.center.toString(), this.height,
-            this.width, this.color.toString()) + "\t\t";
+        this.width, this.color.toString()) + "\t\t";
     this.performActions(key);
     out += String.format("%-5s %s %-5s %-5s %s", actions.get(key).get(0).getEndTime(),
-            this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
-
+        this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
 
     return out;
   }
@@ -102,7 +102,8 @@ public abstract class AShape implements Shapes {
     int key = animate.getStartTime();
 
     if (!keyPoints.contains(key)) {
-      if(keyPoints.size() > 0 && key != actions.get(keyPoints.get(keyPoints.size()-1)).get(0).getEndTime()) {
+      if (keyPoints.size() > 0 && key != actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
+          .getEndTime()) {
         throw new IllegalArgumentException("Start time for new animation does not match up with "
             + "end time for previous animation");
       }

@@ -15,14 +15,14 @@ public abstract class AbstractAnimation implements Animation {
    * Constructs the Animation.
    *
    * @param startTime the startTime of the animation
-   * @param endTime   the endTime of the animation
+   * @param endTime the endTime of the animation
    * @throws IllegalArgumentException if the endTime is <= the startTime
    */
 
   public AbstractAnimation(int startTime, int endTime) {
     if (endTime <= startTime) {
-      throw new IllegalArgumentException("end time cannot be less than or the " +
-              "same as the start time");
+      throw new IllegalArgumentException("end time cannot be less than or the "
+          + "same as the start time");
     }
     this.startTime = startTime;
     this.endTime = endTime;
