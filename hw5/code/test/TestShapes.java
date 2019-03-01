@@ -1,21 +1,25 @@
 import org.junit.Test;
 
-import cs3500.model.*;
+import cs3500.model.Color;
+import cs3500.model.Ellipse;
+import cs3500.model.Position;
+import cs3500.model.Rectangle;
+import cs3500.model.Shapes;
 
 import static org.junit.Assert.assertEquals;
 
 public class TestShapes {
 
   @Test(expected = IllegalArgumentException.class)
-  public void testRectangleWith0Height(){
+  public void testRectangleWith0Height() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Rectangle(p, 0, 3, c, "Rectangle");
     assertEquals("Height cannot be negative", s.getName());
-    }
+  }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testRectangleWithNegativeHeight(){
+  public void testRectangleWithNegativeHeight() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Rectangle(p, -2, 3, c, "Rectangle");
@@ -23,7 +27,7 @@ public class TestShapes {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testRectangleWith0Width(){
+  public void testRectangleWith0Width() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Rectangle(p, 2, 0, c, "Rectangle");
@@ -31,7 +35,7 @@ public class TestShapes {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testRectangleWithNegativeWidth(){
+  public void testRectangleWithNegativeWidth() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Rectangle(p, 2, -3, c, "Rectangle");
@@ -39,7 +43,7 @@ public class TestShapes {
   }
 
   @Test
-  public void testGetNameForRectangle(){
+  public void testGetNameForRectangle() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Rectangle(p, 2, 3, c, "Rectangle");
@@ -47,7 +51,7 @@ public class TestShapes {
   }
 
   @Test
-  public void testGetNameForEllipse(){
+  public void testGetNameForEllipse() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Rectangle(p, 2, 3, c, "Ellipse");
@@ -55,7 +59,7 @@ public class TestShapes {
   }
 
   @Test
-  public void testGetDesciptionForRectangle(){
+  public void testGetDesciptionForRectangle() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Rectangle(p, 2, 3, c, "Rectangle");
@@ -63,7 +67,7 @@ public class TestShapes {
   }
 
   @Test
-  public void testGetDescriptionForEllipse(){
+  public void testGetDescriptionForEllipse() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Ellipse(p, 2, 3, c, "Ellipse");
@@ -71,8 +75,7 @@ public class TestShapes {
   }
 
 
-
-  }
+}
 
 
 
