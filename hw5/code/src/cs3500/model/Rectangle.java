@@ -1,5 +1,7 @@
 package cs3500.model;
 
+import java.awt.Component;
+
 /**
  * Represents a rectangle shape.
  */
@@ -23,8 +25,8 @@ public class Rectangle extends AShape {
 
 
   @Override
-  public void getImage() {
-    //this method is empty because we don't know how to render the images yet
+  public Component getImage() {
+
   }
 
 }

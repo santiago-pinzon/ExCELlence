@@ -1,5 +1,6 @@
 package cs3500.model;
 
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -66,7 +67,7 @@ public abstract class AShape implements Shapes {
 
   @Override
   public String getFullDescription() {
-    String output = "shape " + this.name + " " + this.desc + "\n\n";
+    String output = "shape " + this.name + " " + this.desc + "\n";
     for (int key : keyPoints) {
       output += this.getDescription(key);
     }
@@ -93,9 +94,8 @@ public abstract class AShape implements Shapes {
   }
 
   @Override
-  public void getImage() {
+  abstract public Component getImage();
     //this method is empty because we don't know how to render the images yet
-  }
 
   @Override
   public void addAction(Animation animate) {

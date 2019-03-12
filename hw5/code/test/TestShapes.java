@@ -1,9 +1,9 @@
+import cs3500.model.Rectangle;
 import org.junit.Test;
 
 import cs3500.model.Color;
 import cs3500.model.Ellipse;
 import cs3500.model.Position;
-import cs3500.model.Rectangle;
 import cs3500.model.Shapes;
 
 import static org.junit.Assert.assertEquals;

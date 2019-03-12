@@ -1,3 +1,4 @@
+import cs3500.model.Rectangle;
 import org.junit.Test;
 
 import cs3500.model.Animation;
@@ -6,7 +7,6 @@ import cs3500.model.ColorChange;
 import cs3500.model.Ellipse;
 import cs3500.model.Motion;
 import cs3500.model.Position;
-import cs3500.model.Rectangle;
 import cs3500.model.Size;
 
 import static org.junit.Assert.assertEquals;

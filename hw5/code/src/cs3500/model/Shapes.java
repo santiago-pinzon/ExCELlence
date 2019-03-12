@@ -1,5 +1,7 @@
 package cs3500.model;
 
+import java.awt.Component;
+
 /**
  * The interface for shapes.
  */
@@ -54,7 +56,7 @@ public interface Shapes {
   /**
    * Gets the image of the shape. Since we don't know how to render yet this is left empty.
    */
-  void getImage();
+  Component getImage();
 
   /**
    * Adds the action to the animation.

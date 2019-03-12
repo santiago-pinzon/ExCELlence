@@ -33,6 +33,10 @@ public class AnimationModelImpl implements AnimationModel {
     this.listOfShapes.get(shape).addAction(animate);
   }
 
+  public HashMap<String, Shapes> getHash() {
+    return listOfShapes;
+  }
+
   @Override
   public String getAnimation() {
     String output = "";

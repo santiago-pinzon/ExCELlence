@@ -1,3 +1,4 @@
+import cs3500.model.Rectangle;
 import org.junit.Test;
 
 import cs3500.model.AnimationModelImpl;
@@ -6,7 +7,6 @@ import cs3500.model.ColorChange;
 import cs3500.model.Ellipse;
 import cs3500.model.Motion;
 import cs3500.model.Position;
-import cs3500.model.Rectangle;
 import cs3500.model.Size;
 
 import static org.junit.Assert.assertEquals;
@@ -108,12 +108,12 @@ public class AnimationModelImplTest {
     imp.addAnimation("R", size);
     imp.addAnimation("E", size);
 
-    assertEquals("shape R Rectangle\n\n" +
+    assertEquals("shape R Rectangle\n" +
             "motion\tR\t0     0     0     10    10    255   0     0" +
             "    \t\t10    5     0     10    10    255   0     0    \n" +
             "motion\tR\t10    5     0     10    10    255   0     0" +
             "    \t\t15    5     0     20    21    255   0     0    \n\n" +
-            "shape E Ellipse\n\n" +
+            "shape E Ellipse\n" +
             "motion\tE\t0     5     5     20    10    0     0     255" +
             "  \t\t10    5     5     20    10    0     255   0    \n" +
             "motion\tE\t10    5     5     20    10    0     255   0" +
