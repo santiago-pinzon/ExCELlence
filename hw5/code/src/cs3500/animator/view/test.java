@@ -17,7 +17,7 @@ public class test {
     Ellipse hello = new Ellipse(new Position(300, 300), 50, 50,
         new Color(0, 0, 255), "E");
 
-    Motion motion = new Motion(0, 100, new Position(600, 600));
+    Motion motion = new Motion(0, 100, new Position(300, 300));
     ColorChange color = new ColorChange(0, 100, new Color(0, 255, 0));
     Size size = new Size(100, 150, 300, 400);
 
@@ -30,7 +30,7 @@ public class test {
     imp.addAnimation("R", size);
     imp.addAnimation("E", size);
 
-    AnimationView animate = new AnimationView(imp, 500, 500,100);
+    AnimationView animate = new AnimationView(imp, 1000, 1000,100);
     animate.Animate();
   }
 

@@ -150,10 +150,12 @@ public abstract class AShape implements Shapes {
   public void getTweener(int tick) {
     int keyFrame = 0;
     ArrayList<Animation> animations;
-    for(int e: this.keyPoints) {
-      if (e < tick) {
-        keyFrame = e;
+    for(int i = 0; i < keyPoints.size(); i++) {
+      if(keyPoints.get(i) > tick) {
         break;
+      }
+      else {
+        keyFrame = keyPoints.get(i);
       }
     }
     animations = this.actions.get(keyFrame);

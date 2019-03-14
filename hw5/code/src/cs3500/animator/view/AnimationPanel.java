@@ -15,7 +15,7 @@ public class AnimationPanel extends JPanel {
 
     Graphics2D g2 = (Graphics2D) g;
     setLocation(0,0);
-    setSize(1000, 1000);
+    setSize(2000, 2000);
 
     for (Shapes shape : this.listOfShapes) {
       switch (shape.getDesc()) {
