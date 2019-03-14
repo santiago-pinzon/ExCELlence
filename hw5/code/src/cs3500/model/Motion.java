@@ -27,5 +27,21 @@ public class Motion extends AbstractAnimation {
     shape.changePosition(this.to);
   }
 
+  @Override
+  public void applyTweener(int frame, Shapes s) {
+    int length = this.endTime - this.startTime;
+    double ratio = (double) frame/length * 1;
 
+    int fromX = s.getX();
+    int fromY = s.getY();
+
+    int xDifference = to.getX() - fromX;
+    int yDifference = to.getY() - fromY;
+
+    fromX += xDifference * ratio;
+    fromY += yDifference * ratio;
+
+    s.changePosition(new Position(fromX, fromY));
+
+  }
 }

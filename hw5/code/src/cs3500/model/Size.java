@@ -29,4 +29,24 @@ public class Size extends AbstractAnimation {
   public void apply(Shapes shape) {
     shape.changeSize(height, width);
   }
+
+  @Override
+  public void applyTweener(int frame, Shapes s) {
+    int length = this.endTime - this.startTime;
+    double ratio = (double) frame/length * 1;
+
+    int fromW = s.getWidth();
+    int fromH = s.getHeight();
+
+
+    int wDifference = width - fromW;
+    int hDifference = height - fromH;
+
+
+    fromW += wDifference * ratio;
+    fromH += hDifference * ratio;
+
+
+    s.changeSize(fromH, fromW);
+  }
 }

@@ -29,11 +29,6 @@ public abstract class AbstractAnimation implements Animation {
   }
 
 
-  @Override
-  public void renderAnimation() {
-    // don't know how to render the animation yet
-  }
-
 
   @Override
   public int getStartTime() {
@@ -49,6 +44,9 @@ public abstract class AbstractAnimation implements Animation {
 
   @Override
   public abstract void apply(Shapes shape);
+
+  @Override
+  public abstract void applyTweener(int frame, Shapes s);
 
 
 }

@@ -12,14 +12,14 @@ import cs3500.model.Size;
 public class test {
 
   public static void main(String[] args) {
-    Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
+    Rectangle test = new Rectangle(new Position(0, 0), 100, 100,
         new Color(255, 0, 0), "R");
-    Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
+    Ellipse hello = new Ellipse(new Position(300, 300), 50, 50,
         new Color(0, 0, 255), "E");
 
-    Motion motion = new Motion(0, 10, new Position(5, 0));
-    ColorChange color = new ColorChange(0, 10, new Color(0, 255, 0));
-    Size size = new Size(10, 15, 20, 21);
+    Motion motion = new Motion(0, 100, new Position(600, 600));
+    ColorChange color = new ColorChange(0, 100, new Color(0, 255, 0));
+    Size size = new Size(100, 150, 300, 400);
 
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
@@ -30,13 +30,8 @@ public class test {
     imp.addAnimation("R", size);
     imp.addAnimation("E", size);
 
-    StringBuilder out = new StringBuilder();
-
-    TextView text = new TextView(imp, 200, 70, 360, 360, out);
-
-    text.render();
-
-    System.out.println(out.toString());
+    AnimationView animate = new AnimationView(imp, 500, 500,100);
+    animate.Animate();
   }
 
 

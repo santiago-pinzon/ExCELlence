@@ -32,8 +32,10 @@ public interface Animation {
 
 
   /**
-   * Renders the animation. Since we don't know how to render yet, nothing is being done here.
+   * Renders the animation. MORE HERE
    */
-  void renderAnimation();
+  void applyTweener(int frame, Shapes s);
+
+
 
 }

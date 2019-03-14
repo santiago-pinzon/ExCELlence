@@ -34,4 +34,6 @@ public interface AnimationModel {
    */
   String getAnimation();
 
+  void updateShapes(int tick);
+
 }

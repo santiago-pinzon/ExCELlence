@@ -43,4 +43,5 @@ public class Color {
   public String toString() {
     return String.format("%-5s %-5s %-5s", this.r, this.g, this.b);
   }
+
 }

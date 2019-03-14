@@ -10,7 +10,6 @@ public class Rectangle extends AShape {
 
   /**
    * Constructs a rectangle with a given position, height, width, color, name.
-   *
    * @param center the center position of the rectangle
    * @param height the height of the rectangle
    * @param width  the width of the rectangle
@@ -23,10 +22,5 @@ public class Rectangle extends AShape {
     this.desc = "Rectangle";
   }
 
-
-  @Override
-  public Component getImage() {
-
-  }
 
 }

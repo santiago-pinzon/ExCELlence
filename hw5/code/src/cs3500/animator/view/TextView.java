@@ -4,7 +4,7 @@ import cs3500.model.AnimationModelImpl;
 import java.io.IOException;
 import java.util.function.Consumer;
 
-public class TextView implements IView {
+public class TextView implements ITextView {
   private AnimationModelImpl animation;
   private int x;
   private int y;

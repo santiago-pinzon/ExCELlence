@@ -10,8 +10,6 @@ import java.util.function.Consumer;
  */
 public interface IView {
 
-
-
   /**
    * Transmit an error message to the view, in case
    * the command could not be processed correctly

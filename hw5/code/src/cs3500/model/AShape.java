@@ -93,9 +93,7 @@ public abstract class AShape implements Shapes {
     return this.name;
   }
 
-  @Override
-  abstract public Component getImage();
-    //this method is empty because we don't know how to render the images yet
+
 
   @Override
   public void addAction(Animation animate) {
@@ -122,6 +120,47 @@ public abstract class AShape implements Shapes {
   public void performActions(int key) {
     for (Animation a : actions.get(key)) {
       a.apply(this);
+    }
+  }
+
+  public String getDesc() {
+    return desc;
+  }
+
+  public java.awt.Color getActualColor() {
+    return new java.awt.Color(this.color.r, this.color.g, this.color.b);
+  }
+
+  public int getX() {
+    return this.center.getX();
+  }
+
+  public int getY() {
+    return this.center.getY();
+  }
+
+  public int getHeight() {
+    return this.height;
+  }
+
+  public int getWidth() {
+    return this.width;
+  }
+
+  public void getTweener(int tick) {
+    int keyFrame = 0;
+    ArrayList<Animation> animations;
+    for(int e: this.keyPoints) {
+      if (e < tick) {
+        keyFrame = e;
+        break;
+      }
+    }
+    animations = this.actions.get(keyFrame);
+
+    for(Animation a: animations) {
+      // send in the number of ticks after the start of the animation
+      a.applyTweener(tick - a.getStartTime(), this);
     }
   }
 

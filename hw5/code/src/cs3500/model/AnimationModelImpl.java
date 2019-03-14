@@ -46,4 +46,14 @@ public class AnimationModelImpl implements AnimationModel {
     }
     return output;
   }
+
+  @Override
+  public void updateShapes(int tick) {
+    for(Shapes s: this.listOfShapes.values()) {
+      s.getTweener(tick);
+    }
+  }
+
+
+
 }

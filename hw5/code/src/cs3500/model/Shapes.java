@@ -1,6 +1,8 @@
 package cs3500.model;
 
 import java.awt.Component;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * The interface for shapes.
@@ -53,10 +55,6 @@ public interface Shapes {
    */
   String getName();
 
-  /**
-   * Gets the image of the shape. Since we don't know how to render yet this is left empty.
-   */
-  Component getImage();
 
   /**
    * Adds the action to the animation.
@@ -71,6 +69,21 @@ public interface Shapes {
    * @param key a singular animation.
    */
   void performActions(int key);
+
+
+  String getDesc();
+
+  java.awt.Color getActualColor();
+
+  int getX();
+
+  int getY();
+
+  int getHeight();
+
+  int getWidth();
+
+  void getTweener(int tick);
 
 
 }
