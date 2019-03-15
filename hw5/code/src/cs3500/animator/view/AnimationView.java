@@ -59,7 +59,7 @@ public class AnimationView extends JFrame implements IView {
         AnimationView.this.animation.updateShapes(tick);
         AnimationView.this.animationPanel.addShapes(
             AnimationView.this.animation.getHash().values());
-        tick++;
+        tick++; // % by current time for looping animation
       }
     });
     this.makeVisible();

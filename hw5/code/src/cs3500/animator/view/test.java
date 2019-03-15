@@ -30,7 +30,7 @@ public class test {
     imp.addAnimation("R", size);
     imp.addAnimation("E", size);
 
-    AnimationView animate = new AnimationView(imp, 1000, 1000,100);
+    AnimationView animate = new AnimationView(imp, 1000, 1000,50);
     animate.Animate();
   }
 
