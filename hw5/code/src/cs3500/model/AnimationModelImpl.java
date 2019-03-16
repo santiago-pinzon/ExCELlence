@@ -1,12 +1,16 @@
 package cs3500.model;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * The implementation of the animation model.
  */
 
 public class AnimationModelImpl implements AnimationModel {
+  private List<Shapes > shapes;
   private HashMap<String, Shapes> listOfShapes;
 
   /**
@@ -46,4 +50,26 @@ public class AnimationModelImpl implements AnimationModel {
     }
     return output;
   }
+
+  @Override
+  public void updateShapes(int tick) {
+    for(Shapes s: this.listOfShapes.values()) {
+      s.getTweener(tick);
+    }
+  }
+
+
+
+  public List<Shapes> getShapes(){
+    ArrayList<Shapes> copys = new ArrayList<Shapes>();
+    for (Shapes s: this.shapes){
+      copys.add(s);
+    }
+    return copys;
+  }
+
+
 }
+
+
+

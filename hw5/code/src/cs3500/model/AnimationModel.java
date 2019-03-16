@@ -1,5 +1,7 @@
 package cs3500.model;
 
+import java.util.List;
+
 /**
  * Interface for the Animation Model.
  */
@@ -33,5 +35,9 @@ public interface AnimationModel {
    * @return the full animation as a string.
    */
   String getAnimation();
+
+  void updateShapes(int tick);
+
+
 
 }

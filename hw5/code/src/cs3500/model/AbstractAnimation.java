@@ -22,17 +22,12 @@ public abstract class AbstractAnimation implements Animation {
   public AbstractAnimation(int startTime, int endTime) {
     if (endTime <= startTime) {
       throw new IllegalArgumentException("end time cannot be less than or the "
-          + "same as the start time");
+              + "same as the start time");
     }
     this.startTime = startTime;
     this.endTime = endTime;
   }
 
-
-  @Override
-  public void renderAnimation() {
-    // don't know how to render the animation yet
-  }
 
 
   @Override
@@ -49,6 +44,9 @@ public abstract class AbstractAnimation implements Animation {
 
   @Override
   public abstract void apply(Shapes shape);
+
+  @Override
+  public abstract void applyTweener(int frame, Shapes s);
 
 
 }

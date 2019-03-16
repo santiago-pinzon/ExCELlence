@@ -2,6 +2,7 @@ package cs3500.model;
 
 import java.awt.Component;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -19,6 +20,7 @@ public abstract class AShape implements Shapes {
   protected Color color;
   protected String name;
   protected String desc;
+  private List<Animation> animations;
 
   /**
    * Constructs an abstract shape.
@@ -80,10 +82,10 @@ public abstract class AShape implements Shapes {
     String out = "motion\t" + this.name + "\t";
 
     out += String.format("%-5s %s %-5s %-5s %s", key, this.center.toString(), this.height,
-        this.width, this.color.toString()) + "\t\t";
+            this.width, this.color.toString()) + "\t\t";
     this.performActions(key);
     out += String.format("%-5s %s %-5s %-5s %s", actions.get(key).get(0).getEndTime(),
-        this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
+            this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
 
     return out;
   }
@@ -93,9 +95,7 @@ public abstract class AShape implements Shapes {
     return this.name;
   }
 
-  @Override
-  abstract public Component getImage();
-    //this method is empty because we don't know how to render the images yet
+
 
   @Override
   public void addAction(Animation animate) {
@@ -103,9 +103,9 @@ public abstract class AShape implements Shapes {
 
     if (!keyPoints.contains(key)) {
       if (keyPoints.size() > 0 && key != actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
-          .getEndTime()) {
+              .getEndTime()) {
         throw new IllegalArgumentException("Start time for new animation does not match up with "
-            + "end time for previous animation");
+                + "end time for previous animation");
       }
       keyPoints.add(key);
       Collections.sort(keyPoints);
@@ -125,7 +125,72 @@ public abstract class AShape implements Shapes {
     }
   }
 
+  public String getDesc() {
+    return desc;
+  }
 
+  public java.awt.Color getActualColor() {
+    return new java.awt.Color(this.color.r, this.color.g, this.color.b);
+  }
+
+  public int getX() {
+    return this.center.getX();
+  }
+
+  public int getY() {
+    return this.center.getY();
+  }
+
+  public int getHeight() {
+    return this.height;
+  }
+
+  public int getWidth() {
+    return this.width;
+  }
+
+
+
+
+  public void getTweener(int tick) {
+    int keyFrame = 0;
+    ArrayList<Animation> animations;
+    for(int i = 0; i < keyPoints.size(); i++) {
+      if(keyPoints.get(i) > tick) {
+        break;
+      }
+      else {
+        keyFrame = keyPoints.get(i);
+      }
+    }
+    animations = this.actions.get(keyFrame);
+
+    for(Animation a: animations) {
+      // send in the number of ticks after the start of the animation
+      a.applyTweener(tick - a.getStartTime(), this);
+    }
+  }
+
+
+
+public int getRed(){
+    return color.r;
 }
 
+  public int getBlue(){
+    return color.b;
+  }
+
+  public int getGreen(){
+    return color.g;
+  }
+
+  @Override
+  public List<Animation> getAnimations() {
+    return animations;
+  }
+
+
+
+}
 
