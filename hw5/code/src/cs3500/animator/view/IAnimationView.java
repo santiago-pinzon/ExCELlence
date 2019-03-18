@@ -5,4 +5,4 @@ public interface IAnimationView extends IView {
   public void addShapes();
 
   public void refresh();
-}
+} 
