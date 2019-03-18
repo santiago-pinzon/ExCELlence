@@ -20,7 +20,7 @@ public abstract class AbstractAnimation implements Animation {
    */
 
   public AbstractAnimation(int startTime, int endTime) {
-    if (endTime <= startTime) {
+    if (endTime < startTime) {
       throw new IllegalArgumentException("end time cannot be less than or the "
               + "same as the start time");
     }

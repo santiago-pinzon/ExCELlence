@@ -13,12 +13,8 @@ import cs3500.model.AnimationModelImpl;
 import cs3500.model.Animation;
 
 
-<<<<<<< HEAD
 public class SVGView implements ISVGView {
 
-=======
-public class SVGView extends Component implements ISVGView  {
->>>>>>> 3fc7bf3873247897f614a729462a4499029fb983
   private int speed;
   private Shapes s;
   private Appendable a;
@@ -236,8 +232,11 @@ public class SVGView extends Component implements ISVGView  {
   }
 
 
+  /**
+   * Transmit an error message to the view, in case the command could not be processed correctly
+   */
   @Override
   public void showErrorMessage(String error) {
-    JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
+    return;
   }
 }

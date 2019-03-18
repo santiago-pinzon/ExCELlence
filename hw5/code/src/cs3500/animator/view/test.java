@@ -18,8 +18,7 @@ import java.io.FileReader;
 public class test {
 
   public static void main(String[] args) throws FileNotFoundException {
-    FileReader read = new FileReader("C:\\Users\\pnzni\\Documents\\OOD\\ExCELlence\\hw5\\code"
-        + "\\src\\cs3500\\animator\\view\\toh-3.txt");
+    FileReader read = new FileReader("C:\\Users\\pnzni\\Documents\\OOD\\ExCELlence\\hw5\\code\\src\\cs3500\\animator\\view\\big-bang-big-crunch.txt");
 
     AnimationBuilder<AnimationModel> builder = new AnimationBuilderImpl();
 

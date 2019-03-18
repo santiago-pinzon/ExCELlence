@@ -101,8 +101,8 @@ public abstract class AShape implements Shapes {
     int key = animate.getStartTime();
 
     if (!keyPoints.contains(key)) {
-      if (keyPoints.size() > 0 && key != actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
-          .getEndTime() + 1) {
+      if (keyPoints.size() > 0 && key < actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
+          .getEndTime()) {
         throw new IllegalArgumentException("Start time for new animation (" + key +") does not "
             + "match up with end time for previous animation: " + actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
             .getEndTime());
@@ -150,8 +150,8 @@ public abstract class AShape implements Shapes {
   }
 
   public void getTweener(int tick) {
-    int keyFrame = 0;
-    ArrayList<Animation> animations;
+    int keyFrame = keyPoints.get(0);
+    ArrayList<Animation> toBeDone;
     for (int i = 0; i < keyPoints.size(); i++) {
       if (keyPoints.get(i) > tick) {
         break;
@@ -159,9 +159,9 @@ public abstract class AShape implements Shapes {
         keyFrame = keyPoints.get(i);
       }
     }
-    animations = this.actions.get(keyFrame);
+    toBeDone = this.actions.get(keyFrame);
 
-    for (Animation a : animations) {
+    for (Animation a : toBeDone) {
       // send in the number of ticks after the start of the animation
       a.applyTweener(tick - a.getStartTime(), this);
     }

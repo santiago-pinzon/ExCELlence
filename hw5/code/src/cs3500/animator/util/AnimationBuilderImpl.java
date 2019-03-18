@@ -117,13 +117,20 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
   private void addAnimation(String name, int t1, int x1, int y1, int w1, int h1, int r1, int g1,
       int b1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2) {
     if(x1 != x2 || y1 != y2) {
+      System.out.println("ADDING NEW MOTION " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Motion(t1, t2, new Position(x2, y2)));
     }
     else if(w1 != w1 || h1 != h2) {
+      System.out.println("ADDING NEW HEIGHT " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Size(t1, t2, h2, w2));
     }
     else if(r1 != r2 || g1 != g2 || b1 != b2) {
+      System.out.println("ADDING NEW COLOR " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new ColorChange(t1, t2, new Color(r2, g2, b2)));
+    }
+    else {
+      System.out.println("ADDING NEW PAUSE " + name + " T1: " + t1 + " T2: " + t2);
+      this.listOfShapes.get(name).addAction(new Motion(t1, t2, new Position(x2, y2)));
     }
   }
 

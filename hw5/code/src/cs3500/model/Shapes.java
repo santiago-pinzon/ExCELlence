@@ -4,7 +4,6 @@ package cs3500.model;
 import java.util.List;
 
 
-
 /**
  * The interface for shapes.
  */
@@ -15,7 +14,7 @@ public interface Shapes {
    * Makes the shape shrink/grow by the given amount.
    *
    * @param height the amount the shape will shrink by if negative amount, the shape will shrink, if
-   *               positive amount the shape will grow
+   * positive amount the shape will grow
    */
   void changeSize(int height, int width);
 
@@ -92,6 +91,6 @@ public interface Shapes {
 
   int getGreen();
 
-List<Animation> getAnimations();
+  List<Animation> getAnimations();
 }
 
