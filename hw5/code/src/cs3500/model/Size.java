@@ -49,4 +49,9 @@ public class Size extends AbstractAnimation {
 
     s.changeSize(fromH, fromW);
   }
+<<<<<<< HEAD
   }
+=======
+
+}
+>>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17

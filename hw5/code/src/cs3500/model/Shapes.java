@@ -1,9 +1,15 @@
 package cs3500.model;
 
+<<<<<<< HEAD
 import java.awt.Component;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
+=======
+
+import java.util.List;
+
+>>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17
 
 /**
  * The interface for shapes.
@@ -15,7 +21,7 @@ public interface Shapes {
    * Makes the shape shrink/grow by the given amount.
    *
    * @param height the amount the shape will shrink by if negative amount, the shape will shrink, if
-   *               positive amount the shape will grow
+   * positive amount the shape will grow
    */
   void changeSize(int height, int width);
 
@@ -92,9 +98,12 @@ public interface Shapes {
 
   int getGreen();
 
-List<Animation> getAnimations();
+  List<Animation> getAnimations();
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17

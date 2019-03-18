@@ -82,10 +82,10 @@ public abstract class AShape implements Shapes {
     String out = "motion\t" + this.name + "\t";
 
     out += String.format("%-5s %s %-5s %-5s %s", key, this.center.toString(), this.height,
-            this.width, this.color.toString()) + "\t\t";
+        this.width, this.color.toString()) + "\t\t";
     this.performActions(key);
     out += String.format("%-5s %s %-5s %-5s %s", actions.get(key).get(0).getEndTime(),
-            this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
+        this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
 
     return out;
   }
@@ -96,16 +96,16 @@ public abstract class AShape implements Shapes {
   }
 
 
-
   @Override
   public void addAction(Animation animate) {
     int key = animate.getStartTime();
 
     if (!keyPoints.contains(key)) {
-      if (keyPoints.size() > 0 && key != actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
-              .getEndTime()) {
-        throw new IllegalArgumentException("Start time for new animation does not match up with "
-                + "end time for previous animation");
+      if (keyPoints.size() > 0 && key < actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
+          .getEndTime()) {
+        throw new IllegalArgumentException("Start time for new animation (" + key +") does not "
+            + "match up with end time for previous animation: " + actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
+            .getEndTime());
       }
       keyPoints.add(key);
       Collections.sort(keyPoints);
@@ -149,6 +149,7 @@ public abstract class AShape implements Shapes {
     return this.width;
   }
 
+<<<<<<< HEAD
 
 
 
@@ -167,24 +168,36 @@ public abstract class AShape implements Shapes {
       }
     }
     animations = this.actions.get(keyFrame);
+=======
+  public void getTweener(int tick) {
+    int keyFrame = keyPoints.get(0);
+    ArrayList<Animation> toBeDone;
+    for (int i = 0; i < keyPoints.size(); i++) {
+      if (keyPoints.get(i) > tick) {
+        break;
+      } else {
+        keyFrame = keyPoints.get(i);
+      }
+    }
+    toBeDone = this.actions.get(keyFrame);
 
-    for(Animation a: animations) {
+    for (Animation a : toBeDone) {
       // send in the number of ticks after the start of the animation
       a.applyTweener(tick - a.getStartTime(), this);
     }
   }
 
+>>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17
 
-
-public int getRed(){
+  public int getRed() {
     return color.r;
-}
+  }
 
-  public int getBlue(){
+  public int getBlue() {
     return color.b;
   }
 
-  public int getGreen(){
+  public int getGreen() {
     return color.g;
   }
 
@@ -192,7 +205,6 @@ public int getRed(){
   public List<Animation> getAnimations() {
     return animations;
   }
-
 
 
 }

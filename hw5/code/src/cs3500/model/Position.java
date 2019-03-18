@@ -18,12 +18,13 @@ public class Position {
    */
 
   public Position(int x, int y) {
-    if (x < 0) {
+    /*if (x < 0) {
       throw new IllegalArgumentException("X cannot be negative");
     }
     if (y < 0) {
       throw new IllegalArgumentException("Y cannot be negative");
     }
+    */
     this.x = x;
     this.y = y;
   }

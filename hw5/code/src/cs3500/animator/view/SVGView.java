@@ -13,7 +13,8 @@ import cs3500.model.AnimationModelImpl;
 import cs3500.model.Animation;
 
 
-public class SVGView extends Component implements ISVGView  {
+public class SVGView implements ISVGView {
+
   private int speed;
   private Shapes s;
   private Appendable a;
@@ -22,11 +23,9 @@ public class SVGView extends Component implements ISVGView  {
   private AnimationModelImpl m;
 
 
+  public SVGView(int speed, Shapes s, Appendable a, int width, int height, AnimationModelImpl m) {
 
-
-  public SVGView(int speed, Shapes s, Appendable a, int width, int height, AnimationModelImpl m){
-
-    if (s == null || a == null){
+    if (s == null || a == null) {
       throw new IllegalArgumentException("Cannot be null");
     }
     this.speed = speed;
@@ -42,10 +41,10 @@ public class SVGView extends Component implements ISVGView  {
   @Override
   public void output() {
     this.appendHelp("<svg width=\"" + this.width + "\" height=\"" + this.height + "\" " +
-            "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">");
+        "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">");
     for (Shapes s : m.getShapes()) {
       this.appendHelp("<" + getSVGType(s) + " id=\"" + s.getName() + "\" "
-              + getSVGDesc(s) + " >\n");
+          + getSVGDesc(s) + " >\n");
 
       for (Animation an : s.getAnimations()) {
 
@@ -69,15 +68,12 @@ public class SVGView extends Component implements ISVGView  {
         int endG = s.getGreen();
         int endB = s.getBlue();
 
-
-        movements = checkSVGCommands(startX, startY, startW, startH, startR, startG, startB, endX, endY,
-                endW, endH, endR, endG, endB, s, an);
-
-
+        movements = checkSVGCommands(startX, startY, startW, startH, startR, startG, startB, endX,
+            endY,
+            endW, endH, endR, endG, endB, s, an);
 
         this.appendHelp(movements);
       }
-
 
       this.appendHelp("\n\n</" + getSVGType(s) + ">");
     }
@@ -87,11 +83,10 @@ public class SVGView extends Component implements ISVGView  {
   }
 
 
-
   private String checkSVGCommands(int startX, int startY, int startW, int startH,
-                                  int startR, int startG, int startB, int endX, int endY,
-                                  int endW, int endH, int endR, int endG, int endB, Shapes shape,
-                                  Animation an) {
+      int startR, int startG, int startB, int endX, int endY,
+      int endW, int endH, int endR, int endG, int endB, Shapes shape,
+      Animation an) {
     String result = "";
 
     if (startX != endX) {
@@ -116,10 +111,10 @@ public class SVGView extends Component implements ISVGView  {
   private String locationCommand(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "<animate attributeType=\"xml\" begin=\"" +
-            +an.getStartTime() * speed
-            + "ms\" dur=\""
-            + (an.getEndTime() - an.getStartTime()) * speed
-            + "ms\" attributeName=\"";
+        +an.getStartTime() * speed
+        + "ms\" dur=\""
+        + (an.getEndTime() - an.getStartTime()) * speed
+        + "ms\" attributeName=\"";
 
     if (shape.getDesc().equals("Ellipse")) {
       start += "cx";
@@ -129,10 +124,10 @@ public class SVGView extends Component implements ISVGView  {
     }
 
     start += "\" from=\""
-            + startval
-            + "\" to=\"";
+        + startval
+        + "\" to=\"";
     start += endval
-            + "\" fill=\"freeze\" />\n";
+        + "\" fill=\"freeze\" />\n";
 
     return start;
   }
@@ -140,10 +135,10 @@ public class SVGView extends Component implements ISVGView  {
   private String sizeCommand(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "<animate attributeType=\"xml\" begin=\"" +
-            +an.getStartTime() * speed
-            + "ms\" dur=\""
-            + (an.getEndTime() - an.getStartTime()) * speed
-            + "ms\" attributeName=\"";
+        +an.getStartTime() * speed
+        + "ms\" dur=\""
+        + (an.getEndTime() - an.getStartTime()) * speed
+        + "ms\" attributeName=\"";
 
     if (shape.getDesc().equals("Ellipse")) {
       start += "rx";
@@ -152,43 +147,42 @@ public class SVGView extends Component implements ISVGView  {
     }
 
     start += "\" from=\""
-            + startval
-            + "\" to=\"";
+        + startval
+        + "\" to=\"";
     start += endval
-            + "\" fill=\"freeze\" />\n";
+        + "\" fill=\"freeze\" />\n";
 
     return start;
   }
 
   private String colorCommand(Animation an, int startR, int endR,
-                              int startG, int endG, int startB, int endB) {
+      int startG, int endG, int startB, int endB) {
 
     String start = "<animate attributeName = \"fill\" "
-            + "attributeType=\"xml\" begin=\""
-            + an.getStartTime() * speed
-            + "ms\" dur=\""
-            + (an.getEndTime() - an.getStartTime()) * speed
-            + "ms\"";
+        + "attributeType=\"xml\" begin=\""
+        + an.getStartTime() * speed
+        + "ms\" dur=\""
+        + (an.getEndTime() - an.getStartTime()) * speed
+        + "ms\"";
 
     start += " from=\""
-            + "rgb("
-            + startR
-            + ","
-            + startG
-            + ","
-            + startB
-            + ")\" to=\"";
+        + "rgb("
+        + startR
+        + ","
+        + startG
+        + ","
+        + startB
+        + ")\" to=\"";
     start += "rgb("
-            + endR
-            + ","
-            + endG
-            + ","
-            + endB
-            + ")\" fill=\"freeze\" />\n";
+        + endR
+        + ","
+        + endG
+        + ","
+        + endB
+        + ")\" fill=\"freeze\" />\n";
 
     return start;
   }
-
 
 
   private void appendHelp(String s) throws IllegalArgumentException {
@@ -200,48 +194,49 @@ public class SVGView extends Component implements ISVGView  {
   }
 
 
-  private String getSVGType(Shapes s){
-    if (s.getDesc().equals("Rectangle")){
+  private String getSVGType(Shapes s) {
+    if (s.getDesc().equals("Rectangle")) {
       return "rect";
-    }
-    else if (s.getDesc().equals("Ellipse")){
+    } else if (s.getDesc().equals("Ellipse")) {
       return "ellipse";
-    }
-    else {
+    } else {
       throw new IllegalArgumentException("Shape is not valid");
     }
   }
 
-  private String getSVGDesc(Shapes s){
+  private String getSVGDesc(Shapes s) {
     String result = "";
     if (s.getDesc().equals("Rectangle")) {
       result = "x=\"" + s.getX()
-              + "\" y=\"" + s.getY()
-              + "\" width=\"" + s.getWidth()
-              + "\" height=\"" + s.getHeight()
-              + "\" fill=\"rgb(" + s.getRed()
-              + "," + s.getBlue()
-              + "," + s.getGreen() + ")\""
-              + " visibility=";
+          + "\" y=\"" + s.getY()
+          + "\" width=\"" + s.getWidth()
+          + "\" height=\"" + s.getHeight()
+          + "\" fill=\"rgb(" + s.getRed()
+          + "," + s.getBlue()
+          + "," + s.getGreen() + ")\""
+          + " visibility=";
 
 
     } else if (s.getDesc().equals("Ellipse")) {
       result = "cx=\"" + s.getX()
-              + "\" cy=\"" + s.getY()
-              + "\" rx=\"" + s.getWidth()
-              + "\" ry=\"" + s.getHeight()
-              + "\" fill=\"rgb(" + s.getRed()
-              + "," + s.getBlue()
-              + "," + s.getGreen() + ")\""
-              + " visibility=\"";
+          + "\" cy=\"" + s.getY()
+          + "\" rx=\"" + s.getWidth()
+          + "\" ry=\"" + s.getHeight()
+          + "\" fill=\"rgb(" + s.getRed()
+          + "," + s.getBlue()
+          + "," + s.getGreen() + ")\""
+          + " visibility=\"";
     }
 
     return result;
   }
 
 
+  /**
+   * Transmit an error message to the view, in case the command could not be processed correctly
+   */
   @Override
   public void showErrorMessage(String error) {
-    JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
+    return;
   }
 }
