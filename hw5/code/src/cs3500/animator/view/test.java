@@ -14,13 +14,13 @@ public class test {
 
   public static void main(String[] args) throws FileNotFoundException {
     FileReader read = new FileReader(
-        "C:\\Users\\pnzni\\Documents\\OOD\\ExCELlence\\hw5\\code\\src\\smalldemo.txt");
+        "C:\\Users\\pnzni\\Documents\\OOD\\ExCELlence\\hw5\\code\\test\\big-bang-big-crunch.txt");
 
     AnimationBuilder<AnimationModel> builder = new AnimationBuilderImpl();
 
     AnimationModelImpl model = (AnimationModelImpl) AnimationReader.parseFile(read, builder);
 
-    AnimationView view = new AnimationView(model, 1000, 1000, 30);
+    AnimationView view = new AnimationView(model, 500, 500, 10);
 
     view.Animate();
 

@@ -120,7 +120,7 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
       System.out.println("ADDING NEW MOTION " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Motion(t1, t2, new Position(x2, y2)));
     }
-    else if(w1 != w1 || h1 != h2) {
+    else if(w1 != w2 || h1 != h2) {
       System.out.println("ADDING NEW HEIGHT " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Size(t1, t2, h2, w2));
     }
