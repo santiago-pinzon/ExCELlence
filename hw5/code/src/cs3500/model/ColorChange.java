@@ -47,4 +47,8 @@ public class ColorChange extends AbstractAnimation {
     s.changeColor(new Color(fromR, fromG, fromB));
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43

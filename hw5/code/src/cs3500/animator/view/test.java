@@ -13,6 +13,7 @@ public class test {
 
   public static void main(String[] args) {
     Rectangle test = new Rectangle(new Position(0, 0), 100, 100,
+<<<<<<< HEAD
             new Color(255, 0, 0), "R");
     Ellipse hello = new Ellipse(new Position(300, 300), 50, 50,
             new Color(0, 0, 255), "E");
@@ -20,6 +21,15 @@ public class test {
     Motion motion = new Motion(0, 100, new Position(300, 300));
     ColorChange color = new ColorChange(0, 100, new Color(0, 255, 0));
     Size size = new Size(100, 200, 300, 400);
+=======
+        new Color(255, 0, 0), "R");
+    Ellipse hello = new Ellipse(new Position(300, 300), 50, 50,
+        new Color(0, 0, 255), "E");
+
+    Motion motion = new Motion(0, 100, new Position(300, 300));
+    ColorChange color = new ColorChange(0, 100, new Color(0, 255, 0));
+    Size size = new Size(100, 150, 300, 400);
+>>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43
 
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
@@ -31,8 +41,11 @@ public class test {
     imp.addAnimation("R", size);
     imp.addAnimation("E", size);
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43
     AnimationView animate = new AnimationView(imp, 1000, 1000,50);
     animate.Animate();
   }

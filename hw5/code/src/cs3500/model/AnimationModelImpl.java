@@ -60,6 +60,7 @@ public class AnimationModelImpl implements AnimationModel {
 
 
 
+<<<<<<< HEAD
   public List<Shapes> getShapes(){
     ArrayList<Shapes> copys = new ArrayList<Shapes>();
     for (Shapes s: this.shapes){
@@ -69,6 +70,8 @@ public class AnimationModelImpl implements AnimationModel {
   }
 
 
+=======
+>>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43
 }
 
 
