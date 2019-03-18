@@ -1,8 +1,11 @@
 package cs3500.animator.view;
 
 
+import java.awt.*;
 import java.io.IOException;
 
+
+import javax.swing.*;
 
 import cs3500.model.AShape;
 import cs3500.model.Shapes;
@@ -10,8 +13,12 @@ import cs3500.model.AnimationModelImpl;
 import cs3500.model.Animation;
 
 
+<<<<<<< HEAD
 public class SVGView implements ISVGView {
 
+=======
+public class SVGView extends Component implements ISVGView  {
+>>>>>>> 3fc7bf3873247897f614a729462a4499029fb983
   private int speed;
   private Shapes s;
   private Appendable a;
@@ -34,13 +41,9 @@ public class SVGView implements ISVGView {
   }
 
 
+
   @Override
   public void output() {
-
-  }
-
-  @Override
-  public void showErrorMessage(String error) {
     this.appendHelp("<svg width=\"" + this.width + "\" height=\"" + this.height + "\" " +
         "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">");
     for (Shapes s : m.getShapes()) {
@@ -233,4 +236,8 @@ public class SVGView implements ISVGView {
   }
 
 
+  @Override
+  public void showErrorMessage(String error) {
+    JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
+  }
 }
