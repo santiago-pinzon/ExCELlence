@@ -12,7 +12,6 @@ import cs3500.model.Shapes;
 
 public class test {
 
-<<<<<<< HEAD
   public static void main(String[] args) {
 
     /*
@@ -36,27 +35,25 @@ public class test {
     imp.addAnimation("R", size);
     imp.addAnimation("E", size);
 =======
+*/
+    public static void main (String[]args) throws FileNotFoundException {
+      FileReader read = new FileReader(
+              "C:\\Users\\pnzni\\Documents\\OOD\\ExCELlence\\hw5\\code\\test\\big-bang-big-crunch.txt");
 
-  public static void main(String[] args) throws FileNotFoundException {
-    FileReader read = new FileReader(
-        "C:\\Users\\pnzni\\Documents\\OOD\\ExCELlence\\hw5\\code\\test\\big-bang-big-crunch.txt");
+      AnimationBuilder<AnimationModel> builder = new AnimationBuilderImpl();
 
-    AnimationBuilder<AnimationModel> builder = new AnimationBuilderImpl();
-
-    AnimationModelImpl model = (AnimationModelImpl) AnimationReader.parseFile(read, builder);
->>>>>>> aa5bca907ae520425661636a43b016abd782625f
-
-    AnimationView view = new AnimationView(model, 500, 500, 10);
-
-<<<<<<< HEAD
+      AnimationModelImpl model = (AnimationModelImpl) AnimationReader.parseFile(read, builder);
 
 
-    AnimationView animate = new AnimationView(imp, 1000, 1000,50);
-    animate.Animate();
+      SVGView view = new SVGView(model, 500, 500, 10);
 
-   // view.Animate();
 
-   */
+      AnimationView animate = new AnimationView(imp, 1000, 1000, 50);
+      view.output();
+
+      // view.Animate();
+
+   /*
 
 
     StringBuffer out = new StringBuffer();
@@ -77,13 +74,7 @@ public class test {
 
 
 
-
-
-
-
-=======
-    view.Animate();
-
+*/
+    }
   }
-}
->>>>>>> aa5bca907ae520425661636a43b016abd782625f
+
