@@ -33,12 +33,11 @@ public class AnimationView extends JFrame implements IView {
     this.setSize(width, height);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    //use a borderlayout with drawing panel in center and button panel in south
     this.setLayout(new BorderLayout());
     animationPanel = new AnimationPanel();
     animationPanel.setPreferredSize(new Dimension(500, 500));
     scrollPane = new JScrollPane(animationPanel);
-    this.add(scrollPane, BorderLayout.CENTER);
+    this.add(scrollPane);
 
     this.pack();
 
@@ -48,17 +47,13 @@ public class AnimationView extends JFrame implements IView {
     this.setVisible(true);
   }
 
-  public void addShapes() {
-    this.animationPanel.addShapes(this.animation.getHash().values());
-  }
-
   public void Animate() {
     Timer timer = new Timer(this.speed, new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         AnimationView.this.animation.updateShapes(tick);
         AnimationView.this.animationPanel.addShapes(
-            AnimationView.this.animation.getHash().values());
+            AnimationView.this.animation.getHash());
         tick++; // % by current time for looping animation
       }
     });

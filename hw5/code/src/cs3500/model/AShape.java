@@ -149,26 +149,6 @@ public abstract class AShape implements Shapes {
     return this.width;
   }
 
-<<<<<<< HEAD
-
-
-
-
-
-
-  public void getTweener(int tick) {
-    int keyFrame = 0;
-    ArrayList<Animation> animations;
-    for(int i = 0; i < keyPoints.size(); i++) {
-      if(keyPoints.get(i) > tick) {
-        break;
-      }
-      else {
-        keyFrame = keyPoints.get(i);
-      }
-    }
-    animations = this.actions.get(keyFrame);
-=======
   public void getTweener(int tick) {
     int keyFrame = keyPoints.get(0);
     ArrayList<Animation> toBeDone;
@@ -187,7 +167,7 @@ public abstract class AShape implements Shapes {
     }
   }
 
->>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17
+
 
   public int getRed() {
     return color.r;

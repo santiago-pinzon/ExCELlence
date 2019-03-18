@@ -95,7 +95,7 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
 
       switch (type) {
         case "ellipse":
-          Ellipse e = new Ellipse(new Position(x1, y1), h1, h1, new Color(r1, g1, b1), name);
+          Ellipse e = new Ellipse(new Position(x1, y1), h1, w1, new Color(r1, g1, b1), name);
           listOfShapes.put(name, e);
           this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, t2, x2, y2, w2, h2, r2, g2, b2);
           break;
