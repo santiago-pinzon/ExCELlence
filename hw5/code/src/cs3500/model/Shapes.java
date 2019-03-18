@@ -1,11 +1,8 @@
 package cs3500.model;
 
 import java.awt.Component;
-<<<<<<< HEAD
 import java.util.List;
-=======
 import java.util.ArrayList;
->>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43
 import java.util.HashMap;
 
 /**
@@ -89,7 +86,6 @@ public interface Shapes {
 
   void getTweener(int tick);
 
-<<<<<<< HEAD
   int getRed();
 
   int getBlue();
@@ -98,7 +94,7 @@ public interface Shapes {
 
 List<Animation> getAnimations();
 }
-=======
 
-}
->>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43
+
+
+

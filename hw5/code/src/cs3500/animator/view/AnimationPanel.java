@@ -9,12 +9,13 @@ import javax.swing.JPanel;
 
 public class AnimationPanel extends JPanel {
   ArrayList<Shapes> listOfShapes = new ArrayList<>();
+
   @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
 
     Graphics2D g2 = (Graphics2D) g;
-    setLocation(0,0);
+    setLocation(0, 0);
     setSize(2000, 2000);
 
     for (Shapes shape : this.listOfShapes) {
@@ -39,8 +40,4 @@ public class AnimationPanel extends JPanel {
     this.listOfShapes.clear();
     this.listOfShapes.addAll(in);
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43

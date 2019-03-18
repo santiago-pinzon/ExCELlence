@@ -149,28 +149,9 @@ public abstract class AShape implements Shapes {
     return this.width;
   }
 
-<<<<<<< HEAD
-=======
-  public void getTweener(int tick) {
-    int keyFrame = 0;
-    ArrayList<Animation> animations;
-    for(int i = 0; i < keyPoints.size(); i++) {
-      if(keyPoints.get(i) > tick) {
-        break;
-      }
-      else {
-        keyFrame = keyPoints.get(i);
-      }
-    }
-    animations = this.actions.get(keyFrame);
 
-    for(Animation a: animations) {
-      // send in the number of ticks after the start of the animation
-      a.applyTweener(tick - a.getStartTime(), this);
-    }
-  }
 
->>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43
+
 
 
 
