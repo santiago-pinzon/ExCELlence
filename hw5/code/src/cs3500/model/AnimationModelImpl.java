@@ -1,9 +1,8 @@
 package cs3500.model;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * The implementation of the animation model.
@@ -11,14 +10,14 @@ import java.util.Map;
 
 public class AnimationModelImpl implements AnimationModel {
   private List<Shapes > shapes;
-  private HashMap<String, Shapes> listOfShapes;
+  private LinkedHashMap<String, Shapes> listOfShapes;
 
   /**
    * Constructs the animation model using a hashMap to take care of the list of shapes.
    */
 
   public AnimationModelImpl() {
-    this.listOfShapes = new HashMap<>();
+    this.listOfShapes = new LinkedHashMap<>();
   }
 
 
@@ -26,7 +25,7 @@ public class AnimationModelImpl implements AnimationModel {
    * Generates a new AnimationModelImpl based on a pre-established list of shapes
    * @param in the list of shapes to be used in the animation.
    */
-  public AnimationModelImpl(HashMap<String, Shapes> in) {
+  public AnimationModelImpl(LinkedHashMap<String, Shapes> in) {
     this.listOfShapes = in;
   }
 
@@ -46,7 +45,7 @@ public class AnimationModelImpl implements AnimationModel {
     this.listOfShapes.get(shape).addAction(animate);
   }
 
-  public HashMap<String, Shapes> getHash() {
+  public LinkedHashMap<String, Shapes> getHash() {
     return listOfShapes;
   }
 

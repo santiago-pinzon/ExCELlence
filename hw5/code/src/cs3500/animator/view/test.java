@@ -18,13 +18,13 @@ import java.io.FileReader;
 public class test {
 
   public static void main(String[] args) throws FileNotFoundException {
-    FileReader read = new FileReader("C:\\Users\\pnzni\\Documents\\OOD\\ExCELlence\\hw5\\code\\src\\cs3500\\animator\\view\\big-bang-big-crunch.txt");
+    FileReader read = new FileReader("C:\\Users\\pnzni\\Documents\\OOD\\ExCELlence\\hw5\\code\\test\\buildings.txt");
 
     AnimationBuilder<AnimationModel> builder = new AnimationBuilderImpl();
 
     AnimationModelImpl model = (AnimationModelImpl) AnimationReader.parseFile(read, builder);
 
-    AnimationView view = new AnimationView(model, 1000, 1000, 75);
+    AnimationView view = new AnimationView(model, 1000, 1000, 5);
 
     view.Animate();
   }

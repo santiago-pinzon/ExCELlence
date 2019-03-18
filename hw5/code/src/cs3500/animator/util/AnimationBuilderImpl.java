@@ -10,7 +10,7 @@ import cs3500.model.Position;
 import cs3500.model.Rectangle;
 import cs3500.model.Shapes;
 import cs3500.model.Size;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
 
@@ -18,8 +18,8 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
   private int y;
   private int width;
   private int height;
-  HashMap<String, Shapes> listOfShapes = new HashMap<>();
-  HashMap<String, String> shapesToBeInstantiated = new HashMap<>();
+  LinkedHashMap<String, Shapes> listOfShapes = new LinkedHashMap<>();
+  LinkedHashMap<String, String> shapesToBeInstantiated = new LinkedHashMap<>();
 
 
   /**
