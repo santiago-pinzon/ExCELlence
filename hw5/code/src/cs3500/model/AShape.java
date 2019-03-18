@@ -147,12 +147,15 @@ public abstract class AShape implements Shapes {
     return this.width;
   }
 
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+>>>>>>> aa5bca907ae520425661636a43b016abd782625f
   public void getTweener(int tick) {
     int keyFrame = keyPoints.get(0);
     ArrayList<Animation> toBeDone;
@@ -171,6 +174,11 @@ public abstract class AShape implements Shapes {
     }
   }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> aa5bca907ae520425661636a43b016abd782625f
   public int getRed() {
     return color.r;
   }

@@ -5,19 +5,14 @@ import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.animator.util.AnimationReader;
 import cs3500.model.AnimationModel;
 import cs3500.model.AnimationModelImpl;
-import cs3500.model.Color;
-import cs3500.model.ColorChange;
-import cs3500.model.Ellipse;
-import cs3500.model.Motion;
-import cs3500.model.Position;
-import cs3500.model.Rectangle;
-import cs3500.model.Size;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import cs3500.model.Shapes;
 
 public class test {
 
+<<<<<<< HEAD
   public static void main(String[] args) {
 
     /*
@@ -40,8 +35,20 @@ public class test {
     imp.addAnimation("E", color);
     imp.addAnimation("R", size);
     imp.addAnimation("E", size);
+=======
 
+  public static void main(String[] args) throws FileNotFoundException {
+    FileReader read = new FileReader(
+        "C:\\Users\\pnzni\\Documents\\OOD\\ExCELlence\\hw5\\code\\test\\big-bang-big-crunch.txt");
 
+    AnimationBuilder<AnimationModel> builder = new AnimationBuilderImpl();
+
+    AnimationModelImpl model = (AnimationModelImpl) AnimationReader.parseFile(read, builder);
+>>>>>>> aa5bca907ae520425661636a43b016abd782625f
+
+    AnimationView view = new AnimationView(model, 500, 500, 10);
+
+<<<<<<< HEAD
 
 
     AnimationView animate = new AnimationView(imp, 1000, 1000,50);
@@ -74,3 +81,9 @@ public class test {
 
 
 
+=======
+    view.Animate();
+
+  }
+}
+>>>>>>> aa5bca907ae520425661636a43b016abd782625f

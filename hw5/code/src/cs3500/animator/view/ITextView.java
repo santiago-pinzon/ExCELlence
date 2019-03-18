@@ -6,3 +6,7 @@ public interface ITextView extends IView {
 
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa5bca907ae520425661636a43b016abd782625f

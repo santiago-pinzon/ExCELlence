@@ -1,7 +1,11 @@
 package cs3500.model;
 
+<<<<<<< HEAD
 import java.util.Collection;
 import java.util.HashMap;
+=======
+import java.util.LinkedHashMap;
+>>>>>>> aa5bca907ae520425661636a43b016abd782625f
 import java.util.List;
 import java.util.ArrayList;
 
@@ -11,14 +15,14 @@ import java.util.ArrayList;
 
 public class AnimationModelImpl implements AnimationModel {
   private List<Shapes > shapes;
-  private HashMap<String, Shapes> listOfShapes;
+  private LinkedHashMap<String, Shapes> listOfShapes;
 
   /**
    * Constructs the animation model using a hashMap to take care of the list of shapes.
    */
 
   public AnimationModelImpl() {
-    this.listOfShapes = new HashMap<>();
+    this.listOfShapes = new LinkedHashMap<>();
   }
 
 
@@ -26,7 +30,7 @@ public class AnimationModelImpl implements AnimationModel {
    * Generates a new AnimationModelImpl based on a pre-established list of shapes
    * @param in the list of shapes to be used in the animation.
    */
-  public AnimationModelImpl(HashMap<String, Shapes> in) {
+  public AnimationModelImpl(LinkedHashMap<String, Shapes> in) {
     this.listOfShapes = in;
   }
 
@@ -46,7 +50,7 @@ public class AnimationModelImpl implements AnimationModel {
     this.listOfShapes.get(shape).addAction(animate);
   }
 
-  public HashMap<String, Shapes> getHash() {
+  public LinkedHashMap<String, Shapes> getHash() {
     return listOfShapes;
   }
 
@@ -67,8 +71,17 @@ public class AnimationModelImpl implements AnimationModel {
     }
   }
 
+<<<<<<< HEAD
   public Collection<Shapes> getShapes(){
     return this.listOfShapes.values();
+=======
+  public List<Shapes> getShapes(){
+    ArrayList<Shapes> copies = new ArrayList<Shapes>();
+    for (Shapes s: this.shapes){
+      copies.add(s);
+    }
+    return copies;
+>>>>>>> aa5bca907ae520425661636a43b016abd782625f
   }
 
 }

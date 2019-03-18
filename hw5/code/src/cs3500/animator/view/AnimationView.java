@@ -13,43 +13,44 @@ import javax.swing.*;
  * turtle. It shows any error messages using a pop-up dialog box, and shows the turtle position and
  * heading
  */
-public class AnimationView extends JFrame implements IView {
+public class AnimationView implements IView {
 
   private AnimationPanel animationPanel;
   private JScrollPane scrollPane;
-  AnimationModelImpl animation;
-  int tick; // keeps track of the current frame.
-  int speed;
+  private AnimationModelImpl animation;
+  private int tick; // keeps track of the current frame.
+  private int speed;
+  private JFrame frame;
 
   public AnimationView(AnimationModelImpl animation, int height, int width, int speed) {
-    super();
+    this.frame = new JFrame();
 
     this.tick = 1;
     this.speed = speed;
 
     this.animation = animation;
 
-    this.setTitle("ExceLlence");
-    this.setSize(width, height);
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setTitle("ExceLlence");
+    frame.setPreferredSize(new Dimension(width, height));
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    //use a borderlayout with drawing panel in center and button panel in south
-    this.setLayout(new BorderLayout());
+
+    frame.setLayout(new BorderLayout());
     animationPanel = new AnimationPanel();
-    animationPanel.setPreferredSize(new Dimension(500, 500));
+    //animationPanel.setPreferredSize(new Dimension(width, height));
     scrollPane = new JScrollPane(animationPanel);
-    this.add(scrollPane, BorderLayout.CENTER);
 
-    this.pack();
+    frame.getContentPane().add(scrollPane);
+
+
+    frame.pack();
+    this.refresh();
+    
 
   }
 
   public void makeVisible() {
-    this.setVisible(true);
-  }
-
-  public void addShapes() {
-    this.animationPanel.addShapes(this.animation.getHash().values());
+    this.frame.setVisible(true);
   }
 
   public void Animate() {
@@ -58,7 +59,7 @@ public class AnimationView extends JFrame implements IView {
       public void actionPerformed(ActionEvent e) {
         AnimationView.this.animation.updateShapes(tick);
         AnimationView.this.animationPanel.addShapes(
-            AnimationView.this.animation.getHash().values());
+            AnimationView.this.animation.getHash());
         tick++; // % by current time for looping animation
       }
     });
@@ -68,12 +69,12 @@ public class AnimationView extends JFrame implements IView {
 
 
   public void refresh() {
-    this.repaint();
+    this.frame.repaint();
   }
 
   @Override
   public void showErrorMessage(String error) {
-    JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
+    JOptionPane.showMessageDialog(this.frame, error, "Error", JOptionPane.ERROR_MESSAGE);
 
   }
 

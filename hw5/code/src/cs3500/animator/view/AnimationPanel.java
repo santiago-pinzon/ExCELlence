@@ -1,24 +1,28 @@
 package cs3500.animator.view;
 
 import cs3500.model.Shapes;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.LinkedHashMap;
 import javax.swing.JPanel;
 
+
 public class AnimationPanel extends JPanel {
-  ArrayList<Shapes> listOfShapes = new ArrayList<>();
+  LinkedHashMap<String, Shapes> listOfShapes = new LinkedHashMap();
 
   @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
 
+    this.setBackground(Color.WHITE);
     Graphics2D g2 = (Graphics2D) g;
     setLocation(0, 0);
-    setSize(2000, 2000);
+    //setSize(500, 500);
 
-    for (Shapes shape : this.listOfShapes) {
+    for (Shapes shape : this.listOfShapes.values()) {
+      System.out.println(shape.getName());
       switch (shape.getDesc()) {
         case "Rectangle":
           g2.setColor(shape.getActualColor());
@@ -32,12 +36,20 @@ public class AnimationPanel extends JPanel {
         default:
           throw new IllegalArgumentException("Shape does not exist: " + shape.getDesc());
       }
-
+     // g2.translate(-200,-70);
     }
   }
 
-  public void addShapes(Collection<Shapes> in) {
-    this.listOfShapes.clear();
-    this.listOfShapes.addAll(in);
+  public void addShapes(LinkedHashMap<String, Shapes> in) {
+    this.listOfShapes = (LinkedHashMap) in.clone();
   }
+<<<<<<< HEAD
 }
+=======
+
+}
+
+
+
+
+>>>>>>> aa5bca907ae520425661636a43b016abd782625f

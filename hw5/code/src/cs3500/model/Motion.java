@@ -43,4 +43,10 @@ public class Motion extends AbstractAnimation {
     s.changePosition(new Position(fromX, fromY));
 
   }
+<<<<<<< HEAD
 }
+=======
+
+  }
+
+>>>>>>> aa5bca907ae520425661636a43b016abd782625f
