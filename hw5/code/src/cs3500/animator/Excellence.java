@@ -73,7 +73,7 @@ public class Excellence {
       speed = 1;
     }
     if (output.equals("") || output.equals("out")) {
-      output = "System.out";
+      output .equals("System.out");
     }
 
     switch (viewType) {
@@ -87,13 +87,13 @@ public class Excellence {
         IView v = new AnimationView(model, 1000, 1000, 1000);
         ((AnimationView) v).Animate();
         break;
-
+/*
       case "svg":
 
-        IView s = new SVGView(1000, model.getShapes().get(speed), a, 1000, 1000, model);
+        IView s = new SVGView(1000, model.getShapes()., a, 1000, 1000, model);
         ((SVGView) s).output();
         break;
-
+ */
 
       default:
         JFrame frame = new JFrame();

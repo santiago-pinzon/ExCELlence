@@ -1,9 +1,9 @@
 package cs3500.model;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * The implementation of the animation model.
@@ -67,18 +67,8 @@ public class AnimationModelImpl implements AnimationModel {
     }
   }
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17
-  public List<Shapes> getShapes(){
-    ArrayList<Shapes> copies = new ArrayList<Shapes>();
-    for (Shapes s: this.shapes){
-      copies.add(s);
-    }
-    return copies;
+  public Collection<Shapes> getShapes(){
+    return this.listOfShapes.values();
   }
 
 }

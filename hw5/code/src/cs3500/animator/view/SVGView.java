@@ -3,6 +3,7 @@ package cs3500.animator.view;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 import javax.swing.*;
@@ -41,38 +42,40 @@ public class SVGView implements ISVGView {
   @Override
   public void output() {
     this.appendHelp("<svg width=\"" + this.width + "\" height=\"" + this.height + "\" " +
-        "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">");
+        "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n\n");
     for (Shapes s : m.getShapes()) {
       this.appendHelp("<" + getSVGType(s) + " id=\"" + s.getName() + "\" "
-          + getSVGDesc(s) + " >\n");
+          + getSVGDesc(s) + " >\n\n");
 
-      for (Animation an : s.getAnimations()) {
+      for (ArrayList<Animation> an : s.getAnimations()) {
+        for (Animation ann : an) {
 
-        String movements;
+          String movements;
 
-        int startX = s.getX();
-        int startY = s.getY();
-        int startW = s.getWidth();
-        int startH = s.getHeight();
-        int startR = s.getRed();
-        int startG = s.getGreen();
-        int startB = s.getBlue();
+          int startX = s.getX();
+          int startY = s.getY();
+          int startW = s.getWidth();
+          int startH = s.getHeight();
+          int startR = s.getRed();
+          int startG = s.getGreen();
+          int startB = s.getBlue();
 
-        an.apply(s);
+          ann.apply(s);
 
-        int endX = s.getX();
-        int endY = s.getY();
-        int endW = s.getWidth();
-        int endH = s.getHeight();
-        int endR = s.getRed();
-        int endG = s.getGreen();
-        int endB = s.getBlue();
+          int endX = s.getX();
+          int endY = s.getY();
+          int endW = s.getWidth();
+          int endH = s.getHeight();
+          int endR = s.getRed();
+          int endG = s.getGreen();
+          int endB = s.getBlue();
 
-        movements = checkSVGCommands(startX, startY, startW, startH, startR, startG, startB, endX,
-            endY,
-            endW, endH, endR, endG, endB, s, an);
+          movements = checkSVGCommands(startX, startY, startW, startH, startR, startG, startB, endX,
+                  endY,
+                  endW, endH, endR, endG, endB, s, ann);
 
-        this.appendHelp(movements);
+          this.appendHelp(movements);
+        }
       }
 
       this.appendHelp("\n\n</" + getSVGType(s) + ">");

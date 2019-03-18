@@ -40,10 +40,4 @@ public class AnimationPanel extends JPanel {
     this.listOfShapes.clear();
     this.listOfShapes.addAll(in);
   }
-<<<<<<< HEAD
 }
-=======
-
-}
-
->>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17

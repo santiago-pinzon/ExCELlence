@@ -33,7 +33,7 @@ public class Size extends AbstractAnimation {
   @Override
   public void applyTweener(int frame, Shapes s) {
     int length = this.endTime - this.startTime;
-    double ratio = (double) frame/length * 1;
+    double ratio = (double) frame / length * 1;
 
     int fromW = s.getWidth();
     int fromH = s.getHeight();
@@ -49,9 +49,4 @@ public class Size extends AbstractAnimation {
 
     s.changeSize(fromH, fromW);
   }
-<<<<<<< HEAD
-  }
-=======
-
 }
->>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17

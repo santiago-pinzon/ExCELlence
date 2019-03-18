@@ -1,15 +1,8 @@
 package cs3500.model;
 
-<<<<<<< HEAD
-import java.awt.Component;
-import java.util.List;
+
 import java.util.ArrayList;
-import java.util.HashMap;
-=======
-
-import java.util.List;
-
->>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17
+import java.util.Collection;
 
 /**
  * The interface for shapes.
@@ -98,12 +91,6 @@ public interface Shapes {
 
   int getGreen();
 
-  List<Animation> getAnimations();
+  Collection<ArrayList<Animation>> getAnimations();
 }
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17
