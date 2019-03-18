@@ -21,6 +21,15 @@ public class AnimationModelImpl implements AnimationModel {
     this.listOfShapes = new HashMap<>();
   }
 
+
+  /**
+   * Generates a new AnimationModelImpl based on a pre-established list of shapes
+   * @param in the list of shapes to be used in the animation.
+   */
+  public AnimationModelImpl(HashMap<String, Shapes> in) {
+    this.listOfShapes = in;
+  }
+
   @Override
   public void addShape(Shapes shape) throws IllegalArgumentException {
     if (this.listOfShapes.containsKey(shape.getName())) {
@@ -60,18 +69,15 @@ public class AnimationModelImpl implements AnimationModel {
 
 
 
-<<<<<<< HEAD
+
   public List<Shapes> getShapes(){
-    ArrayList<Shapes> copys = new ArrayList<Shapes>();
+    ArrayList<Shapes> copies = new ArrayList<Shapes>();
     for (Shapes s: this.shapes){
-      copys.add(s);
+      copies.add(s);
     }
-    return copys;
+    return copies;
   }
 
-
-=======
->>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43
 }
 
 

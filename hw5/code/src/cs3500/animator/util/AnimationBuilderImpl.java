@@ -1,6 +1,7 @@
 package cs3500.animator.util;
 
 import cs3500.model.AnimationModel;
+import cs3500.model.AnimationModelImpl;
 import cs3500.model.Color;
 import cs3500.model.ColorChange;
 import cs3500.model.Ellipse;
@@ -28,7 +29,7 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
    */
   @Override
   public AnimationModel build() {
-    return null;
+    return new AnimationModelImpl(this.listOfShapes);
   }
 
   /**
@@ -143,6 +144,6 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
   @Override
   public AnimationBuilder addKeyframe(String name, int t, int x, int y, int w, int h, int r, int g,
       int b) {
-    return null;
+    return this;
   }
 }

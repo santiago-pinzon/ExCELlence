@@ -18,7 +18,6 @@ public class Motion extends AbstractAnimation {
 
   public Motion(int startTime, int endTime, Position to) {
     super(startTime, endTime);
-
     this.to = to;
   }
 
@@ -44,8 +43,5 @@ public class Motion extends AbstractAnimation {
     s.changePosition(new Position(fromX, fromY));
 
   }
-<<<<<<< HEAD
-} 
-=======
+
 }
->>>>>>> bbaaeefc2b4b02b2e66de6d0208cd54adea13f43
