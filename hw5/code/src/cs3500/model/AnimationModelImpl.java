@@ -66,9 +66,12 @@ public class AnimationModelImpl implements AnimationModel {
     }
   }
 
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17
   public List<Shapes> getShapes(){
     ArrayList<Shapes> copies = new ArrayList<Shapes>();
     for (Shapes s: this.shapes){

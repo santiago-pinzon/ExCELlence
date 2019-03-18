@@ -30,7 +30,7 @@ public class ColorChange extends AbstractAnimation {
   @Override
   public void applyTweener(int frame, Shapes s) {
     int length = this.endTime - this.startTime;
-    double ratio = (double) frame/length;
+    double ratio = (double) frame / length;
 
     int fromR = s.getActualColor().getRed();
     int fromG = s.getActualColor().getGreen();
@@ -47,4 +47,8 @@ public class ColorChange extends AbstractAnimation {
     s.changeColor(new Color(fromR, fromG, fromB));
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5d896be15ca16b7e9caeb413827e0f182beeea17
