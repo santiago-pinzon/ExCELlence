@@ -22,8 +22,5 @@ public class Rectangle extends AShape {
     super(center, height, width, color, name);
     this.desc = "Rectangle";
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> aa5bca907ae520425661636a43b016abd782625f
 }

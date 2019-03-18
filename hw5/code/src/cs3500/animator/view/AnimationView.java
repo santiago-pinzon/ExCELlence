@@ -45,7 +45,7 @@ public class AnimationView implements IView {
 
     frame.pack();
     this.refresh();
-    
+
 
   }
 

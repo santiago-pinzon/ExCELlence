@@ -37,8 +37,4 @@ public interface Animation {
   void applyTweener(int frame, Shapes s);
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> aa5bca907ae520425661636a43b016abd782625f
 }

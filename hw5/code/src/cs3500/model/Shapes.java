@@ -1,14 +1,9 @@
 package cs3500.model;
 
-<<<<<<< HEAD
+
 
 import java.util.ArrayList;
 import java.util.Collection;
-=======
-
-import java.util.List;
-
->>>>>>> aa5bca907ae520425661636a43b016abd782625f
 
 /**
  * The interface for shapes.

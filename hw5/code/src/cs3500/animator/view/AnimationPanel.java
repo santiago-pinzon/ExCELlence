@@ -43,13 +43,5 @@ public class AnimationPanel extends JPanel {
   public void addShapes(LinkedHashMap<String, Shapes> in) {
     this.listOfShapes = (LinkedHashMap) in.clone();
   }
-<<<<<<< HEAD
-}
-=======
 
 }
-
-
-
-
->>>>>>> aa5bca907ae520425661636a43b016abd782625f
