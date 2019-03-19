@@ -176,4 +176,45 @@ public class AnimationModelImplTest {
     imp.addAnimation("R", size);
   }
 
+  @Test
+  public void testGetShapesNothingAdded(){
+    AnimationModelImpl imp = new AnimationModelImpl();
+    assertEquals(0, imp.getShapes().size());
+  }
+
+  @Test
+  public void testGetShapesAdded(){
+    AnimationModelImpl imp = new AnimationModelImpl();
+
+    Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
+            new Color(255, 0, 0), "R", true);
+    Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
+            new Color(0, 0, 255), "E", true);
+
+    imp.addShape(test);
+    imp.addShape(hello);
+
+    assertEquals(2, imp.getShapes().size());
+  }
+
+  @Test
+  public void testRemoveShape(){
+    AnimationModelImpl imp = new AnimationModelImpl();
+
+    Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
+            new Color(255, 0, 0), "R", true);
+    Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
+            new Color(0, 0, 255), "E", true);
+
+    imp.addShape(test);
+    imp.addShape(hello);
+
+    assertEquals(2, imp.getShapes().size());
+
+    imp.removeShape("R");
+    assertEquals(1, imp.getShapes().size());
+  }
+
+
+
 }
