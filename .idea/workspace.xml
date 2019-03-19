@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e43cfbd2-1a8d-4cb6-8d6a-a357af6b2906" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Animation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/ColorChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/ColorChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Motion.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Motion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Size.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,8 +122,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="86" column="28" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
+            <state relative-caret-position="170">
+              <caret line="25" column="79" selection-start-line="25" selection-start-column="79" selection-end-line="25" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,6 +142,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -148,6 +158,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> 3a8eb926d2da17359c19895ac8b7550765265902
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -183,31 +195,31 @@
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Ellipse.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/IView.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/TextView.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationReader.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Position.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AbstractAnimation.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/windowTes.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/IAnimationView.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/ITextView.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/test.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Motion.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Animation.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/ColorChange.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Rectangle.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Size.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/big-bang-big-crunch.txt" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationPanel.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationView.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/buildings.txt" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationBuilderImpl.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/visualTest.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Animation.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/ColorChange.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Motion.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Size.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" />
       </list>
     </option>
   </component>
@@ -272,16 +284,6 @@
               <item name="cs3500" type="462c0819:PsiDirectoryNode" />
               <item name="animator" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ExCELlence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ExCELlence" type="462c0819:PsiDirectoryNode" />
-              <item name="hw5" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cs3500" type="462c0819:PsiDirectoryNode" />
-              <item name="animator" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -301,17 +303,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence" />
-      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\test" />
-      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\Resources" />
-      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src" />
-      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src\cs3500\animator" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src\cs3500" />
       <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src\cs3500\animator" />
       <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\Resources" />
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence" />
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\test" />
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src" />
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src\cs3500\animator" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -598,16 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/TextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Ellipse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -615,6 +607,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -627,6 +620,15 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_191/src.zip!/javax/swing/JComponent.java" />
+=======
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_191/src.zip!/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="1055" selection-start-line="1055" selection-end-line="1055" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 3a8eb926d2da17359c19895ac8b7550765265902
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/ISVGView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -656,6 +658,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -667,6 +670,8 @@
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_191/src.zip!/java/util/Scanner.java" />
     <entry file="file://$PROJECT_DIR$/hw5/code/src/smalldemo.txt">
 =======
+=======
+>>>>>>> 3a8eb926d2da17359c19895ac8b7550765265902
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_191/src.zip!/java/util/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -710,6 +715,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/test.java" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Motion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -762,27 +768,12 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 3a8eb926d2da17359c19895ac8b7550765265902
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Rectangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1292">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Size.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -885,22 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2254#2255#0" expanded="true" />
-            <element signature="e#2277#2278#0" expanded="true" />
-            <element signature="e#2354#2355#0" expanded="true" />
-            <element signature="e#2372#2373#0" expanded="true" />
-            <element signature="e#2397#2398#0" expanded="true" />
-            <element signature="e#2415#2416#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/visualTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -934,11 +909,139 @@
     <entry file="file://$PROJECT_DIR$/toh-3.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/TextView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/Resources/text-transcript.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/text-transcript.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Size.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding>
+            <element signature="e#1034#1035#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+          <folding>
+            <element signature="e#1154#1155#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1293#1294#0" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1361#1362#0" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1525#1526#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#1624#1625#0" expanded="true" />
+            <element signature="e#2362#2363#0" expanded="true" />
+            <element signature="e#2388#2389#0" expanded="true" />
+            <element signature="e#3259#3260#0" expanded="true" />
+            <element signature="e#3280#3281#0" expanded="true" />
+            <element signature="e#3424#3425#0" expanded="true" />
+            <element signature="e#3459#3460#0" expanded="true" />
+            <element signature="e#3482#3483#0" expanded="true" />
+            <element signature="e#3517#3518#0" expanded="true" />
+            <element signature="e#3545#3546#0" expanded="true" />
+            <element signature="e#3573#3574#0" expanded="true" />
+            <element signature="e#3600#3601#0" expanded="true" />
+            <element signature="e#3627#3628#0" expanded="true" />
+            <element signature="e#4143#4144#0" expanded="true" />
+            <element signature="e#4167#4168#0" expanded="true" />
+            <element signature="e#4244#4245#0" expanded="true" />
+            <element signature="e#4268#4269#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Motion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/ColorChange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding>
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="e#2252#2253#0" expanded="true" />
+            <element signature="e#2275#2276#0" expanded="true" />
+            <element signature="e#2302#2303#0" expanded="true" />
+            <element signature="e#2324#2325#0" expanded="true" />
+            <element signature="e#2461#2462#0" expanded="true" />
+            <element signature="e#2496#2497#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="285">
@@ -951,6 +1054,10 @@
         <state relative-caret-position="153">
           <caret line="86" column="28" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
 >>>>>>> 2f0a2137a0d729b482aa9ed0bab5ef2424006c41
+=======
+        <state relative-caret-position="170">
+          <caret line="25" column="79" selection-start-line="25" selection-start-column="79" selection-end-line="25" selection-end-column="79" />
+>>>>>>> 3a8eb926d2da17359c19895ac8b7550765265902
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

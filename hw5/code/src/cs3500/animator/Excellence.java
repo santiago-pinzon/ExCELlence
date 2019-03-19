@@ -3,7 +3,6 @@ package cs3500.animator;
 import java.awt.Dimension;
 import java.io.BufferedWriter;
 import java.io.Closeable;
-import java.io.FileDescriptor;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,12 +15,16 @@ import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.model.AnimationModelImpl;
 import cs3500.animator.view.IView;
 import cs3500.animator.view.TextView;
-import cs3500.animator.view.SVGView;
 import cs3500.animator.view.AnimationView;
 import cs3500.animator.util.AnimationBuilder;
 import cs3500.animator.util.AnimationReader;
 
 
+/**
+ * Excellence represents the main class of the animation program. Running the main function
+ * requires that the proper command line arguments be supplied. The main program then parses said
+ * arguments and initializes a model to match with the proper view and output. 
+ */
 public class Excellence {
 
   public static void main(String[] args) throws IOException {

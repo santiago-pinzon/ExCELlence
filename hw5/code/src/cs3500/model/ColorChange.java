@@ -5,14 +5,15 @@ package cs3500.model;
  */
 
 public class ColorChange extends AbstractAnimation {
-  Color color;
+
+  private Color color;
 
   /**
    * Constructs a colorChange with a given startTime, endTime and color.
    *
    * @param startTime the startTime of the animation
-   * @param endTime   the endTime of the animation
-   * @param color     the color that the shape is being changed to
+   * @param endTime the endTime of the animation
+   * @param color the color that the shape is being changed to
    * @throws IllegalArgumentException if the endTime is <= the startTime
    */
 
@@ -36,9 +37,9 @@ public class ColorChange extends AbstractAnimation {
     int fromG = s.getActualColor().getGreen();
     int fromB = s.getActualColor().getBlue();
 
-    int rDifference = color.r - fromR;
-    int gDifference = color.g - fromG;
-    int bDifference = color.b - fromB;
+    int rDifference = color.getR() - fromR;
+    int gDifference = color.getG() - fromG;
+    int bDifference = color.getB() - fromB;
 
     fromR += rDifference * ratio;
     fromG += gDifference * ratio;
