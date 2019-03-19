@@ -2,6 +2,7 @@ package cs3500.animator;
 
 import java.awt.Dimension;
 import java.io.BufferedWriter;
+import java.io.Closeable;
 import java.io.FileDescriptor;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -94,6 +95,7 @@ public class Excellence {
       case "text":
         IView t = new TextView(model, 10, 10, 1000, 1000, a);
         ((TextView) t).render();
+        ((Closeable) a).close();
         break;
 
       case "visual":
@@ -107,6 +109,7 @@ public class Excellence {
 
         IView s = new SVGView(1000, model.getShapes().get(0), a, 1000, 1000, model);
         ((SVGView) s).output();
+        ((Closeable) a).close();
         break;
  */
 
