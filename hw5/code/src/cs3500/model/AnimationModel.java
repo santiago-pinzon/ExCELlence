@@ -43,17 +43,15 @@ public interface AnimationModel {
    */
   void updateShapes(int tick);
 
-<<<<<<< HEAD
  ArrayList<Shapes> getShapes();
 
 void addShapesToArray(Shapes s);
 
-=======
+
   /**
    * removes a shape from the animation.
    * @param name the name of the shape to be removed.
    */
   void removeShape(String name);
->>>>>>> 3a8eb926d2da17359c19895ac8b7550765265902
 
 }
