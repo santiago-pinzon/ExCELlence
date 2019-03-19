@@ -1,16 +1,15 @@
 package cs3500.model;
 
 
-import java.util.Collection;
-import java.util.HashMap;
-
 import java.util.LinkedHashMap;
-
 import java.util.List;
 import java.util.ArrayList;
 
 /**
- * The implementation of the animation model.
+ * The implementation of the animation model. An animationModelImpl effectively holds and manages
+ * the list of shapes included in the animation. The animationModel is capable of adding and
+ * removing shapes, as well as adding animations to shapes. The shapes are stored in a LinkedHashMap
+ * with the shape's name as the key.
  */
 
 public class AnimationModelImpl implements AnimationModel {
@@ -97,7 +96,6 @@ public class AnimationModelImpl implements AnimationModel {
 
   public int getWidth() {
     return width;
-
   }
 
   public int getX() {
@@ -106,6 +104,11 @@ public class AnimationModelImpl implements AnimationModel {
 
   public int getY() {
     return y;
+  }
+
+  @Override
+  public void removeShape(String name) {
+    this.listOfShapes.remove(name);
   }
 }
 

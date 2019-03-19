@@ -11,8 +11,8 @@ import java.util.HashMap;
 
 public abstract class AShape implements Shapes {
 
-  public HashMap<Integer, ArrayList<Animation>> actions;
-  public ArrayList<Integer> keyPoints;
+  private HashMap<Integer, ArrayList<Animation>> actions;
+  private ArrayList<Integer> keyPoints;
   protected Position center;
   protected int height;
   protected int width;
@@ -101,8 +101,9 @@ public abstract class AShape implements Shapes {
     if (!keyPoints.contains(key)) {
       if (keyPoints.size() > 0 && key < actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
           .getEndTime()) {
-        throw new IllegalArgumentException("Start time for new animation (" + key +") does not "
-            + "match up with end time for previous animation: " + actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
+        throw new IllegalArgumentException("Start time for new animation (" + key + ") does not "
+            + "match up with end time for previous animation: " + actions
+            .get(keyPoints.get(keyPoints.size() - 1)).get(0)
             .getEndTime());
       }
       keyPoints.add(key);
@@ -128,7 +129,7 @@ public abstract class AShape implements Shapes {
   }
 
   public java.awt.Color getActualColor() {
-    return new java.awt.Color(this.color.r, this.color.g, this.color.b);
+    return new java.awt.Color(this.color.getR(), this.color.getG(), this.color.getB());
   }
 
   public int getX() {
@@ -168,15 +169,15 @@ public abstract class AShape implements Shapes {
 
 
   public int getRed() {
-    return color.r;
+    return color.getR();
   }
 
   public int getBlue() {
-    return color.b;
+    return color.getB();
   }
 
   public int getGreen() {
-    return color.g;
+    return color.getG();
   }
 
   @Override

@@ -36,6 +36,17 @@ public interface AnimationModel {
    */
   String getAnimation();
 
+
+  /**
+   * Updates the shapes based on the tick number of the animation over all.
+   * @param tick the time tick of the animation
+   */
   void updateShapes(int tick);
+
+  /**
+   * removes a shape from the animation.
+   * @param name the name of the shape to be removed.
+   */
+  void removeShape(String name);
 
 }

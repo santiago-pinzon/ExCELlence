@@ -1,7 +1,6 @@
 package cs3500.model;
 
 
-
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -24,7 +23,6 @@ public interface Shapes {
    *
    * @param p the new position for the shape.
    */
-
   void changePosition(Position p);
 
   /**
