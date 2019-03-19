@@ -111,7 +111,7 @@ public class Excellence {
 
       case "svg":
 
-        IView s = new SVGView(1000, model.getShapes().get(0), a, 1000, 1000, model);
+        IView s = new SVGView(speed,model.getShapes(),a , 1000, 1000, model);
         ((SVGView) s).output();
         ((Closeable) a).close();
         break;

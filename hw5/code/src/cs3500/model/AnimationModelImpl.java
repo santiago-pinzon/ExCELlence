@@ -92,12 +92,8 @@ public class AnimationModelImpl implements AnimationModel {
 
 @Override
   public ArrayList<Shapes> getShapes() {
-    ArrayList<Shapes> copies = new ArrayList<Shapes>();
-    for (Shapes s : this.shapes) {
-      copies.add(s);
-    }
+    ArrayList<Shapes> copies = new ArrayList<>(this.listOfShapes.values());
     return copies;
-
   }
 
   public int getHeight() {
