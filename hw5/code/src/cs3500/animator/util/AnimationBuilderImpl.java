@@ -118,22 +118,43 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
     return this;
   }
 
+  /**
+   * Adds an animation to the specific shape. This checks the arguments to determine which type
+   * of motion it is and adds it to the desired shape
+   * @param name the name of the shape
+   * @param t1 The start time of this transformation
+   * @param x1 The initial x-position of the shape
+   * @param y1 The initial y-position of the shape
+   * @param w1 The initial width of the shape
+   * @param h1 The initial height of the shape
+   * @param r1 The initial red color-value of the shape
+   * @param g1 The initial green color-value of the shape
+   * @param b1 The initial blue color-value of the shape
+   * @param t2 The end time of this transformation
+   * @param x2 The final x-position of the shape
+   * @param y2 The final y-position of the shape
+   * @param w2 The final width of the shape
+   * @param h2 The final height of the shape
+   * @param r2 The final red color-value of the shape
+   * @param g2 The final green color-value of the shape
+   * @param b2 The final blue color-value of the shape
+   */
   private void addAnimation(String name, int t1, int x1, int y1, int w1, int h1, int r1, int g1,
       int b1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2) {
     if(x1 != x2 || y1 != y2) {
-      System.out.println("ADDING NEW MOTION " + name + " T1: " + t1 + " T2: " + t2);
+      //System.out.println("ADDING NEW MOTION " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Motion(t1, t2, new Position(x2, y2)));
     }
     else if(w1 != w2 || h1 != h2) {
-      System.out.println("ADDING NEW HEIGHT " + name + " T1: " + t1 + " T2: " + t2);
+      //System.out.println("ADDING NEW HEIGHT " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Size(t1, t2, h2, w2));
     }
     else if(r1 != r2 || g1 != g2 || b1 != b2) {
-      System.out.println("ADDING NEW COLOR " + name + " T1: " + t1 + " T2: " + t2);
+      //System.out.println("ADDING NEW COLOR " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new ColorChange(t1, t2, new Color(r2, g2, b2)));
     }
     else {
-      System.out.println("ADDING NEW PAUSE " + name + " T1: " + t1 + " T2: " + t2);
+      //System.out.println("ADDING NEW PAUSE " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Motion(t1, t2, new Position(x2, y2)));
     }
   }

@@ -13,18 +13,9 @@ public class Position {
    *
    * @param x the x coordinate
    * @param y the y coordinate
-   * @throws IllegalArgumentException if the x value is < 0
-   * @throws IllegalArgumentException if the y value if < 0
    */
 
   public Position(int x, int y) {
-    /*if (x < 0) {
-      throw new IllegalArgumentException("X cannot be negative");
-    }
-    if (y < 0) {
-      throw new IllegalArgumentException("Y cannot be negative");
-    }
-    */
     this.x = x;
     this.y = y;
   }

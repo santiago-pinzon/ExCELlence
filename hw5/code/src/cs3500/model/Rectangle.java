@@ -1,6 +1,5 @@
 package cs3500.model;
 
-import java.awt.Component;
 
 /**
  * Represents a rectangle shape.

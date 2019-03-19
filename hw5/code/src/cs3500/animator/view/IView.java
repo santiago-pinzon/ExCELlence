@@ -1,7 +1,5 @@
 package cs3500.animator.view;
 
-import java.util.function.Consumer;
-
 
 /**
  * The view interface. To motivate the methods here
@@ -14,7 +12,7 @@ public interface IView {
    * Transmit an error message to the view, in case
    * the command could not be processed correctly
    *
-   * @param error
+   * @param error the message to be displayed
    */
   void showErrorMessage(String error);
 
