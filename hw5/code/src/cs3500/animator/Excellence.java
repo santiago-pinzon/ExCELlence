@@ -1,5 +1,6 @@
 package cs3500.animator;
 
+import cs3500.animator.view.SVGView;
 import java.awt.Dimension;
 import java.io.BufferedWriter;
 import java.io.Closeable;
@@ -107,14 +108,14 @@ public class Excellence {
         ((AnimationView) v).Animate();
         break;
 
-        /*
+
       case "svg":
 
         IView s = new SVGView(1000, model.getShapes().get(0), a, 1000, 1000, model);
         ((SVGView) s).output();
         ((Closeable) a).close();
         break;
- */
+
 
       default:
         JFrame frame = new JFrame();
