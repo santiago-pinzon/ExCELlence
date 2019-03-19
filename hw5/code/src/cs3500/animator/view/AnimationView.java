@@ -1,6 +1,7 @@
 package cs3500.animator.view;
 
 
+import cs3500.model.Animation;
 import cs3500.model.AnimationModelImpl;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,7 +23,7 @@ public class AnimationView implements IView {
   private int speed;
   private JFrame frame;
 
-  public AnimationView(AnimationModelImpl animation, int height, int width, int speed) {
+  public AnimationView(AnimationModelImpl animation, int speed) {
     this.frame = new JFrame();
 
     this.tick = 1;
@@ -31,15 +32,17 @@ public class AnimationView implements IView {
     this.animation = animation;
 
     frame.setTitle("ExceLlence");
-    frame.setPreferredSize(new Dimension(width, height));
+    frame.setPreferredSize(new Dimension(animation.getWidth(), animation.getHeight()));
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
     frame.setLayout(new BorderLayout());
     animationPanel = new AnimationPanel();
-    //animationPanel.setPreferredSize(new Dimension(width, height));
-    scrollPane = new JScrollPane(animationPanel);
-
+    animationPanel.setOffset(animation.getX(), animation.getY());
+    scrollPane = new JScrollPane(animationPanel,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+        JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+    scrollPane.setPreferredSize(new Dimension(animation.getWidth(), animation.getHeight()));
+    scrollPane.setEnabled(true);
     frame.getContentPane().add(scrollPane);
 
 
@@ -60,6 +63,7 @@ public class AnimationView implements IView {
         AnimationView.this.animation.updateShapes(tick);
         AnimationView.this.animationPanel.addShapes(
             AnimationView.this.animation.getHash());
+        AnimationView.this.refresh();
         tick++; // % by current time for looping animation
       }
     });

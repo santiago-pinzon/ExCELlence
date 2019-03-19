@@ -1,5 +1,6 @@
 package cs3500.animator;
 
+import java.awt.Dimension;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -62,7 +63,7 @@ public class Excellence {
         default:
 
           JFrame frame = new JFrame();
-          frame.setSize(100, 100);
+          frame.setPreferredSize(new Dimension(100, 100));
           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
           JOptionPane.showMessageDialog(frame, "Invalid input",
                   "Error", JOptionPane.ERROR_MESSAGE);
@@ -84,7 +85,7 @@ public class Excellence {
 
       case "visual":
 
-        IView v = new AnimationView(model, 1000, 1000, 1000);
+        IView v = new AnimationView(model,50);
         ((AnimationView) v).Animate();
         break;
 /*
@@ -97,7 +98,7 @@ public class Excellence {
 
       default:
         JFrame frame = new JFrame();
-        frame.setSize(100, 100);
+        frame.setPreferredSize(new Dimension(100, 100));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JOptionPane.showMessageDialog(frame, "Invalid view type",
                 "Error", JOptionPane.ERROR_MESSAGE);

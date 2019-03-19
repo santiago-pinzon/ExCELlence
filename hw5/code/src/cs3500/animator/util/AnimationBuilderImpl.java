@@ -29,7 +29,7 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
    */
   @Override
   public AnimationModel build() {
-    return new AnimationModelImpl(this.listOfShapes);
+    return new AnimationModelImpl(this.listOfShapes, this.height, this.width, this.x, this.y);
   }
 
   /**
@@ -97,12 +97,16 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
         case "ellipse":
           Ellipse e = new Ellipse(new Position(x1, y1), h1, w1, new Color(r1, g1, b1), name);
           listOfShapes.put(name, e);
-          this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, t2, x2, y2, w2, h2, r2, g2, b2);
+          if(t1 != t2) {
+            this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, t2, x2, y2, w2, h2, r2, g2, b2);
+          }
           break;
         case "rectangle":
           Rectangle r = new Rectangle(new Position(x1, y1), h1, w1, new Color(r1,g1,b1), name);
           listOfShapes.put(name, r);
-          this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, t2, x2, y2, w2, h2, r2, g2, b2);
+          if(t1 != t2) {
+            this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, t2, x2, y2, w2, h2, r2, g2, b2);
+          }
           break;
         default:
           throw new IllegalArgumentException("This shape is not valid");

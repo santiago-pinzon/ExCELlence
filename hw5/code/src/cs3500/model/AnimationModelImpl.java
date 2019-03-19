@@ -17,6 +17,10 @@ public class AnimationModelImpl implements AnimationModel {
 
   private List<Shapes> shapes;
   private LinkedHashMap<String, Shapes> listOfShapes;
+  private int height;
+  private int width;
+  private int x;
+  private int y;
 
   /**
    * Constructs the animation model using a hashMap to take care of the list of shapes.
@@ -32,8 +36,12 @@ public class AnimationModelImpl implements AnimationModel {
    *
    * @param in the list of shapes to be used in the animation.
    */
-  public AnimationModelImpl(LinkedHashMap<String, Shapes> in) {
+  public AnimationModelImpl(LinkedHashMap<String, Shapes> in, int height, int width, int x, int y) {
     this.listOfShapes = in;
+    this.height = height;
+    this.width = width;
+    this.x = x;
+    this.y = y;
   }
 
   @Override
@@ -81,6 +89,23 @@ public class AnimationModelImpl implements AnimationModel {
     }
     return copies;
 
+  }
+
+  public int getHeight() {
+    return height;
+  }
+
+  public int getWidth() {
+    return width;
+
+  }
+
+  public int getX() {
+    return x;
+  }
+
+  public int getY() {
+    return y;
   }
 }
 
