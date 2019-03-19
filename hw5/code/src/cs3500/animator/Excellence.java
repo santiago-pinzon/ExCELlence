@@ -97,7 +97,7 @@ public class Excellence {
 
     switch (viewType) {
       case "text":
-        IView t = new TextView(model, 10, 10, 1000, 1000, a);
+        IView t = new TextView(model, model.getX(), model.getY(), model.getHeight(), model.getWidth(), a);
         ((TextView) t).render();
         ((Closeable) a).close();
         break;
@@ -111,7 +111,7 @@ public class Excellence {
 
       case "svg":
 
-        IView s = new SVGView(speed,model.getShapes(),a , 1000, 1000, model);
+        IView s = new SVGView(speed, model.getShapes(), a , model.getWidth(), model.getHeight(), model);
         ((SVGView) s).output();
         ((Closeable) a).close();
         break;

@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3374fdd-913d-4aa2-b371-7b157ec167a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/out/production/ExCELlence/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/out/production/ExCELlence/text-transcript.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/simple-example-with-loopback.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/simple-example.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello.svg" beforeDir="false" afterPath="$PROJECT_DIR$/hello.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/hw5/code/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,13 +18,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="113" selection-start-line="113" selection-end-line="113" />
+            <state relative-caret-position="176">
+              <caret line="113" column="95" selection-start-line="113" selection-start-column="95" selection-end-line="113" selection-end-column="95" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
@@ -40,10 +36,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="-137">
+              <caret line="230" column="34" lean-forward="true" selection-start-line="230" selection-start-column="34" selection-end-line="230" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hello.svg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -55,8 +59,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java" />
       </list>
     </option>
   </component>
@@ -154,7 +159,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553029111218" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553030663794" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -172,7 +177,7 @@
     <configuration name="Excellence" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs3500.animator.Excellence" />
       <module name="ExCELlence" />
-      <option name="PROGRAM_PARAMETERS" value="-in &quot;buildings.txt&quot; -view &quot;svg&quot; -out &quot;hello.svg&quot; -speed 30" />
+      <option name="PROGRAM_PARAMETERS" value="-in &quot;buildings.txt&quot; -view &quot;svg&quot; -out &quot;hello.svg&quot; -speed 10" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cs3500.animator.*" />
@@ -233,29 +238,46 @@
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AbstractAnimation.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hello.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2210">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildings.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="110" column="41" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="113" column="95" selection-start-line="113" selection-start-column="95" selection-end-line="113" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-137">
+          <caret line="230" column="34" lean-forward="true" selection-start-line="230" selection-start-column="34" selection-end-line="230" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello.svg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>

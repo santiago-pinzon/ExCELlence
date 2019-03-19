@@ -1,14 +1,8 @@
 package cs3500.animator.view;
 
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
-
-
-import javax.swing.*;
-
-import cs3500.model.AShape;
 import cs3500.model.Shapes;
 import cs3500.model.AnimationModelImpl;
 import cs3500.model.Animation;
@@ -217,8 +211,8 @@ public class SVGView implements ISVGView {
               + "\" width=\"" + s.getWidth()
               + "\" height=\"" + s.getHeight()
               + "\" fill=\"rgb(" + s.getRed()
-              + "," + s.getBlue()
-              + "," + s.getGreen() + ")\""
+              + "," + s.getGreen()
+              + "," + s.getBlue() + ")\""
               + " visibility=";
 
       if (s.isVisible()) {
@@ -234,8 +228,8 @@ public class SVGView implements ISVGView {
               + "\" rx=\"" + s.getWidth()
               + "\" ry=\"" + s.getHeight()
               + "\" fill=\"rgb(" + s.getRed()
-              + "," + s.getBlue()
-              + "," + s.getGreen() + ")\""
+              + "," + s.getGreen()
+              + "," + s.getBlue() + ")\""
               + " visibility=";
 
       if (s.isVisible()) {
