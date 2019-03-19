@@ -5,10 +5,9 @@ package cs3500.model;
  */
 
 public class Color {
-
-  private int r;
-  private int g;
-  private int b;
+  int r;
+  int g;
+  int b;
 
   /**
    * Constructs a Color by having values for r, g, b.
@@ -17,11 +16,11 @@ public class Color {
    * @param g represents the value for green
    * @param b represents the value for blue
    * @throws IllegalArgumentException if r < 0 or r > 255 because that is an invalid number for a
-   * color
+   *                                  color
    * @throws IllegalArgumentException if g < 0 or g > 255 because that is an invalid number for a
-   * color
+   *                                  color
    * @throws IllegalArgumentException if b < 0 or b > 255 because that is an invalid number for a
-   * color
+   *                                  color
    */
 
   public Color(int r, int g, int b) {
@@ -43,18 +42,6 @@ public class Color {
   @Override
   public String toString() {
     return String.format("%-5s %-5s %-5s", this.r, this.g, this.b);
-  }
-
-  public int getR() {
-    return r;
-  }
-
-  public int getG() {
-    return g;
-  }
-
-  public int getB() {
-    return b;
   }
 
 }

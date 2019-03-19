@@ -95,16 +95,16 @@ public class SVGView implements ISVGView {
     String result = "";
 
     if (startX != endX) {
-      result += locationCommand(shape, an, startX, endX);
+      result += xCommand(shape, an, startX, endX);
     }
     if (startY != endY) {
-      result += locationCommand(shape, an, startY, endY);
+      result += yCommand(shape, an, startY, endY);
     }
     if (startW != endW) {
-      result += sizeCommand(shape, an, startW, endW);
+      result += widthCommand(shape, an, startW, endW);
     }
     if (startH != endH) {
-      result += sizeCommand(shape, an, startH, endH);
+      result += heightCommand(shape, an, startH, endH);
     }
     if (startR != endR || startG != endG || startB != endB) {
       result += colorCommand(an, startR, endR, startG, endG, startB, endB);
@@ -113,7 +113,7 @@ public class SVGView implements ISVGView {
     return result;
   }
 
-  private String locationCommand(Shapes shape, Animation an, int startval, int endval) {
+  private String xCommand(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "\t<animate attributeType=\"xml\" begin=\"" +
         +an.getStartTime() * speed
@@ -137,7 +137,31 @@ public class SVGView implements ISVGView {
     return start;
   }
 
-  private String sizeCommand(Shapes shape, Animation an, int startval, int endval) {
+  private String yCommand(Shapes shape, Animation an, int startval, int endval) {
+
+    String start = "\t<animate attributeType=\"xml\" begin=\"" +
+            +an.getStartTime() * speed
+            + "ms\" dur=\""
+            + (an.getEndTime() - an.getStartTime()) * speed
+            + "ms\" attributeName=\"";
+
+    if (shape.getDesc().equals("Ellipse")) {
+      start += "cy";
+
+    } else {
+      start += "y";
+    }
+
+    start += "\" from=\""
+            + startval
+            + "\" to=\"";
+    start += endval
+            + "\" fill=\"freeze\" />\n";
+
+    return start;
+  } 
+
+  private String widthCommand(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "<animate attributeType=\"xml\" begin=\"" +
         +an.getStartTime() * speed
@@ -156,6 +180,29 @@ public class SVGView implements ISVGView {
         + "\" to=\"";
     start += endval
         + "\" fill=\"freeze\" />\n";
+
+    return start;
+  }
+
+  private String heightCommand(Shapes shape, Animation an, int startval, int endval) {
+
+    String start = "<animate attributeType=\"xml\" begin=\"" +
+            +an.getStartTime() * speed
+            + "ms\" dur=\""
+            + (an.getEndTime() - an.getStartTime()) * speed
+            + "ms\" attributeName=\"";
+
+    if (shape.getDesc().equals("Ellipse")) {
+      start += "ry";
+    } else {
+      start += "height";
+    }
+
+    start += "\" from=\""
+            + startval
+            + "\" to=\"";
+    start += endval
+            + "\" fill=\"freeze\" />\n";
 
     return start;
   }

@@ -5,15 +5,14 @@ package cs3500.model;
  */
 
 public class Motion extends AbstractAnimation {
-
-  private Position to;
+  Position to;
 
   /**
    * Constructs a Motion with a given startTime, endTime and Position.
    *
    * @param startTime represents the startTime of the animation
-   * @param endTime represents the endTime of the animation
-   * @param to represents the position being moved to
+   * @param endTime   represents the endTime of the animation
+   * @param to        represents the position being moved to
    * @throws IllegalArgumentException if the endTime is <= the startTime
    */
 

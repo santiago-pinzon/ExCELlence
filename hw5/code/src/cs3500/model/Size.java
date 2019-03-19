@@ -15,18 +15,11 @@ public class Size extends AbstractAnimation {
    * @param endTime   the endTime of the animation
    * @param height    the new height of the shape
    * @param width     the new width of the shape
-   * @throws IllegalArgumentException if the endTime is <= the startTime or if height and width
-   *            are negative
+   * @throws IllegalArgumentException if the endTime is <= the startTime
    */
 
   public Size(int startTime, int endTime, int height, int width) {
     super(startTime, endTime);
-    if(height < 0) {
-      throw new IllegalArgumentException("Cannot have a negative height");
-    }
-    if(width < 0) {
-      throw new IllegalArgumentException("Cannot have a negative Width");
-    }
     this.height = height;
     this.width = width;
   }
