@@ -20,9 +20,9 @@ public class AnimationModelImplTest {
   @Test(expected = IllegalArgumentException.class)
   public void testAddShapeWithSameName() {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "R");
+            new Color(255, 0, 0), "R", true);
     Rectangle test1 = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(0, 255, 0), "R");
+            new Color(0, 255, 0), "R", true);
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
     imp.addShape(test1);
@@ -32,7 +32,7 @@ public class AnimationModelImplTest {
   @Test(expected = IllegalArgumentException.class)
   public void testShapeNotInListOfShapes() {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "M");
+            new Color(255, 0, 0), "M", true);
 
     Motion motion = new Motion(0, 10, new Position(5, 0));
 
@@ -47,7 +47,7 @@ public class AnimationModelImplTest {
   @Test
   public void testGetAnimationForJustRectangle() {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "R");
+            new Color(255, 0, 0), "R", true);
 
     Size size = new Size(10, 15, 20, 21);
     Motion motion = new Motion(0, 10, new Position(5, 0));
@@ -69,7 +69,7 @@ public class AnimationModelImplTest {
   @Test
   public void testGetAnimationForJustEllipse() {
     Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
-            new Color(0, 0, 255), "E");
+            new Color(0, 0, 255), "E", true);
 
     ColorChange color = new ColorChange(0, 10, new Color(0, 255, 0));
     Size size = new Size(10, 15, 20, 21);
@@ -91,9 +91,9 @@ public class AnimationModelImplTest {
   @Test
   public void testGetAnimationsForRectangleAndEllipse() {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "R");
+            new Color(255, 0, 0), "R", true);
     Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
-            new Color(0, 0, 255), "E");
+            new Color(0, 0, 255), "E", true);
 
     Motion motion = new Motion(0, 10, new Position(5, 0));
     ColorChange color = new ColorChange(0, 10, new Color(0, 255, 0));
@@ -124,9 +124,9 @@ public class AnimationModelImplTest {
   @Test
   public void testNoAnimation() {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "R");
+            new Color(255, 0, 0), "R", true);
     Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
-            new Color(0, 0, 255), "E");
+            new Color(0, 0, 255), "E", true);
 
     Motion motion = new Motion(0, 10, new Position(5, 0));
     ColorChange color = new ColorChange(0, 10, new Color(0, 255, 0));
@@ -143,9 +143,9 @@ public class AnimationModelImplTest {
   @Test
   public void testNothingAdded() {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "R");
+            new Color(255, 0, 0), "R", true);
     Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
-            new Color(0, 0, 255), "E");
+            new Color(0, 0, 255), "E", true);
 
     Motion motion = new Motion(0, 10, new Position(5, 0));
     ColorChange color = new ColorChange(0, 10, new Color(0, 255, 0));
@@ -160,9 +160,9 @@ public class AnimationModelImplTest {
   @Test (expected = java.lang.IllegalArgumentException.class)
   public void testAddingIntermediateAnimation() {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
-        new Color(255, 0, 0), "R");
+        new Color(255, 0, 0), "R", true);
     Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
-        new Color(0, 0, 255), "E");
+        new Color(0, 0, 255), "E", true);
 
     Motion motion = new Motion(0, 10, new Position(5, 0));
     ColorChange color = new ColorChange(0, 10, new Color(0, 255, 0));

@@ -19,6 +19,7 @@ public abstract class AShape implements Shapes {
   protected Color color;
   protected String name;
   protected String desc;
+  protected boolean visible;
 
   /**
    * Constructs an abstract shape.
@@ -32,7 +33,7 @@ public abstract class AShape implements Shapes {
    * @throws IllegalArgumentException if the width is <= 0
    */
 
-  public AShape(Position center, int height, int width, Color color, String name) {
+  public AShape(Position center, int height, int width, Color color, String name, boolean visible) {
     if (height <= 0) {
       throw new IllegalArgumentException("Height cannot be negative");
     }
@@ -46,6 +47,7 @@ public abstract class AShape implements Shapes {
     this.name = name;
     this.actions = new HashMap<>();
     this.keyPoints = new ArrayList<>();
+    this.visible = visible;
   }
 
 
@@ -183,6 +185,11 @@ public abstract class AShape implements Shapes {
   public Collection<ArrayList<Animation>> getAnimations() {
 
     return this.actions.values();
+  }
+
+  @Override
+  public boolean isVisible(){
+    return this.visible;
   }
 
 

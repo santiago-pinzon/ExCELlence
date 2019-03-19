@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class AnimationModelImpl implements AnimationModel {
 
-  private List<Shapes> shapes;
+  private ArrayList<Shapes> shapes;
   private LinkedHashMap<String, Shapes> listOfShapes;
   private int height;
   private int width;
@@ -28,6 +28,7 @@ public class AnimationModelImpl implements AnimationModel {
 
   public AnimationModelImpl() {
     this.listOfShapes = new LinkedHashMap<>();
+    this.shapes = new ArrayList<Shapes>();
   }
 
 
@@ -80,9 +81,18 @@ public class AnimationModelImpl implements AnimationModel {
       s.getTweener(tick);
     }
   }
+@Override
+  public void addShapesToArray(Shapes s){
+    if (listOfShapes.containsKey(s.getName())){
+      shapes.add(s);
+    }
+    else {
+      throw new IllegalArgumentException("There already exists a shape with this name");
+    }
+  }
 
-
-  public List<Shapes> getShapes() {
+@Override
+  public ArrayList<Shapes> getShapes() {
     ArrayList<Shapes> copies = new ArrayList<Shapes>();
     for (Shapes s : this.shapes) {
       copies.add(s);

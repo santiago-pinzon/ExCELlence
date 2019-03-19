@@ -104,7 +104,7 @@ public class AnimationReader {
     }
     builder.addMotion(name,
             vals[0], vals[1], vals[2 ], vals[3 ], vals[4 ], vals[5 ], vals[6 ], vals[7 ],
-            vals[8], vals[9], vals[10], vals[11], vals[12], vals[13], vals[14], vals[15]);
+            vals[8], vals[9], vals[10], vals[11], vals[12], vals[13], vals[14], vals[15], true);
   }
   
   private static int getInt(Scanner s, String label, String fieldName) {

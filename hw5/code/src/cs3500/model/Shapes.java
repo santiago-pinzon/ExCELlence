@@ -93,5 +93,7 @@ public interface Shapes {
   int getGreen();
 
   Collection<ArrayList<Animation>> getAnimations();
+
+  boolean isVisible();
 }
 

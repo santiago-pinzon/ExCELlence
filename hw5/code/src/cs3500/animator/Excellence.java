@@ -1,6 +1,9 @@
 package cs3500.animator;
 
 import java.awt.Dimension;
+import java.io.BufferedWriter;
+import java.io.FileDescriptor;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -32,7 +35,8 @@ public class Excellence {
     int speed = -1;
 
     IView view = null;
-    AnimationBuilder controller = null;
+    AnimationBuilder controller = new AnimationBuilderImpl();
+    FileReader read;
 
     Appendable a = null;
 
@@ -74,8 +78,17 @@ public class Excellence {
       speed = 1;
     }
     if (output.equals("") || output.equals("out")) {
-      output .equals("System.out");
+      a = System.out;
     }
+    else {
+      a = new BufferedWriter(new FileWriter(output));
+    }
+
+    if(!inputfile.equals("")) {
+      read = new FileReader(inputfile);
+      model = (AnimationModelImpl) AnimationReader.parseFile(read, controller);
+    }
+
 
     switch (viewType) {
       case "text":
@@ -85,13 +98,14 @@ public class Excellence {
 
       case "visual":
 
-        IView v = new AnimationView(model,50);
+        IView v = new AnimationView(model,speed);
         ((AnimationView) v).Animate();
         break;
-/*
+
+        /*
       case "svg":
 
-        IView s = new SVGView(1000, model.getShapes()., a, 1000, 1000, model);
+        IView s = new SVGView(1000, model.getShapes().get(0), a, 1000, 1000, model);
         ((SVGView) s).output();
         break;
  */

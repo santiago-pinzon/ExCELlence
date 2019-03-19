@@ -1,6 +1,6 @@
 package cs3500.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Interface for the Animation Model.
@@ -37,5 +37,10 @@ public interface AnimationModel {
   String getAnimation();
 
   void updateShapes(int tick);
+
+ ArrayList<Shapes> getShapes();
+
+void addShapesToArray(Shapes s);
+
 
 }

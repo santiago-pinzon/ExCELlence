@@ -47,7 +47,7 @@ public class TestAbstractAnimation {
   @Test
   public void testGetFullDescriptionOfRectangle() {
     Rectangle r = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "R");
+            new Color(255, 0, 0), "R", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     r.addAction(motion);
     assertEquals("shape R Rectangle\n\n" +
@@ -58,7 +58,7 @@ public class TestAbstractAnimation {
   @Test
   public void testGetDescriptionOfRectangle() {
     Rectangle r = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "R");
+            new Color(255, 0, 0), "R", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     r.addAction(motion);
     assertEquals("motion\tR\t0     0     0     10    10    255   0     0" +
@@ -68,7 +68,7 @@ public class TestAbstractAnimation {
   @Test
   public void testGetFullDescriptionOfEllipse() {
     Ellipse r = new Ellipse(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "E");
+            new Color(255, 0, 0), "E", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     ColorChange c = new ColorChange(0, 10, new Color(0, 255, 0));
     r.addAction(motion);
@@ -81,7 +81,7 @@ public class TestAbstractAnimation {
   @Test
   public void testGetDescriptionOfEllipse() {
     Ellipse r = new Ellipse(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "E");
+            new Color(255, 0, 0), "E", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     r.addAction(motion);
     assertEquals("motion\tE\t0     0     0     10    10    255   0     0" +
@@ -91,7 +91,7 @@ public class TestAbstractAnimation {
   @Test
   public void testGetFullDescriptionOfNewEllipse() {
     Ellipse r = new Ellipse(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "E");
+            new Color(255, 0, 0), "E", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     ColorChange c = new ColorChange(0, 10, new Color(0, 255, 0));
 

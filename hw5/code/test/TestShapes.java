@@ -18,7 +18,7 @@ public class TestShapes {
   public void testRectangleWith0Height() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
-    Shapes s = new Rectangle(p, 0, 3, c, "Rectangle");
+    Shapes s = new Rectangle(p, 0, 3, c, "Rectangle", true);
     assertEquals("Height cannot be negative", s.getName());
   }
 
@@ -26,7 +26,7 @@ public class TestShapes {
   public void testRectangleWithNegativeHeight() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
-    Shapes s = new Rectangle(p, -2, 3, c, "Rectangle");
+    Shapes s = new Rectangle(p, -2, 3, c, "Rectangle", true);
     assertEquals("Height cannot be negative", s.getName());
   }
 
@@ -34,7 +34,7 @@ public class TestShapes {
   public void testRectangleWith0Width() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
-    Shapes s = new Rectangle(p, 2, 0, c, "Rectangle");
+    Shapes s = new Rectangle(p, 2, 0, c, "Rectangle", true);
     assertEquals("Width cannot be negative", s.getName());
   }
 
@@ -42,7 +42,7 @@ public class TestShapes {
   public void testRectangleWithNegativeWidth() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
-    Shapes s = new Rectangle(p, 2, -3, c, "Rectangle");
+    Shapes s = new Rectangle(p, 2, -3, c, "Rectangle", true);
     assertEquals("Width cannot be negative", s.getName());
   }
 
@@ -50,7 +50,7 @@ public class TestShapes {
   public void testGetNameForRectangle() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
-    Shapes s = new Rectangle(p, 2, 3, c, "Rectangle");
+    Shapes s = new Rectangle(p, 2, 3, c, "Rectangle", true);
     assertEquals("Rectangle", s.getName());
   }
 
@@ -58,7 +58,7 @@ public class TestShapes {
   public void testGetNameForEllipse() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
-    Shapes s = new Rectangle(p, 2, 3, c, "Ellipse");
+    Shapes s = new Rectangle(p, 2, 3, c, "Ellipse", true);
     assertEquals("Ellipse", s.getName());
   }
 
@@ -66,7 +66,7 @@ public class TestShapes {
   public void testGetDescriptionForRectangle() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
-    Shapes s = new Rectangle(p, 2, 3, c, "Rectangle");
+    Shapes s = new Rectangle(p, 2, 3, c, "Rectangle", true);
     assertEquals("shape Rectangle Rectangle\n\n", s.getFullDescription());
   }
 
@@ -74,7 +74,7 @@ public class TestShapes {
   public void testGetDescriptionForEllipse() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
-    Shapes s = new Ellipse(p, 2, 3, c, "Ellipse");
+    Shapes s = new Ellipse(p, 2, 3, c, "Ellipse", true);
     assertEquals("shape Ellipse Ellipse\n\n", s.getFullDescription());
   }
 

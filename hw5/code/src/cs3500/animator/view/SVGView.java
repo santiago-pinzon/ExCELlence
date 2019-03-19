@@ -17,14 +17,14 @@ import cs3500.model.Animation;
 public class SVGView implements ISVGView {
 
   private int speed;
-  private Shapes s;
+  private ArrayList<Shapes> s;
   private Appendable a;
   private int width;
   private int height;
   private AnimationModelImpl m;
 
 
-  public SVGView(int speed, Shapes s, Appendable a, int width, int height, AnimationModelImpl m) {
+  public SVGView(int speed, ArrayList<Shapes> s, Appendable a, int width, int height, AnimationModelImpl m) {
 
     if (s == null || a == null) {
       throw new IllegalArgumentException("Cannot be null");
@@ -45,7 +45,7 @@ public class SVGView implements ISVGView {
         "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n\n");
     for (Shapes s : m.getShapes()) {
       this.appendHelp("<" + getSVGType(s) + " id=\"" + s.getName() + "\" "
-          + getSVGDesc(s) + " >\n\n");
+          + getSVGDesc(s) +">\n\n");
 
       for (ArrayList<Animation> an : s.getAnimations()) {
         for (Animation ann : an) {
@@ -59,6 +59,7 @@ public class SVGView implements ISVGView {
           int startR = s.getRed();
           int startG = s.getGreen();
           int startB = s.getBlue();
+          boolean isVisibleStart = s.isVisible();
 
           ann.apply(s);
 
@@ -69,6 +70,7 @@ public class SVGView implements ISVGView {
           int endR = s.getRed();
           int endG = s.getGreen();
           int endB = s.getBlue();
+          boolean isVisibleEnd = s.isVisible();
 
           movements = checkSVGCommands(startX, startY, startW, startH, startR, startG, startB, endX,
                   endY,
@@ -78,7 +80,7 @@ public class SVGView implements ISVGView {
         }
       }
 
-      this.appendHelp("\n\n</" + getSVGType(s) + ">");
+      this.appendHelp("\n</" + getSVGType(s) + ">");
     }
     this.appendHelp("\n\n</svg>");
 
@@ -113,7 +115,7 @@ public class SVGView implements ISVGView {
 
   private String locationCommand(Shapes shape, Animation an, int startval, int endval) {
 
-    String start = "<animate attributeType=\"xml\" begin=\"" +
+    String start = "\t<animate attributeType=\"xml\" begin=\"" +
         +an.getStartTime() * speed
         + "ms\" dur=\""
         + (an.getEndTime() - an.getStartTime()) * speed
@@ -211,26 +213,39 @@ public class SVGView implements ISVGView {
     String result = "";
     if (s.getDesc().equals("Rectangle")) {
       result = "x=\"" + s.getX()
-          + "\" y=\"" + s.getY()
-          + "\" width=\"" + s.getWidth()
-          + "\" height=\"" + s.getHeight()
-          + "\" fill=\"rgb(" + s.getRed()
-          + "," + s.getBlue()
-          + "," + s.getGreen() + ")\""
-          + " visibility=";
+              + "\" y=\"" + s.getY()
+              + "\" width=\"" + s.getWidth()
+              + "\" height=\"" + s.getHeight()
+              + "\" fill=\"rgb(" + s.getRed()
+              + "," + s.getBlue()
+              + "," + s.getGreen() + ")\""
+              + " visibility=";
+
+      if (s.isVisible()) {
+        result = result +"\"visible\"";
+      } else {
+        result = result +"\"hidden\"";
+      }
 
 
     } else if (s.getDesc().equals("Ellipse")) {
       result = "cx=\"" + s.getX()
-          + "\" cy=\"" + s.getY()
-          + "\" rx=\"" + s.getWidth()
-          + "\" ry=\"" + s.getHeight()
-          + "\" fill=\"rgb(" + s.getRed()
-          + "," + s.getBlue()
-          + "," + s.getGreen() + ")\""
-          + " visibility=\"";
-    }
+              + "\" cy=\"" + s.getY()
+              + "\" rx=\"" + s.getWidth()
+              + "\" ry=\"" + s.getHeight()
+              + "\" fill=\"rgb(" + s.getRed()
+              + "," + s.getBlue()
+              + "," + s.getGreen() + ")\""
+              + " visibility=";
 
+      if (s.isVisible()) {
+        result = result +"\"visible\"";
+      } else {
+        result = result +"\"hidden\"";
+      }
+
+      return result;
+    }
     return result;
   }
 
