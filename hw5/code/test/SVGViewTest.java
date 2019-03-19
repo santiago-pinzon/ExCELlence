@@ -41,7 +41,7 @@ public class SVGViewTest {
            "\t<animate attributeType=\"xml\" begin=\"0ms\" dur=\"100ms\" " +
            "attributeName=\"x\" from=\"0\" to=\"300\" fill=\"freeze\" />\n" +
            "\t<animate attributeType=\"xml\" begin=\"0ms\" dur=\"100ms\" " +
-           "attributeName=\"y\" from=\"0\" to=\"300\" fill=\"freeze\" />\n\n" +
+           "attributeName=\"x\" from=\"0\" to=\"300\" fill=\"freeze\" />\n\n" +
            "</rect>\n\n" + "</svg>", out.toString());
 
 }
