@@ -11,7 +11,6 @@ import java.util.Scanner;
 import java.io.StringReader;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.model.AnimationModelImpl;
 import cs3500.animator.view.IView;

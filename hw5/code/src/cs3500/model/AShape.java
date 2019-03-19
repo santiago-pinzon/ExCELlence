@@ -6,9 +6,9 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
- * Represents an abstract class for shapes.
+ * Represents an abstract class for shapes. The shapes which extend this class only differ in
+ * their name and as a result, the majority of the code has been abstracted.
  */
-
 public abstract class AShape implements Shapes {
 
   private HashMap<Integer, ArrayList<Animation>> actions;

@@ -1,12 +1,10 @@
 package cs3500.model;
 
 /**
- * Abstract class for animations.
+ * Abstract class for animations. An animation holds the final state for any shape that contains
+ * it. It then calculates "tweeners" based on how much of the animation has progressed.
  */
-
-
 public abstract class AbstractAnimation implements Animation {
-
   protected int startTime;
   protected int endTime;
 
@@ -29,22 +27,38 @@ public abstract class AbstractAnimation implements Animation {
   }
 
 
-
+  /**
+   * Returns the start point for the animation.
+   * @return the starting point.
+   */
   @Override
   public int getStartTime() {
     return startTime;
   }
 
 
+  /**
+   * Returns the end time for the animation.
+   * @return the end time.
+   */
   @Override
   public int getEndTime() {
     return endTime;
   }
 
 
+  /**
+   * Applies the animation to the shape
+   * @param shape the shape that is getting animated
+   */
   @Override
   public abstract void apply(Shapes shape);
 
+  /**
+   * @param frame the frame of the animation, scaled to where 0 is the first frame of the
+   * animation.
+   * @param s the shape upon which the tweener should be applied
+   */
   @Override
   public abstract void applyTweener(int frame, Shapes s);
 
