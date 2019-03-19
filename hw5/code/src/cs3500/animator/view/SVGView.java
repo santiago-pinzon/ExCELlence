@@ -92,13 +92,13 @@ public class SVGView implements ISVGView {
       result += locationCommand(shape, an, startX, endX);
     }
     if (startY != endY) {
-      result += locationCommand(shape, an, startY, endY);
+      result += locationCommandY(shape, an, startY, endY);
     }
     if (startW != endW) {
       result += sizeCommand(shape, an, startW, endW);
     }
     if (startH != endH) {
-      result += sizeCommand(shape, an, startH, endH);
+      result += sizeCommandH(shape, an, startH, endH);
     }
     if (startR != endR || startG != endG || startB != endB) {
       result += colorCommand(an, startR, endR, startG, endG, startB, endB);
@@ -131,6 +131,30 @@ public class SVGView implements ISVGView {
     return start;
   }
 
+  private String locationCommandY(Shapes shape, Animation an, int startval, int endval) {
+
+    String start = "\t<animate attributeType=\"xml\" begin=\"" +
+        +an.getStartTime() * speed
+        + "ms\" dur=\""
+        + (an.getEndTime() - an.getStartTime()) * speed
+        + "ms\" attributeName=\"";
+
+    if (shape.getDesc().equals("Ellipse")) {
+      start += "cy";
+
+    } else {
+      start += "y";
+    }
+
+    start += "\" from=\""
+        + startval
+        + "\" to=\"";
+    start += endval
+        + "\" fill=\"freeze\" />\n";
+
+    return start;
+  }
+
   private String sizeCommand(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "<animate attributeType=\"xml\" begin=\"" +
@@ -143,6 +167,29 @@ public class SVGView implements ISVGView {
       start += "rx";
     } else {
       start += "width";
+    }
+
+    start += "\" from=\""
+        + startval
+        + "\" to=\"";
+    start += endval
+        + "\" fill=\"freeze\" />\n";
+
+    return start;
+  }
+
+  private String sizeCommandH(Shapes shape, Animation an, int startval, int endval) {
+
+    String start = "<animate attributeType=\"xml\" begin=\"" +
+        +an.getStartTime() * speed
+        + "ms\" dur=\""
+        + (an.getEndTime() - an.getStartTime()) * speed
+        + "ms\" attributeName=\"";
+
+    if (shape.getDesc().equals("Ellipse")) {
+      start += "ry";
+    } else {
+      start += "height";
     }
 
     start += "\" from=\""
