@@ -8,6 +8,11 @@ import cs3500.model.AnimationModelImpl;
 import cs3500.model.Animation;
 
 
+/**
+ * This is an implementation of the SVGView interface that uses an XML-based format that
+ * can be used to describe images and animations.
+ */
+
 public class SVGView implements ISVGView {
 
   private int speed;
@@ -17,6 +22,16 @@ public class SVGView implements ISVGView {
   private int height;
   private AnimationModelImpl m;
 
+  /**
+   * Constructs an SVGView.
+   * @param speed The speed of the animation.
+   * @param s The List of Shapes in the animation.
+   * @param a The output of the SVGView
+   * @param width The width of the canvas size.
+   * @param height The height of the canvas size.
+   * @param m The AnimationModelImpl of the Animation
+   * @throws IllegalArgumentException if s is null or a is null
+   */
 
   public SVGView(int speed, ArrayList<Shapes> s, Appendable a, int width, int height, AnimationModelImpl m) {
 
@@ -81,6 +96,26 @@ public class SVGView implements ISVGView {
 
   }
 
+  /**
+   * Produces a String that checks the SVG Commands for all of its inputs.
+   * @param startX The starting X position.
+   * @param startY The starting Y position.
+   * @param startW The starting Width.
+   * @param startH The starting height.
+   * @param startR The starting Red value.
+   * @param startG The starting Green value.
+   * @param startB The starting Blue value.
+   * @param endX The ending X position.
+   * @param endY The ending Y position.
+   * @param endW The ending Width.
+   * @param endH The ending Height.
+   * @param endR The ending Red value.
+   * @param endG The ending Green value.
+   * @param endB The ending Blue value.
+   * @param shape The shape being described.
+   * @param an The animation being described.
+   * @return String with all of the inputs in SVG format.
+   */
 
   private String checkSVGCommands(int startX, int startY, int startW, int startH,
       int startR, int startG, int startB, int endX, int endY,
@@ -107,6 +142,14 @@ public class SVGView implements ISVGView {
     return result;
   }
 
+  /**
+   * Produces a String turning the X Position into SVG format.
+   * @param shape The shape being described.
+   * @param an The animation being described.
+   * @param startval The starting X position.
+   * @param endval The ending X position.
+   * @return String with the Xvalues in SVG format.
+   */
   private String locationCommand(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "\t<animate attributeType=\"xml\" begin=\"" +
@@ -130,6 +173,15 @@ public class SVGView implements ISVGView {
 
     return start;
   }
+
+  /**
+   * Produces a String turning the Y Position into SVG format.
+   * @param shape The shape being described.
+   * @param an The animation being described.
+   * @param startval The starting Y position.
+   * @param endval The ending Y position.
+   * @return String with the Yvalues in SVG format.
+   */
 
   private String locationCommandY(Shapes shape, Animation an, int startval, int endval) {
 
@@ -155,9 +207,18 @@ public class SVGView implements ISVGView {
     return start;
   }
 
+  /**
+   * Produces a String turning the Width into SVG format.
+   * @param shape The shape being described.
+   * @param an The animation being described.
+   * @param startval The starting Width.
+   * @param endval The ending Width.
+   * @return String with the Width in SVG format.
+   */
+
   private String sizeCommand(Shapes shape, Animation an, int startval, int endval) {
 
-    String start = "<animate attributeType=\"xml\" begin=\"" +
+    String start = "\t<animate attributeType=\"xml\" begin=\"" +
         +an.getStartTime() * speed
         + "ms\" dur=\""
         + (an.getEndTime() - an.getStartTime()) * speed
@@ -178,9 +239,18 @@ public class SVGView implements ISVGView {
     return start;
   }
 
+  /**
+   * Produces a String turning the Height into SVG format.
+   * @param shape The shape being described.
+   * @param an The animation being described.
+   * @param startval The starting Height.
+   * @param endval The ending Height.
+   * @return String with the Height in SVG format.
+   */
+
   private String sizeCommandH(Shapes shape, Animation an, int startval, int endval) {
 
-    String start = "<animate attributeType=\"xml\" begin=\"" +
+    String start = "\t<animate attributeType=\"xml\" begin=\"" +
         +an.getStartTime() * speed
         + "ms\" dur=\""
         + (an.getEndTime() - an.getStartTime()) * speed
@@ -201,10 +271,22 @@ public class SVGView implements ISVGView {
     return start;
   }
 
+  /**
+   * Produces a String turning the Color into SVG format.
+   * @param an The animation being described.
+   * @param startR The starting Red value.
+   * @param endR The ending Red value.
+   * @param startG The starting Green value.
+   * @param endG The ending Green value.
+   * @param startB The starting Blue value.
+   * @param endB The ending Blue value.
+   * @return String with the Color in SVG format.
+   */
+
   private String colorCommand(Animation an, int startR, int endR,
       int startG, int endG, int startB, int endB) {
 
-    String start = "<animate attributeName = \"fill\" "
+    String start = "\t<animate attributeName = \"fill\" "
         + "attributeType=\"xml\" begin=\""
         + an.getStartTime() * speed
         + "ms\" dur=\""
@@ -230,6 +312,11 @@ public class SVGView implements ISVGView {
     return start;
   }
 
+  /**
+   * Helper method that appends the given String to the appendable.
+   * @param s String in SVG format
+   * @throws IllegalArgumentException if the appendable can't append the String.
+   */
 
   private void appendHelp(String s) throws IllegalArgumentException {
     try {
@@ -239,6 +326,11 @@ public class SVGView implements ISVGView {
     }
   }
 
+  /**
+   * Gets the Shape in SVG format.
+   * @param s The Shape being described.
+   * @return a String of the shape in SVG format.
+   */
 
   private String getSVGType(Shapes s) {
     if (s.getDesc().equals("Rectangle")) {
@@ -249,6 +341,12 @@ public class SVGView implements ISVGView {
       throw new IllegalArgumentException("Shape is not valid");
     }
   }
+
+  /**
+   * Gets the Description of the Shape in SVG format.
+   * @param s The Shape being described.
+   * @return a String of the description of the shape in SVG format.
+   */
 
   private String getSVGDesc(Shapes s) {
     String result = "";
@@ -291,11 +389,9 @@ public class SVGView implements ISVGView {
   }
 
 
-  /**
-   * Transmit an error message to the view, in case the command could not be processed correctly
-   */
+
   @Override
   public void showErrorMessage(String error) {
-    return;
+    this.appendHelp(error);
   }
 }
