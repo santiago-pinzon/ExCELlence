@@ -34,7 +34,7 @@ public class SVGViewTest {
   }
 
   @Test(expected=IllegalArgumentException.class)
-  public void testSVGViewNullReadable(){
+  public void testSVGViewNullAppendable(){
     StringBuffer out = null;
     AnimationModelImpl a = new AnimationModelImpl();
     Shapes test = new Rectangle(new Position(0, 0), 100, 100,
