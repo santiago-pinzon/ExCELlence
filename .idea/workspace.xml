@@ -3,12 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="e43cfbd2-1a8d-4cb6-8d6a-a357af6b2906" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/production/ExCELlence/cs3500/animator/view/big-bang-big-crunch.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/production/ExCELlence/cs3500/animator/view/toh-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/big-bang-big-crunch.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/buildings.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/hanoi.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/smalldemo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/toh-12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/toh-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/toh-5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/out/test/ExCELlence/toh-8.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationBuilderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationBuilderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/big-bang-big-crunch.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/big-bang-big-crunch.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/toh-3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/toh-3.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/visualTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/visualTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/smalldemo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/smalldemo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/big-bang-big-crunch.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/buildings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/buildings.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/hanoi.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/hanoi.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/smalldemo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/smalldemo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/toh-12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/toh-12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/toh-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/toh-5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/toh-5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/toh-8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/toh-8.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,26 +36,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/visualTest.java">
+        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+            <state relative-caret-position="1292">
+              <caret line="100" column="47" selection-start-line="100" selection-start-column="47" selection-end-line="100" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="75" column="25" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1852#1853#0" expanded="true" />
-                <element signature="e#1882#1883#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -47,68 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/IAnimationView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-285">
-              <caret line="18" column="53" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2254#2255#0" expanded="true" />
-                <element signature="e#2277#2278#0" expanded="true" />
-                <element signature="e#2354#2355#0" expanded="true" />
-                <element signature="e#2372#2373#0" expanded="true" />
-                <element signature="e#2397#2398#0" expanded="true" />
-                <element signature="e#2415#2416#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -167,11 +110,11 @@
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Size.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/big-bang-big-crunch.txt" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationPanel.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationView.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/buildings.txt" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationBuilderImpl.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/visualTest.java" />
       </list>
     </option>
@@ -238,33 +181,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="cs3500" type="462c0819:PsiDirectoryNode" />
               <item name="animator" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExCELlence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ExCELlence" type="462c0819:PsiDirectoryNode" />
-              <item name="hw5" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cs3500" type="462c0819:PsiDirectoryNode" />
-              <item name="animator" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExCELlence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ExCELlence" type="462c0819:PsiDirectoryNode" />
-              <item name="hw5" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cs3500" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExCELlence" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ExCELlence" type="462c0819:PsiDirectoryNode" />
-              <item name="hw5" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -277,7 +194,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553004494189" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553006320336" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../animator-master" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -285,7 +202,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence" />
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src" />
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src\cs3500\animator" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src\cs3500" />
+      <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src\cs3500\animator" />
       <recent name="C:\Users\pnzni\Documents\OOD\ExCELlence\hw5\code\src" />
     </key>
   </component>
@@ -301,11 +225,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.visualTest">
+  <component name="RunManager" selected="Application.Excellence">
     <configuration name="Excellence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs3500.animator.Excellence" />
       <module name="ExCELlence" />
-      <option name="PROGRAM_PARAMETERS" value="-in &quot;smalldemo.txt&quot; -view &quot;visual&quot; -speed 30" />
+      <option name="PROGRAM_PARAMETERS" value="-in &quot;buildings.txt&quot; -view &quot;text&quot; -out &quot;newBuildings.txt&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cs3500.animator.*" />
@@ -368,16 +292,16 @@
     <list>
       <item itemvalue="Application.Excellence" />
       <item itemvalue="Application.test (1)" />
-      <item itemvalue="JUnit.AnimationModelImplTest.testGetAnimationsForRectangleAndEllipse" />
       <item itemvalue="Application.windowTes" />
       <item itemvalue="Application.visualTest" />
+      <item itemvalue="JUnit.AnimationModelImplTest.testGetAnimationsForRectangleAndEllipse" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Excellence" />
         <item itemvalue="Application.visualTest" />
         <item itemvalue="Application.test (1)" />
         <item itemvalue="Application.windowTes" />
-        <item itemvalue="Application.Excellence" />
         <item itemvalue="JUnit.AnimationModelImplTest.testGetAnimationsForRectangleAndEllipse" />
       </list>
     </recent_temporary>
@@ -429,9 +353,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="846" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20469798" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20469798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -441,7 +364,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3277311" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32913166" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49932885" visible="true" weight="0.24369748" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932885" visible="true" weight="0.24369748" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.54901963" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -510,7 +433,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/visualTest.java</url>
-          <line>21</line>
+          <line>16</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
@@ -627,7 +550,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/test/smalldemo.txt">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/smalldemo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="25" />
@@ -648,7 +571,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/smalldemo.txt">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/smalldemo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="21" />
@@ -784,71 +707,21 @@
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/big-bang-big-crunch.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/test/hanoi.txt">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/hanoi.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2254#2255#0" expanded="true" />
-            <element signature="e#2277#2278#0" expanded="true" />
-            <element signature="e#2354#2355#0" expanded="true" />
-            <element signature="e#2372#2373#0" expanded="true" />
-            <element signature="e#2397#2398#0" expanded="true" />
-            <element signature="e#2415#2416#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/test/big-bang-big-crunch.txt">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/big-bang-big-crunch.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/test/buildings.txt">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/buildings.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="110" column="65" lean-forward="true" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="65" />
@@ -877,6 +750,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/AnimationPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/IAnimationView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -884,10 +774,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285">
+          <caret line="18" column="53" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2254#2255#0" expanded="true" />
+            <element signature="e#2277#2278#0" expanded="true" />
+            <element signature="e#2354#2355#0" expanded="true" />
+            <element signature="e#2372#2373#0" expanded="true" />
+            <element signature="e#2397#2398#0" expanded="true" />
+            <element signature="e#2415#2416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smalldemo.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/visualTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+        <state relative-caret-position="320">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="100" column="47" selection-start-line="100" selection-start-column="47" selection-end-line="100" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
