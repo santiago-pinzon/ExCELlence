@@ -16,7 +16,6 @@ import cs3500.model.Animation;
 public class SVGView implements ISVGView {
 
   private int speed;
-  private ArrayList<Shapes> s;
   private Appendable a;
   private int width;
   private int height;
@@ -32,14 +31,14 @@ public class SVGView implements ISVGView {
    * @param m The AnimationModelImpl of the Animation
    * @throws IllegalArgumentException if s is null or a is null
    */
-
-  public SVGView(int speed, ArrayList<Shapes> s, Appendable a, int width, int height, AnimationModelImpl m) {
+  public SVGView(int speed, ArrayList<Shapes> s, Appendable a, int width,
+      int height, AnimationModelImpl m) {
 
     if (s == null || a == null) {
       throw new IllegalArgumentException("Cannot be null");
     }
     this.speed = speed;
-    this.s = s;
+    ArrayList<Shapes> s1 = s;
     this.a = a;
     this.width = width;
     this.height = height;
@@ -50,11 +49,11 @@ public class SVGView implements ISVGView {
 
   @Override
   public void output() {
-    this.appendHelp("<svg width=\"" + this.width + "\" height=\"" + this.height + "\" " +
-        "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n\n");
+    this.appendHelp("<svg width=\"" + this.width + "\" height=\"" + this.height + "\" "
+        + "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n\n");
     for (Shapes s : m.getShapes()) {
       this.appendHelp("<" + getSVGType(s) + " id=\"" + s.getName() + "\" "
-          + getSVGDesc(s) +">\n\n");
+          + getSVGDesc(s) + ">\n\n");
 
       for (ArrayList<Animation> an : s.getAnimations()) {
         for (Animation ann : an) {
@@ -152,8 +151,8 @@ public class SVGView implements ISVGView {
    */
   private String locationCommand(Shapes shape, Animation an, int startval, int endval) {
 
-    String start = "\t<animate attributeType=\"xml\" begin=\"" +
-        +an.getStartTime() * speed
+    String start = "\t<animate attributeType=\"xml\" begin=\""
+        + an.getStartTime() * speed
         + "ms\" dur=\""
         + (an.getEndTime() - an.getStartTime()) * speed
         + "ms\" attributeName=\"";
@@ -185,8 +184,8 @@ public class SVGView implements ISVGView {
 
   private String locationCommandY(Shapes shape, Animation an, int startval, int endval) {
 
-    String start = "\t<animate attributeType=\"xml\" begin=\"" +
-        +an.getStartTime() * speed
+    String start = "\t<animate attributeType=\"xml\" begin=\""
+        + an.getStartTime() * speed
         + "ms\" dur=\""
         + (an.getEndTime() - an.getStartTime()) * speed
         + "ms\" attributeName=\"";
@@ -218,8 +217,8 @@ public class SVGView implements ISVGView {
 
   private String sizeCommand(Shapes shape, Animation an, int startval, int endval) {
 
-    String start = "\t<animate attributeType=\"xml\" begin=\"" +
-        +an.getStartTime() * speed
+    String start = "\t<animate attributeType=\"xml\" begin=\""
+        + an.getStartTime() * speed
         + "ms\" dur=\""
         + (an.getEndTime() - an.getStartTime()) * speed
         + "ms\" attributeName=\"";
@@ -250,8 +249,8 @@ public class SVGView implements ISVGView {
 
   private String sizeCommandH(Shapes shape, Animation an, int startval, int endval) {
 
-    String start = "\t<animate attributeType=\"xml\" begin=\"" +
-        +an.getStartTime() * speed
+    String start = "\t<animate attributeType=\"xml\" begin=\""
+        + an.getStartTime() * speed
         + "ms\" dur=\""
         + (an.getEndTime() - an.getStartTime()) * speed
         + "ms\" attributeName=\"";
@@ -361,9 +360,9 @@ public class SVGView implements ISVGView {
               + " visibility=";
 
       if (s.isVisible()) {
-        result = result +"\"visible\"";
+        result = result + "\"visible\"";
       } else {
-        result = result +"\"hidden\"";
+        result = result + "\"hidden\"";
       }
 
 
@@ -378,9 +377,9 @@ public class SVGView implements ISVGView {
               + " visibility=";
 
       if (s.isVisible()) {
-        result = result +"\"visible\"";
+        result = result + "\"visible\"";
       } else {
-        result = result +"\"hidden\"";
+        result = result + "\"hidden\"";
       }
 
       return result;

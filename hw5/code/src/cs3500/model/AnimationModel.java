@@ -13,7 +13,7 @@ public interface AnimationModel {
    *
    * @param shape the shape being added to the list of shapes.
    * @throws IllegalArgumentException if a shape is already in the list of shapes with that shapes
-   *                                  name.
+   * name.
    */
 
   public void addShape(Shapes shape);
@@ -21,7 +21,7 @@ public interface AnimationModel {
   /**
    * Adds an animation to the given shape.
    *
-   * @param shape   the shape getting the animation.
+   * @param shape the shape getting the animation.
    * @param animate the animation being given to the shape.
    * @throws IllegalArgumentException if the given shape is not in the list of shapes.
    */
@@ -39,17 +39,19 @@ public interface AnimationModel {
 
   /**
    * Updates the shapes based on the tick number of the animation over all.
+   *
    * @param tick the time tick of the animation
    */
   void updateShapes(int tick);
 
- ArrayList<Shapes> getShapes();
+  ArrayList<Shapes> getShapes();
 
-void addShapesToArray(Shapes s);
+  void addShapesToArray(Shapes s);
 
 
   /**
    * removes a shape from the animation.
+   *
    * @param name the name of the shape to be removed.
    */
   void removeShape(String name);

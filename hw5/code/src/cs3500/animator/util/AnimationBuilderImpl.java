@@ -12,6 +12,10 @@ import cs3500.model.Shapes;
 import cs3500.model.Size;
 import java.util.LinkedHashMap;
 
+/**
+ * Represents an AnimationBuilder which is capable of taking a formatted imput file and
+ * converting it to an animation model.
+ */
 public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
 
   private int x;
@@ -54,9 +58,9 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
    * Adds a new shape to the growing document.
    *
    * @param name The unique name of the shape to be added. No shape with this name should already
-   * exist.
+   *        exist.
    * @param type The type of shape (e.g. "ellipse", "rectangle") to be added. The set of supported
-   * shapes is unspecified, but should include "ellipse" and "rectangle" as a minimum.
+   *        shapes is unspecified, but should include "ellipse" and "rectangle" as a minimum.
    * @return This {@link AnimationBuilder}
    */
   @Override
@@ -89,22 +93,25 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
    */
   @Override
   public AnimationBuilder addMotion(String name, int t1, int x1, int y1, int w1, int h1, int r1,
-      int g1, int b1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2, boolean visible) {
+      int g1, int b1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2,
+      boolean visible) {
     if (listOfShapes.get(name) == null) {
       String type = shapesToBeInstantiated.get(name);
 
       switch (type) {
         case "ellipse":
-          Ellipse e = new Ellipse(new Position(x1, y1), h1, w1, new Color(r1, g1, b1), name, visible);
+          Ellipse e = new Ellipse(new Position(x1, y1), h1, w1, new Color(r1, g1, b1),
+              name, visible);
           listOfShapes.put(name, e);
-          if(t1 != t2) {
+          if (t1 != t2) {
             this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, t2, x2, y2, w2, h2, r2, g2, b2);
           }
           break;
         case "rectangle":
-          Rectangle r = new Rectangle(new Position(x1, y1), h1, w1, new Color(r1,g1,b1), name, visible);
+          Rectangle r = new Rectangle(new Position(x1, y1), h1, w1, new Color(r1,g1,b1),
+              name, visible);
           listOfShapes.put(name, r);
-          if(t1 != t2) {
+          if (t1 != t2) {
             this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, t2, x2, y2, w2, h2, r2, g2, b2);
           }
           break;
@@ -141,15 +148,15 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
    */
   private void addAnimation(String name, int t1, int x1, int y1, int w1, int h1, int r1, int g1,
       int b1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2) {
-    if(x1 != x2 || y1 != y2) {
+    if (x1 != x2 || y1 != y2) {
       //System.out.println("ADDING NEW MOTION " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Motion(t1, t2, new Position(x2, y2)));
     }
-    else if(w1 != w2 || h1 != h2) {
+    else if (w1 != w2 || h1 != h2) {
       //System.out.println("ADDING NEW HEIGHT " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Size(t1, t2, h2, w2));
     }
-    else if(r1 != r2 || g1 != g2 || b1 != b2) {
+    else if (r1 != r2 || g1 != g2 || b1 != b2) {
       //System.out.println("ADDING NEW COLOR " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new ColorChange(t1, t2, new Color(r2, g2, b2)));
     }

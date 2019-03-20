@@ -88,7 +88,7 @@ public class Excellence {
       a = new BufferedWriter(new FileWriter(output));
     }
 
-    if(!inputfile.equals("")) {
+    if (!inputfile.equals("")) {
       read = new FileReader(inputfile);
       model = (AnimationModelImpl) AnimationReader.parseFile(read, controller);
     }
@@ -96,7 +96,8 @@ public class Excellence {
 
     switch (viewType) {
       case "text":
-        IView t = new TextView(model, model.getX(), model.getY(), model.getHeight(), model.getWidth(), a);
+        IView t = new TextView(model, model.getX(), model.getY(), model.getHeight(),
+            model.getWidth(), a);
         ((TextView) t).render();
         ((Closeable) a).close();
         break;
@@ -104,13 +105,14 @@ public class Excellence {
       case "visual":
 
         IView v = new AnimationView(model,speed);
-        ((AnimationView) v).Animate();
+        ((AnimationView) v).animate();
         break;
 
 
       case "svg":
 
-        IView s = new SVGView(speed, model.getShapes(), a , model.getWidth(), model.getHeight(), model);
+        IView s = new SVGView(speed, model.getShapes(), a , model.getWidth(),
+            model.getHeight(), model);
         ((SVGView) s).output();
         ((Closeable) a).close();
         break;

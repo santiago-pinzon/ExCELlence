@@ -59,10 +59,10 @@ public class AnimationModelImplTest {
     imp.addAnimation("R", size);
 
     assertEquals("shape R Rectangle\n\n" +
-            "motion\tR\t0     0     0     10    10    255   0     0" +
-            "    \t\t10    5     0     10    10    255   0     0    \n" +
-            "motion\tR\t10    5     0     10    10    255   0     0" +
-            "    \t\t15    5     0     20    21    255   0     0    \n\n", imp.getAnimation());
+            "motion\tR\t0     0     0     10    10    255   0     0"
+        + "    \t\t10    5     0     10    10    255   0     0    \n"
+        + "motion\tR\t10    5     0     10    10    255   0     0"
+        + "    \t\t15    5     0     20    21    255   0     0    \n\n", imp.getAnimation());
 
   }
 
@@ -177,13 +177,13 @@ public class AnimationModelImplTest {
   }
 
   @Test
-  public void testGetShapesNothingAdded(){
+  public void testGetShapesNothingAdded() {
     AnimationModelImpl imp = new AnimationModelImpl();
     assertEquals(0, imp.getShapes().size());
   }
 
   @Test
-  public void testGetShapesAdded(){
+  public void testGetShapesAdded() {
     AnimationModelImpl imp = new AnimationModelImpl();
 
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
@@ -198,7 +198,7 @@ public class AnimationModelImplTest {
   }
 
   @Test
-  public void testRemoveShape(){
+  public void testRemoveShape() {
     AnimationModelImpl imp = new AnimationModelImpl();
 
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,

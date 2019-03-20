@@ -35,7 +35,7 @@ public class TextView implements ITextView {
     this.width = width;
     this.out = out;
 
-    if(out == null) {
+    if (out == null) {
       throw new IllegalArgumentException("Appendable cannot be null");
     }
   }
@@ -59,10 +59,10 @@ public class TextView implements ITextView {
 
 
   /**
-   * Transmit an error message to the view, in case the command could not be processed correctly
+   * Transmit an error message to the view, in case the command could not be processed correctly.
    */
   @Override
-  public void showErrorMessage(String error) throws IllegalArgumentException{
+  public void showErrorMessage(String error) throws IllegalArgumentException {
     try {
       out.append(error);
     } catch (IOException e) {

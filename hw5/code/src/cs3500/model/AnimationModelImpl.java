@@ -2,7 +2,6 @@ package cs3500.model;
 
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.ArrayList;
 
 /**
@@ -32,7 +31,7 @@ public class AnimationModelImpl implements AnimationModel {
 
 
   /**
-   * Generates a new AnimationModelImpl based on a pre-established list of shapes
+   * Generates a new AnimationModelImpl based on a pre-established list of shapes.
    *
    * @param in the list of shapes to be used in the animation.
    */
@@ -80,17 +79,17 @@ public class AnimationModelImpl implements AnimationModel {
       s.getTweener(tick);
     }
   }
-@Override
-  public void addShapesToArray(Shapes s){
-    if (listOfShapes.containsKey(s.getName())){
+
+  @Override
+  public void addShapesToArray(Shapes s) {
+    if (listOfShapes.containsKey(s.getName())) {
       shapes.add(s);
-    }
-    else {
+    } else {
       throw new IllegalArgumentException("There already exists a shape with this name");
     }
   }
 
-@Override
+  @Override
   public ArrayList<Shapes> getShapes() {
     ArrayList<Shapes> copies = new ArrayList<>(this.listOfShapes.values());
     return copies;

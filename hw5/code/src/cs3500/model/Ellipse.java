@@ -16,7 +16,8 @@ public class Ellipse extends AShape {
    * @param name   the name of the ellipse
    */
 
-  public Ellipse(Position center, int height, int width, Color color, String name, boolean visible) {
+  public Ellipse(Position center, int height, int width, Color color,
+      String name, boolean visible) {
     super(center, height, width, color, name, visible);
     this.desc = "Ellipse";
   }

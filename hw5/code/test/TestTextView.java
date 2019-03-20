@@ -1,4 +1,3 @@
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import cs3500.animator.view.TextView;
@@ -10,13 +9,12 @@ import cs3500.model.Motion;
 import cs3500.model.Position;
 import cs3500.model.Rectangle;
 import cs3500.model.Size;
-import java.io.BufferedWriter;
 import org.junit.Test;
 
 /**
  * Tests for the text-based view.
  */
-public class testTextView {
+public class TestTextView {
 
   @Test (expected  = java.lang.IllegalArgumentException.class)
   public void testNullAppendable() {

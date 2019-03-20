@@ -151,6 +151,10 @@ public abstract class AShape implements Shapes {
   }
 
 
+  /**
+   * gets the tweener state for the shape at the desired tick.
+   * @param tick the tick for the tweener.
+   */
   public void getTweener(int tick) {
     int keyFrame = keyPoints.get(0);
     ArrayList<Animation> toBeDone;
@@ -189,7 +193,7 @@ public abstract class AShape implements Shapes {
   }
 
   @Override
-  public boolean isVisible(){
+  public boolean isVisible() {
     return this.visible;
   }
 

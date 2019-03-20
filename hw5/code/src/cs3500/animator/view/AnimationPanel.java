@@ -57,7 +57,7 @@ public class AnimationPanel extends JPanel {
   /**
    * This method updates the Hash of shapes to be drawn to its current state. Rather than pass in
    * the model, a copy of the lists to be drawn is passed in.
-   * @param in
+   * @param in the map of shapes to be added.
    */
   public void addShapes(LinkedHashMap<String, Shapes> in) {
     this.listOfShapes = (LinkedHashMap) in.clone();

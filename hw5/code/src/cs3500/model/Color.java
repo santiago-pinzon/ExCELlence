@@ -17,11 +17,11 @@ public class Color {
    * @param g represents the value for green
    * @param b represents the value for blue
    * @throws IllegalArgumentException if r < 0 or r > 255 because that is an invalid number for a
-   * color
+   *        color
    * @throws IllegalArgumentException if g < 0 or g > 255 because that is an invalid number for a
-   * color
+   *        color
    * @throws IllegalArgumentException if b < 0 or b > 255 because that is an invalid number for a
-   * color
+   *        color
    */
 
   public Color(int r, int g, int b) {

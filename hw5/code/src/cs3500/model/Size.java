@@ -21,10 +21,10 @@ public class Size extends AbstractAnimation {
 
   public Size(int startTime, int endTime, int height, int width) {
     super(startTime, endTime);
-    if(height < 0) {
+    if (height < 0) {
       throw new IllegalArgumentException("Cannot have a negative height");
     }
-    if(width < 0) {
+    if (width < 0) {
       throw new IllegalArgumentException("Cannot have a negative Width");
     }
     this.height = height;

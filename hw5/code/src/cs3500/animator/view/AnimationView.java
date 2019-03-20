@@ -1,10 +1,14 @@
 package cs3500.animator.view;
 
 import cs3500.model.AnimationModelImpl;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.Timer;
 
 /**
  * This is an implementation of the IAnimationView interface that uses Java Swing to draw the
@@ -14,7 +18,6 @@ import javax.swing.*;
 public class AnimationView implements IAnimationView {
 
   private AnimationPanel animationPanel;
-  private JScrollPane scrollPane;
   private AnimationModelImpl animation;
   private int tick; // keeps track of the current frame.
   private int speed;
@@ -42,7 +45,7 @@ public class AnimationView implements IAnimationView {
     frame.setLayout(new BorderLayout());
     animationPanel = new AnimationPanel();
     animationPanel.setOffset(animation.getX(), animation.getY());
-    scrollPane = new JScrollPane(animationPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+    JScrollPane scrollPane = new JScrollPane(animationPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
         JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
     scrollPane.setPreferredSize(new Dimension(animation.getWidth(), animation.getHeight()));
     scrollPane.setEnabled(true);
@@ -65,7 +68,7 @@ public class AnimationView implements IAnimationView {
    * This method represents the "loop" of the animation. It utilizes a timer, which is set to
    * loop every {@code speed} ms, and updates the shapes as necessary.
    */
-  public void Animate() {
+  public void animate() {
     Timer timer = new Timer(this.speed, new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -89,7 +92,7 @@ public class AnimationView implements IAnimationView {
   }
 
   /**
-   * This method displays a message to the user in the event that an error occurs
+   * This method displays a message to the user in the event that an error occurs.
    * @param error the message to be displayed
    */
   @Override

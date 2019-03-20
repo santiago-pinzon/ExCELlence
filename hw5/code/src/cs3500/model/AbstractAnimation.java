@@ -48,15 +48,16 @@ public abstract class AbstractAnimation implements Animation {
 
 
   /**
-   * Applies the animation to the shape
-   * @param shape the shape that is getting animated
+   * Applies the animation to the shape.
+   * @param shape the shape that is getting animated.
    */
   @Override
   public abstract void apply(Shapes shape);
 
   /**
+   * Calculates the tweener for the shape at a certain frame.
    * @param frame the frame of the animation, scaled to where 0 is the first frame of the
-   * animation.
+   *        animation.
    * @param s the shape upon which the tweener should be applied
    */
   @Override
