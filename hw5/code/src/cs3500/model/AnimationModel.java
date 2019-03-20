@@ -13,7 +13,7 @@ public interface AnimationModel {
    *
    * @param shape the shape being added to the list of shapes.
    * @throws IllegalArgumentException if a shape is already in the list of shapes with that shapes
-   * name.
+   *        name.
    */
 
   public void addShape(Shapes shape);

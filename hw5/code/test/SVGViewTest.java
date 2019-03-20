@@ -1,4 +1,3 @@
-import junit.framework.TestCase;
 
 import org.junit.Test;
 
@@ -61,7 +60,7 @@ public class SVGViewTest {
     SVGView svgView = new SVGView(1, a.getShapes(), out, 500, 700, a);
     svgView.output();
 
-    TestCase.assertEquals("<svg width=\"500\" height=\"700\" version=\"1.1\" " +
+    assertEquals("<svg width=\"500\" height=\"700\" version=\"1.1\" " +
         "xmlns=\"http://www.w3.org/2000/svg\">\n" +
         "\n" +
         "<rect id=\"R\" x=\"0\" y=\"0\" width=\"100\" height=\"100\" " +

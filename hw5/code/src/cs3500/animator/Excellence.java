@@ -27,6 +27,11 @@ import cs3500.animator.util.AnimationReader;
  */
 public class Excellence {
 
+  /**
+   * The main class for the Excellence animator.
+   * @param args the command line parameters.
+   * @throws IOException when unable to output.
+   */
   public static void main(String[] args) throws IOException {
 
     Readable r = new StringReader(String.join(" ", args));
