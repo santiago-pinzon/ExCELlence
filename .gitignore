@@ -2,7 +2,7 @@
 *.class
 *.xml
 workspace.xml
-
+.idea
 
 # Log file
 *.log
