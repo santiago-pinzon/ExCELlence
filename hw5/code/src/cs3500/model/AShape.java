@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 
+import javafx.animation.KeyFrame;
+
 /**
  * Represents an abstract class for shapes. The shapes which extend this class only differ in
  * their name and as a result, the majority of the code has been abstracted.
@@ -12,6 +14,7 @@ import java.util.HashMap;
 public abstract class AShape implements Shapes {
 
   private HashMap<Integer, ArrayList<Animation>> actions;
+  private HashMap<Integer, ArrayList<KeyFrame>> keyframes;
   private ArrayList<Integer> keyPoints;
   protected Position center;
   protected int height;
@@ -20,15 +23,17 @@ public abstract class AShape implements Shapes {
   protected String name;
   protected String desc;
   protected boolean visible;
+  protected int startTime;
+  protected int endTime;
 
   /**
    * Constructs an abstract shape.
    *
    * @param center the position of the shape
    * @param height the height of the shape
-   * @param width the width of the shape
-   * @param color the color of the shape
-   * @param name the name of the shape
+   * @param width  the width of the shape
+   * @param color  the color of the shape
+   * @param name   the name of the shape
    * @throws IllegalArgumentException if the height is <= 0
    * @throws IllegalArgumentException if the width is <= 0
    */
@@ -48,6 +53,9 @@ public abstract class AShape implements Shapes {
     this.actions = new HashMap<>();
     this.keyPoints = new ArrayList<>();
     this.visible = visible;
+    this.startTime = startTime;
+    this.endTime = endTime;
+    this.keyframes = new HashMap<>();
   }
 
 
@@ -82,10 +90,10 @@ public abstract class AShape implements Shapes {
     String out = "motion\t" + this.name + "\t";
 
     out += String.format("%-5s %s %-5s %-5s %s", key, this.center.toString(), this.height,
-        this.width, this.color.toString()) + "\t\t";
+            this.width, this.color.toString()) + "\t\t";
     this.performActions(key);
     out += String.format("%-5s %s %-5s %-5s %s", actions.get(key).get(0).getEndTime(),
-        this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
+            this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
 
     return out;
   }
@@ -101,13 +109,14 @@ public abstract class AShape implements Shapes {
     int key = animate.getStartTime();
 
     if (!keyPoints.contains(key)) {
-      if (keyPoints.size() > 0 && key < actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
+    /*  if (keyPoints.size() > 0 && key < actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
           .getEndTime()) {
         throw new IllegalArgumentException("Start time for new animation (" + key + ") does not "
             + "match up with end time for previous animation: " + actions
             .get(keyPoints.get(keyPoints.size() - 1)).get(0)
             .getEndTime());
       }
+      */
       keyPoints.add(key);
       Collections.sort(keyPoints);
     }
@@ -117,6 +126,99 @@ public abstract class AShape implements Shapes {
     }
 
     actions.get(key).add(animate);
+  }
+
+  @Override
+  public void addKeyFrame2(Animation animate) {
+    int key = animate.getStartTime();
+
+    if (!keyPoints.contains(key)) {
+    /*  if (keyPoints.size() > 0 && key < actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
+          .getEndTime()) {
+        throw new IllegalArgumentException("Start time for new animation (" + key + ") does not "
+            + "match up with end time for previous animation: " + actions
+            .get(keyPoints.get(keyPoints.size() - 1)).get(0)
+            .getEndTime());
+      }
+      */
+      keyPoints.add(key);
+      Collections.sort(keyPoints);
+    }
+
+    if (!keyframes.containsKey(key)) {
+      keyframes.put(key, new ArrayList<KeyFrame>());
+    }
+
+    actions.get(key).add(animate);
+  }
+
+
+  @Override
+  public void addKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b){
+    for (ArrayList<Animation> a : this.getAnimations()){
+      if (a.size() == 0){
+        this.addAction(new AnimationChangeTime(t, t + 1));
+      }
+      if (a.get(0).getStartTime() > t){
+        a.remove(0);
+        a.add(0, new AnimationVisible(t));
+        this.changeStartTime(t);
+//         a.set(1, a.get(1).changeStartTime(t));
+      }
+      if (a.get(a.size() - 1).getEndTime() < t){
+        this.changeEndTime(t);
+        this.addAction(new AnimationChangeAll(a.get(a.size() - 2).getEndTime(), t, w, h, new Position(x, y), new Color(r, g, b)));
+      }/*
+       for (Animation an : a){
+         if (an.getStartTime() == t || an.getEndTime() == t){
+           throw new IllegalArgumentException("error");
+         }
+*//*
+         if (an.getStartTime() < t && an.getEndTime() > t){
+           int start = an.getStartTime();
+           this.addAction(an.changeStartTime(t));
+           this.addAction(new AnimationChangeAll(start, t, w, h, new Position(x, y),  new Color(r, g, b)));
+         }
+
+       }
+*/
+}
+
+  }
+
+
+
+  @Override
+  public void removeKeyFrame(int t) {
+    for (ArrayList<Animation> a : this.getAnimations()) {
+      if (a.size() == 0) {
+        throw new IllegalArgumentException("no keyframes available");
+      }
+      if (startTime == t){
+        a.remove(0);
+        Animation temp = a.remove(0);
+        a.add(0, new AnimationVisible(temp.getEndTime()));
+      }
+      if (endTime == t){
+        a.remove(a.size() - 1);
+        Animation temp = a.remove(a.size() - 1);
+        a.add(new AnimationVisible(temp.getStartTime()));
+      }
+      for (int i = 0; i < a.size(); i ++){
+        Animation an = a.get(i);
+
+        if (an.getStartTime() == t){
+          a.remove(an);
+          try{
+            Animation temp = a.remove(i + 1);
+            this.addAction(temp.changeStartTime(t));
+          } catch(IndexOutOfBoundsException e){
+            this.changeEndTime(t);
+          }
+        }
+      }
+    }
+    throw new IllegalArgumentException("Not key frame");
   }
 
   @Override
@@ -188,7 +290,6 @@ public abstract class AShape implements Shapes {
 
   @Override
   public Collection<ArrayList<Animation>> getAnimations() {
-
     return this.actions.values();
   }
 
@@ -197,6 +298,28 @@ public abstract class AShape implements Shapes {
     return this.visible;
   }
 
+
+
+
+@Override
+public void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b){
+    this.removeKeyFrame(t);
+    this.addKeyFrame(t, x, y, w, h, r, g, b);
+}
+
+@Override
+  public void changeStartTime(int t){
+    this.startTime = t;
+}
+  @Override
+  public void changeEndTime(int t){
+    this.endTime = t;
+  }
+
+  @Override
+  public boolean getVisibility(){
+    return false;
+  }
 
 }
 

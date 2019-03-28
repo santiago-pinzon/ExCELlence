@@ -93,5 +93,20 @@ public interface Shapes {
   Collection<ArrayList<Animation>> getAnimations();
 
   boolean isVisible();
+
+  void addKeyFrame2(Animation animate);
+
+  void addKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
+
+
+  void changeEndTime(int t);
+
+  void changeStartTime(int t);
+
+  void removeKeyFrame(int t);
+
+  boolean getVisibility();
+
+  void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
 }
 

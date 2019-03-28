@@ -1,5 +1,9 @@
 package cs3500.animator.util;
 
+import java.util.LinkedHashMap;
+
+import cs3500.model.Shapes;
+
 /**
  * Represents the interface for an animationBuilder.
  * @param <Doc> something.
@@ -76,4 +80,6 @@ public interface AnimationBuilder<Doc> {
    */
   AnimationBuilder<Doc> addKeyframe(String name,
                                     int t, int x, int y, int w, int h, int r, int g, int b);
+
+  LinkedHashMap<String, Shapes> getHash();
 }

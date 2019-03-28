@@ -38,5 +38,7 @@ public interface Animation {
    */
   void applyTweener(int frame, Shapes s);
 
+  Animation changeStartTime(int i);
+
 
 }
