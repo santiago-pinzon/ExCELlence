@@ -224,14 +224,14 @@ public class EditorView extends JFrame implements IEditorView {
 
   public void slowDown() {
     if(this.speed > 1) {
-      this.speed /= 2;
+      this.speed *= 2;
     }
     this.timer.setDelay(1000/speed);
   }
 
   public void speedUp() {
     if(this.speed < 500) {
-      this.speed *= 2;
+      this.speed /= 2;
     }
     this.timer.setDelay (1000/this.speed);
   }
