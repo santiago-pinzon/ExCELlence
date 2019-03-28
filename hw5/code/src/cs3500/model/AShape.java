@@ -288,5 +288,9 @@ public void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int 
     return false;
   }
 
+  public int getEnd() {
+    return keyPoints.get(keyPoints.size() - 1);
+  }
+
 }
 
