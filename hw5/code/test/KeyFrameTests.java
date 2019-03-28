@@ -46,7 +46,11 @@ public class KeyFrameTests {
 
     animator.build();
 
+
     animator.addKeyframe("c", 5, 0, 0, 1, 1, 0, 0, 0);
+
+  //  animator.addKeyframe("c", 50, 0, 0, 1, 1, 0, 0, 0);
+
 
     animator.addKeyframe("r", 2, 200, 200, 1, 1, 0, 255, 0);
 
@@ -71,6 +75,10 @@ public class KeyFrameTests {
                     "motion c 20 200 100 60 120 0 255 0   45 200 100 60 120 0 255 0\n",
             a.toString());
 
+
   }
 }
+
+
+  }
 

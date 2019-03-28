@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.model.AnimationModelImpl;
 import cs3500.animator.view.IView;
+
 import cs3500.animator.view.EditorView;
 import cs3500.animator.view.TextView;
 import cs3500.animator.view.AnimationView;
@@ -77,7 +78,11 @@ public class Excellence {
         default:
 
           JFrame frame = new JFrame();
+
           frame.setPreferredSize(new Dimension(500, 500));
+
+          frame.setPreferredSize(new Dimension(100, 100));
+
           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
           JOptionPane.showMessageDialog(frame, "Invalid input",
                   "Error", JOptionPane.ERROR_MESSAGE);
@@ -113,6 +118,7 @@ public class Excellence {
         ((AnimationView) v).animate();
         break;
 
+
       case "svg":
 
         IView s = new SVGView(speed, model.getShapes(), a , model.getWidth(),
@@ -120,6 +126,7 @@ public class Excellence {
         ((SVGView) s).output();
         ((Closeable) a).close();
         break;
+
 
       case "edit":
         IView e = new EditorView();
@@ -129,6 +136,12 @@ public class Excellence {
       default:
         JFrame frame = new JFrame();
         frame.setPreferredSize(new Dimension(500, 500));
+
+
+      default:
+        JFrame frame = new JFrame();
+        frame.setPreferredSize(new Dimension(100, 100));
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JOptionPane.showMessageDialog(frame, "Invalid view type",
                 "Error", JOptionPane.ERROR_MESSAGE);

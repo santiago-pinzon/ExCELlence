@@ -14,7 +14,10 @@ import java.util.ArrayList;
 public class AnimationModelImpl implements AnimationModel {
 
   private ArrayList<Shapes> shapes;
+
   private LinkedHashMap<String, Shapes> listOfShapes;
+
+  protected LinkedHashMap<String, Shapes> listOfShapes;
   private int height;
   private int width;
   private int x;
@@ -115,6 +118,16 @@ public class AnimationModelImpl implements AnimationModel {
   public void removeShape(String name) {
     this.listOfShapes.remove(name);
   }
+
+
+  public int getLength() {
+    int max = 0;
+    for(Shapes shape: this.listOfShapes.values()) {
+      max = Math.max(max, shape.getEnd());
+    }
+    return max;
+  }
+
 }
 
 

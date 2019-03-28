@@ -94,7 +94,12 @@ public interface Shapes {
 
   boolean isVisible();
 
+
   void addKeyFrame2(Animation animate);
+
+  void addKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
+
+
 
   void addKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
 
@@ -108,5 +113,9 @@ public interface Shapes {
   boolean getVisibility();
 
   void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
+
+
+  int getEnd();
+
 }
 

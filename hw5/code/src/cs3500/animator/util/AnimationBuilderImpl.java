@@ -192,7 +192,10 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
         s.addKeyFrame(t, x, y, w, h, r, g, b);
         this.addMotion(s.getName(), t, s.getX(), s.getY(), s.getWidth(), s.getHeight(), s.getRed(), s.getGreen(), s.getBlue(),
                 t, x, y, w, h, r, g, b, true);
+
       } 
+
+      }
     }
     return this;
   }
