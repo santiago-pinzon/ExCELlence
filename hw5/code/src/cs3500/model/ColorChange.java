@@ -48,5 +48,10 @@ public class ColorChange extends AbstractAnimation {
     s.changeColor(new Color(fromR, fromG, fromB));
   }
 
+  @Override
+  public Animation changeStartTime(int i) {
+    return new ColorChange(i, endTime, color);
+  }
+
 }
 

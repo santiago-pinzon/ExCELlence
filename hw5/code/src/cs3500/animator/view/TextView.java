@@ -1,5 +1,6 @@
 package cs3500.animator.view;
 
+import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.model.AnimationModelImpl;
 import java.io.IOException;
 
@@ -14,6 +15,7 @@ public class TextView implements ITextView {
   private int width;
   private int height;
   private Appendable out;
+  private AnimationBuilderImpl builder;
 
 
   /**
@@ -40,6 +42,21 @@ public class TextView implements ITextView {
     }
   }
 
+  public TextView(AnimationBuilderImpl builder, int x, int y, int height, int width,
+                  Appendable out) {
+    this.animation = animation;
+    this.x = x;
+    this.y = y;
+    this.height = height;
+    this.width = width;
+    this.out = out;
+    this.builder = builder;
+
+    if(out == null) {
+      throw new IllegalArgumentException("Appendable cannot be null");
+    }
+  }
+
   /**
    * Generates the output for the textView. Appends the output to the desired appendable.
    * @throws IllegalArgumentException if unable to append to the appendable.
@@ -56,13 +73,27 @@ public class TextView implements ITextView {
     }
   }
 
+  public void render2() throws IllegalArgumentException{
+    try {
+      out.append(String.format("canvas %-3s %-3s %-3s %-3s\n", this.x, this.y, this.height,
+              this.width));
+      for (String key : this.builder.getHash().keySet()) {
+        out.append(this.builder.getHash().get(key).getFullDescription());
+      }
+    } catch (IOException e) {
+      throw new IllegalArgumentException("Unable to append to Appendable");
+    }
+  }
+
+
+
 
 
   /**
-   * Transmit an error message to the view, in case the command could not be processed correctly.
+   * Transmit an error message to the view, in case the command could not be processed correctly
    */
   @Override
-  public void showErrorMessage(String error) throws IllegalArgumentException {
+  public void showErrorMessage(String error) throws IllegalArgumentException{
     try {
       out.append(error);
     } catch (IOException e) {

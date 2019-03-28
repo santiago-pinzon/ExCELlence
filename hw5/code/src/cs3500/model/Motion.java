@@ -45,5 +45,10 @@ public class Motion extends AbstractAnimation {
 
   }
 
+  @Override
+  public Animation changeStartTime(int i) {
+    return new Motion(i, endTime, to);
+  }
+
 }
 

@@ -57,5 +57,10 @@ public class Size extends AbstractAnimation {
     s.changeSize(fromH, fromW);
   }
 
+  @Override
+  public Animation changeStartTime(int i) {
+    return new Size(i, endTime, height, width);
+  }
+
 }
 

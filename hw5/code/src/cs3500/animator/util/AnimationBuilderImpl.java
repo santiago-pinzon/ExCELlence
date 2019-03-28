@@ -24,6 +24,7 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
   private int height;
   LinkedHashMap<String, Shapes> listOfShapes = new LinkedHashMap<>();
   LinkedHashMap<String, String> shapesToBeInstantiated = new LinkedHashMap<>();
+  private int animationLength;
 
 
   /**
@@ -183,6 +184,22 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
   @Override
   public AnimationBuilder addKeyframe(String name, int t, int x, int y, int w, int h, int r, int g,
       int b) {
+    if (animationLength < t){
+      this.animationLength = t;
+    }
+    for (Shapes s : listOfShapes.values()){
+      if (s.getName().equals(name)){
+        s.addKeyFrame(t, x, y, w, h, r, g, b);
+        this.addMotion(s.getName(), t, s.getX(), s.getY(), s.getWidth(), s.getHeight(), s.getRed(), s.getGreen(), s.getBlue(),
+                t, x, y, w, h, r, g, b, true);
+      }
+    }
     return this;
+  }
+
+
+  @Override
+  public LinkedHashMap<String, Shapes> getHash() {
+    return listOfShapes;
   }
 }
