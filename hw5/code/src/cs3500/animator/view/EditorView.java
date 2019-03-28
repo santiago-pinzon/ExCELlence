@@ -1,5 +1,6 @@
 package cs3500.animator.view;
 
+import cs3500.model.AnimationModelImpl;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -10,16 +11,29 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
+import javax.swing.Timer;
 
 public class EditorView extends JFrame implements IEditorView, ActionListener {
 
   private JPanel mainPanel;
   private JScrollPane mainScrollPane;
   private JPanel toolPanel;
+  private AnimationPanel panel;
+  private AnimationModelImpl model;
+  private JButton play;
+  private JToggleButton loop;
+  private Timer timer;
 
   private int speed;
   private int tick;
+  private int direction = 1;
+  private int length;
+
+  //state booleans
+  private boolean paused = true;
+  private boolean looping = false;
 
 
   public EditorView() {
@@ -58,7 +72,7 @@ public class EditorView extends JFrame implements IEditorView, ActionListener {
     //add
     JButton add = new JButton(new ImageIcon("add.gif"));
     add.setToolTipText("Add");
-    add.setActionCommand("add");
+    add.setActionCommand("Add a shape or key");
     add.addActionListener(this);
     test.add(add);
 
@@ -68,6 +82,10 @@ public class EditorView extends JFrame implements IEditorView, ActionListener {
     delete.setActionCommand("delete");
     delete.addActionListener(this);
     test.add(delete);
+
+    //edit
+    JButton edit = new JButton(new ImageIcon("edit.gif"));
+    edit.setToolTipText("Edit a shape or keyframe");
 
     //slowdown
     JButton slowdown = new JButton(new ImageIcon("slowdown.gif"));
@@ -84,7 +102,7 @@ public class EditorView extends JFrame implements IEditorView, ActionListener {
     test.add(reverse);
 
     //play
-    JButton play = new JButton(new ImageIcon("Play.gif"));
+    play = new JButton(new ImageIcon("pause.gif"));
     play.setToolTipText("Play");
     play.setActionCommand("play");
     play.addActionListener(this);
@@ -104,10 +122,10 @@ public class EditorView extends JFrame implements IEditorView, ActionListener {
     speedup.addActionListener(this);
     test.add(speedup);
 
-    //loop
-    JButton loop = new JButton(new ImageIcon("loop.gif"));
+    //looping
+    loop = new JToggleButton(new ImageIcon("loop.gif"));
     loop.setToolTipText("Loop");
-    loop.setActionCommand("loop");
+    loop.setActionCommand("looping");
     loop.addActionListener(this);
     test.add(loop);
 
@@ -118,14 +136,14 @@ public class EditorView extends JFrame implements IEditorView, ActionListener {
     restart.addActionListener(this);
     test.add(restart);
 
-    test.setFloatable(false);
+    //test.setFloatable(false);
     test.setRollover(true);
 
     toolPanel.add(test);
     toolPanel.setMaximumSize(new Dimension(1000,100));
     this.mainPanel.add(toolPanel);
 
-    AnimationPanel panel = new AnimationPanel();
+    this.panel = new AnimationPanel();
 
     this.mainPanel.add(panel);
 
@@ -177,30 +195,48 @@ public class EditorView extends JFrame implements IEditorView, ActionListener {
       }
       case "slowdown": {
         System.out.println("slow down");
+        this.speed /= 2;
+        this.timer.setDelay(1000/speed);
         break;
       }
       case "reverse": {
         System.out.println("reverse");
+        this.direction = -1;
         break;
       }
       case "play": {
         System.out.println("play");
+        if(this.paused) {
+          this.play.setIcon(new ImageIcon("play.gif"));
+          this.paused = false;
+          this.timer.start();
+        }
+        else {
+          this.play.setIcon(new ImageIcon("pause.gif"));
+          this.paused = true;
+          this.timer.stop();
+        }
         break;
       }
       case "forward": {
         System.out.println("forward");
+        this.direction = 1;
         break;
       }
       case "speedup": {
         System.out.println("speed up");
+        this.speed *= 2;
+        this.timer.setDelay(1000/this.speed);
         break;
       }
-      case "loop": {
-        System.out.println("loop");
+      case "looping": {
+        System.out.println("looping");
+        this.looping = this.loop.isSelected();
         break;
       }
       case "restart": {
         System.out.println("restart");
+        this.tick = 1;
         break;
       }
       default : {
@@ -213,6 +249,23 @@ public class EditorView extends JFrame implements IEditorView, ActionListener {
   }
 
   public void animate() {
+    timer = new Timer(this.speed, e -> {
+      EditorView.this.model.updateShapes(tick);
+      EditorView.this.panel.addShapes(
+          EditorView.this.model.getHash());
+      EditorView.this.refresh();
+      if(this.looping) {
+        tick = (tick + this.direction) % this.length;
+      }
+      else {
+        tick += this.direction;// % by current time for looping animation
+      }
+    });
+    this.setVisible();
+    timer.start();
+  }
 
+  public void setModel(AnimationModelImpl in) {
+    this.model = in;
   }
 }
