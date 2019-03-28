@@ -39,7 +39,6 @@ public class EditorView extends JFrame implements IEditorView {
   private JButton restart;
 
 
-
   private Timer timer;
 
   private int speed;
@@ -152,7 +151,7 @@ public class EditorView extends JFrame implements IEditorView {
     test.setRollover(true);
 
     toolPanel.add(test);
-    toolPanel.setMaximumSize(new Dimension(1000,100));
+    toolPanel.setMaximumSize(new Dimension(1000, 100));
     this.mainPanel.add(toolPanel);
 
     this.panel = new AnimationPanel();
@@ -188,12 +187,21 @@ public class EditorView extends JFrame implements IEditorView {
       EditorView.this.panel.addShapes(
           EditorView.this.model.getHash());
       EditorView.this.refresh();
-      if(this.tick >= 0 && this.tick <= this.length) {
-        if (this.looping) {
-          tick = (tick + this.direction * this.pause) % this.length;
-        } else {
-          tick += (this.direction * this.pause);// % by current time for looping animation
+
+      if (this.looping) {
+        tick = (tick + this.direction * this.pause) % this.length;
+        if(this.tick == 1 && this.direction < 0) {
+          this.tick = this.length;
         }
+      } else {
+        tick += (this.direction * this.pause);// % by current time for looping animation
+      }
+
+      if(this.tick < 1) {
+        this.tick = 1;
+      }
+      if(this.tick > this.length) {
+        this.tick = this.length;
       }
       System.out.println(tick);
     });
@@ -224,16 +232,18 @@ public class EditorView extends JFrame implements IEditorView {
 
   public void slowDown() {
     if(this.speed > 1) {
-      this.speed *= 2;
+      this.speed /= 2;
     }
-    this.timer.setDelay(1000/speed);
+
+    this.timer.setDelay(1000 / speed);
   }
 
   public void speedUp() {
-    if(this.speed < 500) {
-      this.speed /= 2;
+    if (this.speed < 500) {
+      this.speed *= 2;
     }
-    this.timer.setDelay (1000/this.speed);
+
+    this.timer.setDelay(1000 / this.speed);
   }
 
   public void reverse() {
@@ -245,16 +255,15 @@ public class EditorView extends JFrame implements IEditorView {
   }
 
   public void play() {
-    if(this.paused) {
+    if (this.paused) {
       this.play.setIcon(new ImageIcon("play.gif"));
       this.paused = false;
       this.pause = 0;
-      if(this.started) {
+      if (this.started) {
         this.animate();
         this.started = true;
       }
-    }
-    else {
+    } else {
       this.play.setIcon(new ImageIcon("pause.gif"));
       this.paused = true;
       this.pause = 1;
@@ -263,6 +272,7 @@ public class EditorView extends JFrame implements IEditorView {
 
   public void restart() {
     this.tick = 1;
+    //this.model.updateShapes(1);
   }
 
   public void loop() {
