@@ -63,5 +63,8 @@ public abstract class AbstractAnimation implements Animation {
   @Override
   public abstract void applyTweener(int frame, Shapes s);
 
+  @Override
+  public abstract Animation changeStartTime(int i);
+
 
 }
