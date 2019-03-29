@@ -26,6 +26,7 @@ public interface IEditorView extends IView {
    * Starts the animation.
    */
   void animate();
+
   /**
    * Sets the model.
    *
@@ -39,16 +40,19 @@ public interface IEditorView extends IView {
    * @param listen represents the action listener
    */
   void addActionListener(ActionListener listen);
+
   /**
    * Slows down the animation.
    */
 
 
   void slowDown();
+
   /**
    * Speeds up the animation.
    */
   void speedUp();
+
   /**
    * Reverses the animation.
    */
@@ -68,6 +72,7 @@ public interface IEditorView extends IView {
    * Restarts the animation.
    */
   void restart();
+
   /**
    * Loops the animation.
    */
@@ -87,10 +92,12 @@ public interface IEditorView extends IView {
 
   /**
    * Gets the name of the shape.
+   *
    * @param in represents ActionListener
    * @return the name of the shape.
    */
   String getShapeName(ActionListener in);
+
   /**
    * Gets the number of a key frame.
    *
@@ -101,27 +108,38 @@ public interface IEditorView extends IView {
 
   /**
    * Gets the KeyFrame.
+   *
    * @return Keyframe
    */
   KeyFrame getKeyFrame();
 
   /**
    * Gets the shape type.
+   *
    * @return string of the shape type
    */
   String getShapeType();
 
   /**
    * Gets the name of the shape to be added.
+   *
    * @return the string of the shape name
    */
   String getShapeNameToBeAdded();
 
   /**
    * Get the selected file.
-   * @return the file being selected 
+   *
+   * @return the file being selected
    */
   File saveFileGetter();
+
+  /**
+   * Get the number of keyFrames to be added.
+   *
+   * @return the number of frames.
+   */
+  int getNumberOfKeyFrames();
 }
 
 

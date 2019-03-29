@@ -1,11 +1,13 @@
 package cs3500.animator.view;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.LinkedHashMap;
 
-import javax.swing.*;
-
 import cs3500.model.Shapes;
+import javax.swing.JPanel;
 
 
 /**

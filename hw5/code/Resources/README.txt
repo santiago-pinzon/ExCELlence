@@ -39,3 +39,8 @@ ultimately played in a browser. On the other hand, the AnimationView class displ
  "text", or "SVG"). The command -out specifies the output file; if none is provided, it will default
   to System.out. Lastly the command -speed is used to set the simulation speed of the animation in
   ms.
+
+MARCH 29, 2019
+In this new version of ExCeLlence we have added the "Editor View". This view, accessible via the view option "edit" allows the user to manipulate the animation while running. The user is able to load, save, as well as edit any animation file of their choice. The file simply needs to be formatted in the same format as used in previous versions in order to load. (Currently only the .txt format is supported for saving the animation) Once the animation is loaded and running, the user has the choice of several playback options. He/She can control the speed and direction of the animation, as well as loop, restart, and pause the animation. All these functions are easily controllable from the convenient toolbar. 
+Also new with this update is the addition of keyframes. These represent the state of an object at any point in time and the animation smoothly "tweens" between these keyframes to create the animation.
+Not only can the user manipulate and delete currently existing shapes, they can also add as many as they desire. To do so, the user only has to select which type of shape to add, and enter at least two keyframes for the new shape. If the user wants to add further keyframes they can do so by selecting the keyframe option from the add menu and the desired shape. Additionally, to limit the coupling between the view and the model, there is a controller, which links the two and handles any interaction. 

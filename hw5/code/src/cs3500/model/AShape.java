@@ -30,12 +30,9 @@ public abstract class AShape implements Shapes {
    *
    * @param center the position of the shape
    * @param height the height of the shape
-   * @param width  the width of the shape
-   * @param color  the color of the shape
-   * @param name   the name of the shape
-   * @param width  the width of the shape
-   * @param color  the color of the shape
-   * @param name   the name of the shape
+   * @param width the width of the shape
+   * @param color the color of the shape
+   * @param name the name of the shape
    * @throws IllegalArgumentException if the height is <= 0
    * @throws IllegalArgumentException if the width is <= 0
    */
@@ -106,14 +103,6 @@ public abstract class AShape implements Shapes {
     int key = animate.getStartTime();
 
     if (!keyPoints.contains(key)) {
-    /*  if (keyPoints.size() > 0 && key < actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
-          .getEndTime()) {
-        throw new IllegalArgumentException("Start time for new animation (" + key + ") does not "
-            + "match up with end time for previous animation: " + actions
-            .get(keyPoints.get(keyPoints.size() - 1)).get(0)
-            .getEndTime());
-      }
-      */
       keyPoints.add(key);
       Collections.sort(keyPoints);
     }
@@ -212,8 +201,6 @@ public abstract class AShape implements Shapes {
 
     }
   }
-
-
 
 
   @Override

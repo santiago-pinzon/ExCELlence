@@ -1,6 +1,7 @@
 package cs3500.animator;
 
-import java.awt.*;
+import cs3500.animator.controller.Controller;
+import java.awt.Dimension;
 import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.FileReader;
@@ -8,9 +9,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.Scanner;
-
-import javax.swing.*;
-
 import cs3500.animator.util.AnimationBuilder;
 import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.animator.util.AnimationReader;
@@ -20,6 +18,8 @@ import cs3500.animator.view.IView;
 import cs3500.animator.view.SVGView;
 import cs3500.animator.view.TextView;
 import cs3500.model.AnimationModelImpl;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -86,7 +86,7 @@ public class Excellence {
 
           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
           JOptionPane.showMessageDialog(frame, "Invalid input",
-                  "Error", JOptionPane.ERROR_MESSAGE);
+              "Error", JOptionPane.ERROR_MESSAGE);
       }
     }
 
@@ -107,7 +107,7 @@ public class Excellence {
     switch (viewType) {
       case "text":
         IView t = new TextView(model, model.getX(), model.getY(), model.getHeight(),
-                model.getWidth(), a);
+            model.getWidth(), a);
         ((TextView) t).render();
         ((Closeable) a).close();
         break;
@@ -118,19 +118,16 @@ public class Excellence {
         ((AnimationView) v).animate();
         break;
 
-
       case "svg":
 
         IView s = new SVGView(speed, model.getShapes(), a, model.getWidth(),
-                model.getHeight(), model);
+            model.getHeight(), model);
         ((SVGView) s).output();
         ((Closeable) a).close();
         break;
 
-
       case "edit":
-        IView e = new EditorView();
-        ((EditorView) e).setVisible();
+        Controller controllerOne = new Controller(new EditorView(), new AnimationModelImpl());
         break;
 
       default:
@@ -139,7 +136,7 @@ public class Excellence {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JOptionPane.showMessageDialog(frame, "Invalid view type",
-                "Error", JOptionPane.ERROR_MESSAGE);
+            "Error", JOptionPane.ERROR_MESSAGE);
 
 
     }

@@ -15,8 +15,9 @@ public class KeyFrame {
   private int b;
 
   /**
-   * Constructs a keyFrame with a given key value, x value, y value, width, height, red value,
-   * green value, blue value.
+   * Constructs a keyFrame with a given key value, x value, y value, width, height, red value, green
+   * value, blue value.
+   *
    * @param key represents a key value
    * @param x represents x value
    * @param y represents y value
@@ -38,8 +39,9 @@ public class KeyFrame {
   }
 
   /**
-   * Consstructs a keyFrame that takes two keyFrames and a ratio, it creates a tweener keyframe
-   * that represents the intermediate state.
+   * Consstructs a keyFrame that takes two keyFrames and a ratio, it creates a tweener keyframe that
+   * represents the intermediate state.
+   *
    * @param key first keyframe
    * @param key2 second keyframe
    * @param ratio distance between the two key frames
@@ -59,6 +61,7 @@ public class KeyFrame {
 
   /**
    * Turns the keyframe into a string.
+   *
    * @return the key frame as a string in the correct format
    */
   public String toString() {
@@ -68,6 +71,7 @@ public class KeyFrame {
 
   /**
    * Gets the key value of the keyframe.
+   *
    * @return key value of the keyframe
    */
   public int getKey() {
@@ -76,48 +80,61 @@ public class KeyFrame {
 
   /**
    * Gets the x value of the keyframe.
+   *
    * @return x value of the keyframe
    */
   public int getX() {
     return x;
   }
+
   /**
    * Gets the y value of the keyframe.
+   *
    * @return y value of the keyframe
    */
   public int getY() {
     return y;
   }
+
   /**
    * Gets the height of the keyframe.
+   *
    * @return height of the keyframe
    */
   public int getH() {
     return h;
   }
+
   /**
    * Gets the width of the keyframe.
+   *
    * @return width of the keyframe
    */
   public int getW() {
     return w;
   }
+
   /**
    * Gets the red value of the keyframe.
+   *
    * @return red value of the keyframe
    */
   public int getR() {
     return r;
   }
+
   /**
    * Gets the green value of the keyframe.
+   *
    * @return green value of the keyframe
    */
   public int getG() {
     return g;
   }
+
   /**
    * Gets the blue value of the keyframe.
+   *
    * @return blue value of the keyframe
    */
   public int getB() {

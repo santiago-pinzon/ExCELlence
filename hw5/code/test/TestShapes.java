@@ -1,10 +1,6 @@
-import cs3500.model.Animation;
+
 import cs3500.model.Rectangle;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 
 import cs3500.model.Color;
 import cs3500.model.Ellipse;
@@ -84,7 +80,7 @@ public class TestShapes {
   }
 
   @Test
-  public void testGetDescription(){
+  public void testGetDescription() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Ellipse(p, 2, 3, c, "Ellipse", true);
@@ -92,7 +88,7 @@ public class TestShapes {
   }
 
   @Test
-  public void testGetX(){
+  public void testGetX() {
     Position p = new Position(3, 3);
     Color c = new Color(255, 0, 0);
     Shapes s = new Ellipse(p, 2, 3, c, "Ellipse", true);
@@ -100,7 +96,7 @@ public class TestShapes {
   }
 
   @Test
-  public void testGetY(){
+  public void testGetY() {
     Position p = new Position(3, 7);
     Color c = new Color(255, 0, 0);
     Shapes s = new Ellipse(p, 2, 3, c, "Ellipse", true);
@@ -138,6 +134,7 @@ public class TestShapes {
     Shapes s = new Ellipse(p, 2, 3, c, "Ellipse", true);
     assertEquals(0, s.getBlue());
   }
+
   @Test
   public void testGetGreen() {
     Position p = new Position(3, 7);
@@ -146,14 +143,13 @@ public class TestShapes {
     assertEquals(100, s.getGreen());
   }
 
- @Test
-  public void testIsVisible(){
-   Position p = new Position(3, 7);
-   Color c = new Color(255, 100, 0);
-   Shapes s = new Ellipse(p, 2, 3, c, "Ellipse", true);
-   assertEquals(true, s.isVisible());
- }
-
+  @Test
+  public void testIsVisible() {
+    Position p = new Position(3, 7);
+    Color c = new Color(255, 100, 0);
+    Shapes s = new Ellipse(p, 2, 3, c, "Ellipse", true);
+    assertEquals(true, s.isVisible());
+  }
 
 
 }

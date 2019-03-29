@@ -1,4 +1,4 @@
-package cs3500.animator.Controller;
+package cs3500.animator.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -58,17 +58,6 @@ public class Controller implements IController, ActionListener {
   @Override
   public void removeShape(String shape) {
     this.model.removeShape(shape);
-
-  }
-
-  @Override
-  public void addKeyFrame(int key) {
-
-  }
-
-  @Override
-  public void removeKeyFrame() {
-
   }
 
 

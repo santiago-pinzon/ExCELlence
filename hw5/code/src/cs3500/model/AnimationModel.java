@@ -52,9 +52,9 @@ public interface AnimationModel {
   ArrayList<Shapes> getShapes();
 
   /**
-   * Adds shapes to the arrayList of shapes
+   * Adds shapes to the arrayList of shapes.
    *
-   * @param s shape being added to the arraylist
+   * @param s shape being added to the arraylist.
    */
   void addShapesToArray(Shapes s);
 

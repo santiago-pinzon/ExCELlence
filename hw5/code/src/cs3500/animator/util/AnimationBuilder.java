@@ -1,9 +1,5 @@
 package cs3500.animator.util;
 
-import java.util.LinkedHashMap;
-
-import cs3500.model.Shapes;
-
 /**
  * Represents the interface for an animationBuilder.
  * @param <Doc> something.

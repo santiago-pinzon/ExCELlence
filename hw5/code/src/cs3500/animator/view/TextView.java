@@ -1,8 +1,6 @@
 package cs3500.animator.view;
 
 import java.io.IOException;
-
-import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.model.AnimationModelImpl;
 
 /**
@@ -64,7 +62,7 @@ public class TextView implements ITextView {
 
 
   /**
-   * Transmit an error message to the view, in case the command could not be processed correctly
+   * Transmit an error message to the view, in case the command could not be processed correctly.
    */
   @Override
   public void showErrorMessage(String error) throws IllegalArgumentException {

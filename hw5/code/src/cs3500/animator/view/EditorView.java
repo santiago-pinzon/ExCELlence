@@ -25,13 +25,6 @@ import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
-
-
-import java.awt.*;
-import java.awt.event.ActionListener;
-import java.io.File;
-
-import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -39,9 +32,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class EditorView extends JFrame implements IEditorView {
 
-  private JPanel mainPanel;
-  private JScrollPane mainScrollPane;
-  private JPanel toolPanel;
   private AnimationPanel panel;
   private ROAnimationModel model;
   private JButton play;
@@ -78,6 +68,8 @@ public class EditorView extends JFrame implements IEditorView {
    */
   public EditorView() {
     super();
+
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.direction = 1;
     this.tick = 1;
 
@@ -86,14 +78,14 @@ public class EditorView extends JFrame implements IEditorView {
     setTitle("Excellence");
     setSize(1000, 1000);
 
-    mainPanel = new JPanel();
+    JPanel mainPanel = new JPanel();
     //for elements to be arranged vertically within this panel
     mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
     //scroll bars around this main panel
-    mainScrollPane = new JScrollPane(mainPanel);
+    JScrollPane mainScrollPane = new JScrollPane(mainPanel);
     add(mainScrollPane);
 
-    toolPanel = new JPanel();
+    JPanel toolPanel = new JPanel();
     toolPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
     //toolbar
@@ -182,11 +174,11 @@ public class EditorView extends JFrame implements IEditorView {
 
     toolPanel.add(test);
     toolPanel.setMaximumSize(new Dimension(1000, 100));
-    this.mainPanel.add(toolPanel);
+    mainPanel.add(toolPanel);
 
     this.panel = new AnimationPanel();
 
-    this.mainPanel.add(panel);
+    mainPanel.add(panel);
 
 
   }
@@ -208,16 +200,20 @@ public class EditorView extends JFrame implements IEditorView {
    */
   @Override
   public void showErrorMessage(String error) {
-
+    JOptionPane pane = new JOptionPane(error);
+    pane.setVisible(true);
   }
 
 
-@Override
+  /**
+   * Runs the animation.
+   */
+  @Override
   public void animate() {
     timer = new Timer(this.speed, e -> {
       EditorView.this.model.updateShapes(tick);
       EditorView.this.panel.addShapes(
-              EditorView.this.model.getHash());
+          EditorView.this.model.getHash());
       EditorView.this.refresh();
 
       if (this.looping) {
@@ -242,6 +238,10 @@ public class EditorView extends JFrame implements IEditorView {
   }
 
 
+  /**
+   * Updates the model stored in the view to be a readOnly copy of the model.
+   * @param in the ROAnimationModel being set.
+   */
   @Override
   public void setModel(ROAnimationModel in) {
     this.model = in;
@@ -291,7 +291,7 @@ public class EditorView extends JFrame implements IEditorView {
     this.direction = -1;
   }
 
- @Override
+  @Override
   public void forward() {
     this.direction = 1;
   }
@@ -299,6 +299,10 @@ public class EditorView extends JFrame implements IEditorView {
   @Override
   public void play() {
     if (this.paused) {
+      if (this.started = false) {
+        this.animate();
+        this.started = true;
+      }
       this.play.setIcon(new ImageIcon("play.gif"));
       this.paused = false;
       this.pause = 0;
@@ -330,7 +334,7 @@ public class EditorView extends JFrame implements IEditorView {
     File f = null;
     final JFileChooser fchooser = new JFileChooser(".");
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
-            "Animation files", "txt");
+        "Animation files", "txt");
     fchooser.setFileFilter(filter);
     int retvalue = fchooser.showOpenDialog(EditorView.this);
     if (retvalue == JFileChooser.APPROVE_OPTION) {
@@ -352,13 +356,13 @@ public class EditorView extends JFrame implements IEditorView {
     }
 
     String s = (String) JOptionPane.showInputDialog(
-            this,
-            "Please pick a shape",
-            "Shape Picker",
-            JOptionPane.PLAIN_MESSAGE,
-            new ImageIcon(),
-            possibilities,
-            "");
+        this,
+        "Please pick a shape",
+        "Shape Picker",
+        JOptionPane.PLAIN_MESSAGE,
+        new ImageIcon(),
+        possibilities,
+        "");
 
     return s;
 
@@ -372,13 +376,13 @@ public class EditorView extends JFrame implements IEditorView {
     }
 
     int s = (int) JOptionPane.showInputDialog(
-            this,
-            "Please pick a key frame",
-            "Key Frame Picker",
-            JOptionPane.PLAIN_MESSAGE,
-            new ImageIcon(),
-            possibilities,
-            "");
+        this,
+        "Please pick a key frame",
+        "Key Frame Picker",
+        JOptionPane.PLAIN_MESSAGE,
+        new ImageIcon(),
+        possibilities,
+        "");
 
     return s;
 
@@ -386,18 +390,16 @@ public class EditorView extends JFrame implements IEditorView {
 
   @Override
   public KeyFrame getKeyFrame() {
-    KeyFrame key = new KeyFrame(0,0,0,0,0,0,0,0);
+    KeyFrame key = new KeyFrame(0, 0, 0, 0, 0, 0, 0, 0);
 
     JTextField tField = new JTextField(5);
     JTextField xField = new JTextField(5);
     JTextField yField = new JTextField(5);
     JTextField wField = new JTextField(5);
     JTextField hField = new JTextField(5);
-    JSpinner rField = new JSpinner(new SpinnerNumberModel(128,0,255,1));
-    JSpinner gField = new JSpinner(new SpinnerNumberModel(128,0,255,1));
-    JSpinner bField = new JSpinner(new SpinnerNumberModel(128,0,255,1));
-
-
+    JSpinner rField = new JSpinner(new SpinnerNumberModel(128, 0, 255, 1));
+    JSpinner gField = new JSpinner(new SpinnerNumberModel(128, 0, 255, 1));
+    JSpinner bField = new JSpinner(new SpinnerNumberModel(128, 0, 255, 1));
 
     JPanel myPanel = new JPanel();
     myPanel.add(new JLabel("t:"));
@@ -441,11 +443,11 @@ public class EditorView extends JFrame implements IEditorView {
     return key;
   }
 
-@Override
+  @Override
   public String getShapeType() {
     Object[] possibilities = {"Rectangle", "Ellipse", "KeyFrame"};
 
-    String s = (String)JOptionPane.showInputDialog(
+    String s = (String) JOptionPane.showInputDialog(
         this,
         "Please choose what type of shape to add",
         "Shape Adder",
@@ -456,10 +458,11 @@ public class EditorView extends JFrame implements IEditorView {
     return s;
   }
 
+  @Override
   public int getNumberOfKeyFrames() {
-    Object[] possibilities = {2,3,4,5};
+    Object[] possibilities = {2, 3, 4, 5};
 
-    int s = (int)JOptionPane.showInputDialog(
+    int s = (int) JOptionPane.showInputDialog(
         this,
         "Please pick how many Key Frames to add",
         "Number of Key Frames",
@@ -478,7 +481,6 @@ public class EditorView extends JFrame implements IEditorView {
     JPanel myPanel = new JPanel();
     myPanel.add(new JLabel("Name:"));
     myPanel.add(nameField);
-
 
     int result = JOptionPane.showConfirmDialog(null, myPanel,
         "Please enter the desired name for the new shape", JOptionPane.OK_CANCEL_OPTION);

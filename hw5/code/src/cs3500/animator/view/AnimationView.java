@@ -1,12 +1,16 @@
 package cs3500.animator.view;
 
-import java.awt.*;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
-
 import cs3500.model.AnimationModelImpl;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.Timer;
 
 /**
  * This is an implementation of the IAnimationView interface that uses Java Swing to draw the

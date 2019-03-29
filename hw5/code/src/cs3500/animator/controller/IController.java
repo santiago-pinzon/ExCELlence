@@ -1,4 +1,4 @@
-package cs3500.animator.Controller;
+package cs3500.animator.controller;
 
 import cs3500.model.Shapes;
 
@@ -27,17 +27,6 @@ public interface IController {
    */
   void removeShape(String shape);
 
-  /**
-   * Adds a keyFrame to the model.
-   *
-   * @param key value of the keyframe
-   */
-  void addKeyFrame(int key);
-
-  /**
-   * Removes a keyframe from the model.
-   */
-  void removeKeyFrame();
 
 
 }
