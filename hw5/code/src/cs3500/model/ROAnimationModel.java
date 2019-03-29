@@ -39,11 +39,6 @@ public class ROAnimationModel extends AnimationModelImpl {
   }
 
   @Override
-  public ArrayList<Shapes> getShapes() {
-    throw new UnsupportedOperationException("This method is not allowed");
-  }
-
-  @Override
   public void removeShape(String name) {
     throw new UnsupportedOperationException("This method is not allowed");
   }
