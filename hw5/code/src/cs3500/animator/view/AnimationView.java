@@ -66,7 +66,7 @@ public class AnimationView implements IAnimationView {
    * This method represents the "loop" of the animation. It utilizes a timer, which is set to loop
    * every {@code speed} ms, and updates the shapes as necessary.
    */
-  void animate() {
+  public void animate() {
     Timer timer = new Timer(this.speed, new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {

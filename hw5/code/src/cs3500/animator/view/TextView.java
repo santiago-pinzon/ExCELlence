@@ -16,7 +16,6 @@ public class TextView implements ITextView {
   private int width;
   private int height;
   private Appendable out;
-  private AnimationBuilderImpl builder;
 
 
   /**

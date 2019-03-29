@@ -190,7 +190,7 @@ public class EditorView extends JFrame implements IEditorView {
    * Starts the animation.
    */
 
-  void animate() {
+  public void animate() {
     timer = new Timer(this.speed, e -> {
       EditorView.this.model.updateShapes(tick);
       EditorView.this.panel.addShapes(
@@ -223,7 +223,7 @@ public class EditorView extends JFrame implements IEditorView {
    *
    * @param in the ROAnimationModel being set
    */
-  void setModel(ROAnimationModel in) {
+  public void setModel(ROAnimationModel in) {
     this.model = in;
     this.length = model.getLength();
     System.out.println("Updated model to have shapes: " + this.model.getHash().values().size());
@@ -234,7 +234,7 @@ public class EditorView extends JFrame implements IEditorView {
    *
    * @param listen represents the action listener
    */
-  void addActionListener(ActionListener listen) {
+  public void addActionListener(ActionListener listen) {
     restart.addActionListener(listen);
     loop.addActionListener(listen);
     speedup.addActionListener(listen);
@@ -252,7 +252,7 @@ public class EditorView extends JFrame implements IEditorView {
   /**
    * Slows down the animation.
    */
-  void slowDown() {
+  public void slowDown() {
     if (this.speed > 1) {
       this.speed /= 2;
     }
@@ -263,7 +263,7 @@ public class EditorView extends JFrame implements IEditorView {
   /**
    * Speeds up the animation.
    */
-  void speedUp() {
+  public void speedUp() {
     if (this.speed < 500) {
       this.speed *= 2;
     }
@@ -274,21 +274,21 @@ public class EditorView extends JFrame implements IEditorView {
   /**
    * Reverses the animation.
    */
-  void reverse() {
+  public void reverse() {
     this.direction = -1;
   }
 
   /**
    * Moves the animation forward.
    */
-  void forward() {
+  public void forward() {
     this.direction = 1;
   }
 
   /**
    * Plays the animation.
    */
-  void play() {
+  public void play() {
     if (this.paused) {
       this.play.setIcon(new ImageIcon("play.gif"));
       this.paused = false;
@@ -307,7 +307,7 @@ public class EditorView extends JFrame implements IEditorView {
   /**
    * Restarts the animation.
    */
-  void restart() {
+  public void restart() {
     this.tick = 1;
     this.updateCounter();
   }
@@ -315,7 +315,7 @@ public class EditorView extends JFrame implements IEditorView {
   /**
    * Loops the animation.
    */
-  void loop() {
+  public void loop() {
     this.looping = this.loop.isSelected();
   }
 
@@ -324,7 +324,7 @@ public class EditorView extends JFrame implements IEditorView {
    *
    * @return file
    */
-  File getFile() {
+  public File getFile() {
     File f = null;
     final JFileChooser fchooser = new JFileChooser(".");
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -340,7 +340,7 @@ public class EditorView extends JFrame implements IEditorView {
   /**
    * Updates the counter.
    */
-  void updateCounter() {
+  public void updateCounter() {
     this.tickButton.setText("" + this.tick + "/" + this.length);
   }
 
@@ -350,7 +350,7 @@ public class EditorView extends JFrame implements IEditorView {
    * @param in represents the actionlistener
    * @return name of the shape
    */
-  String getShapeName(ActionListener in) {
+  public String getShapeName(ActionListener in) {
     Object[] possibilities = new Object[this.model.getShapes().size()];
     for (int i = 0; i < this.model.getShapes().size(); i++) {
       possibilities[i] = this.model.getShapes().get(i).getName();
@@ -375,7 +375,7 @@ public class EditorView extends JFrame implements IEditorView {
    * @param name represents the name of the model
    * @return the number of a key frame
    */
-  int getKeyFrameNumber(String name) {
+  public int getKeyFrameNumber(String name) {
     Object[] possibilities = new Object[this.model.getHash().get(name).getKeyPoints().size()];
     for (int i = 0; i < this.model.getHash().get(name).getKeyPoints().size(); i++) {
       possibilities[i] = this.model.getHash().get(name).getKeyPoints().get(i);

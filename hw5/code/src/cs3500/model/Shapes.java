@@ -208,6 +208,10 @@ public interface Shapes {
    */
   void setTweener(KeyFrame frame);
 
+  /**
+   * Gets the key points of the shape.
+   * @return an arraylist of the key points of the shape
+   */
   ArrayList<Integer> getKeyPoints();
 
 }

@@ -261,6 +261,7 @@ public abstract class AShape implements Shapes {
     this.color = new Color(frame.getR(), frame.getG(), frame.getB());
   }
 
+  @Override
   public ArrayList<Integer> getKeyPoints() {
     return this.keyPoints;
   }
