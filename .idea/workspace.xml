@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60ea4cf9-5e96-4550-97e5-21b6520804a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/test/TestTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/test/TestTextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5/code/test/TestKeyFrames.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/test/TestKeyFrames.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,22 +15,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java">
+        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3163">
-              <caret line="211" column="38" selection-start-line="211" selection-start-column="38" selection-end-line="211" selection-end-column="38" />
+            <state relative-caret-position="185">
+              <caret line="125" column="64" selection-start-line="125" selection-start-column="64" selection-end-line="125" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/test/TestShapes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1542">
-              <caret line="156" selection-start-line="156" selection-end-line="156" />
             </state>
           </provider>
         </entry>
@@ -46,22 +38,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="62" column="6" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+            <state relative-caret-position="344">
+              <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hw5/code/test/TestKeyFrames.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1260">
+              <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationBuilderImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="103" selection-start-line="103" selection-end-line="103" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/hw5/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -101,20 +101,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/test/simple-example-with-loopback.svg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
+        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1075">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            <state relative-caret-position="466">
+              <caret line="537" lean-forward="true" selection-start-line="537" selection-end-line="537" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw5/code/test/simple-example-with-loopback.svg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -166,14 +166,15 @@
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/IEditorView.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Position.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/TestShapes.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/SVGViewTest.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/TextView.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/TestTextView.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java" />
+        <option value="$PROJECT_DIR$/hw5/code/test/TestKeyFrames.java" />
       </list>
     </option>
   </component>
@@ -200,6 +201,12 @@
               <item name="ExCELlence" type="b2602c69:ProjectViewProjectNode" />
               <item name="ExCELlence" type="462c0819:PsiDirectoryNode" />
               <item name="hw5" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ExCELlence" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExCELlence" type="462c0819:PsiDirectoryNode" />
+              <item name="hw5" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ExCELlence" type="b2602c69:ProjectViewProjectNode" />
@@ -290,7 +297,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553895601976" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553896482219" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -311,29 +318,44 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestTextView.testMovementAnimation">
-    <configuration name="SVGViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.EDITORTEST">
+    <configuration name="EDITORTEST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs3500.animator.view.EDITORTEST" />
       <module name="ExCELlence" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SVGViewTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs3500.animator.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestShapes.testGetEnd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestKeyFrames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExCELlence" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestShapes" />
-      <option name="METHOD_NAME" value="testGetEnd" />
+      <option name="MAIN_CLASS_NAME" value="TestKeyFrames" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestKeyFrames.testKeyFrameConstructor1ToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExCELlence" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestKeyFrames" />
+      <option name="METHOD_NAME" value="testKeyFrameConstructor1ToString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTextView" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestKeyFrames.testKeyFrameConstructor2ToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExCELlence" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestTextView" />
+      <option name="MAIN_CLASS_NAME" value="TestKeyFrames" />
+      <option name="METHOD_NAME" value="testKeyFrameConstructor2ToString" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -348,30 +370,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTextView.testOneAnimation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ExCELlence" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestTextView" />
-      <option name="METHOD_NAME" value="testOneAnimation" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.TestShapes.testGetEnd" />
-      <item itemvalue="JUnit.TestTextView" />
       <item itemvalue="JUnit.TestTextView.testMovementAnimation" />
-      <item itemvalue="JUnit.SVGViewTest" />
-      <item itemvalue="JUnit.TestTextView.testOneAnimation" />
+      <item itemvalue="JUnit.TestKeyFrames.testKeyFrameConstructor1ToString" />
+      <item itemvalue="JUnit.TestKeyFrames.testKeyFrameConstructor2ToString" />
+      <item itemvalue="JUnit.TestKeyFrames" />
+      <item itemvalue="Application.EDITORTEST" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EDITORTEST" />
+        <item itemvalue="JUnit.TestKeyFrames" />
+        <item itemvalue="JUnit.TestKeyFrames.testKeyFrameConstructor2ToString" />
+        <item itemvalue="JUnit.TestKeyFrames.testKeyFrameConstructor1ToString" />
         <item itemvalue="JUnit.TestTextView.testMovementAnimation" />
-        <item itemvalue="JUnit.TestTextView.testOneAnimation" />
-        <item itemvalue="JUnit.SVGViewTest" />
-        <item itemvalue="JUnit.TestTextView" />
-        <item itemvalue="JUnit.TestShapes.testGetEnd" />
       </list>
     </recent_temporary>
   </component>
@@ -391,39 +403,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestTextView_testMovementAnimation - 2019.03.29 at 17h 17m 26s.xml">
-      <configuration name="TestTextView.testMovementAnimation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestTextView_testMovementAnimation - 2019.03.29 at 17h 18m 29s.xml">
-      <configuration name="TestTextView.testMovementAnimation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SVGViewTest - 2019.03.29 at 17h 20m 01s.xml">
-      <configuration name="SVGViewTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestTextView_testOneAnimation - 2019.03.29 at 17h 20m 39s.xml">
-      <configuration name="TestTextView.testOneAnimation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestTextView_testMovementAnimation - 2019.03.29 at 17h 22m 42s.xml">
-      <configuration name="TestTextView.testMovementAnimation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestTextView_testMovementAnimation - 2019.03.29 at 17h 28m 58s.xml">
-      <configuration name="TestTextView.testMovementAnimation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestTextView_testMovementAnimation - 2019.03.29 at 17h 29m 15s.xml">
-      <configuration name="TestTextView.testMovementAnimation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestTextView_testMovementAnimation - 2019.03.29 at 17h 31m 50s.xml">
-      <configuration name="TestTextView.testMovementAnimation" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestTextView_testMovementAnimation - 2019.03.29 at 17h 32m 05s.xml">
-      <configuration name="TestTextView.testMovementAnimation" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestTextView_testMovementAnimation - 2019.03.29 at 17h 32m 33s.xml">
       <configuration name="TestTextView.testMovementAnimation" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestKeyFrames_testKeyFrameConstructor1ToString - 2019.03.29 at 17h 46m 46s.xml">
+      <configuration name="TestKeyFrames.testKeyFrameConstructor1ToString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKeyFrames_testKeyFrameConstructor1ToString - 2019.03.29 at 17h 47m 53s.xml">
+      <configuration name="TestKeyFrames.testKeyFrameConstructor1ToString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKeyFrames_testKeyFrameConstructor1ToString - 2019.03.29 at 17h 48m 06s.xml">
+      <configuration name="TestKeyFrames.testKeyFrameConstructor1ToString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKeyFrames_testKeyFrameConstructor1ToString - 2019.03.29 at 17h 48m 28s.xml">
+      <configuration name="TestKeyFrames.testKeyFrameConstructor1ToString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKeyFrames_testKeyFrameConstructor1ToString - 2019.03.29 at 17h 49m 19s.xml">
+      <configuration name="TestKeyFrames.testKeyFrameConstructor1ToString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKeyFrames_testKeyFrameConstructor1ToString - 2019.03.29 at 17h 49m 42s.xml">
+      <configuration name="TestKeyFrames.testKeyFrameConstructor1ToString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKeyFrames_testKeyFrameConstructor2ToString - 2019.03.29 at 17h 50m 51s.xml">
+      <configuration name="TestKeyFrames.testKeyFrameConstructor2ToString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKeyFrames_testKeyFrameConstructor2ToString - 2019.03.29 at 17h 51m 19s.xml">
+      <configuration name="TestKeyFrames.testKeyFrameConstructor2ToString" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestKeyFrames_testKeyFrameConstructor2ToString - 2019.03.29 at 17h 52m 11s.xml">
+      <configuration name="TestKeyFrames.testKeyFrameConstructor2ToString" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27259000" />
+    <option name="totallyTimeSpent" value="27904000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="830" extended-state="6" />
@@ -500,6 +512,12 @@
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hw5/code/test/TestKeyFrames.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/hw5/code/test/TestTextView.java</url>
           <line>54</line>
@@ -512,16 +530,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hw5/code/test/AnimationModelImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="219" column="1" selection-start-line="219" selection-start-column="1" selection-end-line="219" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/ArrayList.java" />
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/test.java" />
     <entry file="file://$PROJECT_DIR$/toh-12.txt">
@@ -556,27 +564,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationVisible.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationChangeTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationChangeAll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationVisible.java" />
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationChangeTime.java" />
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationChangeAll.java" />
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AbstractAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="556">
@@ -647,20 +637,6 @@
           <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="27" column="67" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
-            <element signature="e#1217#1218#0" expanded="true" />
-            <element signature="e#1253#1254#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -748,24 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="377" column="9" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6763#6764#0" expanded="true" />
-            <element signature="e#6792#6793#0" expanded="true" />
-            <element signature="e#6812#6813#0" expanded="true" />
-            <element signature="e#6840#6841#0" expanded="true" />
-            <element signature="e#7352#7353#0" expanded="true" />
-            <element signature="e#7399#7400#0" expanded="true" />
-            <element signature="e#7899#7900#0" expanded="true" />
-            <element signature="e#7968#7969#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -783,16 +741,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/test/KeyFrameTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/test/KeyFrameTests.java" />
     <entry file="file://$PROJECT_DIR$/hw5/code/test/TestPosition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -884,10 +833,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="537" lean-forward="true" selection-start-line="537" selection-end-line="537" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="125" column="64" selection-start-line="125" selection-start-column="64" selection-end-line="125" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="62" column="6" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+        <state relative-caret-position="344">
+          <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/test/TestKeyFrames.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,6 @@
 package cs3500.animator.view;
 
-<<<<<<< HEAD
+
 import static java.lang.Integer.parseInt;
 
 import cs3500.model.KeyFrame;
@@ -27,13 +27,12 @@ import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
-=======
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 
 import javax.swing.*;
->>>>>>> cfad60e5b1c416d6c20ce21a6620f28290ab19e8
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import cs3500.model.ROAnimationModel;
@@ -511,7 +510,7 @@ public class EditorView extends JFrame implements IEditorView {
   public String getShapeNameToBeAdded() {
     String name = "";
 
-<<<<<<< HEAD
+
     JTextField nameField = new JTextField(10);
     JPanel myPanel = new JPanel();
     myPanel.add(new JLabel("Name:"));
@@ -535,6 +534,4 @@ public class EditorView extends JFrame implements IEditorView {
     }
     return f;
   }
-=======
->>>>>>> cfad60e5b1c416d6c20ce21a6620f28290ab19e8
 }
