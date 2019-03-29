@@ -211,10 +211,8 @@ public class EditorView extends JFrame implements IEditorView {
 
   }
 
-  /**
-   * Starts the animation.
-   */
 
+@Override
   public void animate() {
     timer = new Timer(this.speed, e -> {
       EditorView.this.model.updateShapes(tick);
@@ -243,21 +241,15 @@ public class EditorView extends JFrame implements IEditorView {
     timer.start();
   }
 
-  /**
-   * Sets the model.
-   *
-   * @param in the ROAnimationModel being set
-   */
+
+  @Override
   public void setModel(ROAnimationModel in) {
     this.model = in;
     this.length = model.getLength();
   }
 
-  /**
-   * Adds the action listener to the view.
-   *
-   * @param listen represents the action listener
-   */
+
+  @Override
   public void addActionListener(ActionListener listen) {
     restart.addActionListener(listen);
     loop.addActionListener(listen);
@@ -273,9 +265,8 @@ public class EditorView extends JFrame implements IEditorView {
     save.addActionListener(listen);
   }
 
-  /**
-   * Slows down the animation.
-   */
+
+  @Override
   public void slowDown() {
     if (this.speed > 1) {
       this.speed /= 2;
@@ -284,9 +275,8 @@ public class EditorView extends JFrame implements IEditorView {
     this.timer.setDelay(1000 / speed);
   }
 
-  /**
-   * Speeds up the animation.
-   */
+
+  @Override
   public void speedUp() {
     if (this.speed < 500) {
       this.speed *= 2;
@@ -295,23 +285,18 @@ public class EditorView extends JFrame implements IEditorView {
     this.timer.setDelay(1000 / this.speed);
   }
 
-  /**
-   * Reverses the animation.
-   */
+
+  @Override
   public void reverse() {
     this.direction = -1;
   }
 
-  /**
-   * Moves the animation forward.
-   */
+ @Override
   public void forward() {
     this.direction = 1;
   }
 
-  /**
-   * Plays the animation.
-   */
+  @Override
   public void play() {
     if (this.paused) {
       this.play.setIcon(new ImageIcon("play.gif"));
@@ -328,26 +313,19 @@ public class EditorView extends JFrame implements IEditorView {
     }
   }
 
-  /**
-   * Restarts the animation.
-   */
+  @Override
   public void restart() {
     this.tick = 1;
     this.updateCounter();
   }
 
-  /**
-   * Loops the animation.
-   */
+
+  @Override
   public void loop() {
     this.looping = this.loop.isSelected();
   }
 
-  /**
-   * Gets the file being selected.
-   *
-   * @return file
-   */
+  @Override
   public File getFile() {
     File f = null;
     final JFileChooser fchooser = new JFileChooser(".");
@@ -361,19 +339,12 @@ public class EditorView extends JFrame implements IEditorView {
     return f;
   }
 
-  /**
-   * Updates the counter.
-   */
+  @Override
   public void updateCounter() {
     this.tickButton.setText("" + this.tick + "/" + this.length);
   }
 
-  /**
-   * Gets the name of the shape.
-   *
-   * @param in represents the actionlistener
-   * @return name of the shape
-   */
+  @Override
   public String getShapeName(ActionListener in) {
     Object[] possibilities = new Object[this.model.getShapes().size()];
     for (int i = 0; i < this.model.getShapes().size(); i++) {
@@ -393,12 +364,7 @@ public class EditorView extends JFrame implements IEditorView {
 
   }
 
-  /**
-   * Gets the number of a key frame.
-   *
-   * @param name represents the name of the model
-   * @return the number of a key frame
-   */
+  @Override
   public int getKeyFrameNumber(String name) {
     Object[] possibilities = new Object[this.model.getHash().get(name).getKeyPoints().size()];
     for (int i = 0; i < this.model.getHash().get(name).getKeyPoints().size(); i++) {
@@ -418,6 +384,7 @@ public class EditorView extends JFrame implements IEditorView {
 
   }
 
+  @Override
   public KeyFrame getKeyFrame() {
     KeyFrame key = new KeyFrame(0,0,0,0,0,0,0,0);
 
@@ -474,7 +441,7 @@ public class EditorView extends JFrame implements IEditorView {
     return key;
   }
 
-
+@Override
   public String getShapeType() {
     Object[] possibilities = {"Rectangle", "Ellipse", "KeyFrame"};
 
@@ -503,6 +470,7 @@ public class EditorView extends JFrame implements IEditorView {
     return s;
   }
 
+  @Override
   public String getShapeNameToBeAdded() {
     String name = "";
 
@@ -520,6 +488,7 @@ public class EditorView extends JFrame implements IEditorView {
     return name;
   }
 
+  @Override
   public File saveFileGetter() {
     File f = new File("");
     final JFileChooser fchooser = new JFileChooser(".");
