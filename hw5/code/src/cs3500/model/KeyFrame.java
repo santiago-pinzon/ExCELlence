@@ -24,13 +24,13 @@ public class KeyFrame {
 
   public KeyFrame(KeyFrame key, KeyFrame key2, double ratio) {
     this.key = key.getKey();
-    this.x += (int) Math.round((key2.getX() - key.getX()) * ratio);
-    this.y += (int) Math.round((key2.getY() - key.getY()) * ratio);
-    this.w += (int) Math.round((key2.getW() - key.getW()) * ratio);
-    this.h += (int) Math.round((key2.getH() - key.getH()) * ratio);
-    this.r += (int) Math.round((key2.getR() - key.getR()) * ratio);
-    this.g += (int) Math.round((key2.getG() - key.getG()) * ratio);
-    this.b += (int) Math.round((key2.getB() - key.getB()) * ratio);
+    this.x = key.getX() + (int) Math.round((key2.getX() - key.getX()) * ratio);
+    this.y = key.getY() + (int) Math.round((key2.getY() - key.getY()) * ratio);
+    this.w = key.getW() + (int) Math.round((key2.getW() - key.getW()) * ratio);
+    this.h = key.getH() + (int) Math.round((key2.getH() - key.getH()) * ratio);
+    this.r = key.getR() + (int) Math.round((key2.getR() - key.getR()) * ratio);
+    this.g = key.getG() + (int) Math.round((key2.getG() - key.getG()) * ratio);
+    this.b = key.getB() + (int) Math.round((key2.getB() - key.getB()) * ratio);
 
 
   }

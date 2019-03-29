@@ -4,7 +4,6 @@ import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.animator.util.AnimationReader;
 import cs3500.animator.view.EditorView;
 import cs3500.model.AnimationModelImpl;
-import cs3500.model.KeyFrame;
 import cs3500.model.ROAnimationModel;
 import cs3500.model.Shapes;
 import java.awt.event.ActionEvent;
@@ -88,6 +87,7 @@ public class Controller implements IController, ActionListener {
         } catch (FileNotFoundException e1) {
           e1.printStackTrace();
         }
+        this.view.restart();
         this.updateView();
         this.view.animate();
 
@@ -104,10 +104,13 @@ public class Controller implements IController, ActionListener {
       }
       case "edit": {
         System.out.println("edit");
-        //String name = this.view.getShapeName();
-        //int key = this.view.getKeyFrameNumber();
+        String name = this.view.getShapeName(this);
+        int key = this.view.getKeyFrameNumber(name);
+        System.out.println(key);
         //KeyFrame frame = this.view.getKeyFrame();
         //this.model.editKeyFrame(name, key, frame);
+        break;
+
       }
       case "slowdown": {
         System.out.println("slow down");

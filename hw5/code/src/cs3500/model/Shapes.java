@@ -115,5 +115,7 @@ public interface Shapes {
 
   void setTweener(KeyFrame frame);
 
+  ArrayList<Integer> getKeyPoints();
+
 }
 

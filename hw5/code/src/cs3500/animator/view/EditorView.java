@@ -1,6 +1,7 @@
 package cs3500.animator.view;
 
 import cs3500.model.ROAnimationModel;
+import cs3500.model.Shapes;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
@@ -8,8 +9,10 @@ import java.io.File;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JToggleButton;
@@ -36,6 +39,8 @@ public class EditorView extends JFrame implements IEditorView {
   private JButton forward;
   private JButton speedup;
   private JButton restart;
+  private JButton tickButton;
+  private JComboBox<String> combobox;
 
 
   private Timer timer;
@@ -59,8 +64,8 @@ public class EditorView extends JFrame implements IEditorView {
 
     this.speed = 64;
 
-    setTitle("Swing features");
-    setSize(400, 400);
+    setTitle("Excellence");
+    setSize(1000, 1000);
 
     mainPanel = new JPanel();
     //for elements to be arranged vertically within this panel
@@ -102,6 +107,7 @@ public class EditorView extends JFrame implements IEditorView {
     //edit
     edit = new JButton(new ImageIcon("edit.gif"));
     edit.setToolTipText("Edit a shape or keyframe");
+    edit.setActionCommand("edit");
     test.add(edit);
 
     //slowdown
@@ -146,6 +152,12 @@ public class EditorView extends JFrame implements IEditorView {
     restart.setActionCommand("restart");
     test.add(restart);
 
+    //tick
+    tickButton = new JButton("Ticks");
+    tickButton.setToolTipText("Ticks");
+    tickButton.setEnabled(false);
+    test.add(tickButton);
+
     //EDITORTEST.setFloatable(false);
     test.setRollover(true);
 
@@ -189,20 +201,20 @@ public class EditorView extends JFrame implements IEditorView {
 
       if (this.looping) {
         tick = (tick + this.direction * this.pause) % this.length;
-        if(this.tick == 1 && this.direction < 0) {
+        if (this.tick == 1 && this.direction < 0) {
           this.tick = this.length;
         }
       } else {
         tick += (this.direction * this.pause);// % by current time for looping animation
       }
 
-      if(this.tick < 1) {
+      if (this.tick < 1) {
         this.tick = 1;
       }
-      if(this.tick > this.length) {
+      if (this.tick > this.length) {
         this.tick = this.length;
       }
-      System.out.println(tick);
+      updateCounter();
     });
     this.setVisible();
     timer.start();
@@ -230,7 +242,7 @@ public class EditorView extends JFrame implements IEditorView {
   }
 
   public void slowDown() {
-    if(this.speed > 1) {
+    if (this.speed > 1) {
       this.speed /= 2;
     }
 
@@ -271,7 +283,7 @@ public class EditorView extends JFrame implements IEditorView {
 
   public void restart() {
     this.tick = 1;
-    //this.model.updateShapes(1);
+    this.updateCounter();
   }
 
   public void loop() {
@@ -290,5 +302,50 @@ public class EditorView extends JFrame implements IEditorView {
     }
     return f;
   }
+
+  public void updateCounter() {
+    this.tickButton.setText("" + this.tick + "/" + this.length);
+  }
+
+  public String getShapeName(ActionListener in) {
+    Object[] possibilities = new Object[this.model.getShapes().size()];
+    for(int i = 0; i < this.model.getShapes().size(); i++) {
+      possibilities[i] = this.model.getShapes().get(i).getName();
+    }
+
+    String s = (String)JOptionPane.showInputDialog(
+        this,
+        "Please pick a shape",
+        "Shape Picker",
+        JOptionPane.PLAIN_MESSAGE,
+        new ImageIcon(),
+        possibilities,
+        "");
+
+    return s;
+
+  }
+
+  public int getKeyFrameNumber(String name) {
+    Object[] possibilities = new Object[this.model.getHash().get(name).getKeyPoints().size()];
+    for(int i = 0; i < this.model.getHash().get(name).getKeyPoints().size(); i++) {
+      possibilities[i] = this.model.getHash().get(name).getKeyPoints().get(i);
+    }
+
+    int s = (int)JOptionPane.showInputDialog(
+        this,
+        "Please pick a key frame",
+        "Key Frame Picker",
+        JOptionPane.PLAIN_MESSAGE,
+        new ImageIcon(),
+        possibilities,
+        "");
+
+    return s;
+
+  }
+
+
+
 
 }
