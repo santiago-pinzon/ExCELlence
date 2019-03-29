@@ -18,7 +18,6 @@ import cs3500.model.Position;
 import cs3500.model.ROAnimationModel;
 import cs3500.model.Rectangle;
 import cs3500.model.Shapes;
-<<<<<<< HEAD
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -28,8 +27,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-=======
->>>>>>> cfad60e5b1c416d6c20ce21a6620f28290ab19e8
 
 /**
  * Conroller class that allows the user to do what they want to the animation.
