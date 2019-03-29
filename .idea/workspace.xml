@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ChangeListManager">
     <list default="true" id="60ea4cf9-5e96-4550-97e5-21b6520804a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java" afterDir="false" />
@@ -317,6 +318,10 @@
         </RuleState>
       </list>
     </option>
+=======
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553895819799" />
+>>>>>>> 712d837b2538f70455f0c175870531625fffb4a2
   </component>
   <component name="RunManager" selected="Application.EDITORTEST">
     <configuration name="EDITORTEST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -332,54 +337,103 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="TestKeyFrames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExCELlence" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestKeyFrames" />
+=======
+    <configuration name="Excellence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs3500.animator.Excellence" />
+      <module name="ExCELlence" />
+      <option name="PROGRAM_PARAMETERS" value="-view &quot;svg&quot; -speed &quot;50&quot; -in &quot;toh-5.txt&quot;" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs3500.animator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> 712d837b2538f70455f0c175870531625fffb4a2
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="TestKeyFrames.testKeyFrameConstructor1ToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExCELlence" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestKeyFrames" />
       <option name="METHOD_NAME" value="testKeyFrameConstructor1ToString" />
       <option name="TEST_OBJECT" value="method" />
+=======
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs3500.animator.view.test" />
+      <module name="ExCELlence" />
+      <option name="PROGRAM_PARAMETERS" value="-view &quot;svg&quot; -speed &quot;50&quot; -in &quot;toh-at-20.svg&quot;" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs3500.animator.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> 712d837b2538f70455f0c175870531625fffb4a2
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="TestKeyFrames.testKeyFrameConstructor2ToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExCELlence" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestKeyFrames" />
       <option name="METHOD_NAME" value="testKeyFrameConstructor2ToString" />
+=======
+    <configuration name="KeyFrameTests.add1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExCELlence" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="KeyFrameTests" />
+      <option name="METHOD_NAME" value="add1" />
+>>>>>>> 712d837b2538f70455f0c175870531625fffb4a2
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="TestTextView.testMovementAnimation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExCELlence" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestTextView" />
       <option name="METHOD_NAME" value="testMovementAnimation" />
       <option name="TEST_OBJECT" value="method" />
+=======
+    <configuration name="TestTextView" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExCELlence" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestTextView" />
+>>>>>>> 712d837b2538f70455f0c175870531625fffb4a2
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+<<<<<<< HEAD
       <item itemvalue="JUnit.TestTextView.testMovementAnimation" />
       <item itemvalue="JUnit.TestKeyFrames.testKeyFrameConstructor1ToString" />
       <item itemvalue="JUnit.TestKeyFrames.testKeyFrameConstructor2ToString" />
       <item itemvalue="JUnit.TestKeyFrames" />
+=======
+      <item itemvalue="Application.test" />
+      <item itemvalue="Application.Excellence" />
+      <item itemvalue="JUnit.KeyFrameTests.add1" />
+      <item itemvalue="JUnit.TestTextView" />
+>>>>>>> 712d837b2538f70455f0c175870531625fffb4a2
       <item itemvalue="Application.EDITORTEST" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.EDITORTEST" />
+<<<<<<< HEAD
         <item itemvalue="JUnit.TestKeyFrames" />
         <item itemvalue="JUnit.TestKeyFrames.testKeyFrameConstructor2ToString" />
         <item itemvalue="JUnit.TestKeyFrames.testKeyFrameConstructor1ToString" />
@@ -949,4 +1003,13 @@
       </state>
     </states>
   </component>
+=======
+        <item itemvalue="JUnit.KeyFrameTests.add1" />
+        <item itemvalue="Application.test" />
+        <item itemvalue="JUnit.TestTextView" />
+        <item itemvalue="Application.Excellence" />
+      </list>
+    </recent_temporary>
+  </component>
+>>>>>>> 712d837b2538f70455f0c175870531625fffb4a2
 </project>
