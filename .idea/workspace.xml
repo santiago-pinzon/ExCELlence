@@ -6,9 +6,6 @@
       <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/ROAnimationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/ROAnimationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,84 +39,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="108" column="32" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
+            <state relative-caret-position="-558">
+              <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#845#846#0" expanded="true" />
-                <element signature="e#902#903#0" expanded="true" />
-                <element signature="e#1044#1045#0" expanded="true" />
-                <element signature="e#1080#1081#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hw5/code/test/KeyFrameTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="347" selection-start-line="347" selection-end-line="347" />
+            <state relative-caret-position="187">
+              <caret line="462" column="6" lean-forward="true" selection-start-line="462" selection-start-column="6" selection-end-line="462" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#7432#7433#0" expanded="true" />
                 <element signature="e#7446#7447#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/ROAnimationModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="304" column="42" selection-start-line="304" selection-start-column="9" selection-end-line="304" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6072#6073#0" expanded="true" />
-                <element signature="e#6101#6102#0" expanded="true" />
-                <element signature="e#6127#6128#0" expanded="true" />
-                <element signature="e#6156#6157#0" expanded="true" />
-                <element signature="e#6183#6184#0" expanded="true" />
-                <element signature="e#6212#6213#0" expanded="true" />
-                <element signature="e#6368#6369#0" expanded="true" />
-                <element signature="e#6397#6398#0" expanded="true" />
-                <element signature="e#6644#6645#0" expanded="true" />
-                <element signature="e#6672#6673#0" expanded="true" />
-                <element signature="e#6722#6723#0" expanded="true" />
-                <element signature="e#6748#6749#0" expanded="true" />
-                <element signature="e#6796#6797#0" expanded="true" />
-                <element signature="e#6818#6819#0" expanded="true" />
-                <element signature="e#6844#6845#0" expanded="true" />
-                <element signature="e#6896#6897#0" expanded="true" />
-                <element signature="e#6935#6936#0" expanded="true" />
-                <element signature="e#6978#6979#0" expanded="true" />
-                <element signature="e#7267#7268#0" expanded="true" />
-                <element signature="e#7298#7299#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,7 +99,6 @@
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationVisible.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Ellipse.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Rectangle.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/TextView.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationBuilder.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/test.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/SVGView.java" />
@@ -161,7 +109,6 @@
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/IEditorView.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Excellence.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/SVGViewTest.java" />
-        <option value="$PROJECT_DIR$/hw5/code/test/KeyFrameTests.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModel.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java" />
         <option value="$PROJECT_DIR$/hw5/code/test/TestTextView.java" />
@@ -169,14 +116,16 @@
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationBuilderImpl.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/ROAnimationModel.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java" />
-        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java" />
         <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java" />
+        <option value="$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/TextView.java" />
+        <option value="$PROJECT_DIR$/hw5/code/test/KeyFrameTests.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="1295" />
     <option name="height" value="1410" />
@@ -289,7 +238,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553883145349" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553895250109" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -380,10 +329,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.EDITORTEST" />
+        <item itemvalue="JUnit.KeyFrameTests.add1" />
         <item itemvalue="Application.test" />
         <item itemvalue="JUnit.TestTextView" />
         <item itemvalue="Application.Excellence" />
-        <item itemvalue="JUnit.KeyFrameTests.add1" />
       </list>
     </recent_temporary>
   </component>
@@ -402,18 +351,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="KeyFrameTests_add1 - 2019.03.27 at 23h 25m 39s.xml">
-      <configuration name="KeyFrameTests.add1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="KeyFrameTests_add1 - 2019.03.28 at 12h 50m 02s.xml">
-      <configuration name="KeyFrameTests.add1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="KeyFrameTests_add1 - 2019.03.28 at 12h 50m 21s.xml">
-      <configuration name="KeyFrameTests.add1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="KeyFrameTests_add1 - 2019.03.28 at 12h 50m 39s.xml">
-      <configuration name="KeyFrameTests.add1" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="KeyFrameTests_add1 - 2019.03.28 at 12h 51m 01s.xml">
       <configuration name="KeyFrameTests.add1" configurationId="JUnit" />
     </history-entry>
@@ -432,12 +369,24 @@
     <history-entry file="TestTextView - 2019.03.29 at 10h 40m 08s.xml">
       <configuration name="TestTextView" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="KeyFrameTests_add1 - 2019.03.29 at 17h 30m 54s.xml">
+      <configuration name="KeyFrameTests.add1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KeyFrameTests_add1 - 2019.03.29 at 17h 31m 25s.xml">
+      <configuration name="KeyFrameTests.add1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KeyFrameTests_add1 - 2019.03.29 at 17h 32m 55s.xml">
+      <configuration name="KeyFrameTests.add1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KeyFrameTests_add1 - 2019.03.29 at 17h 33m 08s.xml">
+      <configuration name="KeyFrameTests.add1" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="18071000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="846" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="846" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
@@ -448,7 +397,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32913166" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32913166" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39915967" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -513,15 +462,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java</url>
-          <line>218</line>
+          <line>216</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java</url>
-          <line>219</line>
+          <url>file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java</url>
+          <line>136</line>
           <properties />
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -588,23 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Rectangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/TextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="85" column="3" selection-start-line="85" selection-start-column="3" selection-end-line="85" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -733,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/test/KeyFrameTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/test/TestTextView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -771,25 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#1207#1208#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
-            <element signature="e#876#877#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AnimationModelImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -800,10 +706,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationBuilderImpl.java">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="168" column="20" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
+        <state relative-caret-position="394">
+          <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -817,6 +726,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/KeyFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EDITORTEST.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -827,24 +743,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Rectangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="108" column="32" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/AShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="304" column="42" selection-start-line="304" selection-start-column="9" selection-end-line="304" selection-end-column="42" />
+        <state relative-caret-position="142">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6072#6073#0" expanded="true" />
@@ -865,16 +774,21 @@
             <element signature="e#6896#6897#0" expanded="true" />
             <element signature="e#6935#6936#0" expanded="true" />
             <element signature="e#6978#6979#0" expanded="true" />
-            <element signature="e#7267#7268#0" expanded="true" />
-            <element signature="e#7298#7299#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/model/Shapes.java">
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/util/AnimationBuilderImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="117" column="36" selection-start-line="117" selection-start-column="36" selection-end-line="117" selection-end-column="36" />
+        <state relative-caret-position="302">
+          <caret line="168" column="20" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/TextView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -883,12 +797,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/view/EditorView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="347" selection-start-line="347" selection-end-line="347" />
+        <state relative-caret-position="187">
+          <caret line="462" column="6" lean-forward="true" selection-start-line="462" selection-start-column="6" selection-end-line="462" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#7432#7433#0" expanded="true" />
             <element signature="e#7446#7447#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_191/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="656" selection-start-line="656" selection-end-line="656" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/src/cs3500/animator/Controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-558">
+          <caret line="90" column="41" selection-start-line="90" selection-start-column="41" selection-end-line="90" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw5/code/test/KeyFrameTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

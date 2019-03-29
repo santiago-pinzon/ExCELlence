@@ -1,22 +1,30 @@
 package cs3500.animator.view;
 
+import static java.lang.Integer.parseInt;
+
+import cs3500.model.KeyFrame;
 import cs3500.model.ROAnimationModel;
 import cs3500.model.Shapes;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.io.File;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -94,8 +102,8 @@ public class EditorView extends JFrame implements IEditorView {
 
     //add
     add = new JButton(new ImageIcon("add.gif"));
-    add.setToolTipText("Add");
-    add.setActionCommand("Add a shape or key");
+    add.setToolTipText("Add a shape or key");
+    add.setActionCommand("add");
     test.add(add);
 
     //delete
@@ -345,7 +353,115 @@ public class EditorView extends JFrame implements IEditorView {
 
   }
 
+  public KeyFrame getKeyFrame() {
+    KeyFrame key = new KeyFrame(0,0,0,0,0,0,0,0);
+
+    JTextField tField = new JTextField(5);
+    JTextField xField = new JTextField(5);
+    JTextField yField = new JTextField(5);
+    JTextField wField = new JTextField(5);
+    JTextField hField = new JTextField(5);
+    JSpinner rField = new JSpinner(new SpinnerNumberModel(128,0,255,1));
+    JSpinner gField = new JSpinner(new SpinnerNumberModel(128,0,255,1));
+    JSpinner bField = new JSpinner(new SpinnerNumberModel(128,0,255,1));
 
 
 
+    JPanel myPanel = new JPanel();
+    myPanel.add(new JLabel("t:"));
+    myPanel.add(tField);
+    myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+    myPanel.add(new JLabel("x:"));
+    myPanel.add(xField);
+    myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+    myPanel.add(new JLabel("y:"));
+    myPanel.add(yField);
+    myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+    myPanel.add(new JLabel("w:"));
+    myPanel.add(wField);
+    myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+    myPanel.add(new JLabel("h:"));
+    myPanel.add(hField);
+    myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+    myPanel.add(new JLabel("r:"));
+    myPanel.add(rField);
+    myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+    myPanel.add(new JLabel("g:"));
+    myPanel.add(gField);
+    myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+    myPanel.add(new JLabel("g:"));
+    myPanel.add(bField);
+
+    int result = JOptionPane.showConfirmDialog(null, myPanel,
+        "Please enter the desired values for the keyframe", JOptionPane.OK_CANCEL_OPTION);
+    if (result == JOptionPane.OK_OPTION) {
+      int t = parseInt(tField.getText());
+      int x = parseInt(xField.getText());
+      int y = parseInt(yField.getText());
+      int w = parseInt(wField.getText());
+      int h = parseInt(hField.getText());
+      int r = (int) rField.getValue();
+      int g = (int) gField.getValue();
+      int b = (int) bField.getValue();
+
+      key = new KeyFrame(t, x, y, h, w, r, g, b);
+    }
+    return key;
+  }
+
+
+  public String getShapeType() {
+    Object[] possibilities = {"Rectangle", "Ellipse"};
+
+    String s = (String)JOptionPane.showInputDialog(
+        this,
+        "Please choose what type of shape to add",
+        "Shape Adder",
+        JOptionPane.PLAIN_MESSAGE,
+        new ImageIcon(),
+        possibilities,
+        "");
+    return s;
+  }
+
+  public int getNumberOfKeyFrames() {
+    Object[] possibilities = {2,3,4,5};
+
+    int s = (int)JOptionPane.showInputDialog(
+        this,
+        "Please pick how many Key Frames to add",
+        "Number of Key Frames",
+        JOptionPane.PLAIN_MESSAGE,
+        new ImageIcon(),
+        possibilities,
+        "");
+    return s;
+  }
+
+  public String getShapeNameToBeAdded() {
+    String name = "";
+
+    JTextField nameField = new JTextField(10);
+    JPanel myPanel = new JPanel();
+    myPanel.add(new JLabel("Name:"));
+    myPanel.add(nameField);
+
+
+    int result = JOptionPane.showConfirmDialog(null, myPanel,
+        "Please enter the desired name for the new shape", JOptionPane.OK_CANCEL_OPTION);
+    if (result == JOptionPane.OK_OPTION) {
+      name = nameField.getText();
+    }
+    return name;
+  }
+
+  public File saveFileGetter() {
+    File f = new File("");
+    final JFileChooser fchooser = new JFileChooser(".");
+    int retvalue = fchooser.showSaveDialog(this);
+    if (retvalue == JFileChooser.APPROVE_OPTION) {
+      f = fchooser.getSelectedFile();
+    }
+    return f;
+  }
 }

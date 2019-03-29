@@ -57,8 +57,6 @@ public abstract class AShape implements Shapes {
     this.actions = new HashMap<>();
     this.keyPoints = new ArrayList<>();
     this.visible = visible;
-    this.startTime = startTime;
-    this.endTime = endTime;
 
     this.keyframes = new LinkedHashMap<>();
 
