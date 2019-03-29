@@ -1,36 +1,37 @@
 package cs3500.animator;
 
-import cs3500.animator.view.EditorView;
-import cs3500.animator.view.SVGView;
-import java.awt.Dimension;
+import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 import java.io.StringReader;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import cs3500.animator.util.AnimationBuilderImpl;
-import cs3500.model.AnimationModelImpl;
-import cs3500.animator.view.IView;
+import java.util.Scanner;
 
-import cs3500.animator.view.TextView;
-import cs3500.animator.view.AnimationView;
+import javax.swing.*;
+
 import cs3500.animator.util.AnimationBuilder;
+import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.animator.util.AnimationReader;
+import cs3500.animator.view.AnimationView;
+import cs3500.animator.view.EditorView;
+import cs3500.animator.view.IView;
+import cs3500.animator.view.SVGView;
+import cs3500.animator.view.TextView;
+import cs3500.model.AnimationModelImpl;
 
 
 /**
- * Excellence represents the main class of the animation program. Running the main function
- * requires that the proper command line arguments be supplied. The main program then parses said
- * arguments and initializes a model to match with the proper view and output. 
+ * Excellence represents the main class of the animation program. Running the main function requires
+ * that the proper command line arguments be supplied. The main program then parses said arguments
+ * and initializes a model to match with the proper view and output.
  */
 public class Excellence {
 
   /**
    * The main class for the Excellence animator.
+   *
    * @param args the command line parameters.
    * @throws IOException when unable to output.
    */
@@ -94,8 +95,7 @@ public class Excellence {
     }
     if (output.equals("") || output.equals("out")) {
       a = System.out;
-    }
-    else {
+    } else {
       a = new BufferedWriter(new FileWriter(output));
     }
 
@@ -107,22 +107,22 @@ public class Excellence {
     switch (viewType) {
       case "text":
         IView t = new TextView(model, model.getX(), model.getY(), model.getHeight(),
-            model.getWidth(), a);
+                model.getWidth(), a);
         ((TextView) t).render();
         ((Closeable) a).close();
         break;
 
       case "visual":
 
-        IView v = new AnimationView(model,speed);
+        IView v = new AnimationView(model, speed);
         ((AnimationView) v).animate();
         break;
 
 
       case "svg":
 
-        IView s = new SVGView(speed, model.getShapes(), a , model.getWidth(),
-            model.getHeight(), model);
+        IView s = new SVGView(speed, model.getShapes(), a, model.getWidth(),
+                model.getHeight(), model);
         ((SVGView) s).output();
         ((Closeable) a).close();
         break;

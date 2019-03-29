@@ -14,6 +14,7 @@ public interface IController {
 
   /**
    * Adds a shape to the model.
+   *
    * @param shape the shape to be added.
    */
   void addShape(Shapes shape);
@@ -21,12 +22,21 @@ public interface IController {
 
   /**
    * Removes a shape from the model.
+   *
    * @param shape the shape to be removed.
    */
   void removeShape(String shape);
 
+  /**
+   * Adds a keyFrame to the model.
+   *
+   * @param key value of the keyframe
+   */
   void addKeyFrame(int key);
 
+  /**
+   * Removes a keyframe from the model.
+   */
   void removeKeyFrame();
 
 

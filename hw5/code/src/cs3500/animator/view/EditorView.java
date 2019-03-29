@@ -1,25 +1,17 @@
 package cs3500.animator.view;
 
-import cs3500.model.ROAnimationModel;
-import cs3500.model.Shapes;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JToggleButton;
-import javax.swing.JToolBar;
-import javax.swing.Timer;
+
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import cs3500.model.ROAnimationModel;
+
+/**
+ * Class that represents the editor view where all of the editing takes place.
+ */
 public class EditorView extends JFrame implements IEditorView {
 
   private JPanel mainPanel;
@@ -56,7 +48,9 @@ public class EditorView extends JFrame implements IEditorView {
   private boolean started = false;
   private int pause = 1;
 
-
+  /**
+   * Constructs an EditorView.
+   */
   public EditorView() {
     super();
     this.direction = 1;
@@ -172,6 +166,7 @@ public class EditorView extends JFrame implements IEditorView {
 
   }
 
+  @Override
   public void setVisible() {
     this.setVisible(true);
   }
@@ -191,12 +186,15 @@ public class EditorView extends JFrame implements IEditorView {
 
   }
 
+  /**
+   * Starts the animation.
+   */
 
-  public void animate() {
+  void animate() {
     timer = new Timer(this.speed, e -> {
       EditorView.this.model.updateShapes(tick);
       EditorView.this.panel.addShapes(
-          EditorView.this.model.getHash());
+              EditorView.this.model.getHash());
       EditorView.this.refresh();
 
       if (this.looping) {
@@ -220,13 +218,23 @@ public class EditorView extends JFrame implements IEditorView {
     timer.start();
   }
 
-  public void setModel(ROAnimationModel in) {
+  /**
+   * Sets the model.
+   *
+   * @param in the ROAnimationModel being set
+   */
+  void setModel(ROAnimationModel in) {
     this.model = in;
     this.length = model.getLength();
     System.out.println("Updated model to have shapes: " + this.model.getHash().values().size());
   }
 
-  public void addActionListener(ActionListener listen) {
+  /**
+   * Adds the action listener to the view.
+   *
+   * @param listen represents the action listener
+   */
+  void addActionListener(ActionListener listen) {
     restart.addActionListener(listen);
     loop.addActionListener(listen);
     speedup.addActionListener(listen);
@@ -241,7 +249,10 @@ public class EditorView extends JFrame implements IEditorView {
     save.addActionListener(listen);
   }
 
-  public void slowDown() {
+  /**
+   * Slows down the animation.
+   */
+  void slowDown() {
     if (this.speed > 1) {
       this.speed /= 2;
     }
@@ -249,7 +260,10 @@ public class EditorView extends JFrame implements IEditorView {
     this.timer.setDelay(1000 / speed);
   }
 
-  public void speedUp() {
+  /**
+   * Speeds up the animation.
+   */
+  void speedUp() {
     if (this.speed < 500) {
       this.speed *= 2;
     }
@@ -257,15 +271,24 @@ public class EditorView extends JFrame implements IEditorView {
     this.timer.setDelay(1000 / this.speed);
   }
 
-  public void reverse() {
+  /**
+   * Reverses the animation.
+   */
+  void reverse() {
     this.direction = -1;
   }
 
-  public void forward() {
+  /**
+   * Moves the animation forward.
+   */
+  void forward() {
     this.direction = 1;
   }
 
-  public void play() {
+  /**
+   * Plays the animation.
+   */
+  void play() {
     if (this.paused) {
       this.play.setIcon(new ImageIcon("play.gif"));
       this.paused = false;
@@ -281,20 +304,31 @@ public class EditorView extends JFrame implements IEditorView {
     }
   }
 
-  public void restart() {
+  /**
+   * Restarts the animation.
+   */
+  void restart() {
     this.tick = 1;
     this.updateCounter();
   }
 
-  public void loop() {
+  /**
+   * Loops the animation.
+   */
+  void loop() {
     this.looping = this.loop.isSelected();
   }
 
-  public File getFile() {
+  /**
+   * Gets the file being selected.
+   *
+   * @return file
+   */
+  File getFile() {
     File f = null;
     final JFileChooser fchooser = new JFileChooser(".");
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
-        "Animation files", "txt");
+            "Animation files", "txt");
     fchooser.setFileFilter(filter);
     int retvalue = fchooser.showOpenDialog(EditorView.this);
     if (retvalue == JFileChooser.APPROVE_OPTION) {
@@ -303,49 +337,62 @@ public class EditorView extends JFrame implements IEditorView {
     return f;
   }
 
-  public void updateCounter() {
+  /**
+   * Updates the counter.
+   */
+  void updateCounter() {
     this.tickButton.setText("" + this.tick + "/" + this.length);
   }
 
-  public String getShapeName(ActionListener in) {
+  /**
+   * Gets the name of the shape.
+   *
+   * @param in represents the actionlistener
+   * @return name of the shape
+   */
+  String getShapeName(ActionListener in) {
     Object[] possibilities = new Object[this.model.getShapes().size()];
-    for(int i = 0; i < this.model.getShapes().size(); i++) {
+    for (int i = 0; i < this.model.getShapes().size(); i++) {
       possibilities[i] = this.model.getShapes().get(i).getName();
     }
 
-    String s = (String)JOptionPane.showInputDialog(
-        this,
-        "Please pick a shape",
-        "Shape Picker",
-        JOptionPane.PLAIN_MESSAGE,
-        new ImageIcon(),
-        possibilities,
-        "");
+    String s = (String) JOptionPane.showInputDialog(
+            this,
+            "Please pick a shape",
+            "Shape Picker",
+            JOptionPane.PLAIN_MESSAGE,
+            new ImageIcon(),
+            possibilities,
+            "");
 
     return s;
 
   }
 
-  public int getKeyFrameNumber(String name) {
+  /**
+   * Gets the number of a key frame.
+   *
+   * @param name represents the name of the model
+   * @return the number of a key frame
+   */
+  int getKeyFrameNumber(String name) {
     Object[] possibilities = new Object[this.model.getHash().get(name).getKeyPoints().size()];
-    for(int i = 0; i < this.model.getHash().get(name).getKeyPoints().size(); i++) {
+    for (int i = 0; i < this.model.getHash().get(name).getKeyPoints().size(); i++) {
       possibilities[i] = this.model.getHash().get(name).getKeyPoints().get(i);
     }
 
-    int s = (int)JOptionPane.showInputDialog(
-        this,
-        "Please pick a key frame",
-        "Key Frame Picker",
-        JOptionPane.PLAIN_MESSAGE,
-        new ImageIcon(),
-        possibilities,
-        "");
+    int s = (int) JOptionPane.showInputDialog(
+            this,
+            "Please pick a key frame",
+            "Key Frame Picker",
+            JOptionPane.PLAIN_MESSAGE,
+            new ImageIcon(),
+            possibilities,
+            "");
 
     return s;
 
   }
-
-
 
 
 }

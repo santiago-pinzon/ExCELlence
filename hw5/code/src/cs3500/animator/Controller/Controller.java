@@ -1,19 +1,20 @@
 package cs3500.animator.Controller;
 
-import cs3500.animator.util.AnimationBuilderImpl;
-import cs3500.animator.util.AnimationReader;
-import cs3500.animator.view.EditorView;
-import cs3500.model.AnimationModelImpl;
-import cs3500.model.ROAnimationModel;
-import cs3500.model.Shapes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+import cs3500.animator.util.AnimationBuilderImpl;
+import cs3500.animator.util.AnimationReader;
+import cs3500.animator.view.EditorView;
+import cs3500.model.AnimationModelImpl;
+import cs3500.model.ROAnimationModel;
+import cs3500.model.Shapes;
+
 /**
- *
+ * Conroller class that allows the user to do what they want to the animation.
  */
 public class Controller implements IController, ActionListener {
 
@@ -22,8 +23,9 @@ public class Controller implements IController, ActionListener {
 
   /**
    * Constructs a controller with an EditorView and an AnimationModelImpl.
-   * @param view
-   * @param model
+   *
+   * @param view  the view being controlled by the user
+   * @param model the model being changed when the user has control
    */
   public Controller(EditorView view, AnimationModelImpl model) {
     this.view = view;
@@ -32,29 +34,17 @@ public class Controller implements IController, ActionListener {
     this.view.setVisible();
   }
 
-  /**
-   * Updates the Hash of shapes stored in the view to show any changes that have been made.
-   */
   @Override
   public void updateView() {
     this.view.setModel(new ROAnimationModel(model));
   }
 
-  /**
-   * Adds a shape to the model.
-   *
-   * @param shape the shape to be added.
-   */
   @Override
   public void addShape(Shapes shape) {
     this.model.addShape(shape);
   }
 
-  /**
-   * Removes a shape from the model.
-   *
-   * @param shape the shape to be removed.
-   */
+
   @Override
   public void removeShape(String shape) {
     this.model.removeShape(shape);
@@ -71,9 +61,7 @@ public class Controller implements IController, ActionListener {
 
   }
 
-  /**
-   * Invoked when an action occurs.
-   */
+
   @Override
   public void actionPerformed(ActionEvent e) {
     String action = e.getActionCommand();

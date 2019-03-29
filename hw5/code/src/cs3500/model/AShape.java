@@ -214,7 +214,7 @@ public abstract class AShape implements Shapes {
       }
 
 
-  
+
 
   @Override
   public int getRed() {

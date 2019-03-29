@@ -1,14 +1,12 @@
 package cs3500.animator.view;
 
-import cs3500.model.AnimationModelImpl;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.Timer;
+
+import javax.swing.*;
+
+import cs3500.model.AnimationModelImpl;
 
 /**
  * This is an implementation of the IAnimationView interface that uses Java Swing to draw the
@@ -29,7 +27,7 @@ public class AnimationView implements IAnimationView {
    * model refreshes all its shapes to the next tick.
    *
    * @param animation the model to be drawn.
-   * @param speed the amount of time in between each tick in ms.
+   * @param speed     the amount of time in between each tick in ms.
    */
   public AnimationView(AnimationModelImpl animation, int speed) {
     this.frame = new JFrame();
@@ -46,7 +44,7 @@ public class AnimationView implements IAnimationView {
     animationPanel = new AnimationPanel();
     animationPanel.setOffset(animation.getX(), animation.getY());
     JScrollPane scrollPane = new JScrollPane(animationPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-        JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+            JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
     scrollPane.setPreferredSize(new Dimension(animation.getWidth(), animation.getHeight()));
     scrollPane.setEnabled(true);
     frame.getContentPane().add(scrollPane);
@@ -60,21 +58,21 @@ public class AnimationView implements IAnimationView {
   /**
    * Sets the animation to be visible.
    */
-  public void makeVisible() {
+  void makeVisible() {
     this.frame.setVisible(true);
   }
 
   /**
-   * This method represents the "loop" of the animation. It utilizes a timer, which is set to
-   * loop every {@code speed} ms, and updates the shapes as necessary.
+   * This method represents the "loop" of the animation. It utilizes a timer, which is set to loop
+   * every {@code speed} ms, and updates the shapes as necessary.
    */
-  public void animate() {
+  void animate() {
     Timer timer = new Timer(this.speed, new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         AnimationView.this.animation.updateShapes(tick);
         AnimationView.this.animationPanel.addShapes(
-            AnimationView.this.animation.getHash());
+                AnimationView.this.animation.getHash());
         AnimationView.this.refresh();
         tick++; // % by current time for looping animation
       }
@@ -84,17 +82,12 @@ public class AnimationView implements IAnimationView {
   }
 
 
-  /**
-   * This method refreshes the image displayed instead of waiting for the window to be resized.
-   */
+  @Override
   public void refresh() {
     this.frame.repaint();
   }
 
-  /**
-   * This method displays a message to the user in the event that an error occurs.
-   * @param error the message to be displayed
-   */
+
   @Override
   public void showErrorMessage(String error) {
     JOptionPane.showMessageDialog(this.frame, error, "Error", JOptionPane.ERROR_MESSAGE);

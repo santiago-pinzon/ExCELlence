@@ -38,10 +38,11 @@ public class KeyFrame {
   }
 
   /**
-   * Consstructs a keyFrame that takes two keyFrames and a ratio.
-   * @param key
-   * @param key2
-   * @param ratio
+   * Consstructs a keyFrame that takes two keyFrames and a ratio, it creates a tweener keyframe
+   * that represents the intermediate state.
+   * @param key first keyframe
+   * @param key2 second keyframe
+   * @param ratio distance between the two key frames
    */
   public KeyFrame(KeyFrame key, KeyFrame key2, double ratio) {
     this.key = key.getKey();

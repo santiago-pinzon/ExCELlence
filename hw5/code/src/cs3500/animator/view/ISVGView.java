@@ -1,8 +1,8 @@
 package cs3500.animator.view;
 
 /**
- * Interface for SVGView that will use an XML-based format that
- * can be used to describe images and animations.
+ * Interface for SVGView that will use an XML-based format that can be used to describe images and
+ * animations.
  */
 
 

@@ -3,14 +3,15 @@ package cs3500.animator.view;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import cs3500.model.Shapes;
-import cs3500.model.AnimationModelImpl;
+
 import cs3500.model.Animation;
+import cs3500.model.AnimationModelImpl;
+import cs3500.model.Shapes;
 
 
 /**
- * This is an implementation of the SVGView interface that uses an XML-based format that
- * can be used to describe images and animations.
+ * This is an implementation of the SVGView interface that uses an XML-based format that can be used
+ * to describe images and animations.
  */
 
 public class SVGView implements ISVGView {
@@ -23,16 +24,17 @@ public class SVGView implements ISVGView {
 
   /**
    * Constructs an SVGView.
-   * @param speed The speed of the animation.
-   * @param s The List of Shapes in the animation.
-   * @param a The output of the SVGView
-   * @param width The width of the canvas size.
+   *
+   * @param speed  The speed of the animation.
+   * @param s      The List of Shapes in the animation.
+   * @param a      The output of the SVGView
+   * @param width  The width of the canvas size.
    * @param height The height of the canvas size.
-   * @param m The AnimationModelImpl of the Animation
+   * @param m      The AnimationModelImpl of the Animation
    * @throws IllegalArgumentException if s is null or a is null
    */
   public SVGView(int speed, ArrayList<Shapes> s, Appendable a, int width,
-      int height, AnimationModelImpl m) {
+                 int height, AnimationModelImpl m) {
 
     if (s == null || a == null) {
       throw new IllegalArgumentException("Cannot be null");
@@ -46,14 +48,13 @@ public class SVGView implements ISVGView {
   }
 
 
-
   @Override
   public void output() {
     this.appendHelp("<svg width=\"" + this.width + "\" height=\"" + this.height + "\" "
-        + "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n\n");
+            + "version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n\n");
     for (Shapes s : m.getShapes()) {
       this.appendHelp("<" + getSVGType(s) + " id=\"" + s.getName() + "\" "
-          + getSVGDesc(s) + ">\n\n");
+              + getSVGDesc(s) + ">\n\n");
 
       for (ArrayList<Animation> an : s.getAnimations()) {
         for (Animation ann : an) {
@@ -97,6 +98,7 @@ public class SVGView implements ISVGView {
 
   /**
    * Produces a String that checks the SVG Commands for all of its inputs.
+   *
    * @param startX The starting X position.
    * @param startY The starting Y position.
    * @param startW The starting Width.
@@ -104,22 +106,22 @@ public class SVGView implements ISVGView {
    * @param startR The starting Red value.
    * @param startG The starting Green value.
    * @param startB The starting Blue value.
-   * @param endX The ending X position.
-   * @param endY The ending Y position.
-   * @param endW The ending Width.
-   * @param endH The ending Height.
-   * @param endR The ending Red value.
-   * @param endG The ending Green value.
-   * @param endB The ending Blue value.
-   * @param shape The shape being described.
-   * @param an The animation being described.
+   * @param endX   The ending X position.
+   * @param endY   The ending Y position.
+   * @param endW   The ending Width.
+   * @param endH   The ending Height.
+   * @param endR   The ending Red value.
+   * @param endG   The ending Green value.
+   * @param endB   The ending Blue value.
+   * @param shape  The shape being described.
+   * @param an     The animation being described.
    * @return String with all of the inputs in SVG format.
    */
 
   private String checkSVGCommands(int startX, int startY, int startW, int startH,
-      int startR, int startG, int startB, int endX, int endY,
-      int endW, int endH, int endR, int endG, int endB, Shapes shape,
-      Animation an) {
+                                  int startR, int startG, int startB, int endX, int endY,
+                                  int endW, int endH, int endR, int endG, int endB, Shapes shape,
+                                  Animation an) {
     String result = "";
 
     if (startX != endX) {
@@ -143,19 +145,20 @@ public class SVGView implements ISVGView {
 
   /**
    * Produces a String turning the X Position into SVG format.
-   * @param shape The shape being described.
-   * @param an The animation being described.
+   *
+   * @param shape    The shape being described.
+   * @param an       The animation being described.
    * @param startval The starting X position.
-   * @param endval The ending X position.
+   * @param endval   The ending X position.
    * @return String with the Xvalues in SVG format.
    */
   private String locationCommand(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "\t<animate attributeType=\"xml\" begin=\""
-        + an.getStartTime() * speed
-        + "ms\" dur=\""
-        + (an.getEndTime() - an.getStartTime()) * speed
-        + "ms\" attributeName=\"";
+            + an.getStartTime() * speed
+            + "ms\" dur=\""
+            + (an.getEndTime() - an.getStartTime()) * speed
+            + "ms\" attributeName=\"";
 
     if (shape.getDesc().equals("Ellipse")) {
       start += "cx";
@@ -165,30 +168,31 @@ public class SVGView implements ISVGView {
     }
 
     start += "\" from=\""
-        + startval
-        + "\" to=\"";
+            + startval
+            + "\" to=\"";
     start += endval
-        + "\" fill=\"freeze\" />\n";
+            + "\" fill=\"freeze\" />\n";
 
     return start;
   }
 
   /**
    * Produces a String turning the Y Position into SVG format.
-   * @param shape The shape being described.
-   * @param an The animation being described.
+   *
+   * @param shape    The shape being described.
+   * @param an       The animation being described.
    * @param startval The starting Y position.
-   * @param endval The ending Y position.
+   * @param endval   The ending Y position.
    * @return String with the Yvalues in SVG format.
    */
 
   private String locationCommandY(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "\t<animate attributeType=\"xml\" begin=\""
-        + an.getStartTime() * speed
-        + "ms\" dur=\""
-        + (an.getEndTime() - an.getStartTime()) * speed
-        + "ms\" attributeName=\"";
+            + an.getStartTime() * speed
+            + "ms\" dur=\""
+            + (an.getEndTime() - an.getStartTime()) * speed
+            + "ms\" attributeName=\"";
 
     if (shape.getDesc().equals("Ellipse")) {
       start += "cy";
@@ -198,30 +202,31 @@ public class SVGView implements ISVGView {
     }
 
     start += "\" from=\""
-        + startval
-        + "\" to=\"";
+            + startval
+            + "\" to=\"";
     start += endval
-        + "\" fill=\"freeze\" />\n";
+            + "\" fill=\"freeze\" />\n";
 
     return start;
   }
 
   /**
    * Produces a String turning the Width into SVG format.
-   * @param shape The shape being described.
-   * @param an The animation being described.
+   *
+   * @param shape    The shape being described.
+   * @param an       The animation being described.
    * @param startval The starting Width.
-   * @param endval The ending Width.
+   * @param endval   The ending Width.
    * @return String with the Width in SVG format.
    */
 
   private String sizeCommand(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "\t<animate attributeType=\"xml\" begin=\""
-        + an.getStartTime() * speed
-        + "ms\" dur=\""
-        + (an.getEndTime() - an.getStartTime()) * speed
-        + "ms\" attributeName=\"";
+            + an.getStartTime() * speed
+            + "ms\" dur=\""
+            + (an.getEndTime() - an.getStartTime()) * speed
+            + "ms\" attributeName=\"";
 
     if (shape.getDesc().equals("Ellipse")) {
       start += "rx";
@@ -230,30 +235,31 @@ public class SVGView implements ISVGView {
     }
 
     start += "\" from=\""
-        + startval
-        + "\" to=\"";
+            + startval
+            + "\" to=\"";
     start += endval
-        + "\" fill=\"freeze\" />\n";
+            + "\" fill=\"freeze\" />\n";
 
     return start;
   }
 
   /**
    * Produces a String turning the Height into SVG format.
-   * @param shape The shape being described.
-   * @param an The animation being described.
+   *
+   * @param shape    The shape being described.
+   * @param an       The animation being described.
    * @param startval The starting Height.
-   * @param endval The ending Height.
+   * @param endval   The ending Height.
    * @return String with the Height in SVG format.
    */
 
   private String sizeCommandH(Shapes shape, Animation an, int startval, int endval) {
 
     String start = "\t<animate attributeType=\"xml\" begin=\""
-        + an.getStartTime() * speed
-        + "ms\" dur=\""
-        + (an.getEndTime() - an.getStartTime()) * speed
-        + "ms\" attributeName=\"";
+            + an.getStartTime() * speed
+            + "ms\" dur=\""
+            + (an.getEndTime() - an.getStartTime()) * speed
+            + "ms\" attributeName=\"";
 
     if (shape.getDesc().equals("Ellipse")) {
       start += "ry";
@@ -262,57 +268,59 @@ public class SVGView implements ISVGView {
     }
 
     start += "\" from=\""
-        + startval
-        + "\" to=\"";
+            + startval
+            + "\" to=\"";
     start += endval
-        + "\" fill=\"freeze\" />\n";
+            + "\" fill=\"freeze\" />\n";
 
     return start;
   }
 
   /**
    * Produces a String turning the Color into SVG format.
-   * @param an The animation being described.
+   *
+   * @param an     The animation being described.
    * @param startR The starting Red value.
-   * @param endR The ending Red value.
+   * @param endR   The ending Red value.
    * @param startG The starting Green value.
-   * @param endG The ending Green value.
+   * @param endG   The ending Green value.
    * @param startB The starting Blue value.
-   * @param endB The ending Blue value.
+   * @param endB   The ending Blue value.
    * @return String with the Color in SVG format.
    */
 
   private String colorCommand(Animation an, int startR, int endR,
-      int startG, int endG, int startB, int endB) {
+                              int startG, int endG, int startB, int endB) {
 
     String start = "\t<animate attributeName = \"fill\" "
-        + "attributeType=\"xml\" begin=\""
-        + an.getStartTime() * speed
-        + "ms\" dur=\""
-        + (an.getEndTime() - an.getStartTime()) * speed
-        + "ms\"";
+            + "attributeType=\"xml\" begin=\""
+            + an.getStartTime() * speed
+            + "ms\" dur=\""
+            + (an.getEndTime() - an.getStartTime()) * speed
+            + "ms\"";
 
     start += " from=\""
-        + "rgb("
-        + startR
-        + ","
-        + startG
-        + ","
-        + startB
-        + ")\" to=\"";
+            + "rgb("
+            + startR
+            + ","
+            + startG
+            + ","
+            + startB
+            + ")\" to=\"";
     start += "rgb("
-        + endR
-        + ","
-        + endG
-        + ","
-        + endB
-        + ")\" fill=\"freeze\" />\n";
+            + endR
+            + ","
+            + endG
+            + ","
+            + endB
+            + ")\" fill=\"freeze\" />\n";
 
     return start;
   }
 
   /**
    * Helper method that appends the given String to the appendable.
+   *
    * @param s String in SVG format
    * @throws IllegalArgumentException if the appendable can't append the String.
    */
@@ -327,6 +335,7 @@ public class SVGView implements ISVGView {
 
   /**
    * Gets the Shape in SVG format.
+   *
    * @param s The Shape being described.
    * @return a String of the shape in SVG format.
    */
@@ -343,6 +352,7 @@ public class SVGView implements ISVGView {
 
   /**
    * Gets the Description of the Shape in SVG format.
+   *
    * @param s The Shape being described.
    * @return a String of the description of the shape in SVG format.
    */
@@ -386,7 +396,6 @@ public class SVGView implements ISVGView {
     }
     return result;
   }
-
 
 
   @Override
