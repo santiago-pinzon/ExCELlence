@@ -64,7 +64,6 @@ public class TestTextView {
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-imp.addAnimation("R", motion);
 
 
     Appendable out = new StringBuilder();
