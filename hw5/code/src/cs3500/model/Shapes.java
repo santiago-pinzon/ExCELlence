@@ -97,7 +97,7 @@ public interface Shapes {
 
   void addKeyFrame2(Animation animate);
 
-  void addKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
+  void addKeyFrame(int t, KeyFrame key);
 
   void changeEndTime(int t);
 
@@ -109,8 +109,11 @@ public interface Shapes {
 
   void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
 
+  boolean containsKey(int t);
 
   int getEnd();
+
+  void setTweener(KeyFrame frame);
 
 }
 

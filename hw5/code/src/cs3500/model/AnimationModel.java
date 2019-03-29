@@ -56,4 +56,12 @@ public interface AnimationModel {
    */
   void removeShape(String name);
 
+  int getLength();
+
+  void editKeyFrame(String name, int key, KeyFrame frame);
+
+  void addKeyFrame(String name, int key, KeyFrame frame);
+
+  void removeKeyFrame(String name, int key);
+
 }

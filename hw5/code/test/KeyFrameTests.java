@@ -1,27 +1,7 @@
-import junit.framework.TestCase;
-
 import org.junit.Test;
-
-
-import java.util.LinkedHashMap;
-
-import cs3500.animator.view.SVGView;
 import cs3500.animator.view.TextView;
-import cs3500.animator.view.IView;
-import cs3500.model.AnimationModel;
-import cs3500.model.AnimationModelImpl;
 import cs3500.animator.util.AnimationBuilder;
 import cs3500.animator.util.AnimationBuilderImpl;
-import cs3500.model.Color;
-import cs3500.model.ColorChange;
-import cs3500.model.Motion;
-import cs3500.model.Size;
-import cs3500.model.Position;
-import cs3500.model.Rectangle;
-import cs3500.model.Ellipse;
-import cs3500.model.Shapes;
-
-
 import static org.junit.Assert.assertEquals;
 
 public class KeyFrameTests {
@@ -78,7 +58,3 @@ public class KeyFrameTests {
 
   }
 }
-
-
-  }
-

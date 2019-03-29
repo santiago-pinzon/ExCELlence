@@ -11,6 +11,8 @@ import cs3500.model.Rectangle;
 import cs3500.model.Size;
 import org.junit.Test;
 
+//FIXME need to fix these tests..
+
 /**
  * Tests for the text-based view.
  */

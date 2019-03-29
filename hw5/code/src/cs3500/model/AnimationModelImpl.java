@@ -126,6 +126,23 @@ public class AnimationModelImpl implements AnimationModel {
     return max;
   }
 
+  @Override
+  public void editKeyFrame(String name, int key, KeyFrame frame) {
+    this.listOfShapes.get(name).removeKeyFrame(key);
+    this.listOfShapes.get(name).addKeyFrame(key, frame);
+  }
+
+  @Override
+  public void addKeyFrame(String name, int key, KeyFrame frame) {
+    this.listOfShapes.get(name).addKeyFrame(key, frame);
+  }
+
+  @Override
+  public void removeKeyFrame(String name, int key) {
+    this.listOfShapes.get(name).removeKeyFrame(key);
+  }
+
+
 }
 
 

@@ -4,19 +4,17 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-
-
-import javafx.animation.KeyFrame;
+import java.util.LinkedHashMap;
 
 /**
- * Represents an abstract class for shapes. The shapes which extend this class only differ in
- * their name and as a result, the majority of the code has been abstracted.
+ * Represents an abstract class for shapes. The shapes which extend this class only differ in their
+ * name and as a result, the majority of the code has been abstracted.
  */
 public abstract class AShape implements Shapes {
 
   private HashMap<Integer, ArrayList<Animation>> actions;
 
-  private HashMap<Integer, ArrayList<KeyFrame>> keyframes;
+  private LinkedHashMap<Integer, KeyFrame> keyframes;
 
   private ArrayList<Integer> keyPoints;
   protected Position center;
@@ -34,11 +32,9 @@ public abstract class AShape implements Shapes {
    *
    * @param center the position of the shape
    * @param height the height of the shape
-
-   * @param width  the width of the shape
-   * @param color  the color of the shape
-   * @param name   the name of the shape
-
+   * @param width the width of the shape
+   * @param color the color of the shape
+   * @param name the name of the shape
    * @param width the width of the shape
    * @param color the color of the shape
    * @param name the name of the shape
@@ -64,7 +60,7 @@ public abstract class AShape implements Shapes {
     this.startTime = startTime;
     this.endTime = endTime;
 
-    this.keyframes = new HashMap<>();
+    this.keyframes = new LinkedHashMap<>();
 
   }
 
@@ -88,8 +84,8 @@ public abstract class AShape implements Shapes {
   @Override
   public String getFullDescription() {
     String output = "shape " + this.name + " " + this.desc + "\n";
-    for (int key : keyPoints) {
-      output += this.getDescription(key);
+    for (int i = 1; i < keyPoints.size(); i++) {
+      output += this.getDescription(i);
     }
 
     return output;
@@ -98,18 +94,8 @@ public abstract class AShape implements Shapes {
   @Override
   public String getDescription(int key) {
     String out = "motion\t" + this.name + "\t";
-
-    out += String.format("%-5s %s %-5s %-5s %s", key, this.center.toString(), this.height,
-
-            this.width, this.color.toString()) + "\t\t";
-    this.performActions(key);
-    out += String.format("%-5s %s %-5s %-5s %s", actions.get(key).get(0).getEndTime(),
-            this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
-    this.performActions(key);
-    out += String.format("%-5s %s %-5s %-5s %s", actions.get(key).get(0).getEndTime(),
-        this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
-
-
+    out += keyframes.get(keyPoints.get(key)) + "\t\t";
+    out += keyframes.get(keyPoints.get(key + 1)) + "\n";
     return out;
   }
 
@@ -162,7 +148,7 @@ public abstract class AShape implements Shapes {
     }
 
     if (!keyframes.containsKey(key)) {
-      keyframes.put(key, new ArrayList<KeyFrame>());
+
     }
 
     actions.get(key).add(animate);
@@ -170,71 +156,23 @@ public abstract class AShape implements Shapes {
 
 
   @Override
-  public void addKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b){
-    for (ArrayList<Animation> a : this.getAnimations()){
-      if (a.size() == 0){
-        this.addAction(new AnimationChangeTime(t, t + 1));
-      }
-      if (a.get(0).getStartTime() > t){
-        a.remove(0);
-        a.add(0, new AnimationVisible(t));
-        this.changeStartTime(t);
-//         a.set(1, a.get(1).changeStartTime(t));
-      }
-      if (a.get(a.size() - 1).getEndTime() < t){
-        this.changeEndTime(t);
-        this.addAction(new AnimationChangeAll(a.get(a.size() - 2).getEndTime(), t, w, h, new Position(x, y), new Color(r, g, b)));
-      }/*
-       for (Animation an : a){
-         if (an.getStartTime() == t || an.getEndTime() == t){
-           throw new IllegalArgumentException("error");
-         }
-*//*
-         if (an.getStartTime() < t && an.getEndTime() > t){
-           int start = an.getStartTime();
-           this.addAction(an.changeStartTime(t));
-           this.addAction(new AnimationChangeAll(start, t, w, h, new Position(x, y),  new Color(r, g, b)));
-         }
-
-       }
-*/
-}
-
+  public void addKeyFrame(int t, cs3500.model.KeyFrame key) {
+    if (!keyPoints.contains(t)) {
+      keyPoints.add(t);
+      Collections.sort(keyPoints);
+    }
+    System.out.println("ADDING KEYFRAME");
+    this.keyframes.put(t, key);
   }
-
 
 
   @Override
   public void removeKeyFrame(int t) {
-    for (ArrayList<Animation> a : this.getAnimations()) {
-      if (a.size() == 0) {
-        throw new IllegalArgumentException("no keyframes available");
-      }
-      if (startTime == t){
-        a.remove(0);
-        Animation temp = a.remove(0);
-        a.add(0, new AnimationVisible(temp.getEndTime()));
-      }
-      if (endTime == t){
-        a.remove(a.size() - 1);
-        Animation temp = a.remove(a.size() - 1);
-        a.add(new AnimationVisible(temp.getStartTime()));
-      }
-      for (int i = 0; i < a.size(); i ++){
-        Animation an = a.get(i);
-
-        if (an.getStartTime() == t){
-          a.remove(an);
-          try{
-            Animation temp = a.remove(i + 1);
-            this.addAction(temp.changeStartTime(t));
-          } catch(IndexOutOfBoundsException e){
-            this.changeEndTime(t);
-          }
-        }
-      }
+    if (!this.keyPoints.contains(t)) {
+      throw new IllegalArgumentException("This keypoint does not exist");
+    } else {
+      this.keyframes.remove(t);
     }
-    throw new IllegalArgumentException("Not key frame");
   }
 
   @Override
@@ -272,24 +210,32 @@ public abstract class AShape implements Shapes {
 
   /**
    * gets the tweener state for the shape at the desired tick.
+   *
    * @param tick the tick for the tweener.
    */
   public void getTweener(int tick) {
     int keyFrame = keyPoints.get(0);
-    ArrayList<Animation> toBeDone;
-    for (int i = 0; i < keyPoints.size(); i++) {
+    double ratio = 1.0;
+    int i;
+    for (i = 0; i < keyPoints.size(); i++) {
       if (keyPoints.get(i) > tick) {
         break;
       } else {
         keyFrame = keyPoints.get(i);
       }
     }
-    toBeDone = this.actions.get(keyFrame);
-
-    for (Animation a : toBeDone) {
-      // send in the number of ticks after the start of the animation
-      a.applyTweener(tick - a.getStartTime(), this);
+    KeyFrame one = this.keyframes.get(keyFrame);
+    if (i < keyPoints.size() - 1) {
+      KeyFrame two = this.keyframes.get(keyPoints.get(i + 1));
+      int difference = two.getKey() - one.getKey();
+      int length = tick - one.getKey();
+      ratio = (double) length / difference;
+      this.setTweener(new KeyFrame(one, two, ratio));
     }
+    else {
+      this.setTweener(one);
+    }
+
   }
 
 
@@ -316,91 +262,24 @@ public abstract class AShape implements Shapes {
     return this.visible;
   }
 
-
-@Override
-public void addKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b){
-    for (ArrayList<Animation> a : this.getAnimations()){
-       if (a.size() == 0){
-         this.addAction(new AnimationChangeTime(t, t + 1));
-       }
-       if (a.get(0).getStartTime() > t){
-         a.remove(0);
-         a.add(0, new AnimationVisible(t));
-         this.changeStartTime(t);
-         a.set(1, a.get(1).changeStartTime(t));
-       }
-       if (a.get(a.size() - 1).getEndTime() < t){
-         this.changeEndTime(t);
-//         this.addAction(new AnimationChangeAll(a.get(a.size() - 2).getEndTime(), t, w, h, new Position(x, y), new Color(r, g, b)));
-       }
-       for (Animation an : a){
-         /*
-         if (an.getStartTime() == t || an.getEndTime() == t){
-           throw new IllegalArgumentException("error");
-         }
-         */
-         if (an.getStartTime() < t && an.getEndTime() > t){ 
-           int start = an.getStartTime();
-           this.addAction(an.changeStartTime(t));
-           this.addAction(new AnimationChangeAll(start, t, w, h, new Position(x, y),  new Color(r, g, b)));
-         }
-       }
-
-    }
-
-}
-
-@Override
-public void removeKeyFrame(int t) {
-  for (ArrayList<Animation> a : this.getAnimations()) {
-    if (a.size() == 0) {
-      throw new IllegalArgumentException("no keyframes available");
-    }
-    if (startTime == t){
-      a.remove(0);
-      Animation temp = a.remove(0);
-      a.add(0, new AnimationVisible(temp.getEndTime()));
-    }
-    if (endTime == t){
-      a.remove(a.size() - 1);
-      Animation temp = a.remove(a.size() - 1);
-      a.add(new AnimationVisible(temp.getStartTime()));
-    }
-    for (int i = 0; i < a.size(); i ++){
-      Animation an = a.get(i);
-
-      if (an.getStartTime() == t){
-        a.remove(an);
-        try{
-          Animation temp = a.remove(i + 1);
-          this.addAction(temp.changeStartTime(t));
-        } catch(IndexOutOfBoundsException e){
-          this.changeEndTime(t);
-        }
-      }
-    }
-  }
-  throw new IllegalArgumentException("Not key frame");
-}
-
-
-@Override
-public void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b){
-    this.removeKeyFrame(t);
-    this.addKeyFrame(t, x, y, w, h, r, g, b);
-}
-
-@Override
-  public void changeStartTime(int t){
-    this.startTime = t;
-}
   @Override
-  public void changeEndTime(int t){
+  public void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b) {
+    this.removeKeyFrame(t);
+    this.addKeyFrame(t, new KeyFrame(t, x, y, w, h, r, g, b));
+  }
+
+  @Override
+  public void changeStartTime(int t) {
+    this.startTime = t;
+  }
+
+  @Override
+  public void changeEndTime(int t) {
     this.endTime = t;
   }
 
   @Override
-  public boolean getVisibility(){
+  public boolean getVisibility() {
     return false;
   }
 
@@ -409,6 +288,15 @@ public void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int 
     return keyPoints.get(keyPoints.size() - 1);
   }
 
+  public boolean containsKey(int t) {
+    return this.keyPoints.contains(t);
+  }
+
+  public void setTweener(KeyFrame frame) {
+    this.center = new Position(frame.getX(), frame.getY());
+    this.width = frame.getW();
+    this.height = frame.getH();
+    this.color = new Color(frame.getR(), frame.getG(), frame.getB());
+  }
 
 }
-

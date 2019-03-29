@@ -5,6 +5,7 @@ import cs3500.model.AnimationModelImpl;
 import cs3500.model.Color;
 import cs3500.model.ColorChange;
 import cs3500.model.Ellipse;
+import cs3500.model.KeyFrame;
 import cs3500.model.Motion;
 import cs3500.model.Position;
 import cs3500.model.Rectangle;
@@ -165,6 +166,11 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
       //System.out.println("ADDING NEW PAUSE " + name + " T1: " + t1 + " T2: " + t2);
       this.listOfShapes.get(name).addAction(new Motion(t1, t2, new Position(x2, y2)));
     }
+    if(t1 == 1 || t1 == 0) {
+      this.listOfShapes.get(name).addKeyFrame(t1, new KeyFrame(t1, x1, y1, h1, w1, r1, g1, b1));
+    }
+    this.listOfShapes.get(name).addKeyFrame(t2, new KeyFrame(t2, x2, y2, h2, w2, r2, g2, b2));
+
   }
 
   /**
@@ -184,19 +190,6 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
   @Override
   public AnimationBuilder addKeyframe(String name, int t, int x, int y, int w, int h, int r, int g,
       int b) {
-    if (animationLength < t){
-      this.animationLength = t;
-    }
-    for (Shapes s : listOfShapes.values()){
-      if (s.getName().equals(name)){
-        s.addKeyFrame(t, x, y, w, h, r, g, b);
-        this.addMotion(s.getName(), t, s.getX(), s.getY(), s.getWidth(), s.getHeight(), s.getRed(), s.getGreen(), s.getBlue(),
-                t, x, y, w, h, r, g, b, true);
-
-      } 
-
-      }
-
     return this;
   }
 

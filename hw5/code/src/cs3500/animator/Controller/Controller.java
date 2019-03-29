@@ -4,6 +4,7 @@ import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.animator.util.AnimationReader;
 import cs3500.animator.view.EditorView;
 import cs3500.model.AnimationModelImpl;
+import cs3500.model.KeyFrame;
 import cs3500.model.ROAnimationModel;
 import cs3500.model.Shapes;
 import java.awt.event.ActionEvent;
@@ -100,6 +101,13 @@ public class Controller implements IController, ActionListener {
         System.out.println("delete");
 
         break;
+      }
+      case "edit": {
+        System.out.println("edit");
+        //String name = this.view.getShapeName();
+        //int key = this.view.getKeyFrameNumber();
+        //KeyFrame frame = this.view.getKeyFrame();
+        //this.model.editKeyFrame(name, key, frame);
       }
       case "slowdown": {
         System.out.println("slow down");

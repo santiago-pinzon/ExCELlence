@@ -23,16 +23,15 @@ public class Color {
    * @throws IllegalArgumentException if b < 0 or b > 255 because that is an invalid number for a
    *        color
    */
-
   public Color(int r, int g, int b) {
     if (r < 0 || r > 255) {
-      throw new IllegalArgumentException("Invalid color");
+      throw new IllegalArgumentException("Invalid color r = " + r);
     }
     if (g < 0 || g > 255) {
-      throw new IllegalArgumentException("Invalid color");
+      throw new IllegalArgumentException("Invalid color g = " + g);
     }
     if (b < 0 || b > 255) {
-      throw new IllegalArgumentException("Invalid color");
+      throw new IllegalArgumentException("Invalid color b = " + b);
     }
 
     this.r = r;

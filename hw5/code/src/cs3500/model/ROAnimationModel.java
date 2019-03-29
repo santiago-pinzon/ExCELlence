@@ -44,4 +44,16 @@ public class ROAnimationModel extends AnimationModelImpl {
   public void removeShape(String name) {
     throw new UnsupportedOperationException("This method is not allowed");
   }
+
+  public void editKeyFrame(String name, int key, KeyFrame frame) {
+    throw new UnsupportedOperationException("This method is not allowed");
+  }
+
+  public void addKeyFrame(String name, int key, KeyFrame frame) {
+    throw new UnsupportedOperationException("This method is not allowed");
+  }
+
+  public void removeKeyFrame(String name, int key) {
+    throw new UnsupportedOperationException("This method is not allowed");
+  }
 }
