@@ -1,11 +1,9 @@
 package cs3500.animator.view;
 
-
 import static java.lang.Integer.parseInt;
 
 import cs3500.model.KeyFrame;
 import cs3500.model.ROAnimationModel;
-import cs3500.model.Shapes;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
@@ -28,14 +26,13 @@ import javax.swing.JToolBar;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
 
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
-import cs3500.model.ROAnimationModel;
 
 /**
  * Class that represents the editor view where all of the editing takes place.
@@ -509,7 +506,6 @@ public class EditorView extends JFrame implements IEditorView {
 
   public String getShapeNameToBeAdded() {
     String name = "";
-
 
     JTextField nameField = new JTextField(10);
     JPanel myPanel = new JPanel();
