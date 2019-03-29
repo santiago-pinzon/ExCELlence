@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
+import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.animator.view.TextView;
 import cs3500.model.AnimationModelImpl;
 import cs3500.model.Color;
@@ -7,6 +8,7 @@ import cs3500.model.ColorChange;
 import cs3500.model.Ellipse;
 import cs3500.model.Motion;
 import cs3500.model.Position;
+import cs3500.model.KeyFrame;
 import cs3500.model.Rectangle;
 import cs3500.model.Size;
 import org.junit.Test;
@@ -51,6 +53,9 @@ public class TestTextView {
 
   @Test
   public void testMovementAnimation() {
+
+
+
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
         new Color(255, 0, 0), "R", true);
 
@@ -59,11 +64,14 @@ public class TestTextView {
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-    imp.addAnimation("R", motion);
+imp.addAnimation("R", motion);
+
 
     Appendable out = new StringBuilder();
 
+
     TextView textView = new TextView(imp, 0,0, 100, 100, out);
+
 
     String description = "canvas 0   0   100 100\n"
         + "shape R Rectangle\n"

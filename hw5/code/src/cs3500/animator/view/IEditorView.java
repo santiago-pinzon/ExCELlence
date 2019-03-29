@@ -1,11 +1,20 @@
 
 package cs3500.animator.view;
 
+/**
+ * Interface for the editor view that allows the user to edit the animation.
+ */
 public interface IEditorView extends IView {
 
-  public void refresh();
+  /**
+   * Refreshes the animation.
+   */
+  void refresh();
 
-  public void setVisible();
+  /**
+   * Makes the animation visible.
+   */
+  void setVisible();
 }
 
 

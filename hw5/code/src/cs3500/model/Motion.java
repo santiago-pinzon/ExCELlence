@@ -12,8 +12,8 @@ public class Motion extends AbstractAnimation {
    * Constructs a Motion with a given startTime, endTime and Position.
    *
    * @param startTime represents the startTime of the animation
-   * @param endTime represents the endTime of the animation
-   * @param to represents the position being moved to
+   * @param endTime   represents the endTime of the animation
+   * @param to        represents the position being moved to
    * @throws IllegalArgumentException if the endTime is <= the startTime
    */
 
@@ -45,10 +45,6 @@ public class Motion extends AbstractAnimation {
 
   }
 
-  @Override
-  public Animation changeStartTime(int i) {
-    return new Motion(i, endTime, to);
-  }
 
 }
 

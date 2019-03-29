@@ -13,7 +13,7 @@ public interface AnimationModel {
    *
    * @param shape the shape being added to the list of shapes.
    * @throws IllegalArgumentException if a shape is already in the list of shapes with that shapes
-   *        name.
+   *                                  name.
    */
 
   public void addShape(Shapes shape);
@@ -21,7 +21,7 @@ public interface AnimationModel {
   /**
    * Adds an animation to the given shape.
    *
-   * @param shape the shape getting the animation.
+   * @param shape   the shape getting the animation.
    * @param animate the animation being given to the shape.
    * @throws IllegalArgumentException if the given shape is not in the list of shapes.
    */
@@ -44,8 +44,18 @@ public interface AnimationModel {
    */
   void updateShapes(int tick);
 
+  /**
+   * Gets the shapes of the animation.
+   *
+   * @return ArrayList of Shapes which includes the shapes in the animation
+   */
   ArrayList<Shapes> getShapes();
 
+  /**
+   * Adds shapes to the arrayList of shapes
+   *
+   * @param s shape being added to the arraylist
+   */
   void addShapesToArray(Shapes s);
 
 
@@ -56,12 +66,67 @@ public interface AnimationModel {
    */
   void removeShape(String name);
 
+  /**
+   * Gets the length of the animation.
+   *
+   * @return length of the animation
+   */
   int getLength();
 
+  /**
+   * Edits the keyFrame.
+   *
+   * @param name  name of the keyframe
+   * @param key   frame of the animation model
+   * @param frame keyframe being edited
+   */
   void editKeyFrame(String name, int key, KeyFrame frame);
 
+  /**
+   * Adds the keyFrame to the animation model.
+   *
+   * @param name  name of the keyframe
+   * @param key   frame of the animation model
+   * @param frame keyframe being edited
+   */
   void addKeyFrame(String name, int key, KeyFrame frame);
 
+
+  /**
+   * Removes the keyFrame.
+   *
+   * @param name name of the keyframe
+   * @param key  frame of the animation model
+   */
   void removeKeyFrame(String name, int key);
+
+  /**
+   * Gets height of the animation model.
+   *
+   * @return height of the animation model
+   */
+  int getHeight();
+
+  /**
+   * Gets width of the animation model.
+   *
+   * @return width of the animation model
+   */
+  int getWidth();
+
+  /**
+   * Gets x value of the animation model.
+   *
+   * @return x value of the animation model
+   */
+  int getX();
+
+  /**
+   * Gets y value of the animation model.
+   *
+   * @return y value of the animation model
+   */
+  int getY();
+
 
 }

@@ -56,6 +56,7 @@ public class AnimationReader {
     return builder.build();
   }
 
+
   private static <Doc> void readCanvas(Scanner s, AnimationBuilder<Doc> builder) {
     int[] vals = new int[4];
     String[] fieldNames = {"left", "top", "width", "height"};

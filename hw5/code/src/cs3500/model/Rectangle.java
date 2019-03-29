@@ -18,7 +18,7 @@ public class Rectangle extends AShape {
    */
 
   public Rectangle(Position center, int height, int width,
-      Color color, String name, boolean visible) {
+                   Color color, String name, boolean visible) {
     super(center, height, width, color, name, visible);
     this.desc = "Rectangle";
   }

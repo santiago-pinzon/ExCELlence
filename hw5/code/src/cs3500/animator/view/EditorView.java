@@ -1,5 +1,6 @@
 package cs3500.animator.view;
 
+<<<<<<< HEAD
 import static java.lang.Integer.parseInt;
 
 import cs3500.model.KeyFrame;
@@ -26,8 +27,20 @@ import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
+=======
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.*;
+>>>>>>> cfad60e5b1c416d6c20ce21a6620f28290ab19e8
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import cs3500.model.ROAnimationModel;
+
+/**
+ * Class that represents the editor view where all of the editing takes place.
+ */
 public class EditorView extends JFrame implements IEditorView {
 
   private JPanel mainPanel;
@@ -64,7 +77,9 @@ public class EditorView extends JFrame implements IEditorView {
   private boolean started = false;
   private int pause = 1;
 
-
+  /**
+   * Constructs an EditorView.
+   */
   public EditorView() {
     super();
     this.direction = 1;
@@ -180,6 +195,7 @@ public class EditorView extends JFrame implements IEditorView {
 
   }
 
+  @Override
   public void setVisible() {
     this.setVisible(true);
   }
@@ -199,12 +215,15 @@ public class EditorView extends JFrame implements IEditorView {
 
   }
 
+  /**
+   * Starts the animation.
+   */
 
   public void animate() {
     timer = new Timer(this.speed, e -> {
       EditorView.this.model.updateShapes(tick);
       EditorView.this.panel.addShapes(
-          EditorView.this.model.getHash());
+              EditorView.this.model.getHash());
       EditorView.this.refresh();
 
       if (this.looping) {
@@ -228,12 +247,22 @@ public class EditorView extends JFrame implements IEditorView {
     timer.start();
   }
 
+  /**
+   * Sets the model.
+   *
+   * @param in the ROAnimationModel being set
+   */
   public void setModel(ROAnimationModel in) {
     this.model = in;
     this.length = model.getLength();
     System.out.println("Updated model to have shapes: " + this.model.getHash().values().size());
   }
 
+  /**
+   * Adds the action listener to the view.
+   *
+   * @param listen represents the action listener
+   */
   public void addActionListener(ActionListener listen) {
     restart.addActionListener(listen);
     loop.addActionListener(listen);
@@ -249,6 +278,9 @@ public class EditorView extends JFrame implements IEditorView {
     save.addActionListener(listen);
   }
 
+  /**
+   * Slows down the animation.
+   */
   public void slowDown() {
     if (this.speed > 1) {
       this.speed /= 2;
@@ -257,6 +289,9 @@ public class EditorView extends JFrame implements IEditorView {
     this.timer.setDelay(1000 / speed);
   }
 
+  /**
+   * Speeds up the animation.
+   */
   public void speedUp() {
     if (this.speed < 500) {
       this.speed *= 2;
@@ -265,14 +300,23 @@ public class EditorView extends JFrame implements IEditorView {
     this.timer.setDelay(1000 / this.speed);
   }
 
+  /**
+   * Reverses the animation.
+   */
   public void reverse() {
     this.direction = -1;
   }
 
+  /**
+   * Moves the animation forward.
+   */
   public void forward() {
     this.direction = 1;
   }
 
+  /**
+   * Plays the animation.
+   */
   public void play() {
     if (this.paused) {
       this.play.setIcon(new ImageIcon("play.gif"));
@@ -289,20 +333,31 @@ public class EditorView extends JFrame implements IEditorView {
     }
   }
 
+  /**
+   * Restarts the animation.
+   */
   public void restart() {
     this.tick = 1;
     this.updateCounter();
   }
 
+  /**
+   * Loops the animation.
+   */
   public void loop() {
     this.looping = this.loop.isSelected();
   }
 
+  /**
+   * Gets the file being selected.
+   *
+   * @return file
+   */
   public File getFile() {
     File f = null;
     final JFileChooser fchooser = new JFileChooser(".");
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
-        "Animation files", "txt");
+            "Animation files", "txt");
     fchooser.setFileFilter(filter);
     int retvalue = fchooser.showOpenDialog(EditorView.this);
     if (retvalue == JFileChooser.APPROVE_OPTION) {
@@ -311,43 +366,58 @@ public class EditorView extends JFrame implements IEditorView {
     return f;
   }
 
+  /**
+   * Updates the counter.
+   */
   public void updateCounter() {
     this.tickButton.setText("" + this.tick + "/" + this.length);
   }
 
+  /**
+   * Gets the name of the shape.
+   *
+   * @param in represents the actionlistener
+   * @return name of the shape
+   */
   public String getShapeName(ActionListener in) {
     Object[] possibilities = new Object[this.model.getShapes().size()];
-    for(int i = 0; i < this.model.getShapes().size(); i++) {
+    for (int i = 0; i < this.model.getShapes().size(); i++) {
       possibilities[i] = this.model.getShapes().get(i).getName();
     }
 
-    String s = (String)JOptionPane.showInputDialog(
-        this,
-        "Please pick a shape",
-        "Shape Picker",
-        JOptionPane.PLAIN_MESSAGE,
-        new ImageIcon(),
-        possibilities,
-        "");
+    String s = (String) JOptionPane.showInputDialog(
+            this,
+            "Please pick a shape",
+            "Shape Picker",
+            JOptionPane.PLAIN_MESSAGE,
+            new ImageIcon(),
+            possibilities,
+            "");
 
     return s;
 
   }
 
+  /**
+   * Gets the number of a key frame.
+   *
+   * @param name represents the name of the model
+   * @return the number of a key frame
+   */
   public int getKeyFrameNumber(String name) {
     Object[] possibilities = new Object[this.model.getHash().get(name).getKeyPoints().size()];
-    for(int i = 0; i < this.model.getHash().get(name).getKeyPoints().size(); i++) {
+    for (int i = 0; i < this.model.getHash().get(name).getKeyPoints().size(); i++) {
       possibilities[i] = this.model.getHash().get(name).getKeyPoints().get(i);
     }
 
-    int s = (int)JOptionPane.showInputDialog(
-        this,
-        "Please pick a key frame",
-        "Key Frame Picker",
-        JOptionPane.PLAIN_MESSAGE,
-        new ImageIcon(),
-        possibilities,
-        "");
+    int s = (int) JOptionPane.showInputDialog(
+            this,
+            "Please pick a key frame",
+            "Key Frame Picker",
+            JOptionPane.PLAIN_MESSAGE,
+            new ImageIcon(),
+            possibilities,
+            "");
 
     return s;
 
@@ -441,6 +511,7 @@ public class EditorView extends JFrame implements IEditorView {
   public String getShapeNameToBeAdded() {
     String name = "";
 
+<<<<<<< HEAD
     JTextField nameField = new JTextField(10);
     JPanel myPanel = new JPanel();
     myPanel.add(new JLabel("Name:"));
@@ -464,4 +535,6 @@ public class EditorView extends JFrame implements IEditorView {
     }
     return f;
   }
+=======
+>>>>>>> cfad60e5b1c416d6c20ce21a6620f28290ab19e8
 }

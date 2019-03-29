@@ -1,12 +1,11 @@
 package cs3500.animator.view;
 
-import cs3500.model.Shapes;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+import java.awt.*;
 import java.util.LinkedHashMap;
-import javax.swing.JPanel;
+
+import javax.swing.*;
+
+import cs3500.model.Shapes;
 
 
 /**
@@ -19,8 +18,9 @@ public class AnimationPanel extends JPanel {
   private int y = 0;
 
   /**
-   * This overrides the parent class's paintComponent method to include drawing all the
-   * rectangles and ellipses included in the animation.
+   * This overrides the parent class's paintComponent method to include drawing all the rectangles
+   * and ellipses included in the animation.
+   *
    * @param g the graphics to be drawn
    */
   @Override
@@ -39,12 +39,12 @@ public class AnimationPanel extends JPanel {
         case "Rectangle":
           g2.setColor(shape.getActualColor());
           g2.fillRect(shape.getX() - this.x, shape.getY() - this.y, shape.getWidth(),
-              shape.getHeight());
+                  shape.getHeight());
           break;
         case "Ellipse":
           g2.setColor(shape.getActualColor());
           g2.fillOval(shape.getX() - this.x, shape.getY() - this.y, shape.getWidth(),
-              shape.getHeight());
+                  shape.getHeight());
           break;
 
         default:
@@ -57,18 +57,20 @@ public class AnimationPanel extends JPanel {
   /**
    * This method updates the Hash of shapes to be drawn to its current state. Rather than pass in
    * the model, a copy of the lists to be drawn is passed in.
+   *
    * @param in the map of shapes to be added.
    */
-  public void addShapes(LinkedHashMap<String, Shapes> in) {
+  void addShapes(LinkedHashMap<String, Shapes> in) {
     this.listOfShapes = (LinkedHashMap) in.clone();
   }
 
   /**
    * Sets the amount to offset each animation by.
+   *
    * @param x the offset in the x direction.
    * @param y the offset in the y direction.
    */
-  public void setOffset(int x, int y) {
+  void setOffset(int x, int y) {
     this.x = x;
     this.y = y;
   }

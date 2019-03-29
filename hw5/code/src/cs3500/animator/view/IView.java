@@ -2,9 +2,8 @@ package cs3500.animator.view;
 
 
 /**
- * The view interface. To motivate the methods here
- * think about all the operations that the controller
- * would need to invoke on the view.
+ * The view interface. To motivate the methods here think about all the operations that the
+ * controller would need to invoke on the view.
  */
 public interface IView {
 

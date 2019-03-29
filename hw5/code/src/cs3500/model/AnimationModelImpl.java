@@ -1,8 +1,8 @@
 package cs3500.model;
 
 
-import java.util.LinkedHashMap;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 /**
  * The implementation of the animation model. An animationModelImpl effectively holds and manages
@@ -96,18 +96,22 @@ public class AnimationModelImpl implements AnimationModel {
     return copies;
   }
 
+  @Override
   public int getHeight() {
     return height;
   }
 
+  @Override
   public int getWidth() {
     return width;
   }
 
+  @Override
   public int getX() {
     return x;
   }
 
+  @Override
   public int getY() {
     return y;
   }
@@ -117,10 +121,10 @@ public class AnimationModelImpl implements AnimationModel {
     this.listOfShapes.remove(name);
   }
 
-
+  @Override
   public int getLength() {
     int max = 0;
-    for(Shapes shape: this.listOfShapes.values()) {
+    for (Shapes shape : this.listOfShapes.values()) {
       max = Math.max(max, shape.getEnd());
     }
     return max;
