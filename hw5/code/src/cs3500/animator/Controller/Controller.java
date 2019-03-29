@@ -108,26 +108,33 @@ public class Controller implements IController, ActionListener {
       }
       case "add": {
         String type = this.view.getShapeType();
-        int number = this.view.getNumberOfKeyFrames();
-        String name = this.view.getShapeNameToBeAdded();
-        ArrayList<KeyFrame> frames = new ArrayList<>();
-        for (int i = 0; i < number; i++) {
-          frames.add(this.view.getKeyFrame());
-        }
-        KeyFrame initial = frames.get(0);
-        if (type.equals("Rectangle")) {
-          this.model.addShape(new Rectangle(new Position(initial.getX(), initial.getY()),
-              initial.getH(), initial.getW(),
-              new Color(initial.getR(), initial.getG(), initial.getB()), name, true));
+        if (type.equals("KeyFrame")) {
+          String name = this.view.getShapeName(this);
+          int key = this.view.getKeyFrameNumber(name);
+          KeyFrame frame = this.view.getKeyFrame();
+          this.model.addKeyFrame(name, key, frame);
         } else {
-          this.model.addShape(new Ellipse(new Position(initial.getX(), initial.getY()),
-              initial.getH(), initial.getW(),
-              new Color(initial.getR(), initial.getG(), initial.getB()), name, true));
-        }
-        this.model.addKeyFrame(name, 1, new KeyFrame(1, initial.getX(), initial.getY(),
-            initial.getH(), initial.getW(), initial.getR(), initial.getG(), initial.getB()));
-        for (KeyFrame k : frames) {
-          this.model.addKeyFrame(name, k.getKey(), k);
+          int number = this.view.getNumberOfKeyFrames();
+          String name = this.view.getShapeNameToBeAdded();
+          ArrayList<KeyFrame> frames = new ArrayList<>();
+          for (int i = 0; i < number; i++) {
+            frames.add(this.view.getKeyFrame());
+          }
+          KeyFrame initial = frames.get(0);
+          if (type.equals("Rectangle")) {
+            this.model.addShape(new Rectangle(new Position(initial.getX(), initial.getY()),
+                initial.getH(), initial.getW(),
+                new Color(initial.getR(), initial.getG(), initial.getB()), name, true));
+          } else {
+            this.model.addShape(new Ellipse(new Position(initial.getX(), initial.getY()),
+                initial.getH(), initial.getW(),
+                new Color(initial.getR(), initial.getG(), initial.getB()), name, true));
+          }
+          this.model.addKeyFrame(name, 1, new KeyFrame(1, initial.getX(), initial.getY(),
+              initial.getH(), initial.getW(), initial.getR(), initial.getG(), initial.getB()));
+          for (KeyFrame k : frames) {
+            this.model.addKeyFrame(name, k.getKey(), k);
+          }
         }
         this.updateView();
         break;
@@ -140,9 +147,8 @@ public class Controller implements IController, ActionListener {
       }
       case "edit": {
         String name = this.view.getShapeName(this);
-        int key = this.view.getKeyFrameNumber(name);
         KeyFrame frame = this.view.getKeyFrame();
-        this.model.editKeyFrame(name, key, frame);
+        this.model.editKeyFrame(name, frame.getKey(), frame);
         break;
 
       }

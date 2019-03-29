@@ -476,7 +476,7 @@ public class EditorView extends JFrame implements IEditorView {
 
 
   public String getShapeType() {
-    Object[] possibilities = {"Rectangle", "Ellipse"};
+    Object[] possibilities = {"Rectangle", "Ellipse", "KeyFrame"};
 
     String s = (String)JOptionPane.showInputDialog(
         this,
