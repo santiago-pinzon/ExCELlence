@@ -70,7 +70,7 @@ public class KeyFrame {
    * Gets the key value of the keyframe.
    * @return key value of the keyframe
    */
-  int getKey() {
+  public int getKey() {
     return key;
   }
 
@@ -78,49 +78,49 @@ public class KeyFrame {
    * Gets the x value of the keyframe.
    * @return x value of the keyframe
    */
-  int getX() {
+  public int getX() {
     return x;
   }
   /**
    * Gets the y value of the keyframe.
    * @return y value of the keyframe
    */
-  int getY() {
+  public int getY() {
     return y;
   }
   /**
    * Gets the height of the keyframe.
    * @return height of the keyframe
    */
-  int getH() {
+  public int getH() {
     return h;
   }
   /**
    * Gets the width of the keyframe.
    * @return width of the keyframe
    */
-  int getW() {
+  public int getW() {
     return w;
   }
   /**
    * Gets the red value of the keyframe.
    * @return red value of the keyframe
    */
-  int getR() {
+  public int getR() {
     return r;
   }
   /**
    * Gets the green value of the keyframe.
    * @return green value of the keyframe
    */
-  int getG() {
+  public int getG() {
     return g;
   }
   /**
    * Gets the blue value of the keyframe.
    * @return blue value of the keyframe
    */
-  int getB() {
+  public int getB() {
     return b;
   }
 
