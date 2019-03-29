@@ -62,7 +62,7 @@ public class KeyFrame {
    * @return the key frame as a string in the correct format
    */
   public String toString() {
-    return String.format("%-5s %-5s %-5s %-5s %-5s %-5s %-5s", key, this.x, this.y, this.h,
+    return String.format("%-5s %-5s %-5s %-5s %-5s %-5s %-5s %-5s", key, this.x, this.y, this.h,
         this.w, this.r, this.g, this.b);
   }
 

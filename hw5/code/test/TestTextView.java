@@ -1,28 +1,23 @@
 import static org.junit.Assert.assertEquals;
 
-import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.animator.view.TextView;
 import cs3500.model.AnimationModelImpl;
 import cs3500.model.Color;
-import cs3500.model.ColorChange;
 import cs3500.model.Ellipse;
-import cs3500.model.Motion;
 import cs3500.model.Position;
 import cs3500.model.KeyFrame;
 import cs3500.model.Rectangle;
-import cs3500.model.Size;
 import org.junit.Test;
 
-//FIXME need to fix these tests..
 
 /**
  * Tests for the text-based view.
  */
 public class TestTextView {
 
-  @Test (expected  = java.lang.IllegalArgumentException.class)
+  @Test(expected = java.lang.IllegalArgumentException.class)
   public void testNullAppendable() {
-    TextView text = new TextView(new AnimationModelImpl(), 2,2,10, 10,null);
+    TextView text = new TextView(new AnimationModelImpl(), 2, 2, 10, 10, null);
   }
 
   @Test
@@ -30,16 +25,18 @@ public class TestTextView {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
         new Color(255, 0, 0), "R", true);
 
-    Size size = new Size(10, 15, 20, 21);
+    KeyFrame one = new KeyFrame(10, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame two = new KeyFrame(15, 0, 0, 20, 21, 255, 0, 0);
 
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-    imp.addAnimation("R", size);
+    imp.addKeyFrame("R", 10, one);
+    imp.addKeyFrame("R", 15, two);
 
     Appendable out = new StringBuilder();
 
-    TextView textView = new TextView(imp, 0,0, 100, 100, out);
+    TextView textView = new TextView(imp, 0, 0, 100, 100, out);
 
     String description = "canvas 0   0   100 100\n"
         + "shape R Rectangle\n"
@@ -54,23 +51,21 @@ public class TestTextView {
   @Test
   public void testMovementAnimation() {
 
-
-
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
         new Color(255, 0, 0), "R", true);
 
-    Motion motion = new Motion(10, 15, new Position(10,10));
+    KeyFrame one = new KeyFrame(10, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame two = new KeyFrame(15, 10, 10, 10, 10, 255, 0, 0);
 
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-
+    imp.addKeyFrame("R", 10, one);
+    imp.addKeyFrame("R", 15, two);
 
     Appendable out = new StringBuilder();
 
-
-    TextView textView = new TextView(imp, 0,0, 100, 100, out);
-
+    TextView textView = new TextView(imp, 0, 0, 100, 100, out);
 
     String description = "canvas 0   0   100 100\n"
         + "shape R Rectangle\n"
@@ -87,16 +82,18 @@ public class TestTextView {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
         new Color(255, 0, 0), "R", true);
 
-    ColorChange motion = new ColorChange(10, 15, new Color(100,100,100));
-
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-    imp.addAnimation("R", motion);
+    KeyFrame one = new KeyFrame(10, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame two = new KeyFrame(15, 0, 0, 10, 10, 100, 100, 100);
+
+    imp.addKeyFrame("R", 10, one);
+    imp.addKeyFrame("R", 15, two);
 
     Appendable out = new StringBuilder();
 
-    TextView textView = new TextView(imp, 0,0, 100, 100, out);
+    TextView textView = new TextView(imp, 0, 0, 100, 100, out);
 
     String description = "canvas 0   0   100 100\n"
         + "shape R Rectangle\n"
@@ -113,16 +110,18 @@ public class TestTextView {
     Ellipse test = new Ellipse(new Position(0, 0), 10, 10,
         new Color(255, 0, 0), "E", true);
 
-    Size size = new Size(10, 15, 20, 21);
-
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-    imp.addAnimation("E", size);
+    KeyFrame one = new KeyFrame(10, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame two = new KeyFrame(15, 0, 0, 20, 21, 255, 0, 0);
+
+    imp.addKeyFrame("E", 10, one);
+    imp.addKeyFrame("E", 15, two);
 
     Appendable out = new StringBuilder();
 
-    TextView textView = new TextView(imp, 0,0, 100, 100, out);
+    TextView textView = new TextView(imp, 0, 0, 100, 100, out);
 
     String description = "canvas 0   0   100 100\n"
         + "shape E Ellipse\n"
@@ -139,16 +138,18 @@ public class TestTextView {
     Ellipse test = new Ellipse(new Position(0, 0), 10, 10,
         new Color(255, 0, 0), "E", true);
 
-    Motion motion = new Motion(10, 15, new Position(10,10));
+    KeyFrame one = new KeyFrame(10, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame two = new KeyFrame(15, 10, 10, 10, 10, 255, 0, 0);
 
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-    imp.addAnimation("E", motion);
+    imp.addKeyFrame("E", 10, one);
+    imp.addKeyFrame("E", 15, two);
 
     Appendable out = new StringBuilder();
 
-    TextView textView = new TextView(imp, 0,0, 100, 100, out);
+    TextView textView = new TextView(imp, 0, 0, 100, 100, out);
 
     String description = "canvas 0   0   100 100\n"
         + "shape E Ellipse\n"
@@ -165,16 +166,18 @@ public class TestTextView {
     Ellipse test = new Ellipse(new Position(0, 0), 10, 10,
         new Color(255, 0, 0), "E", true);
 
-    ColorChange motion = new ColorChange(10, 15, new Color(100,100,100));
-
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-    imp.addAnimation("E", motion);
+    KeyFrame one = new KeyFrame(10, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame two = new KeyFrame(15, 0, 0, 10, 10, 100, 100, 100);
+
+    imp.addKeyFrame("E", 10, one);
+    imp.addKeyFrame("E", 15, two);
 
     Appendable out = new StringBuilder();
 
-    TextView textView = new TextView(imp, 0,0, 100, 100, out);
+    TextView textView = new TextView(imp, 0, 0, 100, 100, out);
 
     String description = "canvas 0   0   100 100\n"
         + "shape E Ellipse\n"
@@ -191,18 +194,20 @@ public class TestTextView {
     Rectangle test = new Rectangle(new Position(0, 0), 10, 10,
         new Color(255, 0, 0), "R", true);
 
-    Size size = new Size(10, 15, 20, 21);
-    Motion motion = new Motion(0, 10, new Position(5, 0));
-
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-    imp.addAnimation("R", motion);
-    imp.addAnimation("R", size);
+    KeyFrame one = new KeyFrame(0, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame two = new KeyFrame(10, 5, 0, 10, 10, 255, 0, 0);
+    KeyFrame three = new KeyFrame(15, 5, 0, 20, 21, 255, 0, 0);
+
+    imp.addKeyFrame("R", 0, one);
+    imp.addKeyFrame("R", 10, two);
+    imp.addKeyFrame("R", 15, three);
 
     Appendable out = new StringBuilder();
 
-    TextView textView = new TextView(imp, 0,0, 100, 100, out);
+    TextView textView = new TextView(imp, 0, 0, 100, 100, out);
 
     textView.render();
 
@@ -221,18 +226,20 @@ public class TestTextView {
     Ellipse test = new Ellipse(new Position(0, 0), 10, 10,
         new Color(255, 0, 0), "E", true);
 
-    Size size = new Size(10, 15, 20, 21);
-    Motion motion = new Motion(0, 10, new Position(5, 0));
-
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
 
-    imp.addAnimation("E", motion);
-    imp.addAnimation("E", size);
+    KeyFrame one = new KeyFrame(0, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame two = new KeyFrame(10, 5, 0, 10, 10, 255, 0, 0);
+    KeyFrame three = new KeyFrame(15, 5, 0, 20, 21, 255, 0, 0);
+
+    imp.addKeyFrame("E", 0, one);
+    imp.addKeyFrame("E", 10, two);
+    imp.addKeyFrame("E", 15, three);
 
     Appendable out = new StringBuilder();
 
-    TextView textView = new TextView(imp, 0,0, 100, 100, out);
+    TextView textView = new TextView(imp, 0, 0, 100, 100, out);
 
     textView.render();
 
@@ -253,22 +260,28 @@ public class TestTextView {
     Ellipse hello = new Ellipse(new Position(5, 5), 20, 10,
         new Color(0, 0, 255), "E", true);
 
-    Motion motion = new Motion(0, 10, new Position(5, 0));
-    ColorChange color = new ColorChange(0, 10, new Color(0, 255, 0));
-    Size size = new Size(10, 15, 20, 21);
-
     AnimationModelImpl imp = new AnimationModelImpl();
     imp.addShape(test);
     imp.addShape(hello);
 
-    imp.addAnimation("R", motion);
-    imp.addAnimation("E", color);
-    imp.addAnimation("R", size);
-    imp.addAnimation("E", size);
+    KeyFrame one = new KeyFrame(0, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame two = new KeyFrame(10, 5, 0, 10, 10, 255, 0, 0);
+    KeyFrame three = new KeyFrame(15, 5, 0, 20, 21, 255, 0, 0);
+
+    KeyFrame four = new KeyFrame(0, 5, 5, 20, 10, 0, 0, 255);
+    KeyFrame five = new KeyFrame(10, 5, 5, 20, 10, 0, 255, 0);
+    KeyFrame six = new KeyFrame(15, 5, 5, 20, 21, 0, 255, 0);
+
+    imp.addKeyFrame("R", 0, one);
+    imp.addKeyFrame("R", 10, two);
+    imp.addKeyFrame("R", 15, three);
+    imp.addKeyFrame("E", 0, four);
+    imp.addKeyFrame("E", 10, five);
+    imp.addKeyFrame("E", 15, six);
 
     Appendable out = new StringBuilder();
 
-    TextView textView = new TextView(imp, 0,0, 100, 100, out);
+    TextView textView = new TextView(imp, 0, 0, 100, 100, out);
 
     textView.render();
 

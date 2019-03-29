@@ -80,7 +80,7 @@ public abstract class AShape implements Shapes {
   @Override
   public String getFullDescription() {
     String output = "shape " + this.name + " " + this.desc + "\n";
-    for (int i = 1; i < keyPoints.size(); i++) {
+    for (int i = 0; i < keyPoints.size() - 1; i++) {
       output += this.getDescription(i);
     }
 
