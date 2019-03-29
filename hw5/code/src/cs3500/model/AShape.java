@@ -24,20 +24,18 @@ public abstract class AShape implements Shapes {
   protected String name;
   protected String desc;
   protected boolean visible;
-  protected int startTime;
-  protected int endTime;
 
   /**
    * Constructs an abstract shape.
    *
    * @param center the position of the shape
    * @param height the height of the shape
-   * @param width the width of the shape
-   * @param color the color of the shape
-   * @param name the name of the shape
-   * @param width the width of the shape
-   * @param color the color of the shape
-   * @param name the name of the shape
+   * @param width  the width of the shape
+   * @param color  the color of the shape
+   * @param name   the name of the shape
+   * @param width  the width of the shape
+   * @param color  the color of the shape
+   * @param name   the name of the shape
    * @throws IllegalArgumentException if the height is <= 0
    * @throws IllegalArgumentException if the width is <= 0
    */
@@ -57,8 +55,6 @@ public abstract class AShape implements Shapes {
     this.actions = new HashMap<>();
     this.keyPoints = new ArrayList<>();
     this.visible = visible;
-    this.startTime = startTime;
-    this.endTime = endTime;
 
     this.keyframes = new LinkedHashMap<>();
 
@@ -129,31 +125,6 @@ public abstract class AShape implements Shapes {
     actions.get(key).add(animate);
   }
 
-  @Override
-
-  public void addKeyFrame2(Animation animate) {
-    int key = animate.getStartTime();
-
-    if (!keyPoints.contains(key)) {
-    /*  if (keyPoints.size() > 0 && key < actions.get(keyPoints.get(keyPoints.size() - 1)).get(0)
-          .getEndTime()) {
-        throw new IllegalArgumentException("Start time for new animation (" + key + ") does not "
-            + "match up with end time for previous animation: " + actions
-            .get(keyPoints.get(keyPoints.size() - 1)).get(0)
-            .getEndTime());
-      }
-      */
-      keyPoints.add(key);
-      Collections.sort(keyPoints);
-    }
-
-    if (!keyframes.containsKey(key)) {
-
-    }
-
-    actions.get(key).add(animate);
-  }
-
 
   @Override
   public void addKeyFrame(int t, cs3500.model.KeyFrame key) {
@@ -183,36 +154,38 @@ public abstract class AShape implements Shapes {
     }
   }
 
+  @Override
   public String getDesc() {
     return desc;
   }
 
+  @Override
   public java.awt.Color getActualColor() {
     return new java.awt.Color(this.color.getR(), this.color.getG(), this.color.getB());
   }
 
+  @Override
   public int getX() {
     return this.center.getX();
   }
 
+  @Override
   public int getY() {
     return this.center.getY();
   }
 
+  @Override
   public int getHeight() {
     return this.height;
   }
 
+  @Override
   public int getWidth() {
     return this.width;
   }
 
 
-  /**
-   * gets the tweener state for the shape at the desired tick.
-   *
-   * @param tick the tick for the tweener.
-   */
+  @Override
   public void getTweener(int tick) {
     int keyFrame = keyPoints.get(0);
     double ratio = 1.0;
@@ -231,29 +204,29 @@ public abstract class AShape implements Shapes {
       int length = tick - one.getKey();
       ratio = (double) length / difference;
       this.setTweener(new KeyFrame(one, two, ratio));
-    }
-    else {
+    } else {
       this.setTweener(one);
     }
 
   }
 
-
+  @Override
   public int getRed() {
     return color.getR();
   }
 
+  @Override
   public int getBlue() {
     return color.getB();
   }
 
+  @Override
   public int getGreen() {
     return color.getG();
   }
 
   @Override
   public Collection<ArrayList<Animation>> getAnimations() {
-
     return this.actions.values();
   }
 
@@ -268,30 +241,13 @@ public abstract class AShape implements Shapes {
     this.addKeyFrame(t, new KeyFrame(t, x, y, w, h, r, g, b));
   }
 
-  @Override
-  public void changeStartTime(int t) {
-    this.startTime = t;
-  }
 
   @Override
-  public void changeEndTime(int t) {
-    this.endTime = t;
-  }
-
-  @Override
-  public boolean getVisibility() {
-    return false;
-  }
-
-
   public int getEnd() {
     return keyPoints.get(keyPoints.size() - 1);
   }
 
-  public boolean containsKey(int t) {
-    return this.keyPoints.contains(t);
-  }
-
+  @Override
   public void setTweener(KeyFrame frame) {
     this.center = new Position(frame.getX(), frame.getY());
     this.width = frame.getW();

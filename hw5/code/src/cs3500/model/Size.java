@@ -15,8 +15,8 @@ public class Size extends AbstractAnimation {
    * @param endTime   the endTime of the animation
    * @param height    the new height of the shape
    * @param width     the new width of the shape
-   * @throws IllegalArgumentException if the endTime is <= the startTime or if height and width
-   *            are negative
+   * @throws IllegalArgumentException if the endTime is <= the startTime or if height and width are
+   *                                  negative
    */
 
   public Size(int startTime, int endTime, int height, int width) {
@@ -57,10 +57,6 @@ public class Size extends AbstractAnimation {
     s.changeSize(fromH, fromW);
   }
 
-  @Override
-  public Animation changeStartTime(int i) {
-    return new Size(i, endTime, height, width);
-  }
 
 }
 

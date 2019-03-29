@@ -3,11 +3,14 @@ package cs3500.model;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+/**
+ * Class to represent a read-only animation model.
+ */
 public class ROAnimationModel extends AnimationModelImpl {
 
   /**
-   * Constructs a read-only animation model using a hashMap to take care of the list of shapes.
-   * This model is only able to retrieve the list of shapes to be drawn, but is unable to change
+   * Constructs a read-only animation model using a hashMap to take care of the list of shapes. This
+   * model is only able to retrieve the list of shapes to be drawn, but is unable to change
    * anything.
    */
   public ROAnimationModel(AnimationModelImpl in) {
@@ -45,14 +48,17 @@ public class ROAnimationModel extends AnimationModelImpl {
     throw new UnsupportedOperationException("This method is not allowed");
   }
 
+  @Override
   public void editKeyFrame(String name, int key, KeyFrame frame) {
     throw new UnsupportedOperationException("This method is not allowed");
   }
 
+  @Override
   public void addKeyFrame(String name, int key, KeyFrame frame) {
     throw new UnsupportedOperationException("This method is not allowed");
   }
 
+  @Override
   public void removeKeyFrame(String name, int key) {
     throw new UnsupportedOperationException("This method is not allowed");
   }

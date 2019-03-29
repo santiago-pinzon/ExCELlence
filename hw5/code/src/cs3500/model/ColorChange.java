@@ -12,8 +12,8 @@ public class ColorChange extends AbstractAnimation {
    * Constructs a colorChange with a given startTime, endTime and color.
    *
    * @param startTime the startTime of the animation
-   * @param endTime the endTime of the animation
-   * @param color the color that the shape is being changed to
+   * @param endTime   the endTime of the animation
+   * @param color     the color that the shape is being changed to
    * @throws IllegalArgumentException if the endTime is <= the startTime
    */
 
@@ -48,10 +48,6 @@ public class ColorChange extends AbstractAnimation {
     s.changeColor(new Color(fromR, fromG, fromB));
   }
 
-  @Override
-  public Animation changeStartTime(int i) {
-    return new ColorChange(i, endTime, color);
-  }
 
 }
 

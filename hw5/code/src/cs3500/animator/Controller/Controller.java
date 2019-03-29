@@ -13,11 +13,19 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+/**
+ *
+ */
 public class Controller implements IController, ActionListener {
 
   public EditorView view;
   AnimationModelImpl model;
 
+  /**
+   * Constructs a controller with an EditorView and an AnimationModelImpl.
+   * @param view
+   * @param model
+   */
   public Controller(EditorView view, AnimationModelImpl model) {
     this.view = view;
     this.model = model;

@@ -1,5 +1,8 @@
 package cs3500.model;
 
+/**
+ * Class to represent critical points of motions, known as keyFrames.
+ */
 public class KeyFrame {
 
   private int key;
@@ -11,6 +14,18 @@ public class KeyFrame {
   private int g;
   private int b;
 
+  /**
+   * Constructs a keyFrame with a given key value, x value, y value, width, height, red value,
+   * green value, blue value.
+   * @param key represents a key value
+   * @param x represents x value
+   * @param y represents y value
+   * @param h represents height
+   * @param w represents width
+   * @param r represents r value
+   * @param g represents g value
+   * @param b represents b value
+   */
   public KeyFrame(int key, int x, int y, int h, int w, int r, int g, int b) {
     this.key = key;
     this.x = x;
@@ -22,6 +37,12 @@ public class KeyFrame {
     this.b = b;
   }
 
+  /**
+   * Consstructs a keyFrame that takes two keyFrames and a ratio.
+   * @param key
+   * @param key2
+   * @param ratio
+   */
   public KeyFrame(KeyFrame key, KeyFrame key2, double ratio) {
     this.key = key.getKey();
     this.x += (int) Math.round((key2.getX() - key.getX()) * ratio);
@@ -35,40 +56,70 @@ public class KeyFrame {
 
   }
 
+  /**
+   * Turns the keyframe into a string.
+   * @return the key frame as a string in the correct format
+   */
   public String toString() {
     return String.format("%-5s %-5s %-5s %-5s %-5s %-5s %-5s", key, this.x, this.y, this.h,
         this.w, this.r, this.g, this.b);
   }
 
-  public int getKey() {
+  /**
+   * Gets the key value of the keyframe.
+   * @return key value of the keyframe
+   */
+  int getKey() {
     return key;
   }
 
-  public int getX() {
+  /**
+   * Gets the x value of the keyframe.
+   * @return x value of the keyframe
+   */
+  int getX() {
     return x;
   }
-
-  public int getY() {
+  /**
+   * Gets the y value of the keyframe.
+   * @return y value of the keyframe
+   */
+  int getY() {
     return y;
   }
-
-  public int getH() {
+  /**
+   * Gets the height of the keyframe.
+   * @return height of the keyframe
+   */
+  int getH() {
     return h;
   }
-
-  public int getW() {
+  /**
+   * Gets the width of the keyframe.
+   * @return width of the keyframe
+   */
+  int getW() {
     return w;
   }
-
-  public int getR() {
+  /**
+   * Gets the red value of the keyframe.
+   * @return red value of the keyframe
+   */
+  int getR() {
     return r;
   }
-
-  public int getG() {
+  /**
+   * Gets the green value of the keyframe.
+   * @return green value of the keyframe
+   */
+  int getG() {
     return g;
   }
-
-  public int getB() {
+  /**
+   * Gets the blue value of the keyframe.
+   * @return blue value of the keyframe
+   */
+  int getB() {
     return b;
   }
 

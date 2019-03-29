@@ -10,24 +10,24 @@ public interface IController {
   /**
    * Updates the Hash of shapes stored in the view to show any changes that have been made.
    */
-  public void updateView();
+  void updateView();
 
   /**
    * Adds a shape to the model.
    * @param shape the shape to be added.
    */
-  public void addShape(Shapes shape);
+  void addShape(Shapes shape);
 
 
   /**
    * Removes a shape from the model.
    * @param shape the shape to be removed.
    */
-  public void removeShape(String shape);
+  void removeShape(String shape);
 
-  public void addKeyFrame(int key);
+  void addKeyFrame(int key);
 
-  public void removeKeyFrame();
+  void removeKeyFrame();
 
 
 }
