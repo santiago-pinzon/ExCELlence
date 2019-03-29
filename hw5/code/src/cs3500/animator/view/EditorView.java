@@ -244,7 +244,6 @@ public class EditorView extends JFrame implements IEditorView {
   public void setModel(ROAnimationModel in) {
     this.model = in;
     this.length = model.getLength();
-    System.out.println("Updated model to have shapes: " + this.model.getHash().values().size());
   }
 
   /**

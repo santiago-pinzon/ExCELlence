@@ -34,7 +34,6 @@ public class AnimationPanel extends JPanel {
 
 
     for (Shapes shape : this.listOfShapes.values()) {
-      //System.out.println(shape.getName());
       switch (shape.getDesc()) {
         case "Rectangle":
           g2.setColor(shape.getActualColor());

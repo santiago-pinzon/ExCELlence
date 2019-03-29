@@ -132,7 +132,6 @@ public abstract class AShape implements Shapes {
       keyPoints.add(t);
       Collections.sort(keyPoints);
     }
-    System.out.println("ADDING KEYFRAME");
     this.keyframes.put(t, key);
   }
 
@@ -198,20 +197,21 @@ public abstract class AShape implements Shapes {
         keyFrame = keyPoints.get(i);
       }
     }
-
-    KeyFrame one = this.keyframes.get(keyFrame);
-    if (i < keyPoints.size() - 1) {
-      KeyFrame two = this.keyframes.get(keyPoints.get(i + 1));
-      int difference = two.getKey() - one.getKey();
-      int length = tick - one.getKey();
-      ratio = (double) length / difference;
-      this.setTweener(new KeyFrame(one, two, ratio));
-    } else {
-      this.setTweener(one);
-
-        }
+    if (i > 0) {
+      KeyFrame one = this.keyframes.get(keyFrame);
+      if (i < keyPoints.size() - 1) {
+        KeyFrame two = this.keyframes.get(keyPoints.get(i + 1));
+        int difference = two.getKey() - one.getKey();
+        int length = tick - one.getKey();
+        ratio = (double) length / difference;
+        this.setTweener(new KeyFrame(one, two, ratio));
+      } else {
+        this.setTweener(one);
 
       }
+
+    }
+  }
 
 
 

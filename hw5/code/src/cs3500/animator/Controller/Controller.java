@@ -34,7 +34,7 @@ public class Controller implements IController, ActionListener {
   /**
    * Constructs a controller with an EditorView and an AnimationModelImpl.
    *
-   * @param view  the view being controlled by the user
+   * @param view the view being controlled by the user
    * @param model the model being changed when the user has control
    */
   public Controller(EditorView view, AnimationModelImpl model) {
@@ -97,7 +97,6 @@ public class Controller implements IController, ActionListener {
         try {
           read = new FileReader(f.getAbsolutePath());
           this.model = (AnimationModelImpl) AnimationReader.parseFile(read, build);
-          System.out.println("created model with shapes :" + model.getHash().values().size());
         } catch (FileNotFoundException e1) {
           e1.printStackTrace();
         }
@@ -108,7 +107,6 @@ public class Controller implements IController, ActionListener {
         break;
       }
       case "add": {
-        System.out.println("add");
         String type = this.view.getShapeType();
         int number = this.view.getNumberOfKeyFrames();
         String name = this.view.getShapeNameToBeAdded();
@@ -126,7 +124,9 @@ public class Controller implements IController, ActionListener {
               initial.getH(), initial.getW(),
               new Color(initial.getR(), initial.getG(), initial.getB()), name, true));
         }
-        for (KeyFrame k: frames) {
+        this.model.addKeyFrame(name, 1, new KeyFrame(1, initial.getX(), initial.getY(),
+            initial.getH(), initial.getW(), initial.getR(), initial.getG(), initial.getB()));
+        for (KeyFrame k : frames) {
           this.model.addKeyFrame(name, k.getKey(), k);
         }
         this.updateView();
