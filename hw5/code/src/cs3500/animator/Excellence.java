@@ -1,5 +1,6 @@
 package cs3500.animator;
 
+import cs3500.animator.view.EditorView;
 import cs3500.animator.view.SVGView;
 import java.awt.Dimension;
 import java.io.BufferedWriter;
@@ -15,7 +16,6 @@ import cs3500.animator.util.AnimationBuilderImpl;
 import cs3500.model.AnimationModelImpl;
 import cs3500.animator.view.IView;
 
-import cs3500.animator.view.EditorView;
 import cs3500.animator.view.TextView;
 import cs3500.animator.view.AnimationView;
 import cs3500.animator.util.AnimationBuilder;
@@ -132,11 +132,6 @@ public class Excellence {
         IView e = new EditorView();
         ((EditorView) e).setVisible();
         break;
-
-      default:
-        JFrame frame = new JFrame();
-        frame.setPreferredSize(new Dimension(500, 500));
-
 
       default:
         JFrame frame = new JFrame();

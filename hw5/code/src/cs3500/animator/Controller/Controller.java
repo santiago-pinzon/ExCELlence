@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import javax.swing.ImageIcon;
 
 public class Controller implements IController, ActionListener {
 

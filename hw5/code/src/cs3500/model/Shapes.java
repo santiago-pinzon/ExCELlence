@@ -99,11 +99,6 @@ public interface Shapes {
 
   void addKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
 
-
-
-  void addKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
-
-
   void changeEndTime(int t);
 
   void changeStartTime(int t);

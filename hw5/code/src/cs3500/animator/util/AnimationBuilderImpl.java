@@ -196,7 +196,7 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
       } 
 
       }
-    }
+
     return this;
   }
 

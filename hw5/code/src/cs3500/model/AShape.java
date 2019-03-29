@@ -105,8 +105,6 @@ public abstract class AShape implements Shapes {
     this.performActions(key);
     out += String.format("%-5s %s %-5s %-5s %s", actions.get(key).get(0).getEndTime(),
             this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
-
-        this.width, this.color.toString()) + "\t\t";
     this.performActions(key);
     out += String.format("%-5s %s %-5s %-5s %s", actions.get(key).get(0).getEndTime(),
         this.center.toString(), this.height, this.width, this.color.toString()) + "\n";
