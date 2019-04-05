@@ -15,6 +15,7 @@ import javax.swing.JPanel;
  * functionality provided in the JPanel to include drawing the requested shapes.
  */
 public class AnimationPanel extends JPanel {
+
   private LinkedHashMap<String, Shapes> listOfShapes = new LinkedHashMap();
   private int x = 0;
   private int y = 0;
@@ -34,22 +35,23 @@ public class AnimationPanel extends JPanel {
     //setLocation(this.x,this.y);
     setPreferredSize(new Dimension(1000, 1000));
 
-
     for (Shapes shape : this.listOfShapes.values()) {
-      switch (shape.getDesc()) {
-        case "Rectangle":
-          g2.setColor(shape.getActualColor());
-          g2.fillRect(shape.getX() - this.x, shape.getY() - this.y, shape.getWidth(),
-                  shape.getHeight());
-          break;
-        case "Ellipse":
-          g2.setColor(shape.getActualColor());
-          g2.fillOval(shape.getX() - this.x, shape.getY() - this.y, shape.getWidth(),
-                  shape.getHeight());
-          break;
+      if (shape.isVisible()) {
+        switch (shape.getDesc()) {
+          case "Rectangle":
+            g2.setColor(shape.getActualColor());
+            g2.fillRect(shape.getX() - this.x, shape.getY() - this.y, shape.getWidth(),
+                shape.getHeight());
+            break;
+          case "Ellipse":
+            g2.setColor(shape.getActualColor());
+            g2.fillOval(shape.getX() - this.x, shape.getY() - this.y, shape.getWidth(),
+                shape.getHeight());
+            break;
 
-        default:
-          throw new IllegalArgumentException("Shape does not exist: " + shape.getDesc());
+          default:
+            throw new IllegalArgumentException("Shape does not exist: " + shape.getDesc());
+        }
       }
     }
 

@@ -187,6 +187,7 @@ public abstract class AShape implements Shapes {
       }
     }
     if (i > 0) {
+      this.visible = true;
       KeyFrame one = this.keyframes.get(keyFrame);
       if (i < keyPoints.size() - 1) {
         KeyFrame two = this.keyframes.get(keyPoints.get(i + 1));
@@ -199,6 +200,9 @@ public abstract class AShape implements Shapes {
 
       }
 
+    }
+    else {
+      this.visible = false;
     }
   }
 
