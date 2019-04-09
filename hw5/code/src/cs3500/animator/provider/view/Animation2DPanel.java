@@ -1,14 +1,11 @@
-package cs3500.animator.view;
+package cs3500.animator.provider.view;
 
-import cs3500.animator.model.Animation2DModel;
-import cs3500.animator.model.KeyFrame;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import java.awt.Point;
-import cs3500.animator.model.Shape;
 import javax.swing.Timer;
 
 /**
@@ -37,7 +34,7 @@ public class Animation2DPanel extends JPanel {
    * @param corner the topLeft corner of the animation window
    * @param speed the speed of the animation
    */
-  Animation2DPanel(Animation2DModel model, int width, int height, Point corner, int speed) {
+  public Animation2DPanel(Animation2DModel model, int width, int height, Point corner, int speed) {
     super();
     this.setPreferredSize(new Dimension(width, height));
     this.model = model;

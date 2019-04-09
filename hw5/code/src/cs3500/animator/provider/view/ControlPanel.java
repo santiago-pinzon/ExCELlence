@@ -1,7 +1,5 @@
-package cs3500.animator.view;
+package cs3500.animator.provider.view;
 
-import cs3500.animator.model.KeyFrame;
-import cs3500.animator.model.Shape;
 import java.awt.Dimension;
 import java.util.ConcurrentModificationException;
 import javax.swing.DefaultListModel;
@@ -78,7 +76,7 @@ public class ControlPanel extends JPanel {
   int userY;
 
 
-  ControlPanel(Animation2DPanel aniPanel) {
+  public ControlPanel(Animation2DPanel aniPanel) {
 
     this.setPreferredSize(new Dimension(400, 800));
     this.animationPanel = aniPanel;

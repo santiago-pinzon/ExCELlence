@@ -1,65 +1,94 @@
 package cs3500.animator.provider.view;
 
+import cs3500.model.AnimationModelImpl;
+import cs3500.model.Shapes;
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * This is the interface of ExCELence implementation. It stores all the information necessary to
- * construct a view of the animation.
- */
-public interface Animation2DModel {
+public class ModelAdapter implements Animation2DModel {
+
+  AnimationModelImpl in;
+
+  public ModelAdapter(AnimationModelImpl model) {
+    this.in = model;
+  }
 
   /**
    * This method return all the motion details as a String representation.
    *
    * @return a String representation
    */
-  String asText();
+  @Override
+  public String asText() {
+    throw new UnsupportedOperationException("This action is unsupported");
+  }
 
   /**
-   * This mehtod return all the motion details as a SVG format String representation.
+   * This method return all the motion details as a SVG format String representation.
    *
    * @param speed the speed of the animation
    * @return a String repsentation applied with SVG format
    */
-  String asSVG(int speed);
+  @Override
+  public String asSVG(int speed) {
+    throw new UnsupportedOperationException("This action is unsupported");
+  }
 
   /**
    * This method return all the motions.
    *
    * @return all the motions
    */
-  List<Motion> getMotion();
-
+  @Override
+  public List<Motion> getMotion() {
+    return null;
+  }
 
   /**
    * The getter of the width of the canvas.
    *
    * @return a copy of width of canvas
    */
-  int getWidth();
+  @Override
+  public int getWidth() {
+    return in.getWidth();
+  }
 
   /**
    * The getter of the height of the canvas.
    *
    * @return a copy of height of canvas
    */
-  int getHeight();
+  @Override
+  public int getHeight() {
+    return in.getHeight();
+  }
 
   /**
    * The getter of the corner point of the canvas.
    *
    * @return a copy of the corner of the canvas
    */
-  Point getCorner();
+  @Override
+  public Point getCorner() {
+    return new Point(this.in.getX(),this.in.getY());
+  }
 
   /**
    * This method return all the shapes.
    *
    * @return all the shapes
    */
-  List<Shape> getShape();
+  @Override
+  public List<Shape> getShape() {
+    List<Shape> temp = new ArrayList<>();
+    ArrayList<Shapes> old = this.in.getShapes();
 
+    for(Shapes s: old) {
+      temp.add(new ShapeAdapter(s));
+    }
+  }
 
   /**
    * Add a shape into the current list by entering the shape name and the shape type.
@@ -67,15 +96,20 @@ public interface Animation2DModel {
    * @param shape the name of the shape
    * @param type the type of the shape
    */
-  void addShape(String shape, String type);
+  @Override
+  public void addShape(String shape, String type) {
 
+  }
 
   /**
    * Delete a shape in the current list.
    *
    * @param shape the name of the shape  wanted to be deleted.
    */
-  void deleteShape(String shape);
+  @Override
+  public void deleteShape(String shape) {
+
+  }
 
   /**
    * Add a keyframe to the existing list of keyframes.
@@ -90,8 +124,11 @@ public interface Animation2DModel {
    * @param width the width of this keyframe
    * @param height the height of this keyframe
    */
-  void addKeyFrame(String name, int tick, int x, int y, int r, int g, int b, int width,
-      int height);
+  @Override
+  public void addKeyFrame(String name, int tick, int x, int y, int r, int g, int b, int width,
+      int height) {
+
+  }
 
   /**
    * Delete a keyframe by entering the shape name and the keyframe string representation.
@@ -99,7 +136,8 @@ public interface Animation2DModel {
    * @param shape the name of the shape
    * @param keyFrame the keyframe string representation that hold this shape
    */
-  void deleteKeyFrame(String shape, String keyFrame);
+  @Override
+  public void deleteKeyFrame(String shape, String keyFrame) {
 
-
+  }
 }

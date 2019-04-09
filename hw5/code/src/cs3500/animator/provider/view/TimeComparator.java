@@ -1,6 +1,7 @@
-package cs3500.animator.model;
+package cs3500.animator.provider.view;
 
 import java.util.Comparator;
+import cs3500.animator.provider.view.Motion;
 
 /**
  * The class of comparator for comparing the motion's start tick.

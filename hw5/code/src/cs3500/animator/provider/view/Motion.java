@@ -1,20 +1,16 @@
-package cs3500.animator.model;
+package cs3500.animator.provider.view;
 
-import cs3500.animator.provider.view.KeyFrame;
-
-/**
- * This is the interface of ExCELence implementation, it stores all the information about a motion
- * in the model.
- */
-public interface IMotion {
-
+public class Motion implements cs3500.animator.model.IMotion {
 
   /**
    * This is a method that gives a string representation of all information stored in Motion class.
    *
    * @return the String represents the model with the information stored with it.
    */
-  String renderAsString();
+  @Override
+  public String renderAsString() {
+    return null;
+  }
 
   /**
    * A method that takes a shape and applying the format of SVG to it.
@@ -23,15 +19,26 @@ public interface IMotion {
    * @param speed the speed of the animation
    * @return the String representation of the shape with SVG format.
    */
-  String renderAsSVG(String shape, int speed);
-
+  @Override
+  public String renderAsSVG(String shape, int speed) {
+    return null;
+  }
 
   /**
    * A method that get the ending of keyframe.
    *
    * @return the ending which is the last element in keyframe list
    */
-  KeyFrame getEndKeyFrame();
+  @Override
+  public KeyFrame getEndKeyFrame() {
+    return null;
+  }
 
+  public int getTickStart() {
+    return 0;
+  }
 
+  public int getTickEnd() {
+    return 0;
+  }
 }
