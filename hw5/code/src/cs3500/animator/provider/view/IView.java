@@ -1,4 +1,4 @@
-package cs3500.animator.provider.view;
+package cs3500.animator.view;
 
 import cs3500.animator.model.Animation2DModel;
 import java.awt.event.ActionListener;

@@ -1,7 +1,6 @@
-package cs3500.animator.provider.view;
+package cs3500.animator.view;
 
 import cs3500.animator.model.Animation2DModel;
-import cs3500.animator.view.IView;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Point;

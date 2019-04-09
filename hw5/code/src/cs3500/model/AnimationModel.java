@@ -1,6 +1,8 @@
 package cs3500.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * Interface for the Animation Model.
@@ -127,6 +129,13 @@ public interface AnimationModel {
    * @return y value of the animation model
    */
   int getY();
+
+  /**
+   * Returns the hashmap of Shapes
+   * @return the hashmap of shapes.
+   */
+  LinkedHashMap<String, Shapes> getHash();
+
 
 
 }

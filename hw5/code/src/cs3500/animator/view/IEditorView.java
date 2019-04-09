@@ -1,6 +1,7 @@
 
 package cs3500.animator.view;
 
+import cs3500.model.AnimationModel;
 import java.awt.event.ActionListener;
 import java.io.File;
 
@@ -30,9 +31,9 @@ public interface IEditorView extends IView {
   /**
    * Sets the model.
    *
-   * @param in the ROAnimationModel being set
+   * @param in the AnimationModel being set. This should be a Read only model
    */
-  void setModel(ROAnimationModel in);
+  void setModel(AnimationModel in);
 
   /**
    * Adds the action listener to the view.

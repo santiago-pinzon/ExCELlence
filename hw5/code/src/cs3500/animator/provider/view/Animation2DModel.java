@@ -1,4 +1,4 @@
-package cs3500.animator.provider.view;
+package cs3500.animator.model;
 
 import java.awt.Point;
 import java.util.List;

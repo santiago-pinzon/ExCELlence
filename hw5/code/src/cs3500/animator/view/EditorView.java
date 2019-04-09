@@ -2,8 +2,8 @@ package cs3500.animator.view;
 
 import static java.lang.Integer.parseInt;
 
+import cs3500.model.AnimationModel;
 import cs3500.model.KeyFrame;
-import cs3500.model.ROAnimationModel;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
@@ -33,7 +33,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class EditorView extends JFrame implements IEditorView {
 
   private AnimationPanel panel;
-  private ROAnimationModel model;
+  private AnimationModel model;
   private JButton play;
   private JToggleButton loop;
   private JButton save;
@@ -243,7 +243,7 @@ public class EditorView extends JFrame implements IEditorView {
    * @param in the ROAnimationModel being set.
    */
   @Override
-  public void setModel(ROAnimationModel in) {
+  public void setModel(AnimationModel in) {
     this.model = in;
     this.length = model.getLength();
   }

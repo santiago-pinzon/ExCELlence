@@ -1,4 +1,4 @@
-package cs3500.animator.provider.view;
+package cs3500.animator.model;
 
 /**
  * This is the interface of ExCELence implementation, it stores all the information about a motion
