@@ -5,11 +5,16 @@ import java.util.List;
 
 public class ShapeAdapter implements Shape{
   Shapes s;
+  List<Motion> m;
+  List<KeyFrame> k;
+
 
   public ShapeAdapter(Shapes s) {
     this.s = s;
+    this.m = m;
+    this.k = k;
   }
-
+ 
 
   /**
    * Add a motion to the current list of motions and sort them from start to end.
@@ -18,7 +23,8 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public void addMotion(Motion m) {
-     m
+    List<Motion> current = this.getMotion();
+    current.add(m);
   }
 
   /**
@@ -28,7 +34,7 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public List<Motion> getMotion() {
-    return null;
+    return m;
   }
 
   /**
@@ -38,7 +44,7 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public String getName() {
-    return null;
+    return s.getName();
   }
 
   /**
@@ -48,7 +54,7 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public String getType() {
-    return null;
+    return s.getDesc();
   }
 
   /**
@@ -58,7 +64,7 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public String renderAsSVG(int speed) {
-    return null;
+    throw new UnsupportedOperationException("This action is unsupported");
   }
 
   /**
@@ -72,7 +78,7 @@ public class ShapeAdapter implements Shape{
   }
 
   /**
-   * A getter to get the keyframes in this shape. 
+   * A getter to get the keyframes in this shape.
    *
    * @return the keyframes
    */
