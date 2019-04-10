@@ -257,4 +257,15 @@ public abstract class AShape implements Shapes {
     return this.keyPoints;
   }
 
+  @Override
+  public KeyFrame findKeyFrame(String keyFrame) {
+    for(KeyFrame k: this.keyframes.values()) {
+      if(k.getDescription().equals(keyFrame)) {
+        return k;
+      }
+    }
+    return null;
+  }
+
+
 }

@@ -1,6 +1,9 @@
 package cs3500.animator;
 
 import cs3500.animator.controller.Controller;
+import cs3500.animator.provider.view.Animation2DModel;
+import cs3500.animator.provider.view.ControlView;
+import cs3500.animator.provider.view.ModelAdapter;
 import java.awt.Dimension;
 import java.io.BufferedWriter;
 import java.io.Closeable;
@@ -128,6 +131,18 @@ public class Excellence {
 
       case "edit":
         Controller controllerOne = new Controller(new EditorView(), new AnimationModelImpl());
+        break;
+
+      case "provider" :
+        if(model == null) {
+          JFrame frame = new JFrame();
+          frame.setPreferredSize(new Dimension(100, 100));
+
+          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          JOptionPane.showMessageDialog(frame, "Undefined model",
+              "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        ControlView control = new ControlView(new ModelAdapter(model));
         break;
 
       default:

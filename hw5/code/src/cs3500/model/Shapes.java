@@ -214,5 +214,11 @@ public interface Shapes {
    */
   ArrayList<Integer> getKeyPoints();
 
+  /**
+   * Searches this Shape's list of keyframes for the keyframe that matches the provided description.
+   * @param keyFrame the description to be compared.
+   * @return The desired keyframe.
+   */
+  KeyFrame findKeyFrame(String keyFrame);
 }
 

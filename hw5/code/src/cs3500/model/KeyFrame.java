@@ -142,4 +142,8 @@ public class KeyFrame {
   }
 
 
+  public String getDescription() {
+    return String.format("Tick: %-3s X: %-3s Y: %-3s W: %-3s H: %-3s R: %-3s G: %-3s B: %-3s"
+        , this.key, this.x, this.y, this.w, this.h, this.r, this.g, this.b);
+  }
 }

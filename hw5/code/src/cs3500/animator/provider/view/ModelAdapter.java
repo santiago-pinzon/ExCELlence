@@ -1,6 +1,11 @@
 package cs3500.animator.provider.view;
 
 import cs3500.model.AnimationModelImpl;
+import cs3500.model.Color;
+import cs3500.model.Ellipse;
+import cs3500.model.KeyFrame;
+import cs3500.model.Position;
+import cs3500.model.Rectangle;
 import cs3500.model.Shapes;
 import java.awt.Point;
 import java.util.ArrayList;
@@ -72,7 +77,7 @@ public class ModelAdapter implements Animation2DModel {
    */
   @Override
   public Point getCorner() {
-    return new Point(this.in.getX(),this.in.getY());
+    return new Point(this.in.getX(), this.in.getY());
   }
 
   /**
@@ -85,9 +90,11 @@ public class ModelAdapter implements Animation2DModel {
     List<Shape> temp = new ArrayList<>();
     ArrayList<Shapes> old = this.in.getShapes();
 
-    for(Shapes s: old) {
+    for (Shapes s : old) {
       temp.add(new ShapeAdapter(s));
     }
+
+    return temp;
   }
 
   /**
@@ -98,7 +105,18 @@ public class ModelAdapter implements Animation2DModel {
    */
   @Override
   public void addShape(String shape, String type) {
-
+    if (type.equals("ellipse")) {
+      this.in.addShape(new Ellipse(new Position(0, 0), 0, 0,
+          new Color(0, 0, 0), shape, false));
+    }
+    if (type.equals("rectangle")) {
+      this.in.addShape(new Rectangle(new Position(0,0), 0, 0,
+          new Color(0,0,0), shape,false));
+    }
+    else {
+      //TODO determine if this is necessary
+      throw new IllegalArgumentException("Type of shape not recognized");
+    }
   }
 
   /**
@@ -108,7 +126,7 @@ public class ModelAdapter implements Animation2DModel {
    */
   @Override
   public void deleteShape(String shape) {
-
+    this.in.removeShape(shape);
   }
 
   /**
@@ -127,7 +145,7 @@ public class ModelAdapter implements Animation2DModel {
   @Override
   public void addKeyFrame(String name, int tick, int x, int y, int r, int g, int b, int width,
       int height) {
-
+    this.in.addKeyFrame(name, tick, new KeyFrame(tick, x, y, height, width, r, g, b));
   }
 
   /**
@@ -138,6 +156,10 @@ public class ModelAdapter implements Animation2DModel {
    */
   @Override
   public void deleteKeyFrame(String shape, String keyFrame) {
-
+    Shapes s = this.in.getHash().get(shape);
+    KeyFrame k = s.findKeyFrame(keyFrame);
+    if(k != null) {
+      this.in.removeKeyFrame(shape, k.getKey());
+    }
   }
 }

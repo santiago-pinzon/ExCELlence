@@ -5,6 +5,12 @@ import java.awt.Point;
 
 public class KeyFrame implements IKeyFrame {
 
+  cs3500.model.KeyFrame in;
+
+  public KeyFrame(cs3500.model.KeyFrame in) {
+    this.in = in;
+  }
+
   /**
    * Gives a string representation that was used in showing the list of keyframe to user.
    *
@@ -12,7 +18,7 @@ public class KeyFrame implements IKeyFrame {
    */
   @Override
   public String keyFrameView() {
-    return null;
+    return this.in.getDescription();
   }
 
   /**
@@ -22,7 +28,7 @@ public class KeyFrame implements IKeyFrame {
    */
   @Override
   public int getTick() {
-    return 0;
+    return this.in.getKey();
   }
 
   /**
@@ -32,7 +38,7 @@ public class KeyFrame implements IKeyFrame {
    */
   @Override
   public Point getPos() {
-    return null;
+    return new Point(this.in.getX(), this.in.getY());
   }
 
   /**
@@ -42,7 +48,7 @@ public class KeyFrame implements IKeyFrame {
    */
   @Override
   public Color getCol() {
-    return null;
+    return new Color(this.in.getR(), this.in.getG(), this.in.getB());
   }
 
   /**
@@ -52,7 +58,7 @@ public class KeyFrame implements IKeyFrame {
    */
   @Override
   public int getWidth() {
-    return 0;
+    return this.in.getW();
   }
 
   /**
@@ -62,6 +68,6 @@ public class KeyFrame implements IKeyFrame {
    */
   @Override
   public int getHeight() {
-    return 0;
+    return this.in.getH();
   }
 }
