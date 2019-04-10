@@ -123,7 +123,6 @@ public class ModelAdapter implements Animation2DModel {
           new Color(0,0,0), shape,false));
     }
     else {
-      //TODO determine if this is necessary
       throw new IllegalArgumentException("Type of shape not recognized");
     }
   }

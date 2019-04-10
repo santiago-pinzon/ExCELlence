@@ -116,6 +116,8 @@ public class ShapeAdapter implements Shape {
   }
 
 
+  //TODO fix the algorithm for finding the current/next keyframe. Should be same as AShape, in
+  // theory.
   /**
    * Find the next keyframe if it actually exist in order to run the animation.
    *
