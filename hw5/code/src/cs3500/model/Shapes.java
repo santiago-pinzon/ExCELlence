@@ -3,6 +3,7 @@ package cs3500.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedHashMap;
 
 /**
  * The interface for shapes.
@@ -220,5 +221,11 @@ public interface Shapes {
    * @return The desired keyframe.
    */
   KeyFrame findKeyFrame(String keyFrame);
+
+  /**
+   * Returns the Hashmap of KeyFrames.
+   * @return the hash of KeyFrames
+   */
+  LinkedHashMap<Integer, KeyFrame> getKeyFrames();
 }
 

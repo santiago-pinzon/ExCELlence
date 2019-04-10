@@ -1,6 +1,13 @@
 package cs3500.animator.provider.view;
 
 public class Motion implements cs3500.animator.model.IMotion {
+  cs3500.model.KeyFrame start;
+  cs3500.model.KeyFrame end;
+
+  public Motion(cs3500.model.KeyFrame start, cs3500.model.KeyFrame end) {
+    this.start = start;
+    this.end = end;
+  }
 
   /**
    * This is a method that gives a string representation of all information stored in Motion class.
@@ -9,7 +16,7 @@ public class Motion implements cs3500.animator.model.IMotion {
    */
   @Override
   public String renderAsString() {
-    return null;
+    throw new UnsupportedOperationException("This action is not supported");
   }
 
   /**
@@ -21,7 +28,7 @@ public class Motion implements cs3500.animator.model.IMotion {
    */
   @Override
   public String renderAsSVG(String shape, int speed) {
-    return null;
+    throw new UnsupportedOperationException("This action is not supported");
   }
 
   /**
@@ -31,14 +38,15 @@ public class Motion implements cs3500.animator.model.IMotion {
    */
   @Override
   public KeyFrame getEndKeyFrame() {
-    return null;
+    return new KeyFrame(end);
   }
 
   public int getTickStart() {
-    return 0;
+    return start.getKey();
   }
 
   public int getTickEnd() {
-    return 0;
+
+    return end.getKey();
   }
 }

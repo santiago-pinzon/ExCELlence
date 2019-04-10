@@ -267,5 +267,10 @@ public abstract class AShape implements Shapes {
     return null;
   }
 
+  @Override
+  public LinkedHashMap<Integer, KeyFrame> getKeyFrames() {
+    return this.keyframes;
+  }
+
 
 }

@@ -2,19 +2,20 @@ package cs3500.animator.provider.view;
 
 import cs3500.model.Shapes;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ShapeAdapter implements Shape{
+public class ShapeAdapter implements Shape {
+
   Shapes s;
   List<Motion> motions;
   List<KeyFrame> keys;
 
-
   public ShapeAdapter(Shapes s) {
     this.s = s;
-    this.motions = motions;
-    this.keys = keys;
+    this.motions = new ArrayList();
+
   }
 
 
@@ -77,8 +78,10 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public void addKeyFrame(KeyFrame k) {
-    if (!keys.contains(k)) {
-      keys.add(k);
+    if (!s.getKeyPoints().contains(k.getTick())) {
+      s.addKeyFrame(k.getTick(), new cs3500.model.KeyFrame(k.getTick(), k.getPos().x, k.getPos().y
+          , k.getHeight(), k.getWidth(), k.getCol().getRed(),
+          k.getCol().getGreen(), k.getCol().getBlue()));
     }
   }
 
@@ -89,6 +92,10 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public List<KeyFrame> getKeyFrame() {
+    keys = new ArrayList<>();
+    for (cs3500.model.KeyFrame k : s.getKeyFrames().values()) {
+      keys.add(new KeyFrame(k));
+    }
     return keys;
   }
 
@@ -100,9 +107,9 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public KeyFrame findThisKeyFrame(int tick) {
-    for (int i = 0; i < keys.size() - 1; i ++){
-      if (tick >= keys.get(i).getTick()){
-        return keys.get(i);
+    for (int i = 0; i < s.getKeyPoints().size() - 1; i++) {
+      if (tick <= s.getKeyFrames().get(s.getKeyPoints().get(i + 1)).getKey()) {
+        return new KeyFrame(s.getKeyFrames().get(s.getKeyPoints().get(i + 1)));
       }
     }
     throw new IllegalArgumentException("No keyframe found");
@@ -117,9 +124,9 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public KeyFrame findNextKeyFrame(int tick) {
-    for (int i = 0; i < keys.size() - 1; i++) {
-      if (tick <= keys.get(i).getTick()) {
-        return keys.get(i);
+    for (int i = 0; i < s.getKeyPoints().size() - 1; i++) {
+      if (tick <= s.getKeyFrames().get(s.getKeyPoints().get(i)).getKey()) {
+        return new KeyFrame(s.getKeyFrames().get(s.getKeyPoints().get(i)));
       }
     }
     throw new IllegalArgumentException("Can't find next keyframe");
@@ -133,7 +140,7 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public boolean hasNextKeyFrame(int tick) {
-    return  tick < keys.get(keys.size() - 1).getTick();
+    return tick < s.getKeyPoints().get(s.getKeyPoints().size() - 1);
   }
 
   /**
@@ -144,6 +151,6 @@ public class ShapeAdapter implements Shape{
    */
   @Override
   public boolean hasKeyFrame(int tick) {
-    return tick > keys.get(0).getTick() && tick <= keys.get(keys.size() - 1).getTick();
+    return this.s.getKeyPoints().contains(tick);
   }
 }

@@ -5,6 +5,8 @@ import cs3500.animator.provider.view.Animation2DModel;
 import cs3500.animator.provider.view.ControlView;
 import cs3500.animator.provider.view.ModelAdapter;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.FileReader;
@@ -23,6 +25,8 @@ import cs3500.animator.view.TextView;
 import cs3500.model.AnimationModelImpl;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 
 /**
@@ -143,6 +147,36 @@ public class Excellence {
               "Error", JOptionPane.ERROR_MESSAGE);
         }
         ControlView control = new ControlView(new ModelAdapter(model));
+        control.setListeners(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            if (e.getActionCommand().equals("start")) {
+              control.start();
+            } else if (e.getActionCommand().equals("pause") ) {
+              control.pause();
+            } else if (e.getActionCommand().equals("restart")) {
+              control.restart();
+            } else if (e.getActionCommand().equals("autoplay")) {
+              control.autoPlay();
+            } else if (e.getActionCommand().equals("speedup")) {
+              control.speedUp();
+            } else if (e.getActionCommand().equals("speeddown")) {
+              control.speedDown();
+            } else if (e.getActionCommand().equals("add")) {
+              control.add();
+
+            } else if (e.getActionCommand().equals("delete")) {
+              control.delete();
+            }
+          }
+        }, new ListSelectionListener() {
+          @Override
+          public void valueChanged(ListSelectionEvent e) {
+            control.showKeyFrameSelected();
+          }
+        });
+        control.show(new ModelAdapter(model));
+
         break;
 
       default:

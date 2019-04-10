@@ -47,7 +47,16 @@ public class ModelAdapter implements Animation2DModel {
    */
   @Override
   public List<Motion> getMotion() {
-    return null;
+    List<Motion> motions= new ArrayList();
+    int end = this.in.getLength();
+    for(Shapes s: this.in.getShapes()) {
+      if(s.getKeyPoints().contains(end)) {
+        motions.add(new Motion(s.getKeyFrames().get(s.getKeyPoints().get(s.getKeyPoints().size()-2)),
+            s.getKeyFrames().get(end)));
+        return motions;
+      }
+    }
+    return motions;
   }
 
   /**
