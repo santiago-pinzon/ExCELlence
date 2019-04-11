@@ -3,7 +3,6 @@ package cs3500.animator.provider.view;
 import cs3500.model.Shapes;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ShapeAdapter implements Shape {
@@ -107,17 +106,18 @@ public class ShapeAdapter implements Shape {
    */
   @Override
   public KeyFrame findThisKeyFrame(int tick) {
-    for (int i = 0; i < s.getKeyPoints().size() - 1; i++) {
-      if (tick <= s.getKeyFrames().get(s.getKeyPoints().get(i + 1)).getKey()) {
-        return new KeyFrame(s.getKeyFrames().get(s.getKeyPoints().get(i + 1)));
+    ArrayList<cs3500.model.KeyFrame> list = new ArrayList<>(s.getKeyFrames().values());
+    KeyFrame key = new KeyFrame(new cs3500.model.KeyFrame(0, 0, 0, 0, 0, 0, 0, 0));
+
+    for (int i = 0; i < list.size() - 1; i++) {
+      if (tick < list.get(i + 1).getKey() && tick >= list.get(i).getKey()) {
+        key = new KeyFrame(list.get(i));
       }
     }
-    throw new IllegalArgumentException("No keyframe found");
+    return key;
   }
 
 
-  //TODO fix the algorithm for finding the current/next keyframe. Should be same as AShape, in
-  // theory.
   /**
    * Find the next keyframe if it actually exist in order to run the animation.
    *
@@ -126,12 +126,15 @@ public class ShapeAdapter implements Shape {
    */
   @Override
   public KeyFrame findNextKeyFrame(int tick) {
-    for (int i = 0; i < s.getKeyPoints().size() - 1; i++) {
-      if (tick <= s.getKeyFrames().get(s.getKeyPoints().get(i)).getKey()) {
-        return new KeyFrame(s.getKeyFrames().get(s.getKeyPoints().get(i)));
+    ArrayList<cs3500.model.KeyFrame> list = new ArrayList<>(s.getKeyFrames().values());
+    KeyFrame key = new KeyFrame(new cs3500.model.KeyFrame(0, 0, 0, 0, 0, 0, 0, 0));
+
+    for (int i = 0; i < list.size() - 1; i++) {
+      if (tick < list.get(i + 1).getKey() && tick >= list.get(i).getKey()) {
+        key = new KeyFrame(list.get(i + 1));
       }
     }
-    throw new IllegalArgumentException("Can't find next keyframe");
+    return key;
   }
 
   /**
@@ -153,6 +156,7 @@ public class ShapeAdapter implements Shape {
    */
   @Override
   public boolean hasKeyFrame(int tick) {
-    return this.s.getKeyPoints().contains(tick);
+    return tick >= s.getKeyPoints().get(0) && tick <= s.getKeyPoints()
+        .get(s.getKeyPoints().size() - 1);
   }
 }
