@@ -76,6 +76,11 @@ public class ControlPanel extends JPanel {
   int userY;
 
 
+  /**
+   * This represents the constructor for the ControlPanel object used in this view.
+   * NOTE: This was received from the provider with no javadoc.
+   * @param aniPanel The panel to be taken in.
+   */
   public ControlPanel(Animation2DPanel aniPanel) {
 
     this.setPreferredSize(new Dimension(400, 800));

@@ -1,7 +1,6 @@
 package cs3500.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 /**
@@ -131,7 +130,7 @@ public interface AnimationModel {
   int getY();
 
   /**
-   * Returns the hashmap of Shapes
+   * Returns the hashmap of Shapes.
    * @return the hashmap of shapes.
    */
   LinkedHashMap<String, Shapes> getHash();

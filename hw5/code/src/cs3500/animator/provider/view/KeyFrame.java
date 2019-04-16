@@ -3,10 +3,19 @@ package cs3500.animator.provider.view;
 import java.awt.Color;
 import java.awt.Point;
 
+/**
+ * This class represents an adapter between our version of a KeyFrame and that provided by the
+ * provider.
+ */
 public class KeyFrame implements IKeyFrame {
 
-  cs3500.model.KeyFrame in;
+  private cs3500.model.KeyFrame in;
 
+  /**
+   * This class holds an instance of our KeyFrame and adapts its behavior to that required by the
+   * provider view.
+   * @param in The KeyFrame to be adapted.
+   */
   public KeyFrame(cs3500.model.KeyFrame in) {
     this.in = in;
   }

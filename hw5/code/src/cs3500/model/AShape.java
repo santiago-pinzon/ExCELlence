@@ -200,8 +200,7 @@ public abstract class AShape implements Shapes {
 
       }
 
-    }
-    else {
+    } else {
       this.visible = false;
     }
   }
@@ -259,8 +258,8 @@ public abstract class AShape implements Shapes {
 
   @Override
   public KeyFrame findKeyFrame(String keyFrame) {
-    for(KeyFrame k: this.keyframes.values()) {
-      if(k.getDescription().equals(keyFrame)) {
+    for (KeyFrame k : this.keyframes.values()) {
+      if (k.getDescription().equals(keyFrame)) {
         return k;
       }
     }

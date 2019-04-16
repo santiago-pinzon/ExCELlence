@@ -5,12 +5,21 @@ import cs3500.model.Shapes;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This represents an adapter from our Shapes interface to the Shape interface provided by the
+ * providers.
+ */
 public class ShapeAdapter implements Shape {
 
-  Shapes s;
-  List<Motion> motions;
-  List<KeyFrame> keys;
+  private Shapes s;
+  private List<Motion> motions;
+  private List<KeyFrame> keys;
 
+  /**
+   * This class holds an instance of the Shapes interface and adapts its behavior to the desired
+   * by the provider view.
+   * @param s The shape object to be adapted.
+   */
   public ShapeAdapter(Shapes s) {
     this.s = s;
     this.motions = new ArrayList();
@@ -78,8 +87,8 @@ public class ShapeAdapter implements Shape {
   @Override
   public void addKeyFrame(KeyFrame k) {
     if (!s.getKeyPoints().contains(k.getTick())) {
-      s.addKeyFrame(k.getTick(), new cs3500.model.KeyFrame(k.getTick(), k.getPos().x, k.getPos().y
-          , k.getHeight(), k.getWidth(), k.getCol().getRed(),
+      s.addKeyFrame(k.getTick(), new cs3500.model.KeyFrame(k.getTick(), k.getPos().x, k.getPos().y,
+          k.getHeight(), k.getWidth(), k.getCol().getRed(),
           k.getCol().getGreen(), k.getCol().getBlue()));
     }
   }

@@ -1,9 +1,19 @@
 package cs3500.animator.provider.view;
 
+/**
+ * This class is an adapter class to hold the place of the Motion Class defined in the provider
+ * code. It serves very little purpose outside of holding two keyFrames which represent the start
+ * and end states of an animation.
+ */
 public class Motion implements cs3500.animator.model.IMotion {
-  cs3500.model.KeyFrame start;
-  cs3500.model.KeyFrame end;
+  private cs3500.model.KeyFrame start;
+  private cs3500.model.KeyFrame end;
 
+  /**
+   * This class takes in two keyFrames to represent the initial and end states of the Motion.
+   * @param start The start KeyFrame.
+   * @param end The end KeyFrame.
+   */
   public Motion(cs3500.model.KeyFrame start, cs3500.model.KeyFrame end) {
     this.start = start;
     this.end = end;

@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 
 import cs3500.model.KeyFrame;
-import cs3500.model.ROAnimationModel;
 
 /**
  * Interface for the editor view that allows the user to edit the animation.

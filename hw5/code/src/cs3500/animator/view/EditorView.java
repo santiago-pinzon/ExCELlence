@@ -303,7 +303,7 @@ public class EditorView extends JFrame implements IEditorView {
         this.animate();
         this.started = true;
       }
-      this.play.setIcon(new ImageIcon("play.gif"));
+      this.play.setIcon(new ImageIcon("hw5/code/Resources/Play.gif"));
       this.paused = false;
       this.pause = 0;
       if (this.started) {
@@ -311,7 +311,7 @@ public class EditorView extends JFrame implements IEditorView {
         this.started = true;
       }
     } else {
-      this.play.setIcon(new ImageIcon("pause.gif"));
+      this.play.setIcon(new ImageIcon("hw5/code/Resources/pause.gif"));
       this.paused = true;
       this.pause = 1;
     }

@@ -11,10 +11,20 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This represents an adapter from our version of the animation model to that provided by the
+ * providers.
+ */
 public class ModelAdapter implements Animation2DModel {
 
-  AnimationModelImpl in;
+  private AnimationModelImpl in;
 
+  /**
+   * This adapter takes in an AnimationModelImpl to be adapted to the behavior desired by the
+   * provider view.
+   *
+   * @param model The model to be adapted.
+   */
   public ModelAdapter(AnimationModelImpl model) {
     this.in = model;
   }
@@ -47,12 +57,13 @@ public class ModelAdapter implements Animation2DModel {
    */
   @Override
   public List<Motion> getMotion() {
-    List<Motion> motions= new ArrayList();
+    List<Motion> motions = new ArrayList();
     int end = this.in.getLength();
-    for(Shapes s: this.in.getShapes()) {
-      if(s.getKeyPoints().contains(end)) {
-        motions.add(new Motion(s.getKeyFrames().get(s.getKeyPoints().get(s.getKeyPoints().size()-2)),
-            s.getKeyFrames().get(end)));
+    for (Shapes s : this.in.getShapes()) {
+      if (s.getKeyPoints().contains(end)) {
+        motions
+            .add(new Motion(s.getKeyFrames().get(s.getKeyPoints().get(s.getKeyPoints().size() - 2)),
+                s.getKeyFrames().get(end)));
         return motions;
       }
     }
@@ -119,10 +130,9 @@ public class ModelAdapter implements Animation2DModel {
           new Color(0, 0, 0), shape, false));
     }
     if (type.equals("rectangle")) {
-      this.in.addShape(new Rectangle(new Position(0,0), 0, 0,
-          new Color(0,0,0), shape,false));
-    }
-    else {
+      this.in.addShape(new Rectangle(new Position(0, 0), 0, 0,
+          new Color(0, 0, 0), shape, false));
+    } else {
       throw new IllegalArgumentException("Type of shape not recognized");
     }
   }
@@ -166,7 +176,7 @@ public class ModelAdapter implements Animation2DModel {
   public void deleteKeyFrame(String shape, String keyFrame) {
     Shapes s = this.in.getHash().get(shape);
     KeyFrame k = s.findKeyFrame(keyFrame);
-    if(k != null) {
+    if (k != null) {
       this.in.removeKeyFrame(shape, k.getKey());
     }
   }
