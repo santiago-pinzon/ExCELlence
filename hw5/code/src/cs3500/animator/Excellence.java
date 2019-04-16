@@ -136,8 +136,8 @@ public class Excellence {
         Controller controllerOne = new Controller(new EditorView(), new AnimationModelImpl());
         break;
 
-      case "provider" :
-        if(model == null) {
+      case "provider":
+        if (model == null) {
           JFrame frame = new JFrame();
           frame.setPreferredSize(new Dimension(100, 100));
 
@@ -151,7 +151,7 @@ public class Excellence {
           public void actionPerformed(ActionEvent e) {
             if (e.getActionCommand().equals("start")) {
               control.start();
-            } else if (e.getActionCommand().equals("pause") ) {
+            } else if (e.getActionCommand().equals("pause")) {
               control.pause();
             } else if (e.getActionCommand().equals("restart")) {
               control.restart();
