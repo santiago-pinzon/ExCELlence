@@ -13,7 +13,6 @@ public class ShapeAdapter implements Shape {
 
   private Shapes s;
   private List<Motion> motions;
-  private List<KeyFrame> keys;
 
   /**
    * This class holds an instance of the Shapes interface and adapts its behavior to the desired
@@ -100,7 +99,7 @@ public class ShapeAdapter implements Shape {
    */
   @Override
   public List<KeyFrame> getKeyFrame() {
-    keys = new ArrayList<>();
+    List<KeyFrame> keys = new ArrayList<>();
     for (cs3500.model.KeyFrame k : s.getKeyFrames().values()) {
       keys.add(new KeyFrame(k));
     }

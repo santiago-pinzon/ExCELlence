@@ -1,7 +1,6 @@
 package cs3500.animator;
 
 import cs3500.animator.controller.Controller;
-import cs3500.animator.provider.view.Animation2DModel;
 import cs3500.animator.provider.view.ControlView;
 import cs3500.animator.provider.view.ModelAdapter;
 import java.awt.Dimension;
