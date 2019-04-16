@@ -92,73 +92,73 @@ public class EditorView extends JFrame implements IEditorView {
     JToolBar test = new JToolBar();
 
     //save
-    save = new JButton(new ImageIcon("save.gif"));
+    save = new JButton(new ImageIcon("hw5/code/Resources/save.gif"));
     save.setToolTipText("Save");
     save.setActionCommand("save");
     test.add(save);
 
     //load
-    load = new JButton(new ImageIcon("open.gif"));
+    load = new JButton(new ImageIcon("hw5/code/Resources/open.gif"));
     load.setToolTipText("Load");
     load.setActionCommand("load");
     test.add(load);
 
     //add
-    add = new JButton(new ImageIcon("add.gif"));
+    add = new JButton(new ImageIcon("hw5/code/Resources/add.gif"));
     add.setToolTipText("Add a shape or key");
     add.setActionCommand("add");
     test.add(add);
 
     //delete
-    delete = new JButton(new ImageIcon("delete.gif"));
+    delete = new JButton(new ImageIcon("hw5/code/Resources/delete.gif"));
     delete.setToolTipText("Delete");
     delete.setActionCommand("delete");
     test.add(delete);
 
     //edit
-    edit = new JButton(new ImageIcon("edit.gif"));
+    edit = new JButton(new ImageIcon("hw5/code/Resources/edit.gif"));
     edit.setToolTipText("Edit a shape or keyframe");
     edit.setActionCommand("edit");
     test.add(edit);
 
     //slowdown
-    slowdown = new JButton(new ImageIcon("slowdown.gif"));
+    slowdown = new JButton(new ImageIcon("hw5/code/Resources/slowdown.gif"));
     slowdown.setToolTipText("Slow Down");
     slowdown.setActionCommand("slowdown");
     test.add(slowdown);
 
     //reverse
-    reverse = new JButton(new ImageIcon("backward.gif"));
+    reverse = new JButton(new ImageIcon("hw5/code/Resources/backward.gif"));
     reverse.setToolTipText("Reverse");
     reverse.setActionCommand("reverse");
     test.add(reverse);
 
     //play
-    play = new JButton(new ImageIcon("pause.gif"));
-    play.setToolTipText("Play");
+    play = new JButton(new ImageIcon("hw5/code/Resources/pause.gif"));
+    play.setToolTipText("Play/Pause");
     play.setActionCommand("play");
     test.add(play);
 
     //forward
-    forward = new JButton(new ImageIcon("forward.gif"));
+    forward = new JButton(new ImageIcon("hw5/code/Resources/forward.gif"));
     forward.setToolTipText("Forward");
     forward.setActionCommand("forward");
     test.add(forward);
 
     //speedup
-    speedup = new JButton(new ImageIcon("speedup.gif"));
+    speedup = new JButton(new ImageIcon("hw5/code/Resources/speedup.gif"));
     speedup.setToolTipText("Speed Up");
     speedup.setActionCommand("speedup");
     test.add(speedup);
 
     //looping
-    loop = new JToggleButton(new ImageIcon("loop.gif"));
+    loop = new JToggleButton(new ImageIcon("hw5/code/Resources/loop.gif"));
     loop.setToolTipText("Loop");
     loop.setActionCommand("looping");
     test.add(loop);
 
     //restart
-    restart = new JButton(new ImageIcon("restart.gif"));
+    restart = new JButton(new ImageIcon("hw5/code/Resources/restart.gif"));
     loop.setToolTipText("Restart");
     restart.setActionCommand("restart");
     test.add(restart);
