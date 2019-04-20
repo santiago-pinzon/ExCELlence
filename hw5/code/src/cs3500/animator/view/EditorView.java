@@ -181,20 +181,18 @@ public class EditorView extends JFrame implements IEditorView {
     mainPanel.add(toolPanel);
 
     this.panel = new AnimationPanel();
+    JScrollPane scroll = new JScrollPane(this.panel);
 
-    mainScrollPane.add(this.panel);
-    mainPanel.add(mainScrollPane);
-
+    mainPanel.add(scroll);
 
     JPanel scrubberPanel = new JPanel(new BorderLayout());
     JToolBar scrubberBar = new JToolBar();
-    scrubberPanel.setMaximumSize(new Dimension(1000,300));
+    scrubberPanel.setMaximumSize(new Dimension(1000, 300));
 
-    if(this.model == null) {
+    if (this.model == null) {
       this.scrubber = new JSlider(0, 0, 0);
-    }
-    else {
-      this.scrubber = new JSlider(0,this.model.getLength(),0);
+    } else {
+      this.scrubber = new JSlider(0, this.model.getLength(), 0);
     }
 
     this.scrubber.setMajorTickSpacing(25);
@@ -208,9 +206,7 @@ public class EditorView extends JFrame implements IEditorView {
     mainPanel.add(scrubberPanel);
 
 
-
   }
-
 
 
   @Override
@@ -275,6 +271,7 @@ public class EditorView extends JFrame implements IEditorView {
 
   /**
    * Updates the model stored in the view to be a readOnly copy of the model.
+   *
    * @param in the ROAnimationModel being set.
    */
   @Override
@@ -304,6 +301,20 @@ public class EditorView extends JFrame implements IEditorView {
   @Override
   public void addChangeListener(ChangeListener change) {
     this.scrubber.addChangeListener(change);
+  }
+
+  @Override
+  public boolean scrubbing() {
+    return this.scrubber.getValueIsAdjusting();
+  }
+
+  @Override
+  public void checkScrubber() {
+    if (this.scrubber.getValueIsAdjusting()) {
+      this.tick = this.scrubber.getValue();
+      this.updateCounter();
+      this.model.updateShapes(this.tick);
+    }
   }
 
 

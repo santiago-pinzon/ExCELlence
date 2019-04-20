@@ -187,6 +187,6 @@ public class Controller implements IController, ActionListener, ChangeListener {
    */
   @Override
   public void stateChanged(ChangeEvent e) {
-
+      this.view.checkScrubber();
   }
 }

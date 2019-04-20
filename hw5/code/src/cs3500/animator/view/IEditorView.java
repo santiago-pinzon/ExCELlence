@@ -148,6 +148,17 @@ public interface IEditorView extends IView {
    * @param change The new ChangeListener.
    */
   void addChangeListener(ChangeListener change);
+
+  /**
+   * Checks whether the user is currently scrubbing.
+   * @return Whether the user is scrubbing or not.
+   */
+  boolean scrubbing();
+
+  /**
+   * Updates the current tick of the animation depending on what is happening with the scrubber.
+   */
+  void checkScrubber();
 }
 
 
