@@ -4,6 +4,7 @@ import static java.lang.Integer.parseInt;
 
 import cs3500.model.AnimationModel;
 import cs3500.model.KeyFrame;
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
@@ -19,12 +20,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSlider;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
+import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -48,6 +51,7 @@ public class EditorView extends JFrame implements IEditorView {
   private JButton restart;
   private JButton tickButton;
   private JComboBox<String> combobox;
+  private JSlider scrubber;
 
 
   private Timer timer;
@@ -83,7 +87,7 @@ public class EditorView extends JFrame implements IEditorView {
     mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
     //scroll bars around this main panel
     JScrollPane mainScrollPane = new JScrollPane(mainPanel);
-    add(mainScrollPane);
+    add(mainPanel);
 
     JPanel toolPanel = new JPanel();
     toolPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -178,10 +182,36 @@ public class EditorView extends JFrame implements IEditorView {
 
     this.panel = new AnimationPanel();
 
-    mainPanel.add(panel);
+    mainScrollPane.add(this.panel);
+    mainPanel.add(mainScrollPane);
+
+
+    JPanel scrubberPanel = new JPanel(new BorderLayout());
+    JToolBar scrubberBar = new JToolBar();
+    scrubberPanel.setMaximumSize(new Dimension(1000,300));
+
+    if(this.model == null) {
+      this.scrubber = new JSlider(0, 0, 0);
+    }
+    else {
+      this.scrubber = new JSlider(0,this.model.getLength(),0);
+    }
+
+    this.scrubber.setMajorTickSpacing(25);
+    this.scrubber.setMinorTickSpacing(5);
+    this.scrubber.setPaintTicks(true);
+    this.scrubber.setPaintLabels(true);
+    this.scrubber.setPaintTrack(true);
+
+    scrubberBar.add(scrubber);
+    scrubberPanel.add(scrubberBar);
+    mainPanel.add(scrubberPanel);
+
 
 
   }
+
+
 
   @Override
   public void setVisible() {
@@ -231,12 +261,17 @@ public class EditorView extends JFrame implements IEditorView {
       if (this.tick > this.length) {
         this.tick = this.length;
       }
+      updateScrubber();
       updateCounter();
     });
     this.setVisible();
     timer.start();
   }
 
+
+  private void updateScrubber() {
+    this.scrubber.setValue(this.tick);
+  }
 
   /**
    * Updates the model stored in the view to be a readOnly copy of the model.
@@ -246,6 +281,7 @@ public class EditorView extends JFrame implements IEditorView {
   public void setModel(AnimationModel in) {
     this.model = in;
     this.length = model.getLength();
+    this.scrubber.setMaximum(this.model.getLength());
   }
 
 
@@ -263,6 +299,11 @@ public class EditorView extends JFrame implements IEditorView {
     add.addActionListener(listen);
     load.addActionListener(listen);
     save.addActionListener(listen);
+  }
+
+  @Override
+  public void addChangeListener(ChangeListener change) {
+    this.scrubber.addChangeListener(change);
   }
 
 
@@ -321,6 +362,7 @@ public class EditorView extends JFrame implements IEditorView {
   public void restart() {
     this.tick = 1;
     this.updateCounter();
+    this.updateScrubber();
   }
 
 

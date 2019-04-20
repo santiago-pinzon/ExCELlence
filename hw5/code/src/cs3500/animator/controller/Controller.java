@@ -22,11 +22,13 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  * Conroller class that allows the user to do what they want to the animation.
  */
-public class Controller implements IController, ActionListener {
+public class Controller implements IController, ActionListener, ChangeListener {
 
   public EditorView view;
   AnimationModelImpl model;
@@ -41,6 +43,7 @@ public class Controller implements IController, ActionListener {
     this.view = view;
     this.model = model;
     this.view.addActionListener(this);
+    this.view.addChangeListener(this);
     this.view.setVisible();
   }
 
@@ -175,5 +178,15 @@ public class Controller implements IController, ActionListener {
       }
 
     }
+  }
+
+  /**
+   * Invoked when the target of the listener has changed its state.
+   *
+   * @param e a ChangeEvent object
+   */
+  @Override
+  public void stateChanged(ChangeEvent e) {
+
   }
 }

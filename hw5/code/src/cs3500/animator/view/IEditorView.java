@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 
 import cs3500.model.KeyFrame;
+import javafx.scene.control.TextFormatter.Change;
+import javax.swing.event.ChangeListener;
 
 /**
  * Interface for the editor view that allows the user to edit the animation.
@@ -140,6 +142,12 @@ public interface IEditorView extends IView {
    * @return the number of frames.
    */
   int getNumberOfKeyFrames();
+
+  /**
+   * Adds a changeListener to the scrubber object.
+   * @param change The new ChangeListener.
+   */
+  void addChangeListener(ChangeListener change);
 }
 
 

@@ -36,7 +36,7 @@ public class AnimationPanel extends JPanel {
     setPreferredSize(new Dimension(1000, 1000));
 
     for (Shapes shape : this.listOfShapes.values()) {
-      if (shape.isVisible()) {
+      //if (shape.isVisible()) {
         switch (shape.getDesc()) {
           case "Rectangle":
             g2.setColor(shape.getActualColor());
@@ -53,7 +53,7 @@ public class AnimationPanel extends JPanel {
             throw new IllegalArgumentException("Shape does not exist: " + shape.getDesc());
         }
       }
-    }
+    //}
 
   }
 
