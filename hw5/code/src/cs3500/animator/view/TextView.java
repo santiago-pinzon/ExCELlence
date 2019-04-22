@@ -8,6 +8,7 @@ import cs3500.model.AnimationModelImpl;
  * capable of outputting to any appendable, be it the console or a .txt file.
  */
 public class TextView implements ITextView {
+
   private AnimationModelImpl animation;
   private int x;
   private int y;
@@ -21,14 +22,14 @@ public class TextView implements ITextView {
    * animations.
    *
    * @param animation the model upon which the text view will be based.
-   * @param x         the offset in the x direction.
-   * @param y         the offset in the y direction.
-   * @param height    the height of the canvas.
-   * @param width     the width of the canvas.
-   * @param out       the appendable to output to, cannot be null.
+   * @param x the offset in the x direction.
+   * @param y the offset in the y direction.
+   * @param height the height of the canvas.
+   * @param width the width of the canvas.
+   * @param out the appendable to output to, cannot be null.
    */
   public TextView(AnimationModelImpl animation, int x, int y, int height, int width,
-                  Appendable out) {
+      Appendable out) {
     this.animation = animation;
     this.x = x;
     this.y = y;
@@ -51,9 +52,11 @@ public class TextView implements ITextView {
   public void render() throws IllegalArgumentException {
     try {
       out.append(String.format("canvas %-3s %-3s %-3s %-3s\n", this.x, this.y, this.height,
-              this.width));
-      for (String key : this.animation.getHash().keySet()) {
-        out.append(this.animation.getHash().get(key).getFullDescription());
+          this.width));
+      for (Integer num: this.animation.getHash().keySet()) {
+        for (String key : this.animation.getHash().get(num).keySet()) {
+          out.append(this.animation.getHash().get(num).get(key).getFullDescription());
+        }
       }
     } catch (IOException e) {
       throw new IllegalArgumentException("Unable to append to Appendable");

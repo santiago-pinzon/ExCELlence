@@ -3,6 +3,7 @@ package cs3500.model;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import sun.awt.image.ImageWatched.Link;
 
 /**
  * The implementation of the animation model. An animationModelImpl effectively holds and manages
@@ -15,7 +16,9 @@ public class AnimationModelImpl implements AnimationModel {
 
   private ArrayList<Shapes> shapes;
 
-  protected LinkedHashMap<String, Shapes> listOfShapes;
+  LinkedHashMap<Integer, LinkedHashMap<String, Shapes>> listOfShapes;
+  LinkedHashMap<String, Integer> layers;
+
   private int height;
   private int width;
   private int x;
@@ -36,12 +39,14 @@ public class AnimationModelImpl implements AnimationModel {
    *
    * @param in the list of shapes to be used in the animation.
    */
-  public AnimationModelImpl(LinkedHashMap<String, Shapes> in, int height, int width, int x, int y) {
+  public AnimationModelImpl(LinkedHashMap<Integer, LinkedHashMap<String, Shapes>> in, int height,
+      int width, int x, int y, LinkedHashMap<String, Integer> layers) {
     this.listOfShapes = in;
     this.height = height;
     this.width = width;
     this.x = x;
     this.y = y;
+    this.layers = layers;
   }
 
   @Override
@@ -49,7 +54,7 @@ public class AnimationModelImpl implements AnimationModel {
     if (this.listOfShapes.containsKey(shape.getName())) {
       throw new IllegalArgumentException("There already exists a shape with this name");
     }
-    this.listOfShapes.put(shape.getName(), shape);
+    this.listOfShapes.get(0).put(shape.getName(), shape);
   }
 
   @Override
@@ -57,27 +62,37 @@ public class AnimationModelImpl implements AnimationModel {
     if (!this.listOfShapes.containsKey(shape)) {
       throw new IllegalArgumentException("This shape does not exist");
     }
-    this.listOfShapes.get(shape).addAction(animate);
+    Integer layer = this.layers.get(shape);
+    this.listOfShapes.get(layer).get(shape).addAction(animate);
   }
 
-  public LinkedHashMap<String, Shapes> getHash() {
+  public LinkedHashMap<Integer, LinkedHashMap<String, Shapes>> getHash() {
     return listOfShapes;
+  }
+
+  @Override
+  public int getLayer(String name) {
+    return layers.get(name);
   }
 
   @Override
   public String getAnimation() {
     String output = "";
-    for (String key : this.listOfShapes.keySet()) {
-      output += this.listOfShapes.get(key).getFullDescription();
-      output += "\n";
+    for (Integer num : this.listOfShapes.keySet()) {
+      for (String key : this.listOfShapes.get(num).keySet()) {
+        output += this.listOfShapes.get(num).get(key).getFullDescription();
+        output += "\n";
+      }
     }
     return output;
   }
 
   @Override
   public void updateShapes(int tick) {
-    for (Shapes s : this.listOfShapes.values()) {
-      s.getTweener(tick);
+    for (Integer num : this.listOfShapes.keySet()) {
+      for (Shapes s : this.listOfShapes.get(num).values()) {
+        s.getTweener(tick);
+      }
     }
   }
 
@@ -92,7 +107,10 @@ public class AnimationModelImpl implements AnimationModel {
 
   @Override
   public ArrayList<Shapes> getShapes() {
-    ArrayList<Shapes> copies = new ArrayList<>(this.listOfShapes.values());
+    ArrayList<Shapes> copies = new ArrayList<>();
+    for (Integer num : this.listOfShapes.keySet()) {
+      copies.addAll(this.listOfShapes.get(num).values());
+    }
     return copies;
   }
 
@@ -124,27 +142,34 @@ public class AnimationModelImpl implements AnimationModel {
   @Override
   public int getLength() {
     int max = 0;
-    for (Shapes shape : this.listOfShapes.values()) {
-      max = Math.max(max, shape.getEnd());
+    for (Integer num : this.listOfShapes.keySet()) {
+      for (Shapes shape : this.listOfShapes.get(num).values()) {
+        max = Math.max(max, shape.getEnd());
+      }
     }
     return max;
   }
 
   @Override
   public void editKeyFrame(String name, int key, KeyFrame frame) {
-    this.listOfShapes.get(name).removeKeyFrame(key);
-    this.listOfShapes.get(name).addKeyFrame(key, frame);
+    Integer layer = this.layers.get(name);
+    this.listOfShapes.get(layer).get(name).removeKeyFrame(key);
+    this.listOfShapes.get(layer).get(name).addKeyFrame(key, frame);
   }
 
   @Override
   public void addKeyFrame(String name, int key, KeyFrame frame) {
-    this.listOfShapes.get(name).addKeyFrame(key, frame);
+    Integer layer = this.layers.get(name);
+    this.listOfShapes.get(layer).get(name).addKeyFrame(key, frame);
   }
 
   @Override
   public void removeKeyFrame(String name, int key) {
-    this.listOfShapes.get(name).removeKeyFrame(key);
+    Integer layer = this.layers.get(name);
+    this.listOfShapes.get(layer).get(name).removeKeyFrame(key);
   }
+
+
 
 
 }

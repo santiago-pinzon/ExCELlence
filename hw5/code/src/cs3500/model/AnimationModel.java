@@ -133,8 +133,15 @@ public interface AnimationModel {
    * Returns the hashmap of Shapes.
    * @return the hashmap of shapes.
    */
-  LinkedHashMap<String, Shapes> getHash();
+  LinkedHashMap<Integer, LinkedHashMap<String, Shapes>> getHash();
 
+
+  /**
+   * Returns the proper layer for the desired shape.
+   * @param name The name of the shape.
+   * @return The layer for the sesired shape.
+   */
+  int getLayer(String name);
 
 
 }

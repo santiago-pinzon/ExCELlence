@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 
 import cs3500.model.Shapes;
@@ -16,7 +18,7 @@ import javax.swing.JPanel;
  */
 public class AnimationPanel extends JPanel {
 
-  private LinkedHashMap<String, Shapes> listOfShapes = new LinkedHashMap();
+  private LinkedHashMap<Integer,LinkedHashMap<String, Shapes>> listOfShapes = new LinkedHashMap();
   private int x = 0;
   private int y = 0;
 
@@ -32,11 +34,14 @@ public class AnimationPanel extends JPanel {
 
     this.setBackground(Color.WHITE);
     Graphics2D g2 = (Graphics2D) g;
-    //setLocation(this.x,this.y);
     setPreferredSize(new Dimension(1000, 1000));
 
-    for (Shapes shape : this.listOfShapes.values()) {
-      //if (shape.isVisible()) {
+    ArrayList<Integer> layers = new ArrayList<>(listOfShapes.keySet());
+    Collections.sort(layers);
+
+    for(Integer num : layers) {
+      for (Shapes shape : this.listOfShapes.get(num).values()) {
+        //if (shape.isVisible()) {
         switch (shape.getDesc()) {
           case "Rectangle":
             g2.setColor(shape.getActualColor());
@@ -53,6 +58,7 @@ public class AnimationPanel extends JPanel {
             throw new IllegalArgumentException("Shape does not exist: " + shape.getDesc());
         }
       }
+    }
     //}
 
   }
@@ -63,7 +69,7 @@ public class AnimationPanel extends JPanel {
    *
    * @param in the map of shapes to be added.
    */
-  void addShapes(LinkedHashMap<String, Shapes> in) {
+  void addShapes(LinkedHashMap<Integer, LinkedHashMap<String, Shapes>> in) {
     this.listOfShapes = (LinkedHashMap) in.clone();
   }
 

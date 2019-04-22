@@ -174,7 +174,8 @@ public class ModelAdapter implements Animation2DModel {
    */
   @Override
   public void deleteKeyFrame(String shape, String keyFrame) {
-    Shapes s = this.in.getHash().get(shape);
+    Integer layer = this.in.getLayer(shape);
+    Shapes s = this.in.getHash().get(layer).get(shape);
     KeyFrame k = s.findKeyFrame(keyFrame);
     if (k != null) {
       this.in.removeKeyFrame(shape, k.getKey());

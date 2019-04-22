@@ -163,7 +163,7 @@ public class EditorView extends JFrame implements IEditorView {
 
     //restart
     restart = new JButton(new ImageIcon("hw5/code/Resources/restart.gif"));
-    loop.setToolTipText("Restart");
+    restart.setToolTipText("Restart");
     restart.setActionCommand("restart");
     test.add(restart);
 
@@ -423,9 +423,11 @@ public class EditorView extends JFrame implements IEditorView {
 
   @Override
   public int getKeyFrameNumber(String name) {
-    Object[] possibilities = new Object[this.model.getHash().get(name).getKeyPoints().size()];
-    for (int i = 0; i < this.model.getHash().get(name).getKeyPoints().size(); i++) {
-      possibilities[i] = this.model.getHash().get(name).getKeyPoints().get(i);
+    Integer layer = this.model.getLayer(name);
+    Object[] possibilities =
+        new Object[this.model.getHash().get(layer).get(name).getKeyPoints().size()];
+    for (int i = 0; i < this.model.getHash().get(layer).get(name).getKeyPoints().size(); i++) {
+      possibilities[i] = this.model.getHash().get(layer).get(name).getKeyPoints().get(i);
     }
 
     int s = (int) JOptionPane.showInputDialog(
