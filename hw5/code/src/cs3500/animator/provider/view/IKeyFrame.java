@@ -53,4 +53,6 @@ public interface IKeyFrame {
    */
   int getHeight();
 
+  int getRotate();
+
 }

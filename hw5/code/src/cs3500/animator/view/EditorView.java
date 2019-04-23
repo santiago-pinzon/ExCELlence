@@ -1,6 +1,8 @@
 package cs3500.animator.view;
 
 import static java.lang.Integer.parseInt;
+import static java.lang.Integer.rotateLeft;
+import static java.lang.Integer.rotateRight;
 
 import cs3500.model.AnimationModel;
 import cs3500.model.KeyFrame;
@@ -445,7 +447,7 @@ public class EditorView extends JFrame implements IEditorView {
 
   @Override
   public KeyFrame getKeyFrame() {
-    KeyFrame key = new KeyFrame(0, 0, 0, 0, 0, 0, 0, 0);
+    KeyFrame key = new KeyFrame(0, 0, 0, 0, 0, 0, 0, 0, 0);
 
     JTextField tField = new JTextField(5);
     JTextField xField = new JTextField(5);
@@ -493,10 +495,12 @@ public class EditorView extends JFrame implements IEditorView {
       int g = (int) gField.getValue();
       int b = (int) bField.getValue();
 
-      key = new KeyFrame(t, x, y, h, w, r, g, b);
+      key = new KeyFrame(t, x, y, h, w, r, g, b, rotateLeft(10, 1));
     }
     return key;
   }
+
+
 
   @Override
   public String getShapeType() {

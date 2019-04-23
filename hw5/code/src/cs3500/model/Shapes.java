@@ -191,7 +191,7 @@ public interface Shapes {
    * @param g green value of the keyFrame
    * @param b blue value of the keyFrame
    */
-  void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b);
+  void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b, int rotate);
 
 
   /**
@@ -227,5 +227,9 @@ public interface Shapes {
    * @return the hash of KeyFrames
    */
   LinkedHashMap<Integer, KeyFrame> getKeyFrames();
+
+  void rotateShape(int angle);
+
+  int getRotation();
 }
 

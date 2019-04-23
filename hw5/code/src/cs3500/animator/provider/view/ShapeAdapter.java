@@ -22,7 +22,6 @@ public class ShapeAdapter implements Shape {
   public ShapeAdapter(Shapes s) {
     this.s = s;
     this.motions = new ArrayList();
-
   }
 
 
@@ -88,7 +87,7 @@ public class ShapeAdapter implements Shape {
     if (!s.getKeyPoints().contains(k.getTick())) {
       s.addKeyFrame(k.getTick(), new cs3500.model.KeyFrame(k.getTick(), k.getPos().x, k.getPos().y,
           k.getHeight(), k.getWidth(), k.getCol().getRed(),
-          k.getCol().getGreen(), k.getCol().getBlue()));
+          k.getCol().getGreen(), k.getCol().getBlue(), k.getRotate()));
     }
   }
 
@@ -115,7 +114,7 @@ public class ShapeAdapter implements Shape {
   @Override
   public KeyFrame findThisKeyFrame(int tick) {
     ArrayList<cs3500.model.KeyFrame> list = new ArrayList<>(s.getKeyFrames().values());
-    KeyFrame key = new KeyFrame(new cs3500.model.KeyFrame(0, 0, 0, 0, 0, 0, 0, 0));
+    KeyFrame key = new KeyFrame(new cs3500.model.KeyFrame(0, 0, 0, 0, 0, 0, 0, 0, 0));
 
     for (int i = 0; i < list.size() - 1; i++) {
       if (tick < list.get(i + 1).getKey() && tick >= list.get(i).getKey()) {
@@ -135,7 +134,7 @@ public class ShapeAdapter implements Shape {
   @Override
   public KeyFrame findNextKeyFrame(int tick) {
     ArrayList<cs3500.model.KeyFrame> list = new ArrayList<>(s.getKeyFrames().values());
-    KeyFrame key = new KeyFrame(new cs3500.model.KeyFrame(0, 0, 0, 0, 0, 0, 0, 0));
+    KeyFrame key = new KeyFrame(new cs3500.model.KeyFrame(0, 0, 0, 0, 0, 0, 0, 0, 0));
 
     for (int i = 0; i < list.size() - 1; i++) {
       if (tick < list.get(i + 1).getKey() && tick >= list.get(i).getKey()) {

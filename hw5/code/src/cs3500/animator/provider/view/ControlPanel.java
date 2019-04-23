@@ -74,6 +74,7 @@ public class ControlPanel extends JPanel {
   int userHeight;
   int userX;
   int userY;
+  int rotationInfo;
 
 
   /**
@@ -524,7 +525,7 @@ public class ControlPanel extends JPanel {
 
         animationPanel.model
             .addKeyFrame(userShapeName1, userTick, userX, userY, userR, userG, userB,
-                userWidth, userHeight);
+                userWidth, userHeight, rotationInfo);
         this.updateKeyFrames();
 
 

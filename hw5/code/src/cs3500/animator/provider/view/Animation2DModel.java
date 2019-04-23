@@ -91,7 +91,7 @@ public interface Animation2DModel {
    * @param height the height of this keyframe
    */
   void addKeyFrame(String name, int tick, int x, int y, int r, int g, int b, int width,
-      int height);
+      int height, int rotate);
 
   /**
    * Delete a keyframe by entering the shape name and the keyframe string representation.

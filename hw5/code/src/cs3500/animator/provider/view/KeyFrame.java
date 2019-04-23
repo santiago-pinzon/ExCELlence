@@ -79,4 +79,9 @@ public class KeyFrame implements IKeyFrame {
   public int getHeight() {
     return this.in.getH();
   }
+
+  @Override
+  public int getRotate(){
+    return this.in.getRotate();
+  }
 }

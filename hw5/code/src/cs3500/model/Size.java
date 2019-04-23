@@ -34,6 +34,7 @@ public class Size extends AbstractAnimation {
 
   @Override
   public void apply(Shapes shape) {
+
     shape.changeSize(height, width);
   }
 
