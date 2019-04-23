@@ -14,7 +14,7 @@ public interface AnimationModel {
    *
    * @param shape the shape being added to the list of shapes.
    * @throws IllegalArgumentException if a shape is already in the list of shapes with that shapes
-   *                                  name.
+   * name.
    */
 
   public void addShape(Shapes shape);
@@ -22,7 +22,7 @@ public interface AnimationModel {
   /**
    * Adds an animation to the given shape.
    *
-   * @param shape   the shape getting the animation.
+   * @param shape the shape getting the animation.
    * @param animate the animation being given to the shape.
    * @throws IllegalArgumentException if the given shape is not in the list of shapes.
    */
@@ -77,8 +77,8 @@ public interface AnimationModel {
   /**
    * Edits the keyFrame.
    *
-   * @param name  name of the keyframe
-   * @param key   frame of the animation model
+   * @param name name of the keyframe
+   * @param key frame of the animation model
    * @param frame keyframe being edited
    */
   void editKeyFrame(String name, int key, KeyFrame frame);
@@ -86,8 +86,8 @@ public interface AnimationModel {
   /**
    * Adds the keyFrame to the animation model.
    *
-   * @param name  name of the keyframe
-   * @param key   frame of the animation model
+   * @param name name of the keyframe
+   * @param key frame of the animation model
    * @param frame keyframe being edited
    */
   void addKeyFrame(String name, int key, KeyFrame frame);
@@ -97,7 +97,7 @@ public interface AnimationModel {
    * Removes the keyFrame.
    *
    * @param name name of the keyframe
-   * @param key  frame of the animation model
+   * @param key frame of the animation model
    */
   void removeKeyFrame(String name, int key);
 
@@ -131,6 +131,7 @@ public interface AnimationModel {
 
   /**
    * Returns the hashmap of Shapes.
+   *
    * @return the hashmap of shapes.
    */
   LinkedHashMap<Integer, LinkedHashMap<String, Shapes>> getHash();
@@ -138,10 +139,40 @@ public interface AnimationModel {
 
   /**
    * Returns the proper layer for the desired shape.
+   *
    * @param name The name of the shape.
    * @return The layer for the sesired shape.
    */
   int getLayer(String name);
 
 
+  /**
+   * Adds a new layer to the model. If that layer already exists nothing happens.
+   *
+   * @param layer The layer number to be added.
+   */
+  void addLayer(int layer);
+
+
+
+  /**
+   * Moves a shape from its current layer to the new layer.
+   *
+   * @param shape The shape to be moved.
+   * @param layer The new layer for the shape.
+   */
+  void moveShape(String shape, int layer);
+
+  /**
+   * Removes an entire layer from the model, with all its shapes too.
+   *
+   * @param layer the layer to be removed.
+   */
+  void removeLayer(int layer);
+
+  /**
+   * Reorders layers within the model;
+   * @param swaps The arrayList of layers to be reordered.
+   */
+  void reorder(ArrayList<Integer> swaps);
 }

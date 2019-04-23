@@ -11,6 +11,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -31,6 +32,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import jdk.nashorn.internal.scripts.JO;
 
 /**
  * Class that represents the editor view where all of the editing takes place.
@@ -52,6 +54,7 @@ public class EditorView extends JFrame implements IEditorView {
   private JButton speedup;
   private JButton restart;
   private JButton tickButton;
+  private JButton layersButton;
   private JComboBox<String> combobox;
   private JSlider scrubber;
 
@@ -168,6 +171,12 @@ public class EditorView extends JFrame implements IEditorView {
     restart.setToolTipText("Restart");
     restart.setActionCommand("restart");
     test.add(restart);
+
+    //Layers
+    layersButton = new JButton(new ImageIcon("hw5/code/Resources/layers.png"));
+    layersButton.setToolTipText("Layer Management");
+    layersButton.setActionCommand("layer");
+    test.add(layersButton);
 
     //tick
     tickButton = new JButton("Ticks");
@@ -298,6 +307,7 @@ public class EditorView extends JFrame implements IEditorView {
     add.addActionListener(listen);
     load.addActionListener(listen);
     save.addActionListener(listen);
+    layersButton.addActionListener(listen);
   }
 
   @Override
@@ -317,6 +327,84 @@ public class EditorView extends JFrame implements IEditorView {
       this.updateCounter();
       this.model.updateShapes(this.tick);
     }
+  }
+
+  @Override
+  public String getLayerOption() {
+    Object[] possibilities = {"Add a layer", "Add a shape to a layer", "Remove a layer", "Reorder "
+        + "layers"};
+
+    String s = (String) JOptionPane.showInputDialog(
+        this,
+        "What would you like to do",
+        "Layout Manager",
+        JOptionPane.PLAIN_MESSAGE,
+        new ImageIcon(),
+        possibilities,
+        "");
+
+    return s;
+  }
+
+  @Override
+  public int getLayerNumber() {
+    int t = 0;
+
+    JTextField tField = new JTextField(5);
+    JPanel myPanel = new JPanel();
+    myPanel.add(new JLabel("Layer:"));
+    myPanel.add(tField);
+
+    int result = JOptionPane.showConfirmDialog(null, myPanel,
+        "Please enter the desired new layer number", JOptionPane.OK_CANCEL_OPTION);
+    if (result == JOptionPane.OK_OPTION) {
+      t = parseInt(tField.getText());
+
+    }
+    return t;
+  }
+
+  @Override
+  public ArrayList<Integer> getLayerReorder() {
+    boolean check = true;
+    ArrayList<Integer> swaps = new ArrayList<>();
+
+    Object[] possibilities = new Object[this.model.getHash().keySet().size()];
+    int i = 0;
+    for (int layer : this.model.getHash().keySet()) {
+      possibilities[i] = layer;
+      i++;
+    }
+
+    JPanel myPanel = new JPanel();
+    JComboBox list1 = new JComboBox(possibilities);
+    JComboBox list2 = new JComboBox(possibilities);
+
+    myPanel.add(new JLabel("Press YES to continue swapping layers\nOr press NO to finish"));
+    myPanel.add(list1);
+    myPanel.add(list2);
+    myPanel.setPreferredSize(new Dimension(600,50));
+
+
+    while (check) {
+
+      int choice = JOptionPane.showConfirmDialog(this, myPanel,
+          "Layer Swapper",
+          JOptionPane.YES_NO_OPTION,
+          JOptionPane.QUESTION_MESSAGE,
+          null);
+
+      if (choice == JOptionPane.YES_OPTION) {
+        swaps.add((Integer) list1.getSelectedItem());
+        swaps.add((Integer) list2.getSelectedItem());
+      } else {
+        check = false;
+      }
+
+    }
+
+    return swaps;
+
   }
 
 
