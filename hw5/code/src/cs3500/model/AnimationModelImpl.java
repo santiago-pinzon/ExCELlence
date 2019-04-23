@@ -54,6 +54,10 @@ public class AnimationModelImpl implements AnimationModel {
     if (this.listOfShapes.containsKey(shape.getName())) {
       throw new IllegalArgumentException("There already exists a shape with this name");
     }
+    if(this.listOfShapes.get(0) == null) {
+      this.listOfShapes.put(0, new LinkedHashMap<>());
+    }
+    this.layers.put(shape.getName(), 0);
     this.listOfShapes.get(0).put(shape.getName(), shape);
   }
 
@@ -73,6 +77,41 @@ public class AnimationModelImpl implements AnimationModel {
   @Override
   public int getLayer(String name) {
     return layers.get(name);
+  }
+
+  @Override
+  public void addLayer(int layer) {
+    if (this.listOfShapes.get(layer) != null) {
+      this.listOfShapes.put(layer, new LinkedHashMap<>());
+    }
+  }
+
+
+  @Override
+  public void moveShape(String shape, int layer) {
+    int num = layers.get(shape);
+    Shapes temp = listOfShapes.get(num).get(shape);
+    listOfShapes.get(num).remove(shape);
+    if(listOfShapes.get(layer) == null) {
+      listOfShapes.put(layer, new LinkedHashMap<>());
+    }
+    listOfShapes.get(layer).put(shape, temp);
+    layers.put(shape, layer);
+  }
+
+  @Override
+  public void removeLayer(int layer) {
+    this.listOfShapes.remove(layer);
+  }
+
+  @Override
+  public void reorder(ArrayList<Integer> swaps) {
+    for (int i = 0; i < swaps.size() - 1; i += 2) {
+      LinkedHashMap<String, Shapes> temp =
+          this.listOfShapes.get(swaps.get(i));
+      this.listOfShapes.put(swaps.get(0), this.listOfShapes.get(swaps.get(i + 1)));
+      this.listOfShapes.put(swaps.get(i + 1), temp);
+    }
   }
 
   @Override
@@ -168,8 +207,6 @@ public class AnimationModelImpl implements AnimationModel {
     Integer layer = this.layers.get(name);
     this.listOfShapes.get(layer).get(name).removeKeyFrame(key);
   }
-
-
 
 
 }

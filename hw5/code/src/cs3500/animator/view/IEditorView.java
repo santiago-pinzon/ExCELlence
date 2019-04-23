@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 
 import cs3500.model.KeyFrame;
+import java.util.ArrayList;
 import javafx.scene.control.TextFormatter.Change;
 import javax.swing.event.ChangeListener;
 
@@ -145,12 +146,14 @@ public interface IEditorView extends IView {
 
   /**
    * Adds a changeListener to the scrubber object.
+   *
    * @param change The new ChangeListener.
    */
   void addChangeListener(ChangeListener change);
 
   /**
    * Checks whether the user is currently scrubbing.
+   *
    * @return Whether the user is scrubbing or not.
    */
   boolean scrubbing();
@@ -159,6 +162,29 @@ public interface IEditorView extends IView {
    * Updates the current tick of the animation depending on what is happening with the scrubber.
    */
   void checkScrubber();
+
+  /**
+   * Prompts the user for what action is desired for the layer management.
+   *
+   * @return The desired option.
+   */
+  String getLayerOption();
+
+  /**
+   * Prompts the user to enter the desired layer number.
+   *
+   * @return The desired layer number.
+   */
+  int getLayerNumber();
+
+
+  /**
+   * Gets the list of layers to be swapped. In order to allow multiple swaps at once, the swaps are
+   * stored as pairs in an arrayList and will be processed as such.
+   *
+   * @return The list of layers to be swapped.
+   */
+  ArrayList<Integer> getLayerReorder();
 }
 
 

@@ -173,6 +173,40 @@ public class Controller implements IController, ActionListener, ChangeListener {
         this.view.restart();
         break;
       }
+      case "layer": {
+        String option = this.view.getLayerOption();
+        switch (option) {
+          case "Add a layer": {
+            int layer = this.view.getLayerNumber();
+            this.model.addLayer(layer);
+            this.updateView();
+            break;
+          }
+          case "Add a shape to a layer": {
+            String shape = this.view.getShapeName(this);
+            int layer = this.view.getLayerNumber();
+            this.model.moveShape(shape, layer);
+            this.updateView();
+            break;
+          }
+          case "Remove a layer": {
+            int layer = this.view.getLayerNumber();
+            this.model.removeLayer(layer);
+            this.updateView();
+            break;
+          }
+          case "Reorder layers": {
+            ArrayList<Integer> swaps = this.view.getLayerReorder();
+            this.model.reorder(swaps);
+            this.updateView();
+            break;
+          }
+          default: {
+            break;
+          }
+        }
+        break;
+      }
       default: {
         break;
       }
@@ -187,6 +221,6 @@ public class Controller implements IController, ActionListener, ChangeListener {
    */
   @Override
   public void stateChanged(ChangeEvent e) {
-      this.view.checkScrubber();
+    this.view.checkScrubber();
   }
 }
