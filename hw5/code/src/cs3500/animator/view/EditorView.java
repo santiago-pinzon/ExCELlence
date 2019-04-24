@@ -337,7 +337,7 @@ public class EditorView extends JFrame implements IEditorView {
     String s = (String) JOptionPane.showInputDialog(
         this,
         "What would you like to do",
-        "Layout Manager",
+        "Layer Manager",
         JOptionPane.PLAIN_MESSAGE,
         new ImageIcon(),
         possibilities,
