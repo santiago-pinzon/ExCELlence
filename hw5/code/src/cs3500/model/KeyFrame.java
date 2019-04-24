@@ -1,6 +1,5 @@
 package cs3500.model;
 
-import java.awt.geom.AffineTransform;
 
 /**
  * Class to represent critical points of motions, known as keyFrames.
@@ -142,8 +141,6 @@ public class KeyFrame {
   public int getB() {
     return b;
   }
-
-
 
 
   public String getDescription() {

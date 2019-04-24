@@ -7,7 +7,6 @@ import java.io.File;
 
 import cs3500.model.KeyFrame;
 import java.util.ArrayList;
-import javafx.scene.control.TextFormatter.Change;
 import javax.swing.event.ChangeListener;
 
 /**

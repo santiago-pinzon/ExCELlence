@@ -1,9 +1,6 @@
 package cs3500.animator.view;
 
 import static java.lang.Integer.parseInt;
-import static java.lang.Integer.rotateLeft;
-import static java.lang.Integer.rotateRight;
-
 import cs3500.model.AnimationModel;
 import cs3500.model.KeyFrame;
 import java.awt.BorderLayout;
@@ -32,7 +29,6 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import jdk.nashorn.internal.scripts.JO;
 
 /**
  * Class that represents the editor view where all of the editing takes place.

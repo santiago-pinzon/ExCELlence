@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  */
 public class AnimationPanel extends JPanel {
 
-  private LinkedHashMap<Integer,LinkedHashMap<String, Shapes>> listOfShapes = new LinkedHashMap();
+  private LinkedHashMap<Integer, LinkedHashMap<String, Shapes>> listOfShapes = new LinkedHashMap();
   private int x = 0;
   private int y = 0;
 
@@ -39,7 +39,7 @@ public class AnimationPanel extends JPanel {
     ArrayList<Integer> layers = new ArrayList<>(listOfShapes.keySet());
     Collections.sort(layers);
 
-    for(Integer num : layers) {
+    for (Integer num : layers) {
       for (Shapes shape : this.listOfShapes.get(num).values()) {
         //if (shape.isVisible()) {
         switch (shape.getDesc()) {

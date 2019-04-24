@@ -3,7 +3,6 @@ package cs3500.model;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import sun.awt.image.ImageWatched.Link;
 
 /**
  * The implementation of the animation model. An animationModelImpl effectively holds and manages
@@ -54,7 +53,7 @@ public class AnimationModelImpl implements AnimationModel {
     if (this.listOfShapes.containsKey(shape.getName())) {
       throw new IllegalArgumentException("There already exists a shape with this name");
     }
-    if(this.listOfShapes.get(0) == null) {
+    if (this.listOfShapes.get(0) == null) {
       this.listOfShapes.put(0, new LinkedHashMap<>());
     }
     this.layers.put(shape.getName(), 0);
@@ -92,7 +91,7 @@ public class AnimationModelImpl implements AnimationModel {
     int num = layers.get(shape);
     Shapes temp = listOfShapes.get(num).get(shape);
     listOfShapes.get(num).remove(shape);
-    if(listOfShapes.get(layer) == null) {
+    if (listOfShapes.get(layer) == null) {
       listOfShapes.put(layer, new LinkedHashMap<>());
     }
     listOfShapes.get(layer).put(shape, temp);

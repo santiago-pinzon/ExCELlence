@@ -25,6 +25,7 @@ public abstract class AShape implements Shapes {
   protected String name;
   protected String desc;
   protected boolean visible;
+
   /**
    * Constructs an abstract shape.
    *
@@ -270,7 +271,6 @@ public abstract class AShape implements Shapes {
   public LinkedHashMap<Integer, KeyFrame> getKeyFrames() {
     return this.keyframes;
   }
-
 
 
 }

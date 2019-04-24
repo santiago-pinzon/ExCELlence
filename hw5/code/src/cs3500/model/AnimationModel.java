@@ -14,7 +14,7 @@ public interface AnimationModel {
    *
    * @param shape the shape being added to the list of shapes.
    * @throws IllegalArgumentException if a shape is already in the list of shapes with that shapes
-   * name.
+   *        name.
    */
 
   public void addShape(Shapes shape);
@@ -171,7 +171,7 @@ public interface AnimationModel {
   void removeLayer(int layer);
 
   /**
-   * Reorders layers within the model;
+   * Reorders layers within the model.
    * @param swaps The arrayList of layers to be reordered.
    */
   void reorder(ArrayList<Integer> swaps);

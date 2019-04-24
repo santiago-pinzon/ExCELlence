@@ -19,13 +19,13 @@ public class TestKeyFrames {
   }
 
 
-    @Test
-    public void testKeyFrameConstructor2ToString() {
-      KeyFrame k = new KeyFrame(1, 0, 0, 10, 10, 255, 0, 0);
-      KeyFrame k2 = new KeyFrame(1, 10, 10, 20, 20, 0, 255, 0);
-      KeyFrame k3 = new KeyFrame(k, k2, 4);
-      assertEquals("1     40    40    50    50    -765  1020  0    ", k3.toString());
-    }
+  @Test
+  public void testKeyFrameConstructor2ToString() {
+    KeyFrame k = new KeyFrame(1, 0, 0, 10, 10, 255, 0, 0);
+    KeyFrame k2 = new KeyFrame(1, 10, 10, 20, 20, 0, 255, 0);
+    KeyFrame k3 = new KeyFrame(k, k2, 4);
+    assertEquals("1     40    40    50    50    -765  1020  0    ", k3.toString());
+  }
 
   @Test
   public void testKeyFrameGetKey() {

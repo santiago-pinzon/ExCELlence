@@ -21,14 +21,14 @@ public class TestAbstractAnimation {
   public void testEndTimeLessThanStartTime() {
     Animation a = new Size(10, 3, 10, 10);
     assertEquals("end time cannot be less than or the same as the start time",
-            a.toString());
+        a.toString());
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testEndTimeEqualsStartTime() {
     Animation a = new Size(10, 10, 10, 10);
     assertEquals("end time cannot be less than or the same as the start time",
-            a.toString());
+        a.toString());
   }
 
   @Test
@@ -48,51 +48,51 @@ public class TestAbstractAnimation {
   @Test
   public void testGetFullDescriptionOfRectangle() {
     Rectangle r = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "R", true);
+        new Color(255, 0, 0), "R", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     r.addAction(motion);
     assertEquals("shape R Rectangle\n\n" +
-            "motion\tR\t0     0     0     10    10    255   0     0" +
-            "    \t\t10    5     0     10    10    255   0     0    \n", r.getFullDescription());
+        "motion\tR\t0     0     0     10    10    255   0     0" +
+        "    \t\t10    5     0     10    10    255   0     0    \n", r.getFullDescription());
   }
 
   @Test
   public void testGetDescriptionOfRectangle() {
     Rectangle r = new Rectangle(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "R", true);
+        new Color(255, 0, 0), "R", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     r.addAction(motion);
     assertEquals("motion\tR\t0     0     0     10    10    255   0     0" +
-            "    \t\t10    5     0     10    10    255   0     0    \n", r.getDescription(0));
+        "    \t\t10    5     0     10    10    255   0     0    \n", r.getDescription(0));
   }
 
   @Test
   public void testGetFullDescriptionOfEllipse() {
     Ellipse r = new Ellipse(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "E", true);
+        new Color(255, 0, 0), "E", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     ColorChange c = new ColorChange(0, 10, new Color(0, 255, 0));
     r.addAction(motion);
     r.addAction(c);
     assertEquals("shape E Ellipse\n\n" +
-            "motion\tE\t0     0     0     10    10    255   0     0" +
-            "    \t\t10    5     0     10    10    0     255   0    \n", r.getFullDescription());
+        "motion\tE\t0     0     0     10    10    255   0     0" +
+        "    \t\t10    5     0     10    10    0     255   0    \n", r.getFullDescription());
   }
 
   @Test
   public void testGetDescriptionOfEllipse() {
     Ellipse r = new Ellipse(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "E", true);
+        new Color(255, 0, 0), "E", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     r.addAction(motion);
     assertEquals("motion\tE\t0     0     0     10    10    255   0     0" +
-            "    \t\t10    5     0     10    10    255   0     0    \n", r.getDescription(0));
+        "    \t\t10    5     0     10    10    255   0     0    \n", r.getDescription(0));
   }
 
   @Test
   public void testGetFullDescriptionOfNewEllipse() {
     Ellipse r = new Ellipse(new Position(0, 0), 10, 10,
-            new Color(255, 0, 0), "E", true);
+        new Color(255, 0, 0), "E", true);
     Motion motion = new Motion(0, 10, new Position(5, 0));
     ColorChange c = new ColorChange(0, 10, new Color(0, 255, 0));
 
@@ -101,11 +101,11 @@ public class TestAbstractAnimation {
     r.addAction(c);
     r.addAction(size);
     assertEquals("shape E Ellipse\n\n" +
-                    "motion\tE\t0     0     0     10    10    255   0     0" +
-                    "    \t\t10    5     0     10    10    0     255   0    \n" +
-                    "motion\tE\t10    5     0     10    10    0     255   0" +
-                    "    \t\t15    5     0     20    21    0     255   0    \n"
-            , r.getFullDescription());
+            "motion\tE\t0     0     0     10    10    255   0     0" +
+            "    \t\t10    5     0     10    10    0     255   0    \n" +
+            "motion\tE\t10    5     0     10    10    0     255   0" +
+            "    \t\t15    5     0     20    21    0     255   0    \n"
+        , r.getFullDescription());
   }
 
 
