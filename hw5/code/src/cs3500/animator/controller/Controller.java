@@ -116,15 +116,15 @@ public class Controller implements IController, ActionListener, ChangeListener {
           if (type.equals("Rectangle")) {
             this.model.addShape(new Rectangle(new Position(initial.getX(), initial.getY()),
                 initial.getH(), initial.getW(),
-                new Color(initial.getR(), initial.getG(), initial.getB()), name, true, initial.getRotate()));
+                new Color(initial.getR(), initial.getG(), initial.getB()), name, true));
           } else {
             this.model.addShape(new Ellipse(new Position(initial.getX(), initial.getY()),
                 initial.getH(), initial.getW(),
-                new Color(initial.getR(), initial.getG(), initial.getB()), name, true, initial.getRotate()));
+                new Color(initial.getR(), initial.getG(), initial.getB()), name, true));
           }
           this.model.addKeyFrame(name, initial.getKey() + 1, new KeyFrame(initial.getKey() + 1,
               initial.getX(), initial.getY(), initial.getH(), initial.getW(), initial.getR(),
-              initial.getG(), initial.getB(), initial.getRotate()));
+              initial.getG(), initial.getB()));
           for (KeyFrame k : frames) {
             this.model.addKeyFrame(name, k.getKey(), k);
           }

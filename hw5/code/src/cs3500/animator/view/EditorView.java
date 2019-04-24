@@ -535,7 +535,7 @@ public class EditorView extends JFrame implements IEditorView {
 
   @Override
   public KeyFrame getKeyFrame() {
-    KeyFrame key = new KeyFrame(0, 0, 0, 0, 0, 0, 0, 0, 0);
+    KeyFrame key = new KeyFrame(0, 0, 0, 0, 0, 0, 0, 0);
 
     JTextField tField = new JTextField(5);
     JTextField xField = new JTextField(5);
@@ -583,7 +583,7 @@ public class EditorView extends JFrame implements IEditorView {
       int g = (int) gField.getValue();
       int b = (int) bField.getValue();
 
-      key = new KeyFrame(t, x, y, h, w, r, g, b, rotateLeft(10, 1));
+      key = new KeyFrame(t, x, y, h, w, r, g, b);
     }
     return key;
   }

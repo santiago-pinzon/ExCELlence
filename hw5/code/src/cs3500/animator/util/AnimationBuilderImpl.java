@@ -12,7 +12,6 @@ import cs3500.model.Motion;
 import cs3500.model.Position;
 import cs3500.model.Rectangle;
 import cs3500.model.Shapes;
-import cs3500.model.Rotate;
 import cs3500.model.Size;
 
 /**
@@ -104,7 +103,7 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
    */
   @Override
   public AnimationBuilder addMotion(String name, int t1, int x1, int y1, int w1, int h1, int r1,
-      int g1, int b1, int rotate1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2, int rotate2,
+      int g1, int b1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2,
       boolean visible) {
 
     Integer layer = layers.get(name);
@@ -118,32 +117,32 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
       switch (type) {
         case "ellipse":
           Ellipse e = new Ellipse(new Position(x1, y1), h1, w1, new Color(r1, g1, b1),
-              name, visible, rotate1);
+              name, visible);
           listOfShapes.get(layer).put(name, e);
           if (t1 != t2) {
-            this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, rotate1, t2, x2, y2, w2, h2, r2, g2, b2, rotate2);
+            this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1,  t2, x2, y2, w2, h2, r2, g2, b2);
           }
           break;
         case "rectangle":
           Rectangle r = new Rectangle(new Position(x1, y1), h1, w1, new Color(r1, g1, b1),
-              name, visible, rotate1);
+              name, visible);
           listOfShapes.get(layer).put(name, r);
           if (t1 != t2) {
-            this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, rotate1, t2, x2, y2, w2, h2, r2, g2, b2, rotate2);
+            this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1,  t2, x2, y2, w2, h2, r2, g2, b2);
           }
           break;
         default:
           throw new IllegalArgumentException("This shape is not valid");
       }
     } else {
-      this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1, rotate1, t2, x2, y2, w2, h2, r2, g2, b2, rotate2);
+      this.addAnimation(name, t1, x1, y1, w1, h1, r1, g1, b1,  t2, x2, y2, w2, h2, r2, g2, b2);
     }
     return this;
   }
 
   /**
    * Adds an animation to the specific shape. This checks the arguments to determine which type of
-   * motion it is and adds it to the desired shape 
+   * motion it is and adds it to the desired shape
    *
    * @param name the name of the shape
    * @param t1 The start time of this transformation
@@ -164,7 +163,7 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
    * @param b2 The final blue color-value of the shape
    */
   private void addAnimation(String name, int t1, int x1, int y1, int w1, int h1, int r1, int g1,
-      int b1, int rotate1, int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2, int rotate2) {
+      int b1,  int t2, int x2, int y2, int w2, int h2, int r2, int g2, int b2) {
 
     Integer layer = layers.get(name);
 
@@ -175,18 +174,15 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
     } else if (r1 != r2 || g1 != g2 || b1 != b2) {
       this.listOfShapes.get(layer).get(name).addAction(new ColorChange(t1, t2, new Color(r2, g2, b2)));
     }
-    else if(rotate1 != rotate2){
-      this.listOfShapes.get(layer).get(name).addAction(new Rotate(t1, t2, rotate2));
-    }
     else {
       this.listOfShapes.get(layer).get(name).addAction(new Motion(t1, t2, new Position(x2, y2)));
     }
 
     if (t1 == 1 || t1 == 0) {
-      this.listOfShapes.get(layer).get(name).addKeyFrame(t1, new KeyFrame(t1, x1, y1, h1, w1, r1, g1, b1, rotate1));
+      this.listOfShapes.get(layer).get(name).addKeyFrame(t1, new KeyFrame(t1, x1, y1, h1, w1, r1, g1, b1));
 
     }
-    this.listOfShapes.get(layer).get(name).addKeyFrame(t2, new KeyFrame(t2, x2, y2, h2, w2, r2, g2, b2, rotate2));
+    this.listOfShapes.get(layer).get(name).addKeyFrame(t2, new KeyFrame(t2, x2, y2, h2, w2, r2, g2, b2));
   }
 
   /**
@@ -205,7 +201,7 @@ public class AnimationBuilderImpl implements AnimationBuilder<AnimationModel> {
    */
   @Override
   public AnimationBuilder addKeyframe(String name, int t, int x, int y, int w, int h, int r, int g,
-      int b, int rotate) {
+      int b) {
     return this;
   }
 
