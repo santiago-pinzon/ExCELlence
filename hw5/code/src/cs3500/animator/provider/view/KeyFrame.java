@@ -80,8 +80,4 @@ public class KeyFrame implements IKeyFrame {
     return this.in.getH();
   }
 
-  @Override
-  public int getRotate(){
-    return this.in.getRotate();
-  }
 }

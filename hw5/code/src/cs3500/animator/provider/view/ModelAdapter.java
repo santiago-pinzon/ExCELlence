@@ -127,11 +127,11 @@ public class ModelAdapter implements Animation2DModel {
   public void addShape(String shape, String type) {
     if (type.equals("ellipse")) {
       this.in.addShape(new Ellipse(new Position(0, 0), 0, 0,
-          new Color(0, 0, 0), shape, false, 0));
+          new Color(0, 0, 0), shape, false));
     }
     if (type.equals("rectangle")) {
       this.in.addShape(new Rectangle(new Position(0, 0), 0, 0,
-          new Color(0, 0, 0), shape, false, 0));
+          new Color(0, 0, 0), shape, false));
     } else {
       throw new IllegalArgumentException("Type of shape not recognized");
     }
@@ -162,8 +162,8 @@ public class ModelAdapter implements Animation2DModel {
    */
   @Override
   public void addKeyFrame(String name, int tick, int x, int y, int r, int g, int b, int width,
-      int height, int rotate) {
-    this.in.addKeyFrame(name, tick, new KeyFrame(tick, x, y, height, width, r, g, b, rotate));
+      int height) {
+    this.in.addKeyFrame(name, tick, new KeyFrame(tick, x, y, height, width, r, g, b));
   }
 
   /**

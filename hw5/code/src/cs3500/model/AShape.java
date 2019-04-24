@@ -25,7 +25,6 @@ public abstract class AShape implements Shapes {
   protected String name;
   protected String desc;
   protected boolean visible;
-  protected int r;
   /**
    * Constructs an abstract shape.
    *
@@ -38,7 +37,7 @@ public abstract class AShape implements Shapes {
    * @throws IllegalArgumentException if the width is <= 0
    */
 
-  public AShape(Position center, int height, int width, Color color, String name, boolean visible, int r) {
+  public AShape(Position center, int height, int width, Color color, String name, boolean visible) {
     if (height <= 0) {
       throw new IllegalArgumentException("Height cannot be negative");
     }
@@ -53,7 +52,6 @@ public abstract class AShape implements Shapes {
     this.actions = new HashMap<>();
     this.keyPoints = new ArrayList<>();
     this.visible = visible;
-    this.r = r;
 
     this.keyframes = new LinkedHashMap<>();
 
@@ -234,9 +232,9 @@ public abstract class AShape implements Shapes {
   }
 
   @Override
-  public void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b, int rotate) {
+  public void modifyKeyFrame(int t, int x, int y, int w, int h, int r, int g, int b) {
     this.removeKeyFrame(t);
-    this.addKeyFrame(t, new KeyFrame(t, x, y, w, h, r, g, b, rotate));
+    this.addKeyFrame(t, new KeyFrame(t, x, y, w, h, r, g, b));
   }
 
 
@@ -273,16 +271,6 @@ public abstract class AShape implements Shapes {
     return this.keyframes;
   }
 
-  @Override
-  public void rotateShape(int angle){
-    AffineTransform a = new AffineTransform();
-    a.rotate(Math.toRadians(angle));
-  }
-
-  @Override
-  public int getRotation(){
-    return r;
-  }
 
 
 }

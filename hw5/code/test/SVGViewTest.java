@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * tests for the SVG view.
  */
-/*
+
 public class SVGViewTest {
 
   @Test(expected = IllegalArgumentException.class)
@@ -247,4 +247,3 @@ public class SVGViewTest {
 
 
 }
-*/

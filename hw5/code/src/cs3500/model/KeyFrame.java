@@ -15,7 +15,6 @@ public class KeyFrame {
   private int r;
   private int g;
   private int b;
-  private int rotate;
 
   /**
    * Constructs a keyFrame with a given key value, x value, y value, width, height, red value, green
@@ -30,7 +29,7 @@ public class KeyFrame {
    * @param g represents g value
    * @param b represents b value
    */
-  public KeyFrame(int key, int x, int y, int h, int w, int r, int g, int b, int rotate) {
+  public KeyFrame(int key, int x, int y, int h, int w, int r, int g, int b) {
     this.key = key;
     this.x = x;
     this.y = y;
@@ -39,7 +38,6 @@ public class KeyFrame {
     this.r = r;
     this.g = g;
     this.b = b;
-    this.rotate = rotate;
   }
 
   /**
@@ -59,7 +57,6 @@ public class KeyFrame {
     this.r = key.getR() + (int) Math.round((key2.getR() - key.getR()) * ratio);
     this.g = key.getG() + (int) Math.round((key2.getG() - key.getG()) * ratio);
     this.b = key.getB() + (int) Math.round((key2.getB() - key.getB()) * ratio);
-    this.rotate = key.getRotate() + (int) Math.round((key2.getRotate() - key.getRotate()) * ratio);
 
 
   }
@@ -70,8 +67,8 @@ public class KeyFrame {
    * @return the key frame as a string in the correct format
    */
   public String toString() {
-    return String.format("%-5s %-5s %-5s %-5s %-5s %-5s %-5s %-5s %-5s", key, this.x, this.y, this.h,
-        this.w, this.r, this.g, this.b, this.rotate);
+    return String.format("%-5s %-5s %-5s %-5s %-5s %-5s %-5s %-5s", key, this.x, this.y, this.h,
+        this.w, this.r, this.g, this.b);
   }
 
   /**
@@ -146,16 +143,11 @@ public class KeyFrame {
     return b;
   }
 
-  public int getRotate(){
-    AffineTransform a = new AffineTransform();
-    a.rotate(Math.toRadians(rotate));
 
-    return rotate;
-  }
 
 
   public String getDescription() {
-    return String.format("Tick: %-3s X: %-3s Y: %-3s W: %-3s H: %-3s R: %-3s G: %-3s B: %-3s Rotate: %-3s"
-        , this.key, this.x, this.y, this.w, this.h, this.r, this.g, this.b, this.rotate);
+    return String.format("Tick: %-3s X: %-3s Y: %-3s W: %-3s H: %-3s R: %-3s G: %-3s B: %-3s"
+        , this.key, this.x, this.y, this.w, this.h, this.r, this.g, this.b);
   }
 }

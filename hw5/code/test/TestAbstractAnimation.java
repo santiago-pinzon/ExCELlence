@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
  */
 
 public class TestAbstractAnimation {
-  /*
+
   @Test(expected = IllegalArgumentException.class)
   public void testEndTimeLessThanStartTime() {
     Animation a = new Size(10, 3, 10, 10);
@@ -107,6 +107,6 @@ public class TestAbstractAnimation {
                     "    \t\t15    5     0     20    21    0     255   0    \n"
             , r.getFullDescription());
   }
-  */
+
 
 }
