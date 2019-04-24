@@ -1,6 +1,5 @@
 package cs3500.model;
 
-import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
